@@ -1,13 +1,23 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  webpack(config, { dev }) {
+    if (dev) {
+      // Poistetaan Webpackin persistent file-system cache kehitysmoodissa.
+      // Tämä estää "Cannot read properties of undefined (reading 'call')"
+      // -virheen joka syntyy vanhentuneista chunk-tiedostoista.
+      config.cache = false;
+    }
+    return config;
+  },
+
   async redirects() {
     return [
       // www → non-www (canonical redirect)
       {
         source: "/:path*",
-        has: [{ type: "host", value: "www.pitkansillankatu33.com" }],
-        destination: "https://pitkansillankatu33.com/:path*",
+        has: [{ type: "host", value: "www.pitkansillankatu18.com" }],
+        destination: "https://pitkansillankatu18.com/:path*",
         permanent: true,
       },
     ];
