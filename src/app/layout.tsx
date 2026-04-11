@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Pitkänsillankatu 18 Kokkola",
   },
   description:
-    "225 m² turnkey projekti office & Day Lounge Kokkolan ydinkeskustassa. Konfidentiaalinen palaveri- ja koordinaatiotila suurhankkeille (Keliber, Boliden, Arctial). 149 000 € tai 1 500–2 500 €/kk, bruttotuotto 12–20 %.",
+    "225 m² turnkey projekti office Kokkolan ydinkeskustassa. Konfidentiaalinen palaveri- ja koordinaatiotila suurhankkeille (Keliber, Boliden, Arctial). 149 000 € tai 1 500–2 500 €/kk, bruttotuotto 12–20 %.",
 
   keywords: [
     // ── SUOMI ──────────────────────────────────────────────────────
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "Kokkola ydinkeskusta toimitila",
     "KIP-alue Kokkola",
     "turnkey toimisto Kokkola",
-    "Day Lounge Kokkola",
+    "palaveritila Kokkola",
     "palaverihuone Kokkola",
     "konfidentiaalinen kokoustila Kokkola",
     "sijoituskiinteistö Kokkola",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     "hyreslokal Karleby",
     "hyresavkastning 12-20 %",
     "mötesrum Karleby",
-    "Day Lounge Karleby",
+    "möteslokal Karleby",
     "storprojekt kontor Karleby",
 
     // ── ENGLANTI ───────────────────────────────────────────────────
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     "corporate rental Kokkola",
     "gross yield 12-20%",
     "meeting room Kokkola",
-    "day lounge Kokkola",
+    "meeting room Kokkola",
     "business hub Finland",
     "Keliber Boliden Arctial office Kokkola",
     "turnkey project office Finland",
@@ -109,7 +109,7 @@ export const metadata: Metadata = {
     alternateLocale: ["sv_SE", "en_US"],
     url: BASE_URL,
     siteName: "Pitkänsillankatu 18 – Projekti Office",
-    title: "Pitkänsillankatu 18 – Turnkey Projekti Office & Day Lounge | Kokkola",
+    title: "Pitkänsillankatu 18 – Turnkey Projekti Office | Kokkola",
     description:
       "225 m² konfidentiaalinen projekti office Kokkolan ydinkeskustassa. 7 min KIP-alueelle. 149 000 € tai 1 500–2 500 €/kk. Bruttotuotto 12–20 %.",
     images: [
@@ -126,7 +126,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pitkänsillankatu 18 – Turnkey Projekti Office | Kokkola",
     description:
-      "225 m² turnkey projekti office Kokkolan ydinkeskustassa, 7 min KIP-alueelle. Konfidentiaalinen Day Lounge suurhankkeille. 149 000 € tai 1 500–2 500 €/kk.",
+      "225 m² turnkey projekti office Kokkolan ydinkeskustassa, 7 min KIP-alueelle. Konfidentiaalinen palaveri- ja koordinaatiotila suurhankkeille. 149 000 € tai 1 500–2 500 €/kk.",
     images: ["/og-image.jpg"],
   },
 
@@ -146,7 +146,7 @@ const jsonLd = {
       "@id": `${BASE_URL}/#office`,
       name: "Pitkänsillankatu 18",
       description:
-        "225 m² turnkey projekti office & Day Lounge Kokkolan ydinkeskustassa. Konfidentiaalinen palaveri- ja koordinaatiotila suurhankkeille (Keliber, Boliden, Arctial). 7 min KIP-alueelle. Vuokrattavissa 1 500–2 500 €/kk tai myytävänä 149 000 €.",
+        "225 m² turnkey projekti office Kokkolan ydinkeskustassa. Konfidentiaalinen palaveri- ja koordinaatiotila suurhankkeille (Keliber, Boliden, Arctial). 7 min KIP-alueelle. Vuokrattavissa 1 500–2 500 €/kk tai myytävänä 149 000 €.",
       url: BASE_URL,
       image: `${BASE_URL}/og-image.jpg`,
       address: {

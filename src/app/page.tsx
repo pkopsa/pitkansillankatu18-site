@@ -50,9 +50,9 @@ function FadeIn({
 }
 
 const galleryImages = [
-  { src: "/kip18-daylounge-avara.jpg",         alt: "Day Lounge – avara ja valoisa kokonaisnäkymä" },
-  { src: "/kip18-daylounge-kokous.jpg",         alt: "Day Lounge – kokoustila pitkällä pöydällä" },
-  { src: "/kip18-daylounge-naytto.jpg",         alt: "Day Lounge – taukotila ja esitysnäyttö" },
+  { src: "/kip18-daylounge-avara.jpg",         alt: "Open office – avara ja valoisa kokonaisnäkymä" },
+  { src: "/kip18-daylounge-kokous.jpg",         alt: "Open office – kokoustila pitkällä pöydällä" },
+  { src: "/kip18-daylounge-naytto.jpg",         alt: "Open office – taukotila ja esitysnäyttö" },
   { src: "/kip18-neuvottelu.jpg",               alt: "Neuvotteluhuone – kokoustila ja TV-näyttö" },
   { src: "/kip18-keittio.jpg",                  alt: "Keittiö / Break Room – moderni musta keittiö" },
   { src: "/kip18-keittioalue.jpg",              alt: "Keittiöalue – saari ja kodinkoneet" },
@@ -61,9 +61,9 @@ const galleryImages = [
 ];
 
 const dayLoungeImages = [
-  { src: "/kip18-daylounge-avara.jpg",  alt: "Day Lounge – kokonaisnäkymä" },
-  { src: "/kip18-daylounge-kokous.jpg", alt: "Day Lounge – kokoustila" },
-  { src: "/kip18-daylounge-naytto.jpg", alt: "Day Lounge – esitysnäyttö" },
+  { src: "/kip18-daylounge-avara.jpg",  alt: "Open office – kokonaisnäkymä" },
+  { src: "/kip18-daylounge-kokous.jpg", alt: "Open office – kokoustila" },
+  { src: "/kip18-daylounge-naytto.jpg", alt: "Open office – esitysnäyttö" },
 ];
 
 const neuvotteluImages = [
@@ -193,7 +193,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <Image
             src="/kip18-daylounge-avara.jpg"
-            alt="Pitkänsillankatu 18 – Day Lounge ja Open Office"
+            alt="Pitkänsillankatu 18 – Open Office"
             fill
             className="object-cover brightness-105 contrast-105"
             priority
@@ -426,7 +426,7 @@ export default function Home() {
                 onClick={() => openLightbox(galleryImages, 0)}
                 className="relative aspect-square rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg w-full block cursor-zoom-in"
               >
-                <Image src="/kip18-daylounge-avara.jpg" alt="Day Lounge / Taukotila" fill className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500" />
+                <Image src="/kip18-daylounge-avara.jpg" alt="Open Office / Taukotila" fill className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500" />
               </button>
             </FadeIn>
             {galleryImages.slice(1).map((img, i) => (

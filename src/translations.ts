@@ -44,7 +44,7 @@ export const translations = {
 
     // Muuttovalmis
     readyTitle: "Valmis projektitoimintaan",
-    readySub: "Tilat on suunniteltu kokonaiselle tiimille, neuvotteluihin ja vuorotyöläisten Day Lounge -taukoihin.",
+    readySub: "Tilat on suunniteltu kokonaiselle tiimille, neuvotteluihin ja taukoihin.",
     card1Title: "Laaja open office",
     card1Desc: "94,7 m² OH + keittiö tarjoaa joustavan ja ilmavan tiimityöympäristön.",
     card2Title: "Neuvottelutila",
