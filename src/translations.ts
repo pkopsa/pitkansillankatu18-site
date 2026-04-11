@@ -95,7 +95,7 @@ export const translations = {
 
     // Edut yrityksille
     benefitsBadge: "Edut yrityksille",
-    benefitsTitle: "Konfidentiaalisuus. Connectivity.\nTurnkey-Strategia Kokkolan Suurhankkeille.",
+    benefitsTitle: "Turnkey-toimitilastrategia –\nKokkolan tuleville suurhankkeille.",
     benefit1Icon: "🔒",
     benefit1Title: "Projektitoimiston Erinomaisuus",
     benefit1Desc: "Luottamuksellinen Palaveritila > Hotellin Aula. Turvallinen ja joustava 225 m² pohjaratkaisu, suunniteltu konfidentiaalille projektitiimien koordinaatiolle ja 24/7 Day Lounge -tukikohdalle.",
@@ -218,7 +218,7 @@ export const translations = {
 
     // Fördelar för företag
     benefitsBadge: "Fördelar för företag",
-    benefitsTitle: "Konfidentialitet. Connectivity.\nTurnkey-strategi för Karlebys storprojekt.",
+    benefitsTitle: "Turnkey-kontorsstrategi –\nför Karlebys kommande storprojekt.",
     benefit1Icon: "🔒",
     benefit1Title: "Projektkontorets excellens",
     benefit1Desc: "Konfidentiell möteslokal > Hotelllobby. Säker och flexibel 225 m² layout, utformad för konfidentiell projektteamkoordinering och 24/7 Day Lounge.",
@@ -341,7 +341,7 @@ export const translations = {
 
     // Business benefits
     benefitsBadge: "Business benefits",
-    benefitsTitle: "Confidentiality. Connectivity.\nTurnkey Strategy for Kokkola's Major Projects.",
+    benefitsTitle: "Turnkey Office Space Strategy –\nfor Kokkola's Upcoming Major Projects.",
     benefit1Icon: "🔒",
     benefit1Title: "Project Office Excellence",
     benefit1Desc: "Confidential Meeting Space > Hotel Lobby. Secure and flexible 225 m² layout, designed for confidential project team coordination and 24/7 Day Lounge operations.",
