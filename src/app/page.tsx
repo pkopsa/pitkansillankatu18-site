@@ -205,7 +205,7 @@ export default function Home() {
           <p className="text-teal-400 text-base lg:text-2xl font-semibold tracking-widest uppercase mb-4 lg:mb-6">
             {t.heroLocation}
           </p>
-          <h1 className="text-[2.14rem] sm:text-[2.85rem] md:text-[4.28rem] lg:text-[7.6rem] font-black text-white leading-[1.05] lg:leading-[1.0] tracking-tight mb-6 lg:mb-10">
+          <h1 className="text-[2.14rem] sm:text-[2.85rem] md:text-[4.28rem] lg:text-[7.6rem] 2xl:text-[9.5rem] font-black text-white leading-[1.05] lg:leading-[1.0] tracking-tight mb-6 lg:mb-10 2xl:mb-14">
             {t.heroLine1}<br />
             <span className="text-teal-400">
               {t.heroLine2.split("\n").map((line, i) => (
@@ -214,19 +214,19 @@ export default function Home() {
             </span><br />
             {t.heroLine3}
           </h1>
-          <p className="text-base sm:text-lg md:text-2xl lg:text-3xl text-slate-200 mb-8 lg:mb-12 font-light">
+          <p className="text-base sm:text-lg md:text-2xl lg:text-3xl 2xl:text-4xl text-slate-200 mb-8 lg:mb-12 2xl:mb-16 font-light">
             {t.heroSub}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="#yhteystiedot"
-              className="inline-block bg-teal-500 hover:bg-teal-400 text-slate-900 text-lg lg:text-2xl font-bold px-8 lg:px-14 py-4 lg:py-6 rounded-full transition-colors duration-300 shadow-2xl"
+              className="inline-block bg-teal-500 hover:bg-teal-400 text-slate-900 text-lg lg:text-2xl 2xl:text-3xl font-bold px-8 lg:px-14 2xl:px-18 py-4 lg:py-6 2xl:py-8 rounded-full transition-colors duration-300 shadow-2xl"
             >
               {t.heroBtnRent}
             </a>
             <a
               href="#yhteystiedot"
-              className="inline-block bg-slate-100 hover:bg-slate-200 text-slate-900 text-lg lg:text-2xl font-bold px-8 lg:px-14 py-4 lg:py-6 rounded-full transition-colors duration-300 shadow-2xl"
+              className="inline-block bg-slate-100 hover:bg-slate-200 text-slate-900 text-lg lg:text-2xl 2xl:text-3xl font-bold px-8 lg:px-14 2xl:px-18 py-4 lg:py-6 2xl:py-8 rounded-full transition-colors duration-300 shadow-2xl"
             >
               {t.heroBtnBuy}
             </a>
@@ -245,7 +245,7 @@ export default function Home() {
       <section className="py-14 px-4 lg:py-28 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <h2 className="text-3xl lg:text-5xl font-bold text-center mb-10 lg:mb-20 text-slate-800">{t.detailsTitle}</h2>
+            <h2 className="text-3xl lg:text-5xl 2xl:text-6xl font-bold text-center mb-10 lg:mb-20 2xl:mb-24 text-slate-800">{t.detailsTitle}</h2>
           </FadeIn>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
             {[
@@ -257,8 +257,41 @@ export default function Home() {
               <FadeIn key={i} delay={i * 100}>
                 <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 text-center shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
                   <p className="text-slate-500 text-[1.05rem] lg:text-[1.35rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
-                  <p className="text-[3.24rem] lg:text-[4.06rem] font-black text-slate-900 mb-1 lg:mb-2 whitespace-nowrap leading-none">{item.value}</p>
-                  {!item.inline && <p className="text-slate-400 text-[1.2rem] lg:text-[1.5rem] font-medium mt-2">{item.sub}</p>}
+                  <p className="text-[3.24rem] lg:text-[4.06rem] 2xl:text-[5rem] font-black text-slate-900 mb-1 lg:mb-2 whitespace-nowrap leading-none">{item.value}</p>
+                  {!item.inline && <p className="text-slate-400 text-[1.2rem] lg:text-[1.5rem] 2xl:text-[1.8rem] font-medium mt-2">{item.sub}</p>}
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── EDUT YRITYKSILLE ────────────────────────────────────────── */}
+      <section className="py-14 px-4 lg:py-28 lg:px-8 2xl:py-36 bg-slate-900 text-white">
+        <div className="max-w-6xl mx-auto">
+          <FadeIn>
+            <div className="flex items-center gap-3 mb-4 lg:mb-6 2xl:mb-8 justify-center">
+              <span className="text-teal-400 text-lg lg:text-2xl 2xl:text-3xl">◆</span>
+              <p className="text-teal-400 text-lg lg:text-2xl 2xl:text-3xl font-semibold tracking-widest uppercase">{t.benefitsBadge}</p>
+              <span className="text-teal-400 text-lg lg:text-2xl 2xl:text-3xl">◆</span>
+            </div>
+            <h2 className="text-3xl lg:text-5xl 2xl:text-6xl font-bold text-center mb-10 lg:mb-20 2xl:mb-24 text-white leading-tight">
+              {t.benefitsTitle.split("\n").map((line, i) => (
+                <span key={i}>{line}{i === 0 && <br />}</span>
+              ))}
+            </h2>
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 2xl:gap-12">
+            {[
+              { icon: t.benefit1Icon, title: t.benefit1Title, desc: t.benefit1Desc },
+              { icon: t.benefit2Icon, title: t.benefit2Title, desc: t.benefit2Desc },
+              { icon: t.benefit3Icon, title: t.benefit3Title, desc: t.benefit3Desc },
+            ].map((item, i) => (
+              <FadeIn key={i} delay={i * 150}>
+                <div className="bg-slate-800 border border-white/10 rounded-2xl lg:rounded-3xl p-6 lg:p-10 2xl:p-14 hover:bg-slate-700 transition-colors duration-300 flex flex-col gap-4 lg:gap-6 h-full">
+                  <div className="text-4xl lg:text-5xl 2xl:text-6xl">{item.icon}</div>
+                  <h3 className="text-xl lg:text-2xl 2xl:text-3xl font-bold text-white">{item.title}</h3>
+                  <p className="text-base lg:text-xl 2xl:text-2xl text-slate-300 leading-relaxed flex-1">{item.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -275,7 +308,7 @@ export default function Home() {
               <p className="text-emerald-600 text-lg lg:text-2xl font-semibold tracking-widest uppercase">{t.investorBadge}</p>
               <span className="text-emerald-600 text-lg lg:text-2xl">◆</span>
             </div>
-            <h2 className="text-3xl lg:text-5xl font-bold text-center mb-10 lg:mb-20 text-slate-800">{t.investorTitle}</h2>
+            <h2 className="text-3xl lg:text-5xl 2xl:text-6xl font-bold text-center mb-10 lg:mb-20 2xl:mb-24 text-slate-800">{t.investorTitle}</h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 mb-8 lg:mb-16">
@@ -288,9 +321,9 @@ export default function Home() {
                 <div className="relative bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
                   <div className="absolute top-0 right-0 w-32 h-32 lg:w-40 lg:h-40 bg-emerald-50 rounded-full -translate-y-12 translate-x-12 lg:-translate-y-16 lg:translate-x-16" />
                   <p className="text-slate-500 text-[1.05rem] lg:text-[1.35rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
-                  <p className="text-[3.24rem] lg:text-[4.06rem] font-black mb-1 text-emerald-700">{item.value}</p>
-                  <p className="text-[1.2rem] lg:text-[1.5rem] font-medium mb-4 lg:mb-6 text-slate-400">{item.sub}</p>
-                  <p className="text-[1.05rem] lg:text-[1.2rem] text-slate-600 leading-relaxed">{item.desc}</p>
+                  <p className="text-[3.24rem] lg:text-[4.06rem] 2xl:text-[5rem] font-black mb-1 text-emerald-700 whitespace-nowrap">{item.value}</p>
+                  <p className="text-[1.2rem] lg:text-[1.5rem] 2xl:text-[1.8rem] font-medium mb-4 lg:mb-6 text-slate-400">{item.sub}</p>
+                  <p className="text-[1.05rem] lg:text-[1.2rem] 2xl:text-[1.5rem] text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -298,7 +331,7 @@ export default function Home() {
 
           <FadeIn>
             <div className="bg-slate-50 border border-slate-200 rounded-2xl lg:rounded-3xl p-6 lg:p-10 text-center shadow-lg">
-              <p className="text-base lg:text-2xl text-slate-600 leading-relaxed">
+              <p className="text-base lg:text-2xl 2xl:text-3xl text-slate-600 leading-relaxed">
                 {t.investorSummary}
               </p>
             </div>
@@ -618,14 +651,14 @@ export default function Home() {
           <div className="text-center mb-8 lg:mb-14">
             <p className="text-teal-400 text-sm lg:text-base font-semibold tracking-widest uppercase mb-3">Sijainti</p>
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-3">Kohteen sijainti</h2>
-            <p className="text-slate-400 text-base lg:text-xl">Pitkänsillankatu 33, 67100 Kokkola — BioRexin vieressä</p>
+            <p className="text-slate-400 text-base lg:text-xl">Pitkänsillankatu 18, 67100 Kokkola — BioRexin vieressä</p>
           </div>
           <div className="rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-white/10">
             <PropertyMap />
           </div>
           <p className="text-center text-slate-500 text-sm mt-4">
             <a
-              href="https://maps.google.com/maps?q=Pitkänsillankatu+33,+67100+Kokkola"
+              href="https://maps.google.com/maps?q=Pitkänsillankatu+18,+67100+Kokkola"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-teal-400 transition-colors"

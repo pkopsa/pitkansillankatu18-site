@@ -92,6 +92,20 @@ export const translations = {
     maintLine1: "Kiinteistö-",
     maintLine2: "selvitys",
     maintDownload: "Lataa PDF ↓",
+
+    // Edut yrityksille
+    benefitsBadge: "Edut yrityksille",
+    benefitsTitle: "Konfidentiaalisuus. Connectivity.\nTurnkey-Strategia Kokkolan Suurhankkeille.",
+    benefit1Icon: "🔒",
+    benefit1Title: "Projektitoimiston Erinomaisuus",
+    benefit1Desc: "Luottamuksellinen Palaveritila > Hotellin Aula. Turvallinen ja joustava 225 m² pohjaratkaisu, suunniteltu konfidentiaalille projektitiimien koordinaatiolle ja 24/7 Day Lounge -tukikohdalle.",
+    benefit2Icon: "🗺️",
+    benefit2Title: "Strateginen Tukikohta",
+    benefit2Desc: "Optimoi Connectivity. Ydinkeskustan korkean profiilin sijainti, josta nopea pääsy (7 min) KIP-alueen major-toimijoille (Boliden, Keliber, Arctial).",
+    benefit3Icon: "📈",
+    benefit3Title: "Investointimahdollisuus",
+    benefit3Desc: "Korkeatuottoinen Ydinkeskustan Asset. Potentiaalinen 12–20 % bruttotuotto boomissa teollisuusmarkkinassa. 149 000 € pyyntihinta.",
+
     footer: "Pitkänsillankatu 18 · 67100 Kokkola · 225 m² · 149 000 €",
   },
 
@@ -178,6 +192,20 @@ export const translations = {
     maintLine1: "Fastighets-",
     maintLine2: "utredning",
     maintDownload: "Ladda PDF ↓",
+
+    // Fördelar för företag
+    benefitsBadge: "Fördelar för företag",
+    benefitsTitle: "Konfidentialitet. Connectivity.\nTurnkey-strategi för Karlebys storprojekt.",
+    benefit1Icon: "🔒",
+    benefit1Title: "Projektkontorets excellens",
+    benefit1Desc: "Konfidentiell möteslokal > Hotelllobby. Säker och flexibel 225 m² layout, utformad för konfidentiell projektteamkoordinering och 24/7 Day Lounge.",
+    benefit2Icon: "🗺️",
+    benefit2Title: "Strategisk bas",
+    benefit2Desc: "Optimera Connectivity. Centralt högprofilläge med snabb access (7 min) till KIP-områdets aktörer (Boliden, Keliber, Arctial).",
+    benefit3Icon: "📈",
+    benefit3Title: "Investeringsmöjlighet",
+    benefit3Desc: "Högavkastande centrumfastighet. Potentiell 12–20 % bruttoavkastning på en boom-industrimarknad. 149 000 € begärt pris.",
+
     footer: "Pitkänsillankatu 18 · 67100 Karleby · 225 m² · 149 000 €",
   },
 
@@ -264,6 +292,20 @@ export const translations = {
     maintLine1: "Property",
     maintLine2: "report",
     maintDownload: "Download PDF ↓",
+
+    // Business benefits
+    benefitsBadge: "Business benefits",
+    benefitsTitle: "Confidentiality. Connectivity.\nTurnkey Strategy for Kokkola's Major Projects.",
+    benefit1Icon: "🔒",
+    benefit1Title: "Project Office Excellence",
+    benefit1Desc: "Confidential Meeting Space > Hotel Lobby. Secure and flexible 225 m² layout, designed for confidential project team coordination and 24/7 Day Lounge operations.",
+    benefit2Icon: "🗺️",
+    benefit2Title: "Strategic Base",
+    benefit2Desc: "Optimise Connectivity. High-profile city centre location with fast access (7 min) to KIP zone's major players (Boliden, Keliber, Arctial).",
+    benefit3Icon: "📈",
+    benefit3Title: "Investment Opportunity",
+    benefit3Desc: "High-yield City Centre Asset. Potential 12–20 % gross yield in a booming industrial market. €149,000 asking price.",
+
     footer: "Pitkänsillankatu 18 · 67100 Kokkola · 225 m² · €149,000",
   },
 } as const;

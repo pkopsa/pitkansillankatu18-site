@@ -22,41 +22,36 @@ export const metadata: Metadata = {
     template: "%s | Pitkänsillankatu 18 Kokkola",
   },
   description:
-    "225 m² liiketila KIP-alueella Kokkolassa. 149 000 € tai vuokrattavissa 1 500–2 500 €/kk, bruttotuotto jopa 12–20 %. Ota yhteyttä projektitiimitilasta.",
+    "225 m² turnkey projekti office & Day Lounge Kokkolan ydinkeskustassa. Konfidentiaalinen palaveri- ja koordinaatiotila suurhankkeille (Keliber, Boliden, Arctial). 149 000 € tai 1 500–2 500 €/kk, bruttotuotto 12–20 %.",
 
   keywords: [
     // ── SUOMI ──────────────────────────────────────────────────────
-    // Myynti
-    "sijoitusasunto Kokkola",
-    "asuinhuoneisto Kokkola",
-    "kaksio Kokkola",
-    "Pitkänsillankatu 33",
-    "Kokkolan keskusta asunto",
-    "asunto myytävänä Kokkola",
-    "Kokkola kiinteistö",
-    "huipputuotto sijoitus",
-    "myynti Kokkola",
-    "kerrostaloasunto Kokkola",
-    "1930-luvun kerrostalo Kokkola",
-    // Vuokraus yrityksille
-    "vuokra-asunto Kokkola",
-    "vuokra-asunto yritykselle Kokkola",
-    "yritysasunto Kokkola",
-    "lyhytaikainen vuokra Kokkola",
-    "asunto yrityksille Kokkola",
-    "työsuhde-asunto Kokkola",
-    "kuukausivuokra Kokkola",
-    "kalustettu asunto Kokkola",
-    "väliaikaismajoitus yrityksille Kokkola",
-    "Kokkola yritysvuokraus",
-    "asunto vierailijoille Kokkola",
-    "majoitus yrityksille Kokkola",
-    "business asunto Kokkola",
+    "projekti office Kokkola",
+    "projektitiimi toimisto Kokkola",
+    "liiketila Kokkola",
+    "liiketila myytävänä Kokkola",
+    "Pitkänsillankatu 18",
+    "Kokkola ydinkeskusta toimitila",
+    "KIP-alue Kokkola",
+    "turnkey toimisto Kokkola",
+    "Day Lounge Kokkola",
+    "palaverihuone Kokkola",
+    "konfidentiaalinen kokoustila Kokkola",
+    "sijoituskiinteistö Kokkola",
+    "liiketila sijoitus Kokkola",
+    "vuokratuotto 12-20 prosenttia",
+    "Keliber projektitiimi Kokkola",
+    "Boliden koordinaatio Kokkola",
+    "Arctial toimisto Kokkola",
+    "suurhanke toimisto Kokkola",
+    "24/7 työtila Kokkola",
+    "toimitila vuokraus Kokkola",
+    "yritysvuokraus Kokkola",
+    "149000 liiketila Kokkola",
 
     // ── RUOTSI ─────────────────────────────────────────────────────
     "affärslokal Karleby",
     "projektteam kontor Karleby",
-    "Pitkänsillankatu 18",
     "KIP-området Karleby",
     "kommersiell fastighet Karleby",
     "investering Karleby",
@@ -64,6 +59,8 @@ export const metadata: Metadata = {
     "hyreslokal Karleby",
     "hyresavkastning 12-20 %",
     "mötesrum Karleby",
+    "Day Lounge Karleby",
+    "storprojekt kontor Karleby",
 
     // ── ENGLANTI ───────────────────────────────────────────────────
     "commercial space Kokkola",
@@ -77,6 +74,9 @@ export const metadata: Metadata = {
     "meeting room Kokkola",
     "day lounge Kokkola",
     "business hub Finland",
+    "Keliber Boliden Arctial office Kokkola",
+    "turnkey project office Finland",
+    "confidential meeting space Kokkola",
   ],
   authors: [{ name: "Petri Kopsa", url: BASE_URL }],
   creator: "Petri Kopsa",
@@ -109,9 +109,9 @@ export const metadata: Metadata = {
     alternateLocale: ["sv_SE", "en_US"],
     url: BASE_URL,
     siteName: "Pitkänsillankatu 18 – Projekti Office",
-    title: "Pitkänsillankatu 18 – 225 m² liiketila KIP-alueella | Kokkola",
+    title: "Pitkänsillankatu 18 – Turnkey Projekti Office & Day Lounge | Kokkola",
     description:
-      "225 m² liiketila KIP-alueella. 149 000 € tai vuokrattavissa 1 500–2 500 €/kk, bruttotuotto jopa 12–20 %.",
+      "225 m² konfidentiaalinen projekti office Kokkolan ydinkeskustassa. 7 min KIP-alueelle. 149 000 € tai 1 500–2 500 €/kk. Bruttotuotto 12–20 %.",
     images: [
       {
         url: "/og-image.jpg",
@@ -124,9 +124,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Pitkänsillankatu 18 – Projekti Office | Kokkola",
+    title: "Pitkänsillankatu 18 – Turnkey Projekti Office | Kokkola",
     description:
-      "225 m² KIP-alueen liiketila. 149 000 € tai vuokrattavissa 1 500–2 500 €/kk, sopii projektitiimeille.",
+      "225 m² turnkey projekti office Kokkolan ydinkeskustassa, 7 min KIP-alueelle. Konfidentiaalinen Day Lounge suurhankkeille. 149 000 € tai 1 500–2 500 €/kk.",
     images: ["/og-image.jpg"],
   },
 
@@ -146,7 +146,7 @@ const jsonLd = {
       "@id": `${BASE_URL}/#office`,
       name: "Pitkänsillankatu 18",
       description:
-        "225 m² liiketila KIP-alueella, vuokrattavissa 1 500–2 500 €/kk tai myytävänä 149 000 €.",
+        "225 m² turnkey projekti office & Day Lounge Kokkolan ydinkeskustassa. Konfidentiaalinen palaveri- ja koordinaatiotila suurhankkeille (Keliber, Boliden, Arctial). 7 min KIP-alueelle. Vuokrattavissa 1 500–2 500 €/kk tai myytävänä 149 000 €.",
       url: BASE_URL,
       image: `${BASE_URL}/og-image.jpg`,
       address: {
