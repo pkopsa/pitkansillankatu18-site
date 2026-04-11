@@ -9,7 +9,7 @@ export const translations = {
     // Hero
     heroLocation: "Kokkola · Ydinkeskusta",
     heroLine1: "225 m² liiketilaa",
-    heroLine2: "projektitiimin toimistoksi\n24/7 Day Lounge",
+    heroLine2: "projektitiimin toimistoksi",
     heroLine3: "Pitkänsillankatu 18",
     heroSub: "Liiketila · 67100 Kokkola · 149 000 €",
     heroBtnRent: "Vuokraa tiimillesi",
@@ -39,7 +39,7 @@ export const translations = {
     rentDesc: "1 500–2 500 €, riippuen käyttötarkoituksesta",
     netLabel: "Arvioitu nettotuotto",
     netSub: "vuodessa",
-    netDesc: "Projektitiimin käyttö ja 24/7 Day Lounge -kysyntä tukevat vakaata tuottoa.",
+    netDesc: "Projektitiimin käyttö tukee vakaata tuottoa.",
     investorSummary: "225 m² monikäyttöistä liiketilaa Kokkolan keskustassa. Ostamalla sijoitukseksi tai yrityksesi tukikohdaksi hyödyt kannattavasta vuokratuotosta.",
 
     // Muuttovalmis
@@ -98,12 +98,12 @@ export const translations = {
     benefitsTitle: "Turnkey-toimitilastrategia –\nKokkolan tuleville suurhankkeille.",
     benefit1Icon: "🔒",
     benefit1Title: "Projektitoimiston Erinomaisuus",
-    benefit1Desc: "Luottamuksellinen Palaveritila > Hotellin Aula. Turvallinen ja joustava 225 m² pohjaratkaisu, suunniteltu konfidentiaalille projektitiimien koordinaatiolle ja 24/7 Day Lounge -tukikohdalle.",
+    benefit1Desc: "Luottamuksellinen Palaveritila > Hotellin Aula. Turvallinen ja joustava 225 m² pohjaratkaisu, suunniteltu konfidentiaalille projektitiimien koordinaatiolle.",
     benefit2Icon: "🗺️",
     benefit2Title: "Strateginen Tukikohta",
     benefit2Desc: "Optimoi Connectivity. Ydinkeskustan korkean profiilin sijainti, josta nopea pääsy (7 min) KIP-alueen major-toimijoille (Boliden, Keliber, Arctial).",
     benefit3Icon: "📈",
-    benefit3Title: "Investointimahdollisuus",
+    benefit3Title: "Hyvä investointi",
     benefit3Desc: "Korkeatuottoinen Ydinkeskustan Asset. Potentiaalinen 12–20 % bruttotuotto boomissa teollisuusmarkkinassa. 149 000 € pyyntihinta.",
 
     // Miksi tämä toimitila
@@ -138,7 +138,7 @@ export const translations = {
 
     heroLocation: "Karleby · Centrum",
     heroLine1: "225 m² affärslokal",
-    heroLine2: "för projektteamets kontor\noch 24/7 Day Lounge",
+    heroLine2: "för projektteamets kontor",
     heroLine3: "Pitkänsillankatu 18",
     heroSub: "Affärslokal · 67100 Karleby · 149 000 €",
     heroBtnRent: "Hyr för ditt team",
@@ -166,7 +166,7 @@ export const translations = {
     rentDesc: "1 500–2 500 €, beroende på användning",
     netLabel: "Beräknad nettoavkastning",
     netSub: "per år",
-    netDesc: "Teamanvändning och 24/7 Day Lounge stärker stabil intäkt.",
+    netDesc: "Teamanvändning stärker stabil intäkt.",
     investorSummary: "225 m² flexibel affärslokal i Karlebys centrum. Köp som investering eller som företagets egen bas.",
 
     readyTitle: "Redo för projektverksamhet",
@@ -221,12 +221,12 @@ export const translations = {
     benefitsTitle: "Turnkey-kontorsstrategi –\nför Karlebys kommande storprojekt.",
     benefit1Icon: "🔒",
     benefit1Title: "Projektkontorets excellens",
-    benefit1Desc: "Konfidentiell möteslokal > Hotelllobby. Säker och flexibel 225 m² layout, utformad för konfidentiell projektteamkoordinering och 24/7 Day Lounge.",
+    benefit1Desc: "Konfidentiell möteslokal > Hotelllobby. Säker och flexibel 225 m² layout, utformad för konfidentiell projektteamkoordinering.",
     benefit2Icon: "🗺️",
     benefit2Title: "Strategisk bas",
     benefit2Desc: "Optimera Connectivity. Centralt högprofilläge med snabb access (7 min) till KIP-områdets aktörer (Boliden, Keliber, Arctial).",
     benefit3Icon: "📈",
-    benefit3Title: "Investeringsmöjlighet",
+    benefit3Title: "Bra investering",
     benefit3Desc: "Högavkastande centrumfastighet. Potentiell 12–20 % bruttoavkastning på en boom-industrimarknad. 149 000 € begärt pris.",
 
     // Varför denna lokal
@@ -261,7 +261,7 @@ export const translations = {
 
     heroLocation: "Kokkola · City Centre",
     heroLine1: "225 m² commercial space",
-    heroLine2: "for project teams' office\nand 24/7 Day Lounge",
+    heroLine2: "for project teams' office",
     heroLine3: "Pitkänsillankatu 18",
     heroSub: "Business unit · 67100 Kokkola · €149,000",
     heroBtnRent: "Rent for your team",
@@ -289,7 +289,7 @@ export const translations = {
     rentDesc: "€1,500–2,500 depending on use",
     netLabel: "Estimated net yield",
     netSub: "per year",
-    netDesc: "Team occupancy and 24/7 Day Lounge support stable returns.",
+    netDesc: "Team occupancy supports stable returns.",
     investorSummary: "225 m² versatile commercial space in Kokkola city centre. Buy as an investment or your company's own base.",
 
     readyTitle: "Ready for project operations",
@@ -344,12 +344,12 @@ export const translations = {
     benefitsTitle: "Turnkey Office Space Strategy –\nfor Kokkola's Upcoming Major Projects.",
     benefit1Icon: "🔒",
     benefit1Title: "Project Office Excellence",
-    benefit1Desc: "Confidential Meeting Space > Hotel Lobby. Secure and flexible 225 m² layout, designed for confidential project team coordination and 24/7 Day Lounge operations.",
+    benefit1Desc: "Confidential Meeting Space > Hotel Lobby. Secure and flexible 225 m² layout, designed for confidential project team coordination.",
     benefit2Icon: "🗺️",
     benefit2Title: "Strategic Base",
     benefit2Desc: "Optimise Connectivity. High-profile city centre location with fast access (7 min) to KIP zone's major players (Boliden, Keliber, Arctial).",
     benefit3Icon: "📈",
-    benefit3Title: "Investment Opportunity",
+    benefit3Title: "Great Investment",
     benefit3Desc: "High-yield City Centre Asset. Potential 12–20 % gross yield in a booming industrial market. €149,000 asking price.",
 
     // Why this property

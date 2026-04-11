@@ -184,7 +184,7 @@ const jsonLd = {
         {
           "@type": "Offer",
           name: "Vuokraus yrityksille",
-          description: "1 500–2 500 €/kk. Sopii projekteille, kokouksille ja 24/7 Day Lounge -käyttöön.",
+          description: "1 500–2 500 €/kk. Sopii projekteille ja kokouksille.",
           priceSpecification: {
             "@type": "PriceSpecification",
             minPrice: 1500,
