@@ -18,11 +18,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Pakollisia kenttiä puuttuu." }, { status: 400 });
   }
 
-  await transporter.sendMail({
-    from: `"Pitkänsillankatu 33 lomake" <${process.env.SMTP_USER}>`,
+  try {
+    await transporter.sendMail({
+    from: `"Pitkänsillankatu 18 lomake" <${process.env.SMTP_USER}>`,
     to: process.env.SMTP_USER,
     replyTo: email,
-    subject: `Yhteydenotto: Pitkänsillankatu 33 – ${nimi}`,
+    subject: `Yhteydenotto: Pitkänsillankatu 18 – ${nimi}`,
     text: [
       `Nimi: ${nimi}`,
       `Sähköposti: ${email}`,
@@ -38,7 +39,14 @@ export async function POST(req: NextRequest) {
         <tr><td style="padding:16px;background:#f8fafc;border-left:4px solid #f59e0b;white-space:pre-wrap">${viesti}</td></tr>
       </table>
     `,
-  });
+    });
+  } catch (err) {
+    console.error("SMTP error:", err);
+    return NextResponse.json(
+      { error: "Sähköpostin lähetys epäonnistui. Tarkista SMTP-asetukset." },
+      { status: 500 }
+    );
+  }
 
   return NextResponse.json({ ok: true });
 }
