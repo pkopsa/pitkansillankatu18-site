@@ -50,31 +50,33 @@ function FadeIn({
 }
 
 const galleryImages = [
-  { src: "/olohuone3.webp",               alt: "Day Lounge / Taukotila – avoin ja valoisa" },
-  { src: "/olohuoneesta-keittioon.webp",  alt: "Day Lounge keittiöalueelle" },
-  { src: "/uusi1.jpeg",                   alt: "Avoin työtila – freesi ilme" },
-  { src: "/makuuhuone1.webp",             alt: "Neuvotteluhuone" },
-  { src: "/makuuhuoneesta-olohuoneeseen.webp", alt: "Neuvotteluhuone ja kaapisto" },
-  { src: "/uusi3.jpeg",                   alt: "Neuvotteluhuone – freesi ilme" },
-  { src: "/keittio3.webp",               alt: "Keittiö / Taukotila – varustelu" },
-  { src: "/uusi2.jpeg",                   alt: "Keittiö / Taukotila – freesi ilme" },
-  { src: "/vaatehuone-kaapisto.webp",     alt: "Varastotila ja kaapistoseinä" },
-  { src: "/kaytava1.webp",               alt: "Käytävä ja eteinen" },
-  { src: "/suihkukaappi.webp",           alt: "WC-tila" },
-  { src: "/pesukone.webp",               alt: "Märkätila" },
+  { src: "/kip18-daylounge-avara.jpg",         alt: "Day Lounge – avara ja valoisa kokonaisnäkymä" },
+  { src: "/kip18-daylounge-kokous.jpg",         alt: "Day Lounge – kokoustila pitkällä pöydällä" },
+  { src: "/kip18-daylounge-naytto.jpg",         alt: "Day Lounge – taukotila ja esitysnäyttö" },
+  { src: "/kip18-neuvottelu.jpg",               alt: "Neuvotteluhuone – kokoustila ja TV-näyttö" },
+  { src: "/kip18-keittio.jpg",                  alt: "Keittiö / Break Room – moderni musta keittiö" },
+  { src: "/kip18-keittioalue.jpg",              alt: "Keittiöalue – saari ja kodinkoneet" },
+  { src: "/kip18-toimisto.jpg",                 alt: "Toimisto – työpisteet ja valkotaulu" },
+  { src: "/kip18-kaytatava.jpg",                alt: "Käytävä – toimiston ovi ja WC" },
+  { src: "/kip18-julkisivu.jpg",                alt: "Julkisivu – näyteikkunat Pitkänsillankadulle" },
+  { src: "/kip18-julkisivu-sisaankaynti.jpg",   alt: "Julkisivu – pääsisäänkäynti" },
 ];
 
-const freesiImages = [
-  { src: "/IMG_1504.jpeg", alt: "Neuvotteluhuone" },
-  { src: "/IMG_1505.jpeg", alt: "Varastotila" },
-  { src: "/IMG_1507.jpeg", alt: "Käytävä" },
-  { src: "/IMG_1501.jpeg", alt: "Day Lounge / Taukotila" },
-  { src: "/IMG_1503.jpeg", alt: "Keittiö / Taukotila" },
+const dayLoungeImages = [
+  { src: "/kip18-daylounge-avara.jpg",  alt: "Day Lounge – kokonaisnäkymä" },
+  { src: "/kip18-daylounge-kokous.jpg", alt: "Day Lounge – kokoustila" },
+  { src: "/kip18-daylounge-naytto.jpg", alt: "Day Lounge – esitysnäyttö" },
 ];
 
-const maalaattuImages = [
-  { src: "/maalattu1.jpeg", alt: "Day Lounge ja keittiöalue" },
-  { src: "/maalattu2.jpeg", alt: "Neuvotteluhuone" },
+const neuvotteluImages = [
+  { src: "/kip18-neuvottelu.jpg",       alt: "Neuvotteluhuone – kokoustila" },
+];
+
+const toimistoImages = [
+  { src: "/kip18-toimisto.jpg",      alt: "Toimisto – työpisteet" },
+  { src: "/kip18-keittio.jpg",       alt: "Keittiö / Break Room" },
+  { src: "/kip18-keittioalue.jpg",   alt: "Keittiöalue" },
+  { src: "/kip18-kaytatava.jpg",     alt: "Käytävä ja WC" },
 ];
 
 const PAUSE_MS = 2000;
@@ -192,8 +194,8 @@ export default function Home() {
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/hero.webp"
-            alt="Pitkänsillankatu 18 – liiketila"
+            src="/kip18-daylounge-avara.jpg"
+            alt="Pitkänsillankatu 18 – Day Lounge ja Open Office"
             fill
             className="object-cover brightness-105 contrast-105"
             priority
@@ -316,9 +318,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 items-stretch">
             {[
-              { icon: "💼", title: t.card1Title, desc: t.card1Desc, images: maalaattuImages },
-              { icon: "🤝", title: t.card2Title, desc: t.card2Desc, images: null },
-              { icon: "☕", title: t.card3Title, desc: t.card3Desc, images: freesiImages },
+              { icon: "💼", title: t.card1Title, desc: t.card1Desc, images: dayLoungeImages },
+              { icon: "🤝", title: t.card2Title, desc: t.card2Desc, images: neuvotteluImages },
+              { icon: "☕", title: t.card3Title, desc: t.card3Desc, images: toimistoImages },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 120}>
                 <div className="bg-white hover:bg-slate-50 rounded-2xl lg:rounded-3xl p-6 lg:p-12 transition-colors duration-300 border border-slate-100 shadow-lg hover:shadow-xl flex flex-col h-full">
@@ -358,7 +360,7 @@ export default function Home() {
                 onClick={() => openLightbox(galleryImages, 0)}
                 className="relative aspect-square rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg w-full block cursor-zoom-in"
               >
-                <Image src="/olohuone3.webp" alt="Day Lounge / Taukotila" fill className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500" />
+                <Image src="/kip18-daylounge-avara.jpg" alt="Day Lounge / Taukotila" fill className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500" />
               </button>
             </FadeIn>
             {galleryImages.slice(1).map((img, i) => (
@@ -404,18 +406,19 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
               {/* Ikkunanäkymä */}
               <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[4/3] shadow-xl group">
-                <Image src="/nakyma.webp" alt="Ikkunanäkymä Pitkänsillankadulle" fill className="object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-500" />
+                <Image src="/kip18-julkisivu.jpg" alt="Pitkänsillankatu 18 – julkisivu" fill className="object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 lg:p-6">
                   <p className="text-white text-sm lg:text-xl font-semibold mb-2">{t.historyCaption}</p>
                   <button
                     onClick={() => openLightbox([
-                      { src: "/nakyma.webp",   alt: "Näkymä ikkunasta" },
-                      { src: "/katu-nyt.jpeg", alt: "Pitkänsillankatu kadulta – BioRex" },
-                    ], 1)}
+                      { src: "/kip18-julkisivu.jpg",              alt: "Julkisivu – näyteikkunat" },
+                      { src: "/kip18-julkisivu-sisaankaynti.jpg", alt: "Julkisivu – pääsisäänkäynti" },
+                      { src: "/katu-nyt.jpeg",                    alt: "Pitkänsillankatu kadulta" },
+                    ], 0)}
                     className="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-slate-900 font-bold text-xs lg:text-sm px-3 lg:px-5 py-2 rounded-full transition-colors duration-200 shadow-lg"
                   >
                     <span>📸</span>
-                    <span>Näkymä kadulta</span>
+                    <span>Julkisivu kadulta</span>
                   </button>
                 </div>
               </div>
