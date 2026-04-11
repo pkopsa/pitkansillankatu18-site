@@ -257,8 +257,8 @@ export default function Home() {
               <FadeIn key={i} delay={i * 100}>
                 <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 text-center shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
                   <p className="text-slate-500 text-[1.05rem] lg:text-[1.35rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
-                  <p className="text-[3.24rem] lg:text-[4.06rem] 2xl:text-[5rem] font-black text-slate-900 mb-1 lg:mb-2 whitespace-nowrap leading-none">{item.value}</p>
-                  {!item.inline && <p className="text-slate-400 text-[1.2rem] lg:text-[1.5rem] 2xl:text-[1.8rem] font-medium mt-2">{item.sub}</p>}
+                  <p className="text-[1.05rem] md:text-[1.2rem] lg:text-[1.5rem] 2xl:text-[1.9rem] font-black text-slate-900 mb-1 lg:mb-2 whitespace-nowrap leading-none">{item.value}</p>
+                  {!item.inline && <p className="text-slate-400 text-[0.8rem] md:text-[0.9rem] lg:text-[1.05rem] 2xl:text-[1.3rem] font-medium mt-2">{item.sub}</p>}
                 </div>
               </FadeIn>
             ))}
@@ -321,7 +321,7 @@ export default function Home() {
                 <div className="relative bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
                   <div className="absolute top-0 right-0 w-32 h-32 lg:w-40 lg:h-40 bg-emerald-50 rounded-full -translate-y-12 translate-x-12 lg:-translate-y-16 lg:translate-x-16" />
                   <p className="text-slate-500 text-[1.05rem] lg:text-[1.35rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
-                  <p className="text-[3.24rem] lg:text-[4.06rem] 2xl:text-[5rem] font-black mb-1 text-emerald-700 whitespace-nowrap">{item.value}</p>
+                  <p className="text-[2rem] lg:text-[2.6rem] 2xl:text-[3.2rem] font-black mb-1 text-emerald-700 whitespace-nowrap">{item.value}</p>
                   <p className="text-[1.2rem] lg:text-[1.5rem] 2xl:text-[1.8rem] font-medium mb-4 lg:mb-6 text-slate-400">{item.sub}</p>
                   <p className="text-[1.05rem] lg:text-[1.2rem] 2xl:text-[1.5rem] text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
@@ -457,7 +457,7 @@ export default function Home() {
               <button
                 onClick={() => openLightbox([
                   { src: "/katu-historia.jpeg", alt: "Historiallinen näkymä Kokkolan keskustasta" },
-                  { src: "/katu-nyt.jpeg",      alt: "Pitkänsillankatu tänään – BioRex" },
+                  { src: "/katu-nyt.jpeg",      alt: "Pitkänsillankatu tänään – Terassitalo" },
                 ], 0)}
                 className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[4/3] shadow-xl cursor-zoom-in group"
               >
@@ -651,7 +651,7 @@ export default function Home() {
           <div className="text-center mb-8 lg:mb-14">
             <p className="text-teal-400 text-sm lg:text-base font-semibold tracking-widest uppercase mb-3">Sijainti</p>
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-3">Kohteen sijainti</h2>
-            <p className="text-slate-400 text-base lg:text-xl">Pitkänsillankatu 18, 67100 Kokkola — BioRexin vieressä</p>
+            <p className="text-slate-400 text-base lg:text-xl">Pitkänsillankatu 18, 67100 Kokkola — Terassitalossa</p>
           </div>
           <div className="rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-white/10">
             <PropertyMap />
