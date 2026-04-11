@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ── Kiosk-TV: Samsung 55" 1920×1080 ──────────────────────────────── */
+@media (min-width: 1920px) {
+
+  /* Maksimileveydet */
+  .max-w-4xl { max-width: 100%    !important; }
+  .max-w-6xl { max-width: 1840px  !important; }
+  .max-w-7xl { max-width: 1900px  !important; }
+
+  /* Paddingt */
+  .lg\:px-8  { padding-left: 6rem  !important; padding-right: 6rem   !important; }
+  .lg\:py-28 { padding-top: 10rem  !important; padding-bottom: 10rem  !important; }
+  .lg\:p-10  { padding: 5rem  !important; }
+  .lg\:p-12  { padding: 6rem  !important; }
+
+  /* Yleiset tekstikoot — 2× */
+  .lg\:text-base { font-size: 2rem    !important; line-height: 2.75rem !important; }
+  .lg\:text-lg   { font-size: 2.25rem !important; line-height: 3rem    !important; }
+  .lg\:text-xl   { font-size: 2.5rem  !important; line-height: 3.25rem !important; }
+  .lg\:text-2xl  { font-size: 3rem    !important; line-height: 3.75rem !important; }
+  .lg\:text-3xl  { font-size: 4rem    !important; line-height: 4.75rem !important; }
+  .lg\:text-4xl  { font-size: 5rem    !important; line-height: 5.75rem !important; }
+  .lg\:text-5xl  { font-size: 7rem    !important; line-height: 7.75rem !important; }
+  .lg\:text-6xl  { font-size: 9rem    !important; line-height: 9.75rem !important; }
+
+  /* Hero H1 */
+  .lg\:text-\[8rem\] { font-size: 16rem !important; line-height: 1.0 !important; }
+
+  /* ── Tuottopotentiaali-osio: hillitympi skaalaus jotta teksti ei rivity ── */
+  /* Isonumerot (8,5–10%, 700–850€) — -5% jotta mahtuu yhdelle riville */
+  .text-5xl.lg\:text-6xl   { font-size: 4.5rem !important; line-height: 5rem !important; }
+  /* Label-teksti (Bruttovuokratuotto jne.) */
+  .text-sm.lg\:text-lg     { font-size: 1.5rem !important; line-height: 2rem !important; }
+  /* Sub-teksti (vuodessa, kuukaudessa) */
+  .text-base.lg\:text-xl.text-slate-400 { font-size: 1.75rem !important; line-height: 2.25rem !important; }
+  /* Desc-teksti (yhden rivin kuvaukset) */
+  .text-sm.lg\:text-base.text-slate-600 { font-size: 1.5rem !important; line-height: 2rem !important; }
+
+  /* ── Yhteystiedot-osio: tummien laatikoiden teksti +30% ── */
+  .bg-slate-700 .lg\:text-xl  { font-size: 5.2rem  !important; line-height: 6rem    !important; }
+  .bg-slate-700 .lg\:text-5xl { font-size: 10.4rem !important; line-height: 1       !important; }
+  .bg-slate-700 p.lg\:text-xl,
+  .bg-slate-700 a.lg\:text-xl { font-size: 4.55rem !important; line-height: 5.25rem !important; }
+  /* Padding laatikoihin enemmän jotta teksti hengittää */
+  .bg-slate-700.lg\:rounded-3xl { padding: 4rem !important; }
+
+  /* ── Kuvagalleria: 30% isompi ── */
+  .lg\:gap-4  { gap: 1.5rem !important; }
+  .lg\:gap-8  { gap: 3rem   !important; }
+  .lg\:gap-10 { gap: 4rem   !important; }
+
+  /* Hero-nappi */
+  .lg\:px-14 { padding-left: 8rem  !important; padding-right: 8rem  !important; }
+  .lg\:py-6  { padding-top: 3rem   !important; padding-bottom: 3rem  !important; }
+  .lg\:py-5  { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+
+  /* Marginaalit */
+  .lg\:mb-6  { margin-bottom: 4rem  !important; }
+  .lg\:mb-8  { margin-bottom: 5rem  !important; }
+  .lg\:mb-10 { margin-bottom: 6rem  !important; }
+  .lg\:mb-12 { margin-bottom: 7rem  !important; }
+  .lg\:mb-16 { margin-bottom: 8rem  !important; }
+  .lg\:mb-20 { margin-bottom: 10rem !important; }
+  .lg\:mt-20 { margin-top:    10rem !important; }
+  .lg\:pt-12 { padding-top:   5rem  !important; }
+}
