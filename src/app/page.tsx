@@ -573,25 +573,24 @@ export default function Home() {
           </div>
 
           <FadeIn delay={400}>
-            <div className="mt-12 lg:mt-20 flex flex-wrap justify-center gap-4 lg:gap-6">
+            <div className="mt-12 lg:mt-20 flex flex-wrap justify-center gap-6 lg:gap-10">
 
               {/* QR-koodi */}
-              <div className="flex flex-col items-center gap-3 w-40">
-                <div className="bg-white rounded-2xl p-3 shadow-lg w-40 h-40 flex items-center justify-center">
-                  <QRCodeSVG value="https://pitkansillankatu18.com/" size={120} bgColor="#ffffff" fgColor="#1e293b" level="M" />
+              <div className="flex flex-col items-center gap-3 w-44">
+                <div className="bg-white rounded-2xl p-3 shadow-lg w-44 h-44 flex items-center justify-center">
+                  <QRCodeSVG value="https://www.pitkansillankatu18.com/" size={136} bgColor="#ffffff" fgColor="#1e293b" level="M" />
                 </div>
                 <p className="text-teal-400 font-semibold text-base lg:text-lg tracking-wide text-center">{t.qrCaption}</p>
               </div>
 
               {/* Oikotie */}
-              <div className="flex flex-col items-center gap-3 w-40">
+              <div className="flex flex-col items-center gap-3 w-44">
                 <a
                   href="https://toimitilat.oikotie.fi/myytavat-toimitilat/kokkola/21240654"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-4 shadow-lg w-40 h-40 hover:shadow-xl transition-shadow group"
+                  className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-4 shadow-lg w-44 h-44 hover:shadow-xl transition-shadow group"
                 >
-                  {/* Oikotie logo mark */}
                   <svg viewBox="0 0 48 48" className="w-12 h-12 shrink-0" fill="none">
                     <rect width="48" height="48" rx="10" fill="#FF5000"/>
                     <path d="M10 34 C10 34 14 14 24 14 C34 14 38 34 38 34" stroke="white" strokeWidth="4" fill="none" strokeLinecap="round"/>
@@ -607,60 +606,24 @@ export default function Home() {
                 <p className="text-teal-400 font-semibold text-base lg:text-lg tracking-wide text-center">Oikotie</p>
               </div>
 
-              {/* Retta */}
-              <div className="flex flex-col items-center gap-3 w-40">
+              {/* Isännöitsijäntodistus */}
+              <div className="flex flex-col items-center gap-3 w-44">
                 <a
                   href="/docs/isannoitsijantodistus.pdf"
                   download
-                  className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-4 shadow-lg w-40 h-40 hover:shadow-xl transition-shadow group"
+                  className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-4 shadow-lg w-44 h-44 hover:shadow-xl transition-shadow group"
                 >
-                  <img src="/retta-logo-dark.svg" alt="Retta" className="w-24 h-auto" />
-                  <span className="text-slate-500 font-semibold text-sm group-hover:translate-y-0.5 transition-transform inline-flex items-center gap-1 text-center">
+                  <svg viewBox="0 0 24 24" className="w-12 h-12 shrink-0" fill="none" stroke="#0f172a" strokeWidth={1.4}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                  </svg>
+                  <span className="text-slate-800 font-bold text-sm text-center leading-snug">
+                    {t.rettaCaption}
+                  </span>
+                  <span className="text-slate-500 font-semibold text-sm group-hover:translate-y-0.5 transition-transform">
                     {t.rettaDownload}
                   </span>
                 </a>
                 <p className="text-teal-400 font-semibold text-base lg:text-lg tracking-wide text-center">{t.rettaCaption}</p>
-              </div>
-
-              {/* Kunnossapito */}
-              <div className="flex flex-col items-center gap-3 w-40">
-                <a
-                  href="/docs/kunnossapito2025.pdf"
-                  download
-                  className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-4 shadow-lg w-40 h-40 hover:shadow-xl transition-shadow group"
-                >
-                  <svg viewBox="0 0 24 24" className="w-10 h-10 shrink-0" fill="none" stroke="#1e293b" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l5.653-4.655m5.833-4.322a7.5 7.5 0 00-10.23 0" />
-                  </svg>
-                  <span className="text-slate-800 font-bold text-base text-center leading-tight">
-                    {t.maintLine1}<br />{t.maintLine2}
-                  </span>
-                  <span className="text-slate-500 font-semibold text-sm group-hover:translate-y-0.5 transition-transform inline-flex items-center gap-1">
-                    {t.maintDownload}
-                  </span>
-                </a>
-                <p className="text-teal-400 font-semibold text-base lg:text-lg tracking-wide text-center">{t.maintCaption}</p>
-              </div>
-
-              {/* Vuokrausilmoitus */}
-              <div className="flex flex-col items-center gap-3 w-40">
-                <a
-                  href="https://pitkansillankatu18.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center gap-3 bg-teal-500 hover:bg-teal-400 rounded-2xl p-4 shadow-lg w-40 h-40 hover:shadow-xl transition-all duration-300 group"
-                >
-                  <svg viewBox="0 0 24 24" className="w-10 h-10 shrink-0" fill="none" stroke="#1e293b" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
-                  </svg>
-                  <span className="text-slate-900 font-black text-base text-center leading-tight">
-                    {t.rentalLine1}<br />{t.rentalLine2}
-                  </span>
-                  <span className="text-slate-700 font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                    {t.rentalOpen}
-                  </span>
-                </a>
-                <p className="text-teal-400 font-semibold text-base lg:text-lg tracking-wide text-center">{t.rentalCaption}</p>
               </div>
 
             </div>
