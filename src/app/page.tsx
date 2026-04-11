@@ -58,8 +58,6 @@ const galleryImages = [
   { src: "/kip18-keittioalue.jpg",              alt: "Keittiöalue – saari ja kodinkoneet" },
   { src: "/kip18-toimisto.jpg",                 alt: "Toimisto – työpisteet ja valkotaulu" },
   { src: "/kip18-kaytatava.jpg",                alt: "Käytävä – toimiston ovi ja WC" },
-  { src: "/kip18-julkisivu.jpg",                alt: "Julkisivu – näyteikkunat Pitkänsillankadulle" },
-  { src: "/kip18-julkisivu-sisaankaynti.jpg",   alt: "Julkisivu – pääsisäänkäynti" },
 ];
 
 const dayLoungeImages = [
