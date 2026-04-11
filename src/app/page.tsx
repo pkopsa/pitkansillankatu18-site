@@ -388,18 +388,21 @@ export default function Home() {
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 2xl:gap-10">
             {([
-              { n: "01", icon: t.why1Icon, title: t.why1Title, desc: t.why1Desc },
-              { n: "02", icon: t.why2Icon, title: t.why2Title, desc: t.why2Desc },
-              { n: "03", icon: t.why3Icon, title: t.why3Title, desc: t.why3Desc },
-              { n: "04", icon: t.why4Icon, title: t.why4Title, desc: t.why4Desc },
-              { n: "05", icon: t.why5Icon, title: t.why5Title, desc: t.why5Desc },
-              { n: "06", icon: t.why6Icon, title: t.why6Title, desc: t.why6Desc },
-            ] as { n: string; icon: string; title: string; desc: string }[]).map((item, i) => (
+              { n: "01", icon: t.why1Icon, tag: t.why1Tag, title: t.why1Title, desc: t.why1Desc },
+              { n: "02", icon: t.why2Icon, tag: t.why2Tag, title: t.why2Title, desc: t.why2Desc },
+              { n: "03", icon: t.why3Icon, tag: t.why3Tag, title: t.why3Title, desc: t.why3Desc },
+              { n: "04", icon: t.why4Icon, tag: t.why4Tag, title: t.why4Title, desc: t.why4Desc },
+              { n: "05", icon: t.why5Icon, tag: t.why5Tag, title: t.why5Title, desc: t.why5Desc },
+              { n: "06", icon: t.why6Icon, tag: t.why6Tag, title: t.why6Title, desc: t.why6Desc },
+            ] as { n: string; icon: string; tag: string; title: string; desc: string }[]).map((item, i) => (
               <FadeIn key={i} delay={i * 70}>
                 <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-8 2xl:p-10 border border-slate-100 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col gap-3 lg:gap-4 h-full group">
-                  <div className="flex items-center gap-3">
-                    <span className="text-teal-500 font-black text-xl 2xl:text-2xl tabular-nums leading-none">{item.n}</span>
-                    <span className="text-2xl lg:text-3xl 2xl:text-4xl">{item.icon}</span>
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <div className="text-teal-500 font-black text-4xl lg:text-5xl 2xl:text-6xl tabular-nums leading-none">{item.n}</div>
+                      <div className="text-teal-600 font-semibold text-sm lg:text-base 2xl:text-lg leading-tight mt-1">{item.tag}</div>
+                    </div>
+                    <span className="text-3xl lg:text-4xl 2xl:text-5xl shrink-0 mt-1">{item.icon}</span>
                   </div>
                   <h3 className="text-[0.95rem] lg:text-base 2xl:text-lg font-bold text-slate-900 leading-snug group-hover:text-teal-700 transition-colors">{item.title}</h3>
                   <p className="text-sm lg:text-[0.95rem] 2xl:text-base text-slate-600 leading-relaxed flex-1">{item.desc}</p>
