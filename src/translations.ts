@@ -103,7 +103,7 @@ export const translations = {
     benefit2Title: "Strateginen Tukikohta",
     benefit2Desc: "Optimoi Connectivity. Ydinkeskustan korkean profiilin sijainti, josta nopea pääsy (7 min) KIP-alueen major-toimijoille (Boliden, Keliber, Arctial).",
     benefit3Icon: "📈",
-    benefit3Title: "Hyvä investointi",
+    benefit3Title: "Kannattava investointi",
     benefit3Desc: "Korkeatuottoinen ydinkeskustan kiinteistö. Potentiaalinen 12–20 % bruttotuotto kasvavassa teollisuusmarkkinassa. 149 000 € pyyntihinta.",
 
     // Miksi tämä toimitila
@@ -226,7 +226,7 @@ export const translations = {
     benefit2Title: "Strategisk bas",
     benefit2Desc: "Optimera Connectivity. Centralt högprofilläge med snabb access (7 min) till KIP-områdets aktörer (Boliden, Keliber, Arctial).",
     benefit3Icon: "📈",
-    benefit3Title: "Bra investering",
+    benefit3Title: "Lönsam investering",
     benefit3Desc: "Högavkastande centrumfastighet. Potentiell 12–20 % bruttoavkastning på en boom-industrimarknad. 149 000 € begärt pris.",
 
     // Varför denna lokal
@@ -349,7 +349,7 @@ export const translations = {
     benefit2Title: "Strategic Base",
     benefit2Desc: "Optimise Connectivity. High-profile city centre location with fast access (7 min) to KIP zone's major players (Boliden, Keliber, Arctial).",
     benefit3Icon: "📈",
-    benefit3Title: "Great Investment",
+    benefit3Title: "Profitable Investment",
     benefit3Desc: "High-yield City Centre Asset. Potential 12–20 % gross yield in a booming industrial market. €149,000 asking price.",
 
     // Why this property
