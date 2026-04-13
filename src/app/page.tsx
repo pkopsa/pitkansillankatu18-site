@@ -606,7 +606,7 @@ export default function Home() {
                     {t.etuoviOpen}
                   </span>
                 </a>
-                <p className="text-teal-400 font-semibold text-base lg:text-lg tracking-wide text-center">Oikotie</p>
+                <p className="text-teal-400 font-semibold text-base lg:text-lg tracking-wide text-center">Myynti-ilmoitus</p>
               </div>
 
               {/* Isännöitsijäntodistus */}
