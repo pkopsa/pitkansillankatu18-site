@@ -315,11 +315,11 @@ export default function FloorPlan({ lang = "fi" }: { lang?: Lang }) {
       {/* Neuvottelu – label centred in main Neuvottelu area (avoiding VH corner) */}
       <text x={270} y={178} textAnchor="middle" fill={txt}  fontSize="12" fontFamily="system-ui,sans-serif" fontWeight="700">{L.neu1}</text>
       <text x={270} y={193} textAnchor="middle" fill={txt}  fontSize="12" fontFamily="system-ui,sans-serif" fontWeight="700">{L.neu2}</text>
-      <text x={270} y={211} textAnchor="middle" fill={teal} fontSize="13" fontFamily="system-ui,sans-serif" fontWeight="800">49,4 m²</text>
+      <text x={270} y={211} textAnchor="middle" fill={teal} fontSize="13" fontFamily="system-ui,sans-serif" fontWeight="800">50 m²</text>
 
       {/* Toimisto */}
       <text x={(xToi + xET) / 2} y={(yNeu + yToi) / 2 - 6}  textAnchor="middle" fill={txt}  fontSize="8.5" fontFamily="system-ui,sans-serif" fontWeight="600">{L.office}</text>
-      <text x={(xToi + xET) / 2} y={(yNeu + yToi) / 2 + 8}  textAnchor="middle" fill={teal} fontSize="8.5" fontFamily="system-ui,sans-serif" fontWeight="700">9,6 m²</text>
+      <text x={(xToi + xET) / 2} y={(yNeu + yToi) / 2 + 8}  textAnchor="middle" fill={teal} fontSize="8.5" fontFamily="system-ui,sans-serif" fontWeight="700">10 m²</text>
 
       {/* Wine cabinet label */}
       <text x={wcabX + wcabW / 2} y={wcabY + 9}  textAnchor="middle" fill={teal} fontSize="5.5" fontFamily="system-ui,sans-serif">{L.wineCab.split("\n")[0]}</text>
@@ -336,7 +336,7 @@ export default function FloorPlan({ lang = "fi" }: { lang?: Lang }) {
       {/* OH+KEITTIÖ */}
       <text x={(x0 + xToi) / 2} y={(yNeu + y6) / 2 - 22} textAnchor="middle" fill={txt}  fontSize="13" fontFamily="system-ui,sans-serif" fontWeight="700">{L.openOff1}</text>
       <text x={(x0 + xToi) / 2} y={(yNeu + y6) / 2 - 4}  textAnchor="middle" fill={sub}  fontSize="9"  fontFamily="system-ui,sans-serif">{L.openOff2}</text>
-      <text x={(x0 + xToi) / 2} y={(yNeu + y6) / 2 + 18} textAnchor="middle" fill={teal} fontSize="15" fontFamily="system-ui,sans-serif" fontWeight="800">94,7 m²</text>
+      <text x={(x0 + xToi) / 2} y={(yNeu + y6) / 2 + 18} textAnchor="middle" fill={teal} fontSize="15" fontFamily="system-ui,sans-serif" fontWeight="800">95 m²</text>
 
       {/* Parking lot annotation (rotated, right side) */}
       <text x={x2 + 10} y={(y0 + yNeu) / 2} textAnchor="start" fill={dimTxt} fontSize="7.5" fontFamily="system-ui,sans-serif" transform={`rotate(90,${x2 + 10},${(y0 + yNeu) / 2})`}>{L.parkingR}</text>
