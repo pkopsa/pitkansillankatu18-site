@@ -53,6 +53,24 @@ export const translations = {
     yieldYears: "vuotta",
     yieldCostNote: "Vastike 832,50 €/kk vähennetty",
 
+    // Kasvutarina
+    growthBadge: "Kokkolan kasvutarina",
+    growthTitle: "KIP-alue kasvaa",
+    growthDesc: "Kokkolan teollisuusalue (KIP) on Pohjois-Euroopan suurin epäorgaanisen kemian keskittymä. Alueen kasvu luo jatkuvan kysynnän laadukkaalle toimitilalle keskustassa.",
+    growthCta: "Varaa paikkasi ennen ruuhkaa →",
+    growth1Year: "2023",
+    growth1Title: "KIP 100 M€+",
+    growth1Desc: "KIP-alueelle investoitu yli 100 M€ — teollisuusalueen kasvu kiihtyy.",
+    growth2Year: "2024–2025",
+    growth2Title: "Keliber käynnistyy",
+    growth2Desc: "Keliber-litiumjalostamo käynnistyy — ensimmäinen eurooppalainen akkukelpoisen litiumhydroksidin tuotantolaitos.",
+    growth3Year: "2026–2027",
+    growth3Title: "Arctial-investointipäätös",
+    growth3Desc: "Arctial-alumiinitehdashankkeen investointipäätös. Omistajat: Rio Tinto, Mitsubishi, Tesi. 3 000–4 000 rakennusvaiheen työntekijää.",
+    growth4Year: "2028+",
+    growth4Title: "Arctial toimintavaihe",
+    growth4Desc: "1 500 suoraa + 5 000 välillistä työpaikkaa. Pysyvä kysyntä toimitiloille vuosiksi eteenpäin.",
+
     // Kysyntä
     demandBadge: "Miksi kysyntä on varmaa?",
     demandTitle: "Kolme kasvun voimaa",
@@ -263,6 +281,24 @@ export const translations = {
     yieldYears: "år",
     yieldCostNote: "Avgift 832,50 €/mån dragen av",
 
+    // Tillväxthistoria
+    growthBadge: "Karleby tillväxthistoria",
+    growthTitle: "KIP-området växer",
+    growthDesc: "Karleby industriområde (KIP) är det största centrumet för oorganisk kemi i Nordeuropa. Områdets tillväxt skapar kontinuerlig efterfrågan på kvalitetslokaler i centrum.",
+    growthCta: "Boka din plats innan det är fullt →",
+    growth1Year: "2023",
+    growth1Title: "KIP 100 M€+",
+    growth1Desc: "Över 100 M€ investerade i KIP-området — industriområdets tillväxt accelererar.",
+    growth2Year: "2024–2025",
+    growth2Title: "Keliber startar",
+    growth2Desc: "Kelibers litiumraffinaderi startar — Europas första anläggning för batterilämpligt litiumhydroxid.",
+    growth3Year: "2026–2027",
+    growth3Title: "Arctial investeringsbeslut",
+    growth3Desc: "Investeringsbeslut för Arctialprojektet. Ägare: Rio Tinto, Mitsubishi, Tesi. 3 000–4 000 byggnadsarbetare.",
+    growth4Year: "2028+",
+    growth4Title: "Arctial driftsfas",
+    growth4Desc: "1 500 direkta + 5 000 indirekta arbetstillfällen. Bestående efterfrågan på lokaler i många år framöver.",
+
     // Efterfrågan
     demandBadge: "Varför är efterfrågan säker?",
     demandTitle: "Tre tillväxtkrafter",
@@ -468,6 +504,24 @@ export const translations = {
     yieldPayback: "Payback period",
     yieldYears: "years",
     yieldCostNote: "Maintenance €832.50/mo deducted",
+
+    // Growth story
+    growthBadge: "Kokkola Growth Story",
+    growthTitle: "KIP Zone is Growing",
+    growthDesc: "Kokkola Industrial Park (KIP) is Northern Europe's largest inorganic chemistry cluster. The region's growth creates continuous demand for quality commercial space in the city centre.",
+    growthCta: "Secure your spot before it fills up →",
+    growth1Year: "2023",
+    growth1Title: "KIP €100M+",
+    growth1Desc: "Over €100M invested in the KIP zone — the industrial area's growth is accelerating.",
+    growth2Year: "2024–2025",
+    growth2Title: "Keliber starts up",
+    growth2Desc: "Keliber lithium refinery starts — Europe's first battery-grade lithium hydroxide production plant.",
+    growth3Year: "2026–2027",
+    growth3Title: "Arctial investment decision",
+    growth3Desc: "Investment decision for Arctial aluminium plant. Owners: Rio Tinto, Mitsubishi, Tesi. 3,000–4,000 construction workers.",
+    growth4Year: "2028+",
+    growth4Title: "Arctial operational phase",
+    growth4Desc: "1,500 direct + 5,000 indirect jobs. Sustained demand for commercial space for years ahead.",
 
     // Demand
     demandBadge: "Why is demand guaranteed?",

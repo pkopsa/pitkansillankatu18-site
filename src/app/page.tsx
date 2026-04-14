@@ -6,6 +6,7 @@ import { QRCodeSVG } from "qrcode.react";
 import ContactSection from "@/components/ContactSection";
 import CostComparison from "@/components/CostComparison";
 import InvestorSection from "@/components/InvestorSection";
+import GrowthStory from "@/components/GrowthStory";
 import PropertyMap from "@/components/PropertyMap";
 import FloorPlan from "@/components/FloorPlan";
 import Lightbox from "@/components/Lightbox";
@@ -377,6 +378,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── KOKKOLAN KASVUTARINA ────────────────────────────────────── */}
+      <GrowthStory t={t} lang={lang} />
 
       {/* ── KUSTANNUSVERTAILU ───────────────────────────────────────── */}
       <CostComparison t={t} lang={lang} />
