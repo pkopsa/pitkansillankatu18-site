@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "Pitkänsillankatu 18 – Projekti Office | Kokkola | 225 m²",
+    default: "Pitkänsillankatu 18 | Myytävä ja vuokrattava toimitila Kokkolan keskustassa",
     template: "%s | Pitkänsillankatu 18 Kokkola",
   },
   description:
-    "225 m² turnkey projekti office Kokkolan ydinkeskustassa. Konfidentiaalinen palaveri- ja koordinaatiotila suurhankkeille (Keliber, Boliden, Arctial). 149 000 € tai 1 500–2 500 €/kk, bruttotuotto 12–20 %.",
+    "225 m² moderni liiketila Kokkolan ydinkeskustassa. Täydellinen projektitoimistoksi Arctial- ja KIP-hankkeisiin tai tuottavaksi sijoituskohteeksi. Tutustu ja pyydä esittely!",
 
   keywords: [
     // ── SUOMI ──────────────────────────────────────────────────────

@@ -9,10 +9,11 @@ type FormState = {
   nimi: string;
   email: string;
   puhelin: string;
+  aihe: string;
   viesti: string;
 };
 
-const empty: FormState = { nimi: "", email: "", puhelin: "", viesti: "" };
+const empty: FormState = { nimi: "", email: "", puhelin: "", aihe: "", viesti: "" };
 
 export default function ContactSection({ t, prefillMessage }: { t: T; prefillMessage?: string }) {
   const [form, setForm] = useState<FormState>(empty);
@@ -22,12 +23,13 @@ export default function ContactSection({ t, prefillMessage }: { t: T; prefillMes
       setForm(prev => ({ ...prev, viesti: prefillMessage }));
     }
   }, [prefillMessage]);
+
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
@@ -53,6 +55,13 @@ export default function ContactSection({ t, prefillMessage }: { t: T; prefillMes
       setLoading(false);
     }
   }
+
+  const subjectOptions = [
+    { value: "", label: t.formSubjectDefault },
+    { value: "buy", label: t.formSubjectBuy },
+    { value: "rent-long", label: t.formSubjectRentLong },
+    { value: "rent-short", label: t.formSubjectRentShort },
+  ];
 
   return (
     <section id="contact" className="py-14 px-4 lg:py-28 lg:px-8 bg-white">
@@ -91,117 +100,163 @@ export default function ContactSection({ t, prefillMessage }: { t: T; prefillMes
             </button>
           </div>
         ) : (
-          /* Lomake */
-          <form
-            onSubmit={handleSubmit}
-            className="bg-slate-50 border border-slate-200 rounded-2xl lg:rounded-3xl p-6 lg:p-12 shadow-lg space-y-5 lg:space-y-7"
-          >
-            {/* Nimi + sähköposti */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-7">
-              <label className="flex flex-col gap-2">
-                <span className="text-sm lg:text-base font-semibold text-slate-700">
-                  {t.formNameLabel} <span className="text-teal-500">*</span>
-                </span>
-                <input
-                  type="text"
-                  name="nimi"
-                  value={form.nimi}
-                  onChange={handleChange}
-                  required
-                  placeholder={t.formNamePlaceholder}
-                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 lg:py-4 text-slate-800 placeholder-slate-400 text-sm lg:text-base focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition"
-                />
-              </label>
-
-              <label className="flex flex-col gap-2">
-                <span className="text-sm lg:text-base font-semibold text-slate-700">
-                  {t.formEmailLabel} <span className="text-teal-500">*</span>
-                </span>
-                <input
-                  type="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                  placeholder={t.formEmailPlaceholder}
-                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 lg:py-4 text-slate-800 placeholder-slate-400 text-sm lg:text-base focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition"
-                />
-              </label>
-            </div>
-
-            {/* Puhelin */}
-            <label className="flex flex-col gap-2">
-              <span className="text-sm lg:text-base font-semibold text-slate-700">
-                {t.formPhoneLabel}{" "}
-                <span className="text-slate-400 font-normal">{t.formPhoneOptional}</span>
-              </span>
-              <input
-                type="tel"
-                name="puhelin"
-                value={form.puhelin}
-                onChange={handleChange}
-                placeholder="+358 50 000 0000"
-                className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 lg:py-4 text-slate-800 placeholder-slate-400 text-sm lg:text-base focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition"
-              />
-            </label>
-
-            {/* Viesti */}
-            <label className="flex flex-col gap-2">
-              <span className="text-sm lg:text-base font-semibold text-slate-700">
-                {t.formMessageLabel} <span className="text-teal-500">*</span>
-              </span>
-              <textarea
-                name="viesti"
-                value={form.viesti}
-                onChange={handleChange}
-                required
-                rows={5}
-                placeholder={t.formMessagePlaceholder}
-                className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 lg:py-4 text-slate-800 placeholder-slate-400 text-sm lg:text-base focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition resize-none"
-              />
-            </label>
-
-            {/* Virheviesti */}
-            {error && (
-              <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
-                {error}
-              </p>
-            )}
-
-            {/* Lähetä-nappi */}
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full bg-teal-500 hover:bg-teal-400 disabled:bg-teal-300 text-slate-900 font-bold text-base lg:text-xl py-4 lg:py-5 rounded-xl transition-colors duration-300 shadow-md flex items-center justify-center gap-3"
+          <>
+            {/* Lomake */}
+            <form
+              onSubmit={handleSubmit}
+              className="bg-slate-50 border border-slate-200 rounded-2xl lg:rounded-3xl p-6 lg:p-12 shadow-lg space-y-5 lg:space-y-7"
             >
-              {loading ? (
-                <>
-                  <svg
-                    className="animate-spin h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle
-                      className="opacity-25"
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      strokeWidth="4"
-                    />
-                    <path
-                      className="opacity-75"
-                      fill="currentColor"
-                      d="M4 12a8 8 0 018-8v8H4z"
-                    />
-                  </svg>
-                  {t.formSending}
-                </>
-              ) : (
-                t.formSubmit
+              {/* Aihe-pudotusvalikko */}
+              <label className="flex flex-col gap-2">
+                <span className="text-sm lg:text-base font-semibold text-slate-700">
+                  {t.formSubjectLabel}
+                </span>
+                <select
+                  name="aihe"
+                  value={form.aihe}
+                  onChange={handleChange}
+                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 lg:py-4 text-slate-800 text-sm lg:text-base focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition"
+                >
+                  {subjectOptions.map(opt => (
+                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                  ))}
+                </select>
+              </label>
+
+              {/* Nimi + sähköposti */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-7">
+                <label className="flex flex-col gap-2">
+                  <span className="text-sm lg:text-base font-semibold text-slate-700">
+                    {t.formNameLabel} <span className="text-teal-500">*</span>
+                  </span>
+                  <input
+                    type="text"
+                    name="nimi"
+                    value={form.nimi}
+                    onChange={handleChange}
+                    required
+                    placeholder={t.formNamePlaceholder}
+                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 lg:py-4 text-slate-800 placeholder-slate-400 text-sm lg:text-base focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition"
+                  />
+                </label>
+
+                <label className="flex flex-col gap-2">
+                  <span className="text-sm lg:text-base font-semibold text-slate-700">
+                    {t.formEmailLabel} <span className="text-teal-500">*</span>
+                  </span>
+                  <input
+                    type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                    placeholder={t.formEmailPlaceholder}
+                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 lg:py-4 text-slate-800 placeholder-slate-400 text-sm lg:text-base focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition"
+                  />
+                </label>
+              </div>
+
+              {/* Puhelin */}
+              <label className="flex flex-col gap-2">
+                <span className="text-sm lg:text-base font-semibold text-slate-700">
+                  {t.formPhoneLabel}{" "}
+                  <span className="text-slate-400 font-normal">{t.formPhoneOptional}</span>
+                </span>
+                <input
+                  type="tel"
+                  name="puhelin"
+                  value={form.puhelin}
+                  onChange={handleChange}
+                  placeholder="+358 50 000 0000"
+                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 lg:py-4 text-slate-800 placeholder-slate-400 text-sm lg:text-base focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition"
+                />
+              </label>
+
+              {/* Viesti */}
+              <label className="flex flex-col gap-2">
+                <span className="text-sm lg:text-base font-semibold text-slate-700">
+                  {t.formMessageLabel} <span className="text-teal-500">*</span>
+                </span>
+                <textarea
+                  name="viesti"
+                  value={form.viesti}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  placeholder={t.formMessagePlaceholder}
+                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 lg:py-4 text-slate-800 placeholder-slate-400 text-sm lg:text-base focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition resize-none"
+                />
+              </label>
+
+              {/* Virheviesti */}
+              {error && (
+                <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+                  {error}
+                </p>
               )}
-            </button>
-          </form>
+
+              {/* Lähetä-nappi */}
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-teal-500 hover:bg-teal-400 disabled:bg-teal-300 text-slate-900 font-bold text-base lg:text-xl py-4 lg:py-5 rounded-xl transition-colors duration-300 shadow-md flex items-center justify-center gap-3"
+              >
+                {loading ? (
+                  <>
+                    <svg
+                      className="animate-spin h-5 w-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      />
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v8H4z"
+                      />
+                    </svg>
+                    {t.formSending}
+                  </>
+                ) : (
+                  t.formSubmit
+                )}
+              </button>
+            </form>
+
+            {/* Esittelyvaraus */}
+            <div className="mt-6 lg:mt-8">
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center" aria-hidden>
+                  <div className="w-full border-t border-slate-200" />
+                </div>
+                <div className="relative flex justify-center">
+                  <span className="bg-white px-4 text-sm text-slate-400">tai</span>
+                </div>
+              </div>
+              <div className="mt-6 bg-slate-50 border border-slate-200 rounded-2xl p-6 lg:p-8 text-center">
+                <div className="text-3xl mb-3">📅</div>
+                <h3 className="text-base lg:text-lg font-bold text-slate-800 mb-4">
+                  {t.formBookViewing}
+                </h3>
+                <a
+                  href="tel:+358503060635"
+                  className="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-sm lg:text-base px-6 py-3 rounded-xl transition-colors duration-200 shadow-sm"
+                >
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.28 11.8 19.79 19.79 0 011.22 3.22 2 2 0 013.22 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                  </svg>
+                  +358 50 306 0635
+                </a>
+              </div>
+            </div>
+          </>
         )}
       </div>
     </section>

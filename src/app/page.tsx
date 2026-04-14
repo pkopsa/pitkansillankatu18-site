@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState, ReactNode } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import ContactSection from "@/components/ContactSection";
+import DayRental from "@/components/DayRental";
 import CostComparison from "@/components/CostComparison";
 import InvestorSection from "@/components/InvestorSection";
 import GrowthStory from "@/components/GrowthStory";
@@ -384,6 +385,16 @@ export default function Home() {
 
       {/* ── KUSTANNUSVERTAILU ───────────────────────────────────────── */}
       <CostComparison t={t} lang={lang} />
+
+      {/* ── LYHYTAIKAINEN VUOKRAUS ──────────────────────────────────── */}
+      <DayRental
+        t={t}
+        lang={lang}
+        onCta={() => {
+          setRentPrefill(t.dayRentalPrefill);
+          document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+        }}
+      />
 
       {/* ── KUVAGALLERIA ────────────────────────────────────────────── */}
       <section className="py-14 px-4 lg:py-28 lg:px-8 bg-white">
