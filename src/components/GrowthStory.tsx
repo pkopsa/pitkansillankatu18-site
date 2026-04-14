@@ -2,6 +2,11 @@ import type { translations, Lang } from "@/translations";
 
 type T = typeof translations[Lang];
 
+const AMBER = "#f59e0b";
+const AMBER_LIGHT = "#fbbf24";
+const AMBER_DIM = "rgba(251,191,36,0.20)";
+const AMBER_BG = "rgba(251,191,36,0.08)";
+
 export default function GrowthStory({ t }: { t: T; lang: Lang }) {
   const events = [
     { year: t.growth1Year, title: t.growth1Title, desc: t.growth1Desc },
@@ -16,8 +21,10 @@ export default function GrowthStory({ t }: { t: T; lang: Lang }) {
 
         {/* Otsikko */}
         <div className="text-center mb-12 lg:mb-20">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-4 border"
-            style={{ color: "#fbbf24", borderColor: "rgba(251,191,36,0.25)", backgroundColor: "rgba(251,191,36,0.08)" }}>
+          <span
+            className="inline-block text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-4 border"
+            style={{ color: AMBER_LIGHT, borderColor: AMBER_DIM, backgroundColor: AMBER_BG }}
+          >
             {t.growthBadge}
           </span>
           <h2 className="text-3xl lg:text-5xl 2xl:text-6xl font-black text-white tracking-tight">
@@ -25,56 +32,54 @@ export default function GrowthStory({ t }: { t: T; lang: Lang }) {
           </h2>
         </div>
 
-        {/* ── TIMELINE ── */}
+        {/* Timeline — grid: 1 col mobiilissa, 4 col desktopissa */}
+        <div className="relative mb-12 lg:mb-16">
 
-        {/* Desktop: horisontaalinen */}
-        <div className="hidden md:block mb-12 lg:mb-16">
-          {/* Yhdistävä viiva */}
-          <div className="relative flex items-start justify-between">
-            <div className="absolute top-5 left-0 right-0 h-0.5" style={{ backgroundColor: "rgba(251,191,36,0.25)" }} />
+          {/* Horisontaalinen yhdysteksti (desktop) — absoluttinen, piilossa mobiilissa */}
+          <div
+            className="absolute left-0 right-0"
+            style={{
+              top: "1.25rem",         /* tasattu pisteiden kanssa */
+              height: "2px",
+              background: `linear-gradient(to right, transparent 2%, ${AMBER_DIM} 10%, ${AMBER_DIM} 90%, transparent 98%)`,
+            }}
+            aria-hidden
+          />
 
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-6">
             {events.map((ev, i) => (
-              <div key={i} className="relative flex flex-col items-center w-1/4 px-3">
+              <div key={i} className="flex flex-col items-center text-center relative">
+
                 {/* Piste */}
-                <div className="w-10 h-10 rounded-full border-2 flex items-center justify-center mb-4 z-10 bg-slate-900"
-                  style={{ borderColor: "#f59e0b" }}>
-                  <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#f59e0b" }} />
+                <div
+                  className="w-10 h-10 rounded-full border-2 flex items-center justify-center mb-3 shrink-0 bg-slate-900 z-10"
+                  style={{ borderColor: AMBER }}
+                >
+                  <div className="w-3 h-3 rounded-full" style={{ backgroundColor: AMBER }} />
                 </div>
+
                 {/* Vuosi */}
-                <span className="text-sm font-black tracking-wide mb-2" style={{ color: "#fbbf24" }}>
+                <span className="text-xs font-black tracking-widest mb-3" style={{ color: AMBER_LIGHT }}>
                   {ev.year}
                 </span>
+
                 {/* Kortti */}
-                <div className="bg-slate-800 rounded-2xl p-5 border w-full" style={{ borderColor: "rgba(251,191,36,0.15)" }}>
-                  <h3 className="text-base lg:text-lg font-bold text-white mb-2">{ev.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{ev.desc}</p>
+                <div
+                  className="rounded-2xl p-5 w-full flex-1 border"
+                  style={{ backgroundColor: "#1e293b", borderColor: AMBER_DIM }}
+                >
+                  <h3 className="text-sm lg:text-base font-bold text-white mb-2 leading-snug">{ev.title}</h3>
+                  <p className="text-xs lg:text-sm text-slate-400 leading-relaxed">{ev.desc}</p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
-        {/* Mobiili: vertikaalinen */}
-        <div className="md:hidden mb-10 relative">
-          {/* Pystyviiva */}
-          <div className="absolute left-4 top-0 bottom-0 w-0.5" style={{ backgroundColor: "rgba(251,191,36,0.25)" }} />
-
-          <div className="space-y-6">
-            {events.map((ev, i) => (
-              <div key={i} className="relative flex gap-6 pl-12">
-                {/* Piste */}
-                <div className="absolute left-0 top-1 w-8 h-8 rounded-full border-2 flex items-center justify-center bg-slate-900"
-                  style={{ borderColor: "#f59e0b" }}>
-                  <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#f59e0b" }} />
-                </div>
-                {/* Sisältö */}
-                <div className="bg-slate-800 rounded-2xl p-5 border flex-1" style={{ borderColor: "rgba(251,191,36,0.15)" }}>
-                  <span className="text-xs font-black tracking-wide block mb-1" style={{ color: "#fbbf24" }}>
-                    {ev.year}
-                  </span>
-                  <h3 className="text-base font-bold text-white mb-2">{ev.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{ev.desc}</p>
-                </div>
+                {/* Pystyviiva mobiilissa pisteiden välillä — viimeisellä ei viivaa */}
+                {i < events.length - 1 && (
+                  <div
+                    className="md:hidden w-0.5 h-6 my-1"
+                    style={{ backgroundColor: AMBER_DIM }}
+                    aria-hidden
+                  />
+                )}
               </div>
             ))}
           </div>
@@ -88,9 +93,7 @@ export default function GrowthStory({ t }: { t: T; lang: Lang }) {
           <a
             href="#contact"
             className="inline-block font-bold text-base lg:text-xl px-8 lg:px-12 py-4 lg:py-5 rounded-full transition-colors duration-300 shadow-lg"
-            style={{ backgroundColor: "#f59e0b", color: "#0f172a" }}
-            onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#fbbf24")}
-            onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#f59e0b")}
+            style={{ backgroundColor: AMBER, color: "#0f172a" }}
           >
             {t.growthCta}
           </a>
