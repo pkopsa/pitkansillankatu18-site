@@ -625,7 +625,7 @@ export default function Home() {
               {/* Projektiasunto */}
               <div className="flex flex-col items-center gap-3 w-44">
                 <a
-                  href="https://pitkanshop-gatafh9w.manus.space/"
+                  href="https://pitkansillankatu33.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-4 shadow-lg w-44 h-44 hover:shadow-xl transition-shadow group"
