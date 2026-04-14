@@ -104,6 +104,8 @@ export const translations = {
     emailLabel: "Sähköposti",
     qrCaption: "Skannaa ja varaa",
 
+    rentInquiryPrefill: "Haluamme vuokrata tilan tiimillemme. Tiimin koko: __ hlö, kesto: __ kk.",
+
     // Yhteydenottolomake
     formBadge: "Lomake",
     formTitle: "Lähetä viesti",
@@ -308,6 +310,8 @@ export const translations = {
     emailLabel: "E-post",
     qrCaption: "Skanna och boka",
 
+    rentInquiryPrefill: "Vi vill hyra lokalen för vårt team. Teamstorlek: __ pers, period: __ mån.",
+
     // Kontaktformulär
     formBadge: "Formulär",
     formTitle: "Skicka meddelande",
@@ -511,6 +515,8 @@ export const translations = {
     phoneLabel: "Phone",
     emailLabel: "Email",
     qrCaption: "Scan and book",
+
+    rentInquiryPrefill: "We'd like to rent the space for our team. Team size: __ people, duration: __ months.",
 
     // Contact form
     formBadge: "Contact form",

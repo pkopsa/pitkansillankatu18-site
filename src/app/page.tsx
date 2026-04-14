@@ -91,6 +91,7 @@ function getScrollSpeed() {
 export default function Home() {
   const [lang, setLang] = useState<Lang>("fi");
   const [lightbox, setLightbox] = useState<{ images: typeof galleryImages; index: number } | null>(null);
+  const [rentPrefill, setRentPrefill] = useState("");
 
   const t = translations[lang];
 
@@ -220,14 +221,15 @@ export default function Home() {
             {t.heroSub}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="https://www.terassitalo.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => {
+                setRentPrefill(t.rentInquiryPrefill);
+                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="inline-block bg-teal-500 hover:bg-teal-400 text-slate-900 text-lg lg:text-2xl 2xl:text-3xl font-bold px-8 lg:px-14 2xl:px-18 py-4 lg:py-6 2xl:py-8 rounded-full transition-colors duration-300 shadow-2xl"
             >
               {t.heroBtnRent}
-            </a>
+            </button>
             <a
               href="https://toimitilat.oikotie.fi/myytavat-toimitilat/kokkola/21240654"
               target="_blank"
@@ -649,7 +651,7 @@ export default function Home() {
       </section>
 
       {/* ── YHTEYDENOTTOLOMAKE ──────────────────────────────────────── */}
-      <ContactSection t={t} />
+      <ContactSection t={t} prefillMessage={rentPrefill} />
 
       {/* ── SIJAINTI ────────────────────────────────────────────────── */}
       <section className="bg-slate-900 py-14 px-4 lg:py-24 lg:px-8">

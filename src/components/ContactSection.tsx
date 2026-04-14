@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { translations, Lang } from "@/translations";
 
 type T = typeof translations[Lang];
@@ -14,8 +14,14 @@ type FormState = {
 
 const empty: FormState = { nimi: "", email: "", puhelin: "", viesti: "" };
 
-export default function ContactSection({ t }: { t: T }) {
+export default function ContactSection({ t, prefillMessage }: { t: T; prefillMessage?: string }) {
   const [form, setForm] = useState<FormState>(empty);
+
+  useEffect(() => {
+    if (prefillMessage) {
+      setForm(prev => ({ ...prev, viesti: prefillMessage }));
+    }
+  }, [prefillMessage]);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -49,7 +55,7 @@ export default function ContactSection({ t }: { t: T }) {
   }
 
   return (
-    <section className="py-14 px-4 lg:py-28 lg:px-8 bg-white">
+    <section id="contact" className="py-14 px-4 lg:py-28 lg:px-8 bg-white">
       <div className="max-w-2xl mx-auto">
         {/* Otsikko */}
         <div className="text-center mb-10 lg:mb-16">
