@@ -196,9 +196,9 @@ export default function CostComparison({ t, lang }: { t: T; lang: Lang }) {
             {t.costBasisTitle}
           </p>
           <div className="flex flex-wrap gap-4 lg:gap-8 text-xs lg:text-sm text-slate-500">
-            <span><span className="text-rose-400 font-semibold">A:</span> {t.costBasisHotel}</span>
-            <span><span className="text-amber-400 font-semibold">B:</span> {t.costBasisCowork}</span>
-            <span><span className="text-teal-400 font-semibold">C:</span> {t.costBasisP18}</span>
+            <span><span className="font-semibold" style={{ color: "#fb7185" }}>A:</span> {t.costBasisHotel}</span>
+            <span><span className="font-semibold" style={{ color: "#fbbf24" }}>B:</span> {t.costBasisCowork}</span>
+            <span><span className="font-semibold" style={{ color: "#2dd4bf" }}>C:</span> {t.costBasisP18}</span>
           </div>
         </div>
 
