@@ -219,13 +219,17 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="#yhteystiedot"
+              href="https://www.terassitalo.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-teal-500 hover:bg-teal-400 text-slate-900 text-lg lg:text-2xl 2xl:text-3xl font-bold px-8 lg:px-14 2xl:px-18 py-4 lg:py-6 2xl:py-8 rounded-full transition-colors duration-300 shadow-2xl"
             >
               {t.heroBtnRent}
             </a>
             <a
-              href="#yhteystiedot"
+              href="https://toimitilat.oikotie.fi/myytavat-toimitilat/kokkola/21240654"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-slate-100 hover:bg-slate-200 text-slate-900 text-lg lg:text-2xl 2xl:text-3xl font-bold px-8 lg:px-14 2xl:px-18 py-4 lg:py-6 2xl:py-8 rounded-full transition-colors duration-300 shadow-2xl"
             >
               {t.heroBtnBuy}
@@ -233,12 +237,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-300 animate-bounce">
-          <span className="text-sm lg:text-lg tracking-widest uppercase">{t.heroScroll}</span>
-          <svg className="w-6 h-6 lg:w-8 lg:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
       </section>
 
       {/* ── PERUSTIEDOT ──────────────────────────────────────────────── */}
