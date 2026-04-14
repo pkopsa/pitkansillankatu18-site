@@ -252,7 +252,7 @@ export default function Home() {
               { label: t.detailSize,  value: "225 m²",  sub: t.detailSizeSub,  inline: false },
               { label: t.detailFloor, value: <>Pitkänsillankatu&nbsp;<wbr />18</>, sub: t.detailFloorSub, inline: false },
               { label: t.detailPrice, value: t.detailPriceVal, sub: t.detailPriceSub, inline: false },
-              { label: t.detailMaint, value: <>1&nbsp;500–<wbr />2&nbsp;500&nbsp;Euroa</>, sub: t.detailMaintSub, inline: false },
+              { label: t.detailMaint, value: <>1&nbsp;500–2&nbsp;500&nbsp;Euroa</>, sub: t.detailMaintSub, inline: false },
             ]) as Array<{ label: string; value: ReactNode; sub: string; inline: boolean }>).map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 text-center shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
@@ -321,7 +321,7 @@ export default function Home() {
                 <div className="relative bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
                   <div className="absolute top-0 right-0 w-32 h-32 lg:w-40 lg:h-40 bg-emerald-50 rounded-full -translate-y-12 translate-x-12 lg:-translate-y-16 lg:translate-x-16" />
                   <p className="text-slate-500 text-[1.05rem] lg:text-[1.35rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
-                  <p className="text-[2rem] lg:text-[2.6rem] 2xl:text-[3.2rem] font-black mb-1 text-emerald-700 break-words leading-tight">{item.value}</p>
+                  <p className="text-[2rem] lg:text-[2.6rem] 2xl:text-[3.2rem] font-black mb-1 text-emerald-700 whitespace-nowrap leading-tight">{item.value}</p>
                   <p className="text-[1.2rem] lg:text-[1.5rem] 2xl:text-[1.8rem] font-medium mb-4 lg:mb-6 text-slate-400">{item.sub}</p>
                   <p className="text-[1.05rem] lg:text-[1.2rem] 2xl:text-[1.5rem] text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
@@ -586,6 +586,27 @@ export default function Home() {
                 <p className="text-teal-400 font-semibold text-base lg:text-lg tracking-wide text-center">{t.qrCaption}</p>
               </div>
 
+              {/* Terassitalo */}
+              <div className="flex flex-col items-center gap-3 w-44">
+                <a
+                  href="https://www.terassitalo.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-4 shadow-lg w-44 h-44 hover:shadow-xl transition-shadow group border-t-4 border-amber-400"
+                >
+                  <svg viewBox="0 0 24 24" className="w-12 h-12 shrink-0" fill="none" stroke="#d97706" strokeWidth={1.4}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+                  </svg>
+                  <span className="text-slate-800 font-bold text-sm text-center leading-snug">
+                    Terassitalo
+                  </span>
+                  <span className="text-amber-600 font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                    {t.terassitaloOpen}
+                  </span>
+                </a>
+                <p className="text-teal-400 font-semibold text-base lg:text-lg tracking-wide text-center">{t.terassitaloCaption}</p>
+              </div>
+
               {/* Oikotie */}
               <div className="flex flex-col items-center gap-3 w-44">
                 <a
@@ -629,6 +650,27 @@ export default function Home() {
                 <p className="text-teal-400 font-semibold text-base lg:text-lg tracking-wide text-center">{t.rettaCaption}</p>
               </div>
 
+              {/* Projektiasunto */}
+              <div className="flex flex-col items-center gap-3 w-44">
+                <a
+                  href="https://pitkanshop-gatafh9w.manus.space/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-4 shadow-lg w-44 h-44 hover:shadow-xl transition-shadow group"
+                >
+                  <svg viewBox="0 0 24 24" className="w-12 h-12 shrink-0" fill="none" stroke="#0f172a" strokeWidth={1.4}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                  </svg>
+                  <span className="text-slate-800 font-bold text-sm text-center leading-snug">
+                    {t.aptTitle1}<br />{t.aptTitle2}
+                  </span>
+                  <span className="text-slate-500 font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                    {t.aptOpen}
+                  </span>
+                </a>
+                <p className="text-teal-400 font-semibold text-base lg:text-lg tracking-wide text-center">{t.aptCaption}</p>
+              </div>
+
             </div>
           </FadeIn>
 
@@ -641,15 +683,15 @@ export default function Home() {
       </section>
 
       {/* ── YHTEYDENOTTOLOMAKE ──────────────────────────────────────── */}
-      <ContactSection />
+      <ContactSection t={t} />
 
       {/* ── SIJAINTI ────────────────────────────────────────────────── */}
       <section className="bg-slate-900 py-14 px-4 lg:py-24 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8 lg:mb-14">
-            <p className="text-teal-400 text-sm lg:text-base font-semibold tracking-widest uppercase mb-3">Sijainti</p>
-            <h2 className="text-3xl lg:text-5xl font-bold text-white mb-3">Kohteen sijainti</h2>
-            <p className="text-slate-400 text-base lg:text-xl">Pitkänsillankatu 18, 67100 Kokkola — Terassitalossa</p>
+            <p className="text-teal-400 text-sm lg:text-base font-semibold tracking-widest uppercase mb-3">{t.mapBadge}</p>
+            <h2 className="text-3xl lg:text-5xl font-bold text-white mb-3">{t.mapTitle}</h2>
+            <p className="text-slate-400 text-base lg:text-xl">{t.mapSub}</p>
           </div>
           <div className="rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-white/10">
             <PropertyMap />
@@ -661,7 +703,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="hover:text-teal-400 transition-colors"
             >
-              Avaa Google Mapsissa →
+              {t.mapOpen}
             </a>
           </p>
         </div>
