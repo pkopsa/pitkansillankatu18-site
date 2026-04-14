@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState, ReactNode } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import ContactSection from "@/components/ContactSection";
+import CostComparison from "@/components/CostComparison";
 import PropertyMap from "@/components/PropertyMap";
 import FloorPlan from "@/components/FloorPlan";
 import Lightbox from "@/components/Lightbox";
@@ -410,6 +411,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── KUSTANNUSVERTAILU ───────────────────────────────────────── */}
+      <CostComparison t={t} lang={lang} />
 
       {/* ── KUVAGALLERIA ────────────────────────────────────────────── */}
       <section className="py-14 px-4 lg:py-28 lg:px-8 bg-white">
