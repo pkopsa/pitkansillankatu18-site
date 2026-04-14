@@ -42,6 +42,34 @@ export const translations = {
     netDesc: "Projektitiimin käyttö tukee vakaata tuottoa.",
     investorSummary: "225 m² monikäyttöistä liiketilaa Kokkolan keskustassa. Ostamalla sijoitukseksi tai yrityksesi tukikohdaksi hyödyt kannattavasta vuokratuotosta.",
 
+    // Tuottolaskuri
+    yieldCalcBadge: "Tuottolaskuri",
+    yieldCalcTitle: "Laske oma tuottosi",
+    yieldRentLabel: "Kuukausivuokra",
+    yieldGross: "Bruttovuokratuotto",
+    yieldNet: "Nettovuokratuotto",
+    yieldAnnualNet: "Vuosittainen nettotulo",
+    yieldPayback: "Takaisinmaksuaika",
+    yieldYears: "vuotta",
+    yieldCostNote: "Vastike 832,50 €/kk vähennetty",
+
+    // Kysyntä
+    demandBadge: "Miksi kysyntä on varmaa?",
+    demandTitle: "Kolme kasvun voimaa",
+    demand1Icon: "⚓",
+    demand1Title: "Arctial-hanke",
+    demand1Desc: "3 000–4 000 rakennusvaiheen työntekijää tarvitsevat toimitiloja projektitiimeille lähivuosina.",
+    demand2Icon: "📈",
+    demand2Title: "KIP-alueen investoinnit",
+    demand2Desc: "Yli 100 M€ vuotuiset investoinnit KIP-alueelle takaavat pitkäaikaisen kysynnän liiketiloille.",
+    demand3Icon: "🏙️",
+    demand3Title: "Rajallinen tarjonta",
+    demand3Desc: "Kokkolan ydinkeskustassa on rajallinen määrä laadukkaita toimitiloja — kysyntä ylittää tarjonnan.",
+
+    // Sijoittajaosion PDF-linkki
+    investorPdfTitle: "Isännöitsijäntodistus",
+    investorPdfSub: "Lataa PDF ↓",
+
     // Muuttovalmis
     readyTitle: "Valmis projektitoimintaan",
     readySub: "Tilat on suunniteltu kokonaiselle tiimille, neuvotteluihin ja taukoihin.",
@@ -222,6 +250,34 @@ export const translations = {
     netDesc: "Teamanvändning stärker stabil intäkt.",
     investorSummary: "225 m² flexibel affärslokal i Karlebys centrum. Köp som investering eller som företagets egen bas.",
 
+    // Avkastningskalkylator
+    yieldCalcBadge: "Avkastningskalkylator",
+    yieldCalcTitle: "Beräkna din avkastning",
+    yieldRentLabel: "Månadshyra",
+    yieldGross: "Bruttohyresavkastning",
+    yieldNet: "Nettohyresavkastning",
+    yieldAnnualNet: "Årlig nettoinkomst",
+    yieldPayback: "Återbetalningstid",
+    yieldYears: "år",
+    yieldCostNote: "Avgift 832,50 €/mån dragen av",
+
+    // Efterfrågan
+    demandBadge: "Varför är efterfrågan säker?",
+    demandTitle: "Tre tillväxtkrafter",
+    demand1Icon: "⚓",
+    demand1Title: "Arctial-projektet",
+    demand1Desc: "3 000–4 000 byggnadsarbetare behöver kontorslokaler för projektteam under de kommande åren.",
+    demand2Icon: "📈",
+    demand2Title: "KIP-områdets investeringar",
+    demand2Desc: "Över 100 M€ i årliga investeringar i KIP-området garanterar långvarig efterfrågan på affärslokaler.",
+    demand3Icon: "🏙️",
+    demand3Title: "Begränsat utbud",
+    demand3Desc: "I Karlebys stadskärna finns ett begränsat antal kvalitetslokaler — efterfrågan överstiger utbudet.",
+
+    // PDF-länk i investeraravsnittet
+    investorPdfTitle: "Förvaltningsintyg",
+    investorPdfSub: "Ladda PDF ↓",
+
     readyTitle: "Redo för projektverksamhet",
     readySub: "Lokalerna är designade för hela team, möten och pauser.",
     card1Title: "Representationslokal för matgäster",
@@ -397,6 +453,34 @@ export const translations = {
     netSub: "per year",
     netDesc: "Team occupancy supports stable returns.",
     investorSummary: "225 m² versatile commercial space in Kokkola city centre. Buy as an investment or your company's own base.",
+
+    // Yield calculator
+    yieldCalcBadge: "Yield Calculator",
+    yieldCalcTitle: "Calculate your yield",
+    yieldRentLabel: "Monthly rent",
+    yieldGross: "Gross rental yield",
+    yieldNet: "Net rental yield",
+    yieldAnnualNet: "Annual net income",
+    yieldPayback: "Payback period",
+    yieldYears: "years",
+    yieldCostNote: "Maintenance €832.50/mo deducted",
+
+    // Demand
+    demandBadge: "Why is demand guaranteed?",
+    demandTitle: "Three growth drivers",
+    demand1Icon: "⚓",
+    demand1Title: "Arctial project",
+    demand1Desc: "3,000–4,000 construction workers will need office space for project teams in the coming years.",
+    demand2Icon: "📈",
+    demand2Title: "KIP zone investments",
+    demand2Desc: "Over €100M in annual KIP zone investments guarantee long-term demand for commercial space.",
+    demand3Icon: "🏙️",
+    demand3Title: "Limited supply",
+    demand3Desc: "Kokkola city centre has a limited number of quality commercial spaces — demand exceeds supply.",
+
+    // Investor section PDF link
+    investorPdfTitle: "Management certificate",
+    investorPdfSub: "Download PDF ↓",
 
     readyTitle: "Ready for project operations",
     readySub: "Designed for entire teams, meetings and breaks.",

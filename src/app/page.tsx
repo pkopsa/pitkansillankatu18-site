@@ -5,6 +5,7 @@ import { useEffect, useRef, useState, ReactNode } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import ContactSection from "@/components/ContactSection";
 import CostComparison from "@/components/CostComparison";
+import InvestorSection from "@/components/InvestorSection";
 import PropertyMap from "@/components/PropertyMap";
 import FloorPlan from "@/components/FloorPlan";
 import Lightbox from "@/components/Lightbox";
@@ -299,44 +300,7 @@ export default function Home() {
       </section>
 
       {/* ── SIJOITTAJAN TIEDOT ───────────────────────────────────────── */}
-      <section className="py-14 px-4 lg:py-28 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <FadeIn>
-            <div className="flex items-center gap-3 mb-4 lg:mb-6 justify-center">
-              <span className="text-emerald-600 text-lg lg:text-2xl">◆</span>
-              <p className="text-emerald-600 text-lg lg:text-2xl font-semibold tracking-widest uppercase">{t.investorBadge}</p>
-              <span className="text-emerald-600 text-lg lg:text-2xl">◆</span>
-            </div>
-            <h2 className="text-3xl lg:text-5xl 2xl:text-6xl font-bold text-center mb-10 lg:mb-20 2xl:mb-24 text-slate-800">{t.investorTitle}</h2>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 mb-8 lg:mb-16">
-            {(([
-              { label: t.grossLabel, value: "12–20 %",                              sub: t.grossSub, desc: t.grossDesc },
-              { label: t.rentLabel,  value: <>1&nbsp;500–<wbr />2&nbsp;500&nbsp;€</>, sub: t.rentSub,  desc: t.rentDesc  },
-              { label: t.netLabel,   value: "7–14 %",                               sub: t.netSub,   desc: t.netDesc   },
-            ]) as Array<{ label: string; value: ReactNode; sub: string; desc: string }>).map((item, i) => (
-              <FadeIn key={i} delay={i * 150}>
-                <div className="relative bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
-                  <div className="absolute top-0 right-0 w-32 h-32 lg:w-40 lg:h-40 bg-emerald-50 rounded-full -translate-y-12 translate-x-12 lg:-translate-y-16 lg:translate-x-16" />
-                  <p className="text-slate-500 text-[1.05rem] lg:text-[1.35rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
-                  <p className="text-[2rem] lg:text-[2.6rem] 2xl:text-[3.2rem] font-black mb-1 text-emerald-700 leading-tight">{item.value}</p>
-                  <p className="text-[1.2rem] lg:text-[1.5rem] 2xl:text-[1.8rem] font-medium mb-4 lg:mb-6 text-slate-400">{item.sub}</p>
-                  <p className="text-[1.05rem] lg:text-[1.2rem] 2xl:text-[1.5rem] text-slate-600 leading-relaxed">{item.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-
-          <FadeIn>
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl lg:rounded-3xl p-6 lg:p-10 text-center shadow-lg">
-              <p className="text-base lg:text-2xl 2xl:text-3xl text-slate-600 leading-relaxed">
-                {t.investorSummary}
-              </p>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      <InvestorSection t={t} lang={lang} />
 
       {/* ── MUUTTOVALMIS KOTI ───────────────────────────────────────── */}
       <section className="py-14 px-4 lg:py-28 lg:px-8 bg-slate-50">
