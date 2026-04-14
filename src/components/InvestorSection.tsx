@@ -64,6 +64,45 @@ export default function InvestorSection({ t, lang }: { t: T; lang: Lang }) {
           ))}
         </div>
 
+        {/* ── NOPEA TUOTTOLASKELMA ── */}
+        <div
+          className="rounded-2xl p-6 md:p-8 border mb-8 lg:mb-12"
+          style={{ backgroundColor: "rgba(15, 23, 42, 0.6)", borderColor: "rgba(245, 158, 11, 0.20)" }}
+        >
+          <h3 className="text-lg font-bold text-white mb-4">{t.investorCalcTitle}</h3>
+          <div className="space-y-0">
+            {[
+              { label: t.investorCalcRow1Label, value: t.investorCalcRow1Val, highlight: false },
+              { label: t.investorCalcRow2Label, value: t.investorCalcRow2Val, highlight: false },
+              { label: t.investorCalcRow3Label, value: t.investorCalcRow3Val, highlight: true },
+              { label: t.investorCalcRow4Label, value: t.investorCalcRow4Val, highlight: true },
+              { label: t.investorCalcRow5Label, value: t.investorCalcRow5Val, highlight: false },
+            ].map((row, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-between py-2"
+                style={{ borderBottom: i < 4 ? "1px solid rgba(71, 85, 105, 0.5)" : "none" }}
+              >
+                <span
+                  className="text-sm lg:text-base"
+                  style={{ color: "#cbd5e1" }}
+                >
+                  {row.label}
+                </span>
+                <span
+                  className={row.highlight ? "text-xl font-bold" : "font-semibold text-sm lg:text-base"}
+                  style={{ color: row.highlight ? "#fbbf24" : "#fbbf24" }}
+                >
+                  {row.value}
+                </span>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs mt-4 italic" style={{ color: "#64748b" }}>
+            {t.investorCalcDisclaimer}
+          </p>
+        </div>
+
         {/* ── TUOTTOLASKURI ── */}
         <div className="bg-slate-900 rounded-2xl lg:rounded-3xl p-6 lg:p-10 mb-8 lg:mb-12 shadow-xl border border-white/5">
           <div className="text-center mb-8">

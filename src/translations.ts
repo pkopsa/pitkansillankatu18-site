@@ -230,6 +230,35 @@ export const translations = {
     why6Title: "Tuottava B2B-Sijoituskohde",
     why6Desc: "KIP-alueen kasvu ja uudet työpaikat takaavat vahvan kysynnän laadukkaalle toimistotilalle. Korkea vuokratuotto ja arvonnousupotentiaali tekevät tästä erinomaisen sijoituksen.",
 
+    // ArctialBanner
+    arctialBannerText: "📢 Arctial-alumiinitehtaan (Rio Tinto, Mitsubishi, ABB, Fortum) investointipäätös odotetaan Q1/2027 — Kokkolan toimitilakysyntä kasvaa.",
+    arctialBannerCta: "Varaa tilasi nyt.",
+
+    // KIP-faktapalkki
+    kipFact1Num: "76+",
+    kipFact1Label: "Yritystä KIP-alueella",
+    kipFact2Num: "100 M€+",
+    kipFact2Label: "Vuotuiset investoinnit",
+    kipFact3Num: "~2 500",
+    kipFact3Label: "Suoria työntekijöitä",
+    kipFact4Num: "7 min",
+    kipFact4Label: "Ajomatka keskustasta",
+    kipSource: "Lähde: kip.fi",
+
+    // Sijoittajan tuottolaskelma
+    investorCalcTitle: "Nopea tuottolaskelma",
+    investorCalcRow1Label: "Hoitovastike",
+    investorCalcRow1Val: "832,50 €/kk",
+    investorCalcRow2Label: "Vuokraennuste",
+    investorCalcRow2Val: "1 800 €/kk",
+    investorCalcRow3Label: "Nettotulo",
+    investorCalcRow3Val: "967,50 €/kk = 11 610 €/v",
+    investorCalcRow4Label: "Nettotuotto",
+    investorCalcRow4Val: "~7,8 %",
+    investorCalcRow5Label: "Takaisinmaksuaika",
+    investorCalcRow5Val: "~12,8 vuotta",
+    investorCalcDisclaimer: "Laskelma on suuntaa-antava arvio. Todelliset kulut ja tuotot voivat vaihdella.",
+
     footer: "Pitkänsillankatu 18 · 67100 Kokkola · 225 m² · 149 000 €",
   },
 
@@ -454,6 +483,35 @@ export const translations = {
     why6Title: "Produktiv B2B-investering",
     why6Desc: "KIP-områdets tillväxt och nya arbetstillfällen garanterar stark efterfrågan på kvalitetskontorslokaler. Hög hyresavkastning och värdestegringspotential.",
 
+    // ArctialBanner
+    arctialBannerText: "📢 Arctials aluminiumfabrik (Rio Tinto, Mitsubishi, ABB, Fortum) — investeringsbeslut väntas Q1/2027. Efterfrågan på lokaler i Karleby ökar.",
+    arctialBannerCta: "Reservera din lokal nu.",
+
+    // KIP-faktafält
+    kipFact1Num: "76+",
+    kipFact1Label: "Företag i KIP-området",
+    kipFact2Num: "100 M€+",
+    kipFact2Label: "Årliga investeringar",
+    kipFact3Num: "~2 500",
+    kipFact3Label: "Direktanställda",
+    kipFact4Num: "7 min",
+    kipFact4Label: "Körtid från centrum",
+    kipSource: "Källa: kip.fi",
+
+    // Investerarens avkastningskalkyl
+    investorCalcTitle: "Snabb avkastningskalkyl",
+    investorCalcRow1Label: "Underhållsavgift",
+    investorCalcRow1Val: "832,50 €/mån",
+    investorCalcRow2Label: "Hyresprognos",
+    investorCalcRow2Val: "1 800 €/mån",
+    investorCalcRow3Label: "Nettoinkomst",
+    investorCalcRow3Val: "967,50 €/mån = 11 610 €/år",
+    investorCalcRow4Label: "Nettoavkastning",
+    investorCalcRow4Val: "~7,8 %",
+    investorCalcRow5Label: "Återbetalningstid",
+    investorCalcRow5Val: "~12,8 år",
+    investorCalcDisclaimer: "Kalkylen är vägledande. Faktiska kostnader och intäkter kan variera.",
+
     footer: "Pitkänsillankatu 18 · 67100 Karleby · 225 m² · 149 000 €",
   },
 
@@ -677,6 +735,35 @@ export const translations = {
     why6Icon: "📈", why6Tag: "Profitable investment",
     why6Title: "Productive B2B Investment Asset",
     why6Desc: "KIP zone growth and new jobs guarantee strong demand for quality office space. High rental yield and capital appreciation potential make this an excellent investment.",
+
+    // ArctialBanner
+    arctialBannerText: "📢 Arctial aluminium smelter (Rio Tinto, Mitsubishi, ABB, Fortum) — investment decision expected Q1/2027. Office space demand in Kokkola is rising.",
+    arctialBannerCta: "Reserve your space now.",
+
+    // KIP facts bar
+    kipFact1Num: "76+",
+    kipFact1Label: "Companies in KIP area",
+    kipFact2Num: "€100M+",
+    kipFact2Label: "Annual investments",
+    kipFact3Num: "~2,500",
+    kipFact3Label: "Direct employees",
+    kipFact4Num: "7 min",
+    kipFact4Label: "Drive from city centre",
+    kipSource: "Source: kip.fi",
+
+    // Investor return calculation
+    investorCalcTitle: "Quick return calculation",
+    investorCalcRow1Label: "Maintenance charge",
+    investorCalcRow1Val: "€832.50/mo",
+    investorCalcRow2Label: "Rent estimate",
+    investorCalcRow2Val: "€1,800/mo",
+    investorCalcRow3Label: "Net income",
+    investorCalcRow3Val: "€967.50/mo = €11,610/yr",
+    investorCalcRow4Label: "Net yield",
+    investorCalcRow4Val: "~7.8%",
+    investorCalcRow5Label: "Payback period",
+    investorCalcRow5Val: "~12.8 years",
+    investorCalcDisclaimer: "The calculation is indicative. Actual costs and returns may vary.",
 
     footer: "Pitkänsillankatu 18 · 67100 Kokkola · 225 m² · €149,000",
   },

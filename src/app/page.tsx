@@ -7,6 +7,8 @@ import ContactSection from "@/components/ContactSection";
 import CostComparison from "@/components/CostComparison";
 import InvestorSection from "@/components/InvestorSection";
 import GrowthStory from "@/components/GrowthStory";
+import ArctialBanner from "@/components/ArctialBanner";
+import KipFactsBar from "@/components/KipFactsBar";
 import PropertyMap from "@/components/PropertyMap";
 import FloorPlan from "@/components/FloorPlan";
 import Lightbox from "@/components/Lightbox";
@@ -244,6 +246,9 @@ export default function Home() {
 
       </section>
 
+      {/* ── ARCTIAL BANNER ──────────────────────────────────────────── */}
+      <ArctialBanner t={t} lang={lang} />
+
       {/* ── PERUSTIEDOT ──────────────────────────────────────────────── */}
       <section className="py-14 px-4 lg:py-28 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
@@ -268,6 +273,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── KIP FAKTAPALKKI ─────────────────────────────────────────── */}
+      <KipFactsBar t={t} lang={lang} />
 
       {/* ── EDUT YRITYKSILLE ────────────────────────────────────────── */}
       <section className="py-14 px-4 lg:py-28 lg:px-8 2xl:py-36 bg-slate-900 text-white">
