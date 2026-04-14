@@ -131,23 +131,24 @@ export default function CostComparison({ t, lang }: { t: T; lang: Lang }) {
               const widthPct = Math.round((bar.total / maxCost) * 100);
               return (
                 <div key={bar.label}>
-                  <div className="flex items-center justify-between mb-2 gap-2">
-                    <div className="flex items-center gap-2 min-w-0">
-                      <span className={`font-bold text-sm lg:text-base text-white truncate`}>
+                  <div className="flex items-start justify-between mb-3 gap-4">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="font-bold text-sm lg:text-base text-white">
                         {bar.label}
                       </span>
                       {bar.cheapest && (
-                        <span className="shrink-0 text-xs bg-teal-500/20 text-teal-400 border border-teal-500/30 px-2 py-0.5 rounded-full font-semibold">
+                        <span className="text-xs bg-teal-500/20 text-teal-400 border border-teal-500/30 px-2 py-0.5 rounded-full font-semibold">
                           {t.costCheapest}
                         </span>
                       )}
                     </div>
                     <div className="text-right shrink-0">
-                      <span className={`font-black text-lg lg:text-2xl ${bar.textColor}`}>
+                      <span className={`font-black text-xl lg:text-2xl ${bar.textColor}`}>
                         {fmt(bar.total, lang)}
                       </span>
-                      <span className="text-slate-500 text-xs lg:text-sm ml-1">
-                        ({fmt(bar.monthly, lang)}{t.costPerMonth})
+                      <br />
+                      <span className="text-slate-500 text-xs lg:text-sm">
+                        {fmt(bar.monthly, lang)}{t.costPerMonth}
                       </span>
                     </div>
                   </div>
