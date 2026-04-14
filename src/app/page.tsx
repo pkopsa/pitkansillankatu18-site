@@ -636,9 +636,6 @@ export default function Home() {
                   <span className="text-slate-800 font-bold text-sm text-center leading-snug">
                     {t.aptTitle1}<br />{t.aptTitle2}
                   </span>
-                  <span className="text-slate-500 font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                    {t.aptOpen}
-                  </span>
                 </a>
                 <p className="text-teal-400 font-semibold text-base lg:text-lg tracking-wide text-center">{t.aptCaption}</p>
               </div>
