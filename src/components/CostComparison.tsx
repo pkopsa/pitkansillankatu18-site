@@ -14,8 +14,11 @@ const COWORK_MONTHLY = 350;
 const P18_MONTHLY = 1800;
 
 function fmt(n: number, lang: Lang): string {
-  const locale = lang === "sv" ? "sv-SE" : lang === "en" ? "en-GB" : "fi-FI";
-  return n.toLocaleString(locale, { maximumFractionDigits: 0 }) + " €";
+  const s = Math.round(n).toString();
+  // fi/sv: välilyönti tuhaterottimena, en: pilkku
+  const sep = lang === "en" ? "," : "\u00A0";
+  const grouped = s.replace(/\B(?=(\d{3})+(?!\d))/g, sep);
+  return grouped + " €";
 }
 
 export default function CostComparison({ t, lang }: { t: T; lang: Lang }) {
