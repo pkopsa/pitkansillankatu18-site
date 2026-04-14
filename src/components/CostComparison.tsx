@@ -40,25 +40,22 @@ export default function CostComparison({ t, lang }: { t: T; lang: Lang }) {
       label: t.costOptA,
       total: hotelTotal,
       monthly: Math.round(hotelTotal / months),
-      color: "bg-rose-500",
-      textColor: "text-rose-400",
-      borderColor: "border-rose-500/30",
+      barColor: "#f43f5e",
+      textColor: "#fb7185",
     },
     {
       label: t.costOptB,
       total: coworkTotal,
       monthly: Math.round(coworkTotal / months),
-      color: "bg-amber-500",
-      textColor: "text-amber-400",
-      borderColor: "border-amber-500/30",
+      barColor: "#f59e0b",
+      textColor: "#fbbf24",
     },
     {
       label: t.costOptC,
       total: p18Total,
       monthly: P18_MONTHLY,
-      color: "bg-teal-500",
-      textColor: "text-teal-400",
-      borderColor: "border-teal-500/30",
+      barColor: "#14b8a6",
+      textColor: "#2dd4bf",
       cheapest: true,
     },
   ];
@@ -146,7 +143,7 @@ export default function CostComparison({ t, lang }: { t: T; lang: Lang }) {
                       )}
                     </div>
                     <div className="text-right shrink-0">
-                      <span className={`font-black text-xl lg:text-2xl ${bar.textColor}`}>
+                      <span className="font-black text-xl lg:text-2xl" style={{ color: bar.textColor }}>
                         {fmt(bar.total, lang)}
                       </span>
                       <br />
@@ -157,8 +154,8 @@ export default function CostComparison({ t, lang }: { t: T; lang: Lang }) {
                   </div>
                   <div className="h-8 lg:h-10 bg-slate-700 rounded-full overflow-hidden">
                     <div
-                      className={`h-full ${bar.color} rounded-full transition-all duration-700 ease-out`}
-                      style={{ width: `${widthPct}%` }}
+                      className="h-full rounded-full transition-all duration-700 ease-out"
+                      style={{ width: `${widthPct}%`, backgroundColor: bar.barColor }}
                     />
                   </div>
                 </div>
