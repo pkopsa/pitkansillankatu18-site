@@ -658,7 +658,7 @@ export default function Home() {
           </div>
           <p className="text-center text-slate-500 text-sm mt-4">
             <a
-              href="https://maps.google.com/maps?q=Pitkänsillankatu+18,+67100+Kokkola"
+              href="https://www.google.com/maps/search/?api=1&query=Pitk%C3%A4nsillankatu+18+A%2C+67100+Kokkola"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-teal-400 transition-colors"

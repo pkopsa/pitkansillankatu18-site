@@ -2,8 +2,9 @@
 
 import { useEffect, useRef } from "react";
 
-const LAT = 63.83768;
-const LNG = 23.13045;
+// Pitkänsillankatu 18 A — Terassitalo, kadun puoleinen sisäänkäynti
+const LAT = 63.83795;
+const LNG = 23.13010;
 
 export default function PropertyMap() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -89,7 +90,7 @@ export default function PropertyMap() {
       L.marker([LAT, LNG], { icon })
         .addTo(map)
         .bindPopup(
-          `<strong style="font-size:14px">Pitkänsillankatu 18</strong><br/>67100 Kokkola<br/><em style="color:#888">BioRexin vieressä</em>`,
+          `<strong style="font-size:14px">Pitkänsillankatu 18 A</strong><br/>67100 Kokkola<br/><em style="color:#888">Terassitalo</em>`,
           { offset: [0, -60] }
         )
         .openPopup();
