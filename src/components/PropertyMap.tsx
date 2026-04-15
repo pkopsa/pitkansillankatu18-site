@@ -2,9 +2,10 @@
 
 import { useEffect, useRef } from "react";
 
-// Pitkänsillankatu 18 A — Terassitalo, kadun puoleinen sisäänkäynti
-const LAT = 63.83795;
-const LNG = 23.13010;
+// Pitkänsillankatu 18 A — Terassitalo, länsipääty kadun puolella
+// Koordinaatit: OSM-verified (Nominatim) + hienosäätö länsipäätyyn
+const LAT = 63.83777;
+const LNG = 23.13650;
 
 export default function PropertyMap() {
   const containerRef = useRef<HTMLDivElement>(null);
