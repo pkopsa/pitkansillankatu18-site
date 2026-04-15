@@ -135,8 +135,8 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "FI-07",
     "geo.placename": "Kokkola",
-    "geo.position": "63.83777;23.13650",
-    "ICBM": "63.83777, 23.13650",
+    "geo.position": "63.83768;23.13689",
+    "ICBM": "63.83768, 23.13689",
   },
 };
 
@@ -161,8 +161,8 @@ const jsonLd = {
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: 63.83777,
-        longitude: 23.13650,
+        latitude: 63.83768,
+        longitude: 23.13689,
       },
       floorSize: {
         "@type": "QuantitativeValue",
