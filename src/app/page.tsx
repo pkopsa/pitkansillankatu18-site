@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState, ReactNode } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import ContactSection from "@/components/ContactSection";
+import B2BCalculator from "@/components/B2BCalculator";
 import DayRental from "@/components/DayRental";
 import CostComparison from "@/components/CostComparison";
 import InvestorSection from "@/components/InvestorSection";
@@ -91,7 +92,7 @@ function getScrollSpeed() {
 }
 
 export default function Home() {
-  const [lang, setLang] = useState<Lang>("fi");
+  const [lang, setLang] = useState<Lang>("en");
   const [lightbox, setLightbox] = useState<{ images: typeof galleryImages; index: number } | null>(null);
   const [rentPrefill, setRentPrefill] = useState("");
 
@@ -244,6 +245,9 @@ export default function Home() {
         </div>
 
       </section>
+
+      {/* ── B2B LASKURI ─────────────────────────────────────────────── */}
+      <B2BCalculator t={t} lang={lang} />
 
       {/* ── PERUSTIEDOT ──────────────────────────────────────────────── */}
       <section className="py-14 px-4 lg:py-28 lg:px-8 bg-slate-50">
