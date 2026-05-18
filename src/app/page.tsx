@@ -28,21 +28,33 @@ function FadeIn({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    function reveal() {
+      if (!el) return;
+      el.style.transitionDelay = `${delay}ms`;
+      el.classList.add("opacity-100", "translate-y-0");
+      el.classList.remove("opacity-0", "translate-y-8");
+    }
+
+    // Hard fallback: Samsung Tizen / LG webOS TV browsers often have broken
+    // IntersectionObserver — force visibility after 3 s regardless
+    const timer = setTimeout(reveal, 3000);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.style.transitionDelay = `${delay}ms`;
-          el.classList.add("opacity-100", "translate-y-0");
-          el.classList.remove("opacity-0", "translate-y-8");
+          clearTimeout(timer);
+          reveal();
           observer.disconnect();
         }
       },
-      // rootMargin pre-triggers 200px before element enters viewport so fast
-      // kiosk-scroll on large displays doesn't fly past before observer fires
       { threshold: 0.01, rootMargin: "200px" }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
   }, [delay]);
 
   return (
@@ -86,10 +98,13 @@ const toimistoImages = [
 const PAUSE_MS = 2000;
 const LANGS_CYCLE: Lang[] = ["fi", "sv", "en"];
 function getScrollSpeed() {
-  if (typeof window === "undefined") return 1.0;
-  if (window.innerWidth >= 1920) return 4.16;
-  if (window.innerWidth >= 1024) return 1.6;
-  return 0.64;
+  if (typeof window === "undefined") return 1.5;
+  // URL override: pitkansillankatu18.com/?speed=8  (handy for on-site kiosk tuning)
+  const urlSpeed = parseFloat(new URLSearchParams(window.location.search).get("speed") ?? "");
+  if (!isNaN(urlSpeed)) return Math.min(20, Math.max(0.1, urlSpeed));
+  // Viewport-height based: one screenful scrolls by in ~3 s at 60 fps
+  // — auto-calibrates for 1080p TVs, 4K displays and laptops alike
+  return Math.min(12, Math.max(1, window.innerHeight / 180));
 }
 
 export default function Home() {
