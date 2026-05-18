@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# pitkansillankatu18.com
 
-## Getting Started
+Myynti- ja markkinointisivusto toimitilahuoneistolle As Oy Kokkolan Pitkänsillankatu 18:ssa (Terassitalo, LH 19, 225 m²).
 
-First, run the development server:
+**Live:** https://pitkansillankatu18.com  
+**Vercel-projekti:** pkopsas-projects/pitkansillankatu18-site
+
+## Stack
+
+- Next.js 15 · App Router · React 19 · TypeScript
+- Tailwind CSS v4 (@tailwindcss/postcss)
+- Vercel (manuaalinen deploy — `git.deploymentEnabled: false`)
+
+## Kehitys
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev      # localhost:3000 (Webpack, ei Turbopack)
+npm run build    # Tuotantobuild
+npm run lint     # ESLint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> **Huom.** Tämän koneen CPU ei tue BMI2-käskyjä — Turbopack kaatuu. Älä lisää `--turbopack`-lippua.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+vercel --prod
+```
 
-## Learn More
+Git-push ei triggeröi automaattideploya (`vercel.json`: `deploymentEnabled: false`).
 
-To learn more about Next.js, take a look at the following resources:
+## Versiointi
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Tagit: `v4.x` — katso `git tag --sort=-version:refname`.  
+Julkaisukandidaatti merkitään tagilla ennen jokaista merkittävää esittelyä tai yhtiökokousta.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Rakenne
 
-## Deploy on Vercel
+```
+src/
+  app/
+    page.tsx          — pääsivu (kaikki osiot)
+    layout.tsx        — root layout, metadata, JSON-LD
+    api/contact/      — yhteydenottolomakkeen API-reitti (Nodemailer)
+  components/
+    ContactSection    — lomake
+    DayRental         — päivävuokrausosio
+    CostComparison    — kustannusvertailu (piilotettu yhtiökokoukseen asti)
+    InvestorSection   — sijoittajatiedot (piilotettu yhtiökokoukseen asti)
+    GrowthStory       — Kokkolan kasvutarina
+    FloorPlan         — pohjapiirros (SVG)
+    PropertyMap       — Leaflet-kartta
+    Lightbox          — kuvakatselumoduuli
+    LanguageSwitcher  — fi / sv / en
+  translations.ts     — kaikki UI-tekstit kolmella kielellä
+public/
+  *.jpg / *.jpeg      — tilakuvat
+  katu-historia.jpeg  — historiallinen katukuva
+  docs/               — taloyhtiön PDF-asiakirjat
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Kiosk-tila
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Sivu skrollaa automaattisesti ja vaihtaa kieltä (fi → sv → en → fi) kiosk-näyttöä varten.  
+Touch/pyörä/näppäimistö pysäyttää automaattiskrollauksen.
+
+Wake Lock API pitää näytön päällä Chromium-pohjaisissa selaimissa.
