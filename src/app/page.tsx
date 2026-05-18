@@ -37,7 +37,9 @@ function FadeIn({
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      // rootMargin pre-triggers 200px before element enters viewport so fast
+      // kiosk-scroll on large displays doesn't fly past before observer fires
+      { threshold: 0.01, rootMargin: "200px" }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -200,6 +202,7 @@ export default function Home() {
             src="/kip18-daylounge-avara.jpg"
             alt="Pitkänsillankatu 18 – Open Office"
             fill
+            sizes="100vw"
             className="object-cover brightness-105 contrast-105"
             priority
           />
@@ -457,7 +460,7 @@ export default function Home() {
                 onClick={() => openLightbox(galleryImages, 0)}
                 className="relative aspect-square rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg w-full block cursor-zoom-in"
               >
-                <Image src="/kip18-daylounge-avara.jpg" alt="Open Office / Taukotila" fill className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500" />
+                <Image src="/kip18-daylounge-avara.jpg" alt="Open Office / Taukotila" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500" />
               </button>
             </FadeIn>
             {galleryImages.slice(1).map((img, i) => (
@@ -466,7 +469,7 @@ export default function Home() {
                   onClick={() => openLightbox(galleryImages, i + 1)}
                   className="relative aspect-square rounded-xl lg:rounded-2xl overflow-hidden shadow-md w-full block cursor-zoom-in"
                 >
-                  <Image src={img.src} alt={img.alt} fill className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500" />
+                  <Image src={img.src} alt={img.alt} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500" />
                 </button>
               </FadeIn>
             ))}
@@ -503,7 +506,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
               {/* Ikkunanäkymä */}
               <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[4/3] shadow-xl group">
-                <Image src="/kip18-julkisivu.jpg" alt="Pitkänsillankatu 18 – julkisivu" fill className="object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-500" />
+                <Image src="/kip18-julkisivu.jpg" alt="Pitkänsillankatu 18 – julkisivu" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 lg:p-6">
                   <p className="text-white text-sm lg:text-xl font-semibold mb-2">{t.historyCaption}</p>
                   <button
@@ -527,7 +530,7 @@ export default function Home() {
                 ], 0)}
                 className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[4/3] shadow-xl cursor-zoom-in group"
               >
-                <Image src="/katu-historia.jpeg" alt="Historiallinen katukuva Kokkolasta" fill className="object-cover brightness-100 contrast-105 sepia-[0.2] group-hover:scale-105 transition-transform duration-500" />
+                <Image src="/katu-historia.jpeg" alt="Historiallinen katukuva Kokkolasta" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover brightness-100 contrast-105 sepia-[0.2] group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 lg:p-6">
                   <p className="text-white text-sm lg:text-xl font-semibold">Historiallinen näkymä Kokkolan keskustasta</p>
                   <p className="text-teal-400 text-xs lg:text-sm mt-1">🔍 Klikkaa suurentaaksesi</p>
