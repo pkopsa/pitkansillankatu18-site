@@ -12,8 +12,8 @@ export const translations = {
     heroLine2: "projektitiimin toimistoksi",
     heroLine3: "Pitkänsillankatu 18",
     heroSub: "Liiketila · 67100 Kokkola · 149 000 €",
-    heroBtnRent: "Vuokraa tiimillesi",
-    heroBtnBuy: "Osta sijoitukseksi",
+    heroBtnRent: "Pyydä esittely",
+    heroBtnBuy: "Lisätietoja kaupasta",
     heroScroll: "Tutustu",
 
     // Perustiedot
@@ -205,7 +205,7 @@ export const translations = {
     benefit2Desc: "Optimoi Connectivity. Ydinkeskustan korkean profiilin sijainti, josta nopea pääsy (7 min) KIP-alueen major-toimijoille (Boliden, Keliber, Arctial).",
     benefit3Icon: "📈",
     benefit3Title: "Kannattava investointi",
-    benefit3Desc: "Korkeatuottoinen ydinkeskustan kiinteistö. Potentiaalinen 12–20 % bruttotuotto kasvavassa teollisuusmarkkinassa. 149 000 € pyyntihinta.",
+    benefit3Desc: "Vakaa ydinkeskustan kiinteistö. Käyttötarkoituksen muutos asuinhuoneistoksi vireillä — sopii pitkäaikaiseen asumiseen ja projektitoimistokäyttöön. 149 000 € pyyntihinta.",
 
     // Miksi tämä toimitila
     whyBadge: "Miksi tämä toimitila",
@@ -257,10 +257,33 @@ export const translations = {
     formSubjectDefault: "Valitse aihe…",
     formSubjectBuy: "Olen kiinnostunut ostamaan kohteen",
     formSubjectRentLong: "Haluan vuokrata tilan projektitiimille (pitkäaikainen)",
-    formSubjectRentShort: "Haluan vuokrata tilan kokoukseen / juhlaan (lyhytaikainen)",
+    formSubjectRentShort: "Haluan vuokrata tilan kokoukseen / tilaisuuteen (lyhytaikainen)",
     formBookViewing: "Varaa virtuaalinen tai fyysinen esittely",
 
     footer: "Pitkänsillankatu 18 · 67100 Kokkola · 225 m² · 149 000 €",
+
+    // Statusbanneri — käyttötarkoituksen muutos vireillä
+    statusBannerEmphasis: "Huom:",
+    statusBannerText: "Liikehuoneiston (LH 19) käyttötarkoituksen muutos viralliseksi asuinhuoneistoksi on vireillä (Yhtiökokouksen asialistalla 19.5.2026). Tila myydään tai vuokrataan jatkossa ensisijaisesti asuin- tai projektitoimistokäyttöön. Siihen saakka Terassitalo on normaalisti vuokrattavissa lyhytaikaisesti pop-up-, kokous- ja edustuskäyttöön.",
+
+    // Sitoumus pitkäaikaiseen asumiskäyttöön
+    commitmentTitle: "Sitoumus pitkäaikaiseen asumiskäyttöön",
+    commitmentIntro: "Käyttötarkoituksen muutoksen jälkeen huoneisto toimii pysyvänä asuinhuoneistona. Konkreettisesti tämä tarkoittaa seuraavaa:",
+    commitmentYes1: "Pitkäaikainen oma asumiskäyttö tai vuokraus (vähintään 6 kk sopimukset)",
+    commitmentYes2: "Kotitoimistokäyttö ja projektitoimistokäyttö Kokkolan-työmatkoilla",
+    commitmentYes3: "Sama rauhallinen profiili kuin muillakin talon asunnoilla (vrt. nro 22 ja 25)",
+    commitmentNo1: "EI lyhytaikaista majoitustoimintaa (ei Airbnb-pohjaista bisnestä)",
+    commitmentNo2: "EI tilavuokrausta tilapäisiin tapahtumiin",
+    commitmentNo3: "EI juhla- tai kokoustilan vuokraamista ulkopuolisille",
+    commitmentLegal: "Käyttötarkoituksen muutos asuinhuoneistoksi rajoittaa asunto-osakeyhtiölain 8 luvun nojalla tilan käyttöä — kaupallinen tilavuokraus ja majoitustoiminta eivät ole sallittuja asuinhuoneistossa. Tämä on lakisääteinen rajoitus, ei vain osakkaan oma sitoumus.",
+
+    // Taloyhtiön talous ja tekniikka
+    housingCoTitle: "Taloyhtiön talous ja tekniikka",
+    housingCoPdfsTitle: "Asiakirjat",
+    housingCoPdf1: "Yhtiökokouskutsu 19.5.2026",
+    housingCoPdf2: "Osakkaan aloite — käyttötarkoituksen muutos",
+    housingCoPdf3: "Taloyhtiön tilinpäätös 2025",
+    housingCoPdf4: "Kunnossapitotarveselvitys 2026",
   },
 
   sv: {
@@ -272,8 +295,8 @@ export const translations = {
     heroLine2: "för projektteamets kontor",
     heroLine3: "Pitkänsillankatu 18",
     heroSub: "Affärslokal · 67100 Karleby · 149 000 €",
-    heroBtnRent: "Hyr för ditt team",
-    heroBtnBuy: "Köp som investering",
+    heroBtnRent: "Begär visning",
+    heroBtnBuy: "Mer info om köpet",
     heroScroll: "Utforska",
 
     detailsTitle: "Objektinformation",
@@ -459,7 +482,7 @@ export const translations = {
     benefit2Desc: "Optimera Connectivity. Centralt högprofilläge med snabb access (7 min) till KIP-områdets aktörer (Boliden, Keliber, Arctial).",
     benefit3Icon: "📈",
     benefit3Title: "Lönsam investering",
-    benefit3Desc: "Högavkastande centrumfastighet. Potentiell 12–20 % bruttoavkastning på en boom-industrimarknad. 149 000 € begärt pris.",
+    benefit3Desc: "Stabil centrumfastighet. Ändring av användningsändamål till bostadslägenhet pågår — lämpar sig för långsiktigt boende och projektkontorsbruk. 149 000 € begärt pris.",
 
     // Varför denna lokal
     whyBadge: "Varför denna lokal",
@@ -515,6 +538,26 @@ export const translations = {
     formBookViewing: "Boka virtuell eller fysisk visning",
 
     footer: "Pitkänsillankatu 18 · 67100 Karleby · 225 m² · 149 000 €",
+
+    statusBannerEmphasis: "OBS:",
+    statusBannerText: "Ändring av användningsändamål för affärslokalen (LH 19) till en officiell bostadslägenhet är anhängig (på bolagsstämmans föredragningslista 19.5.2026). Lokalen säljs eller hyrs ut i fortsättningen i första hand för bostads- eller projektkontorsbruk. Fram till dess är Terassitalo normalt tillgänglig för korttidsuthyrning för pop-up-, mötes- och representationsbruk.",
+
+    commitmentTitle: "Åtagande om långsiktigt bostadsbruk",
+    commitmentIntro: "Efter ändring av användningsändamålet fungerar lägenheten som en permanent bostadslägenhet. I praktiken innebär detta:",
+    commitmentYes1: "Långvarigt eget boende eller uthyrning (minst 6 månaders kontrakt)",
+    commitmentYes2: "Hemkontors- och projektkontorsbruk under arbetsresor till Karleby",
+    commitmentYes3: "Samma lugna profil som övriga lägenheter i huset (jfr nr 22 och 25)",
+    commitmentNo1: "INGEN korttidsboende (ingen Airbnb-baserad verksamhet)",
+    commitmentNo2: "INGEN lokal uthyrning för tillfälliga evenemang",
+    commitmentNo3: "INGEN uthyrning av festlokal eller möteslokal till utomstående",
+    commitmentLegal: "Ändringen av användningsändamål till bostadslägenhet begränsar lokalens användning enligt 8 kap. i bostadsaktiebolagslagen — kommersiell lokaluthyrning och korttidsboende är inte tillåtna i en bostadslägenhet. Detta är en lagstadgad begränsning, inte enbart ett åtagande från aktieägarens sida.",
+
+    housingCoTitle: "Bostadsbolagets ekonomi och teknik",
+    housingCoPdfsTitle: "Dokument",
+    housingCoPdf1: "Bolagsstämmokallelse 19.5.2026",
+    housingCoPdf2: "Aktieägarens initiativ — ändring av användningsändamål",
+    housingCoPdf3: "Bostadsbolagets bokslut 2025",
+    housingCoPdf4: "Underhållsutredning 2026",
   },
 
   en: {
@@ -526,8 +569,8 @@ export const translations = {
     heroLine2: "for project teams' office",
     heroLine3: "Pitkänsillankatu 18",
     heroSub: "Business unit · 67100 Kokkola · €149,000",
-    heroBtnRent: "Rent for your team",
-    heroBtnBuy: "Buy as an investment",
+    heroBtnRent: "Request a viewing",
+    heroBtnBuy: "More info on purchase",
     heroScroll: "Explore",
 
     detailsTitle: "Property Details",
@@ -713,7 +756,7 @@ export const translations = {
     benefit2Desc: "Optimise Connectivity. High-profile city centre location with fast access (7 min) to KIP zone's major players (Boliden, Keliber, Arctial).",
     benefit3Icon: "📈",
     benefit3Title: "Profitable Investment",
-    benefit3Desc: "High-yield City Centre Asset. Potential 12–20 % gross yield in a booming industrial market. €149,000 asking price.",
+    benefit3Desc: "Stable city centre asset. Change of use to residential apartment pending — suited for long-term living or project office occupancy. €149,000 asking price.",
 
     // Why this property
     whyBadge: "Why this property",
@@ -769,5 +812,25 @@ export const translations = {
     formBookViewing: "Book a virtual or in-person viewing",
 
     footer: "Pitkänsillankatu 18 · 67100 Kokkola · 225 m² · €149,000",
+
+    statusBannerEmphasis: "Note:",
+    statusBannerText: "A change of use for the commercial premises (LH 19) to an official residential apartment is pending (on the housing company general meeting agenda 19.5.2026). The space will primarily be sold or rented for residential or project office use going forward. Until then, Terassitalo is normally available for short-term rental for pop-up, meeting, and corporate use.",
+
+    commitmentTitle: "Commitment to long-term residential use",
+    commitmentIntro: "After the change of use, the apartment will serve as a permanent residential unit. In practice, this means:",
+    commitmentYes1: "Long-term owner-occupancy or rental (minimum 6-month leases)",
+    commitmentYes2: "Home office and project office use during Kokkola work trips",
+    commitmentYes3: "Same quiet profile as other apartments in the building (cf. nos. 22 and 25)",
+    commitmentNo1: "NO short-term accommodation (no Airbnb-style business)",
+    commitmentNo2: "NO venue rental for temporary events",
+    commitmentNo3: "NO rental as a party or meeting venue to external parties",
+    commitmentLegal: "The change of use to a residential apartment restricts the use of the space under Chapter 8 of the Finnish Housing Companies Act — commercial venue rental and accommodation are not permitted in a residential apartment. This is a statutory restriction, not merely the shareholder's own commitment.",
+
+    housingCoTitle: "Housing company finances & infrastructure",
+    housingCoPdfsTitle: "Documents",
+    housingCoPdf1: "AGM invitation 19.5.2026",
+    housingCoPdf2: "Shareholder initiative — change of use",
+    housingCoPdf3: "Housing company financial statements 2025",
+    housingCoPdf4: "Maintenance needs survey 2026",
   },
 } as const;

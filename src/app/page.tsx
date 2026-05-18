@@ -245,6 +245,48 @@ export default function Home() {
 
       </section>
 
+      {/* ── KÄYTTÖTARKOITUKSEN MUUTOS VIREILLÄ ──────────────────────── */}
+      <section aria-label="Tiedote: käyttötarkoituksen muutos" className="bg-amber-50 border-y border-amber-300 py-5 px-4 shadow-sm">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-amber-900 text-sm lg:text-base text-center leading-relaxed">
+            <strong>{t.statusBannerEmphasis}</strong>{" "}{t.statusBannerText}
+          </p>
+        </div>
+      </section>
+
+      {/* ── SITOUMUS PITKÄAIKAISEEN ASUMISKÄYTTÖÖN ───────────────────── */}
+      <section aria-label={t.commitmentTitle} className="py-10 px-4 lg:py-20 lg:px-8 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn>
+            <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 shadow-md border border-slate-200">
+              <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-3 lg:mb-5">{t.commitmentTitle}</h2>
+              <p className="text-base text-slate-600 mb-6 lg:mb-8 leading-relaxed">{t.commitmentIntro}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8 mb-6 lg:mb-8">
+                <div className="space-y-3">
+                  {([t.commitmentYes1, t.commitmentYes2, t.commitmentYes3] as string[]).map((item, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <span className="text-emerald-600 font-black text-base mt-0.5 shrink-0">✓</span>
+                      <p className="text-sm lg:text-base text-slate-700 leading-snug">{item}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="space-y-3">
+                  {([t.commitmentNo1, t.commitmentNo2, t.commitmentNo3] as string[]).map((item, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <span className="text-red-500 font-black text-base mt-0.5 shrink-0">✗</span>
+                      <p className="text-sm lg:text-base text-slate-700 leading-snug">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-slate-50 rounded-xl p-4 lg:p-5 border border-slate-200">
+                <p className="text-xs lg:text-sm text-slate-600 leading-relaxed">{t.commitmentLegal}</p>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ── PERUSTIEDOT ──────────────────────────────────────────────── */}
       <section className="py-14 px-4 lg:py-28 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
@@ -304,7 +346,10 @@ export default function Home() {
       </section>
 
       {/* ── SIJOITTAJAN TIEDOT ───────────────────────────────────────── */}
-      <InvestorSection t={t} lang={lang} />
+      {/* Hidden 18.5.2026: pending change of use. Restore decision after 19.5.2026 yhtiökokous. */}
+      <div style={{ display: "none" }} aria-hidden="true">
+        <InvestorSection t={t} lang={lang} />
+      </div>
 
       {/* ── MUUTTOVALMIS KOTI ───────────────────────────────────────── */}
       <section className="py-14 px-4 lg:py-28 lg:px-8 bg-slate-50">
@@ -384,7 +429,10 @@ export default function Home() {
       <GrowthStory t={t} lang={lang} />
 
       {/* ── KUSTANNUSVERTAILU ───────────────────────────────────────── */}
-      <CostComparison t={t} lang={lang} />
+      {/* Hidden 18.5.2026: pending change of use. Restore decision after 19.5.2026 yhtiökokous. */}
+      <div style={{ display: "none" }} aria-hidden="true">
+        <CostComparison t={t} lang={lang} />
+      </div>
 
       {/* ── LYHYTAIKAINEN VUOKRAUS ──────────────────────────────────── */}
       <DayRental
@@ -501,6 +549,103 @@ export default function Home() {
                     <p className="text-slate-500 text-xs lg:text-lg mb-1 lg:mb-2">{item.label}</p>
                     <p className="text-sm lg:text-2xl font-bold text-slate-800">{item.value}</p>
                   </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── TALOYHTIÖN TALOUS JA TEKNIIKKA ─────────────────────────── */}
+      <section aria-label={t.housingCoTitle} className="py-14 px-4 lg:py-28 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn>
+            <h2 className="text-3xl lg:text-5xl font-bold text-center mb-8 lg:mb-16 text-slate-800">{t.housingCoTitle}</h2>
+          </FadeIn>
+
+          <FadeIn delay={100}>
+            <div className="bg-slate-50 rounded-2xl lg:rounded-3xl p-6 lg:p-10 border border-slate-200 shadow-sm mb-6 lg:mb-8">
+              <h3 className="text-xl lg:text-2xl font-bold text-slate-800 mb-3">
+                As Oy Kokkolan Pitkänsillankatu 18 — Talous ja kiinteistön kunto
+              </h3>
+              <p className="text-base text-slate-600 mb-8 leading-relaxed">
+                Terassitalon (LH 19) tuleva kehitys asuin- ja projektitoimistokäyttöön tukee
+                vahvasti koko taloyhtiön pitkän aikavälin vakautta.
+              </p>
+
+              <div className="space-y-8">
+                <div>
+                  <h4 className="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                    <span>💰</span> Vahva taloudellinen asema (Tilinpäätös 2025)
+                  </h4>
+                  <p className="text-sm text-slate-600 mb-3">Taloyhtiön taloutta on hoidettu vastuullisesti ja maksuvalmius on erinomaisella tasolla.</p>
+                  <ul className="space-y-2 text-sm text-slate-700">
+                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span><strong>Kassavarat:</strong> Yhtiön rahat ja pankkisaamiset tilikauden 2025 päättyessä olivat 54 244,88 €.</span></li>
+                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span><strong>Hoitoylijäämä:</strong> Siirtyvä hoitoylijäämä 35 077,64 €.</span></li>
+                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span><strong>Hoitovastike:</strong> 3,80 €/m² (1.7.2026 alkaen).</span></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                    <span>🔧</span> Suoritetut suuret investoinnit
+                  </h4>
+                  <p className="text-sm text-slate-600 mb-3">Kiinteistöstä (rak. 1943) on pidetty hyvää huolta. Raskaimmat investoinnit on jo selätetty:</p>
+                  <ul className="space-y-2 text-sm text-slate-700">
+                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>Hissien uusiminen ja korien kunnostus (2025)</span></li>
+                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>Kaukolämpölaitteiston uusiminen ja sähköautojen latauspisteet (2024)</span></li>
+                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>Julkisivu-urakka, parvekekaiteet ja ulko-ovet (2018)</span></li>
+                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>Viemäreiden uusiminen (2003)</span></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                    <span>📋</span> Tulevaisuuden näkymät ja 2030-luvun hankkeet
+                  </h4>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    Lähivuosien korjaustarpeet ovat maltillisia (mm. IV-nuohous 2026). Yhtiön on kuitenkin strategisesti
+                    varauduttava 2030-luvun alussa lähestyviin peruskorjauksiin (vesikatteen uusiminen ja alkuperäisten
+                    käyttövesiputkien uusimisen suunnittelu).
+                  </p>
+                </div>
+
+                <div className="bg-teal-50 rounded-xl p-5 lg:p-6 border border-teal-200">
+                  <h4 className="text-lg font-bold text-teal-800 mb-3 flex items-center gap-2">
+                    <span>🏠</span> Miksi LH 19 muutetaan asuinkäyttöön?
+                  </h4>
+                  <p className="text-sm text-teal-900 leading-relaxed">
+                    Lähestyvien 2030-luvun suurinvestointien vuoksi taloyhtiön tärkein yksittäinen turvaverkko on vakaa
+                    vastikevirta. Muuttamalla 225 neliömetrin huoneisto lailliseksi asuinhuoneistoksi, tilan häiriöherkkä
+                    satunnaiskäyttö päättyy. Samalla varmistetaan, että taloyhtiö saa tästä merkittävän kokoisesta
+                    huoneistosta luotettavan rahoituspohjan tulevien vuosikymmenten remontteja varten. Muutostyöt
+                    toteutetaan täysin osakkaan omalla kustannuksella.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={200}>
+            <div className="bg-slate-900 rounded-2xl p-6 lg:p-8">
+              <h3 className="text-white font-bold text-lg lg:text-xl mb-5">{t.housingCoPdfsTitle}</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {([
+                  { title: t.housingCoPdf1, href: "/docs/yhtiokokouskutsu-19-5-2026.pdf" },
+                  { title: t.housingCoPdf2, href: "/docs/osakas-aloite-kayttotarkoituksen-muutos.pdf" },
+                  { title: t.housingCoPdf3, href: "/docs/tilinpaatos-2025.pdf" },
+                  { title: t.housingCoPdf4, href: "/docs/kunnossapitotarveselvitys-2026.pdf" },
+                ] as { title: string; href: string }[]).map((doc, i) => (
+                  <a
+                    key={i}
+                    href={doc.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 bg-slate-800 hover:bg-slate-700 rounded-xl p-3 lg:p-4 transition-colors border border-white/10"
+                  >
+                    <span className="text-teal-400 text-xl shrink-0">📄</span>
+                    <span className="text-white text-sm font-semibold leading-snug">{doc.title}</span>
+                  </a>
                 ))}
               </div>
             </div>

@@ -20,65 +20,58 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "Pitkänsillankatu 18 | Myytävä ja vuokrattava toimitila Kokkolan keskustassa",
+    default: "Pitkänsillankatu 18 – Tuleva asuinhuoneisto / projektitoimisto | Kokkola",
     template: "%s | Pitkänsillankatu 18 Kokkola",
   },
   description:
-    "225 m² moderni liiketila Kokkolan ydinkeskustassa. Täydellinen projektitoimistoksi Arctial- ja KIP-hankkeisiin tai tuottavaksi sijoituskohteeksi. Tutustu ja pyydä esittely!",
+    "225 m² ainutlaatuinen tila Kokkolan ydinkeskustassa. Käyttötarkoituksen muutos asuinhuoneistoksi vireillä yhtiökokouksessa 19.5.2026. Soveltuu pitkäaikaiseen asumiseen, projektitoimistoksi, sekä lyhytaikaisesti pop-up- ja edustustilaksi.",
 
   keywords: [
     // ── SUOMI ──────────────────────────────────────────────────────
-    "projekti office Kokkola",
-    "projektitiimi toimisto Kokkola",
+    "asuinhuoneisto Kokkola",
+    "kotitoimisto Kokkola",
+    "projektitoimisto Kokkola",
+    "pop-up tila Kokkola",
+    "edustustila Kokkola",
+    "kokoustila Kokkola",
     "liiketila Kokkola",
     "liiketila myytävänä Kokkola",
     "Pitkänsillankatu 18",
     "Kokkola ydinkeskusta toimitila",
     "KIP-alue Kokkola",
-    "turnkey toimisto Kokkola",
     "palaveritila Kokkola",
-    "palaverihuone Kokkola",
-    "konfidentiaalinen kokoustila Kokkola",
     "sijoituskiinteistö Kokkola",
-    "liiketila sijoitus Kokkola",
-    "vuokratuotto 12-20 prosenttia",
     "Keliber projektitiimi Kokkola",
     "Boliden koordinaatio Kokkola",
     "Arctial toimisto Kokkola",
-    "suurhanke toimisto Kokkola",
-    "24/7 työtila Kokkola",
     "toimitila vuokraus Kokkola",
-    "yritysvuokraus Kokkola",
     "149000 liiketila Kokkola",
+    "käyttötarkoituksen muutos Kokkola",
 
     // ── RUOTSI ─────────────────────────────────────────────────────
     "affärslokal Karleby",
     "projektteam kontor Karleby",
     "KIP-området Karleby",
-    "kommersiell fastighet Karleby",
-    "investering Karleby",
-    "företagslokal Karleby",
-    "hyreslokal Karleby",
-    "hyresavkastning 12-20 %",
+    "bostadslägenhet Karleby",
+    "projektkontorsbruk Karleby",
+    "pop-up lokal Karleby",
+    "representationslokal Karleby",
     "mötesrum Karleby",
     "möteslokal Karleby",
-    "storprojekt kontor Karleby",
 
     // ── ENGLANTI ───────────────────────────────────────────────────
     "commercial space Kokkola",
+    "residential apartment Kokkola",
     "project team office Kokkola",
     "Pitkansillankatu 18",
     "KIP zone Kokkola",
     "investment property Kokkola",
-    "office space Kokkola",
-    "corporate rental Kokkola",
-    "gross yield 12-20%",
-    "meeting room Kokkola",
+    "pop-up space Kokkola",
+    "corporate event space Kokkola",
     "meeting room Kokkola",
     "business hub Finland",
     "Keliber Boliden Arctial office Kokkola",
-    "turnkey project office Finland",
-    "confidential meeting space Kokkola",
+    "change of use residential Kokkola",
   ],
   authors: [{ name: "Petri Kopsa", url: BASE_URL }],
   creator: "Petri Kopsa",
@@ -110,10 +103,10 @@ export const metadata: Metadata = {
     locale: "fi_FI",
     alternateLocale: ["sv_SE", "en_US"],
     url: BASE_URL,
-    siteName: "Pitkänsillankatu 18 – Projekti Office",
-    title: "Pitkänsillankatu 18 – Turnkey Projekti Office | Kokkola",
+    siteName: "Pitkänsillankatu 18 – Terassitalo Kokkola",
+    title: "Pitkänsillankatu 18 – Käyttötarkoituksen muutos vireillä | Kokkola",
     description:
-      "225 m² konfidentiaalinen projekti office Kokkolan ydinkeskustassa. 7 min KIP-alueelle. 149 000 € tai 1 500–2 500 €/kk. Bruttotuotto 12–20 %.",
+      "225 m² tila Kokkolan keskustassa. Yhtiökokouksen käsittelyssä 19.5.2026: muutos asuinhuoneistoksi. 149 000 € tai 1 500–2 500 €/kk.",
     images: [
       {
         url: "/og-image.jpg",
@@ -126,9 +119,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Pitkänsillankatu 18 – Turnkey Projekti Office | Kokkola",
+    title: "Pitkänsillankatu 18 – Käyttötarkoituksen muutos vireillä | Kokkola",
     description:
-      "225 m² turnkey projekti office Kokkolan ydinkeskustassa, 7 min KIP-alueelle. Konfidentiaalinen palaveri- ja koordinaatiotila suurhankkeille. 149 000 € tai 1 500–2 500 €/kk.",
+      "225 m² tila Kokkolan ydinkeskustassa. Yhtiökokouksen asialistalla 19.5.2026: muutos asuinhuoneistoksi. Sopii pitkäaikaiseen asumiseen, projektitoimistoksi tai pop-up-tilaksi. 149 000 €.",
     images: ["/og-image.jpg"],
   },
 
@@ -148,7 +141,7 @@ const jsonLd = {
       "@id": `${BASE_URL}/#office`,
       name: "Pitkänsillankatu 18",
       description:
-        "225 m² turnkey projekti office Kokkolan ydinkeskustassa. Konfidentiaalinen palaveri- ja koordinaatiotila suurhankkeille (Keliber, Boliden, Arctial). 7 min KIP-alueelle. Vuokrattavissa 1 500–2 500 €/kk tai myytävänä 149 000 €.",
+        "225 m² liiketila / tuleva asuinhuoneisto Kokkolan ydinkeskustassa. Käyttötarkoituksen muutos asuinhuoneistoksi vireillä (yhtiökokous 19.5.2026). Soveltuu pitkäaikaiseen asumiseen, projektitoimistoksi tai pop-up-tilaksi. 149 000 € tai 1 500–2 500 €/kk.",
       url: BASE_URL,
       image: `${BASE_URL}/og-image.jpg`,
       address: {
@@ -205,8 +198,8 @@ const jsonLd = {
       ],
       amenityFeature: [
         { "@type": "LocationFeatureSpecification", name: "KIP-alue", value: true },
-        { "@type": "LocationFeatureSpecification", name: "225 m² liiketila", value: true },
-        { "@type": "LocationFeatureSpecification", name: "Vuokratuotto 12–20 %", value: true },
+        { "@type": "LocationFeatureSpecification", name: "225 m² liiketila / tuleva asuinhuoneisto", value: true },
+        { "@type": "LocationFeatureSpecification", name: "Käyttötarkoituksen muutos vireillä 2026", value: true },
       ],
     },
     {
