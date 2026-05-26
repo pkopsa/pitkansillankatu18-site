@@ -338,6 +338,29 @@ export default function Home() {
       {/* ── SIJOITTAJAN TIEDOT ───────────────────────────────────────── */}
       <InvestorSection t={t} lang={lang} />
 
+      {/* ── SIJOITTAJAN TARKISTUSLISTA ──────────────────────────────── */}
+      <section className="py-10 px-4 lg:py-16 lg:px-8 bg-slate-50">
+        <div className="max-w-3xl mx-auto">
+          <FadeIn>
+            <h2 className="text-xl lg:text-2xl font-bold text-slate-800 mb-6 text-center">{t.investorChecklistTitle}</h2>
+            <ol className="space-y-3">
+              {[
+                t.investorChecklistItem1,
+                t.investorChecklistItem2,
+                t.investorChecklistItem3,
+                t.investorChecklistItem4,
+                t.investorChecklistItem5,
+              ].map((item, i) => (
+                <li key={i} className="flex gap-3 items-start bg-white rounded-xl p-4 border border-slate-100 shadow-sm">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
+                  <p className="text-sm lg:text-base text-slate-700 leading-relaxed">{item}</p>
+                </li>
+              ))}
+            </ol>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ── MUUTTOVALMIS KOTI ───────────────────────────────────────── */}
       <section className="py-14 px-4 lg:py-28 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
@@ -761,6 +784,7 @@ export default function Home() {
             <div className="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-white/10">
               <p className="text-slate-500 text-sm lg:text-xl">{t.footer}</p>
               <p className="text-slate-600 text-xs mt-4 leading-relaxed max-w-3xl">{t.footerDisclaimer}</p>
+              <p className="text-slate-500 text-xs mt-2">{t.updatedDate}</p>
             </div>
           </FadeIn>
         </div>

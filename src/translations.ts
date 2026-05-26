@@ -44,7 +44,7 @@ export const translations = {
     netSub: "vuodessa",
     netDesc: "Luvussa ei ole huomioitu tyhjäkäyttöä, vakuutuksia, ylläpitoa eikä tulevia remontteja.",
     investorSummary: "225 m² monikäyttöistä liiketilaa Kokkolan keskustassa. Ostamalla sijoitukseksi tai yrityksesi tukikohdaksi hyödyt kannattavasta vuokratuotosta.",
-    investorYieldDisclaimer: "Tuotto- ja vuokralaskelmat ovat vain esimerkkilaskelmia valituilla oletuksilla. Ne eivät ole tuottolupaus, arvio kohteen käyvästä vuokrasta tai ennuste tulevasta arvonkehityksestä. Laskelmissa ei välttämättä ole huomioitu kaikkia kustannuksia, kuten tyhjäkäyttöä, rahoituskuluja, veroja, vakuutuksia, ylläpitoa, remontteja tai taloyhtiön päätöksistä aiheutuvia kustannuksia. Ostajan tulee tehdä oma selvityksensä ennen ostopäätöstä.",
+    investorYieldDisclaimer: "Tuotto- ja vuokralaskelmat ovat vain esimerkkilaskelmia valituilla oletuksilla. Ne eivät ole tuottolupaus, arvio kohteen käyvästä vuokrasta tai ennuste tulevasta arvonkehityksestä. Laskelmissa ei välttämättä ole huomioitu kaikkia kustannuksia, kuten tyhjäkäyttöä, rahoituskuluja, veroja, vakuutuksia, ylläpitoa, remontteja, lupa- ja suunnittelukuluja tai taloyhtiön päätöksistä aiheutuvia kustannuksia. Ostajan tulee tehdä oma selvityksensä ja arvioida kohde omien tavoitteidensa ja riskinsietonsa perusteella.",
 
     // Tuottolaskuri
     yieldCalcBadge: "Tuottolaskuri",
@@ -76,7 +76,7 @@ export const translations = {
     growth4Desc: "Investointipäätöksen toteutuessa: arviolta 1 500 suoraa + 5 000 välillistä työpaikkaa. Ennakoitu pitkäaikainen kysyntä toimitiloille.",
 
     // Kysyntä
-    demandBadge: "Miksi kysyntänäkymät ovat vahvat?",
+    demandBadge: "Kokkolan kasvun taustaa",
     demandTitle: "Kolme kasvun voimaa",
     demand1Icon: "⚓",
     demand1Title: "Arctial-hanke",
@@ -86,7 +86,7 @@ export const translations = {
     demand2Desc: "Yli 100 M€ vuotuiset investoinnit KIP-alueelle tukevat pitkäaikaista kysyntää liiketiloille.",
     demand3Icon: "🏙️",
     demand3Title: "Rajallinen tarjonta",
-    demand3Desc: "Kokkolan ydinkeskustassa on rajallinen määrä laadukkaita toimitiloja — kysyntä ylittää tarjonnan.",
+    demand3Desc: "Ydinkeskustan joustaville toimitiloille voi olla kysyntää erityisesti yritys-, projekti- ja tiimikäytössä.",
 
     // Sijoittajaosion PDF-linkki
     investorPdfTitle: "Isännöitsijäntodistus",
@@ -231,9 +231,9 @@ export const translations = {
     why5Icon: "📅", why5Tag: "Saatavuus sovittavissa",
     why5Title: "Vapautuu sopimuksen mukaan",
     why5Desc: "Tila on vapautettavissa sopimuksen mukaan. Saatavuus ja aloitusajankohta sovitaan — pitkäaikainen käyttö on mahdollista ilman rakennusviiveitä.",
-    why6Icon: "📈", why6Tag: "Tuottava sijoitus",
-    why6Title: "Tuottava B2B-Sijoituskohde",
-    why6Desc: "KIP-alueen kasvu ja uudet työpaikat tukevat vahvaa kysyntää laadukkaalle toimistotilalle. Korkea vuokratuotto ja arvonnousupotentiaali tekevät tästä kiinnostavan sijoituksen.",
+    why6Icon: "📈", why6Tag: "Sijoituskohde",
+    why6Title: "B2B-Sijoituskohde",
+    why6Desc: "KIP-alueen kasvu ja uudet työpaikat tukevat kysyntänäkymiä laadukkaalle toimistotilalle. Tuottopotentiaali riippuu vuokratasosta, käyttöasteesta ja kuluista — ostajan tulee tehdä oma arvio.",
 
     // Lyhytaikainen vuokraus
     dayRentalBadge: "Lyhytaikainen vuokraus",
@@ -267,12 +267,19 @@ export const translations = {
 
     footer: "Pitkänsillankatu 18 · 67100 Kokkola · 225 m² · 119 000 €",
     footerDisclaimer: "Sivuston tiedot perustuvat myyjän käsitykseen ja taloyhtiön asiakirjoihin. Sitovat tiedot käyvät ilmi isännöitsijäntodistuksesta ja taloyhtiön virallisista asiakirjoista. VE2-jakoehdotus on vireillä eikä sitä ole hyväksytty. Pinta-alat ovat suuntaa-antavia. Tuotto- ja vuokralaskelmat ovat esimerkkilaskelmia, eivät lupauksia. Pidätämme oikeuden muutoksiin.",
-    ve2DisclaimerTitle: "Huom. — VE2-ehdotus on vasta alustava",
-    ve2DisclaimerBody: "Kohde on tällä hetkellä yksi liikehuoneisto. Sivustolla kuvattu mahdollinen jako liikehuoneistoksi ja loft-/asuintilaksi on vasta alustava muutosehdotus, joka on ehdotettu taloyhtiön hallitukselle eikä sitä ole vielä hyväksytty taloyhtiössä. Mahdollinen jako, käyttötarkoituksen muutos ja asuinkäyttö edellyttävät taloyhtiön päätöksiä, viranomaislupia, yhtiöjärjestyksen muutoksia ja tarvittavia rakennustöitä. Toteutumisesta ei anneta takuuta.",
-    areaDisclaimer: "Pinta-alat, pohjapiirrokset ja tilankäyttöä koskevat esimerkit ovat suuntaa-antavia. Viralliset pinta-alat, käyttötarkoitukset ja vastuut määräytyvät yhtiöjärjestyksen, isännöitsijäntodistuksen, rakennuslupien ja muiden virallisten asiakirjojen perusteella.",
-    housingCoRenovationNote: "Ostajan tulee tutustua isännöitsijäntodistukseen, tilinpäätökseen, kunnossapitotarveselvitykseen ja muihin virallisiin asiakirjoihin myös tulevien korjaustarpeiden ja kustannusten arvioimiseksi.",
-    housingCoVe2CostNote: "Ehdotuksen lähtökohtana on, että osakkeenomistaja vastaa muutokseen liittyvistä suunnittelu-, lupa-, remontti- ja hallinnollisista kustannuksista. Lopullinen kustannusten ja vastuiden jakautuminen määräytyy taloyhtiön päätösten ja virallisten asiakirjojen perusteella.",
-    energyCertNote: "Energiatodistus toimitetaan ostajalle kaupanteon yhteydessä.",
+    ve2DisclaimerTitle: "Tärkeä huomio — VE2-ehdotus",
+    ve2DisclaimerBody: "Kohde on tällä hetkellä yksi liikehuoneisto. Sivustolla kuvattu mahdollinen jako liikehuoneistoksi ja loft-/asuintilaksi on vasta alustava muutosehdotus, joka on ehdotettu taloyhtiön hallitukselle eikä sitä ole vielä hyväksytty taloyhtiössä. Mahdollinen jako, käyttötarkoituksen muutos ja asuinkäyttö edellyttävät taloyhtiön päätöksiä, viranomaislupia, yhtiöjärjestyksen muutoksia, rekisteröintejä ja tarvittavia rakennustöitä. Toteutumisesta ei anneta takuuta.",
+    areaDisclaimer: "Pinta-alat, pohjapiirrokset, visualisoinnit ja tilankäyttöä koskevat esimerkit ovat suuntaa-antavia. Viralliset pinta-alat, käyttötarkoitukset, hallintaoikeudet ja vastuut määräytyvät yhtiöjärjestyksen, isännöitsijäntodistuksen, rakennuslupien, viranomaispäätösten ja muiden kaupan virallisten asiakirjojen perusteella.",
+    housingCoRenovationNote: "Taloyhtiössä on tehty useita merkittäviä korjauksia. Ostajan tulee kuitenkin tutustua isännöitsijäntodistukseen, tilinpäätökseen, kunnossapitotarveselvitykseen ja muihin virallisiin asiakirjoihin myös tulevien korjaustarpeiden ja kustannusten arvioimiseksi.",
+    housingCoVe2CostNote: "Ehdotuksen lähtökohtana on, että osakkeenomistaja vastaa muutokseen liittyvistä suunnittelu-, lupa-, remontti- ja hallinnollisista kustannuksista. Lopullinen kustannusten ja vastuiden jakautuminen määräytyy taloyhtiön päätösten, virallisten asiakirjojen ja mahdollisten viranomaisvaatimusten perusteella.",
+    energyCertNote: "Energiatodistus toimitetaan ostajalle osana kaupan asiakirjoja.",
+    investorChecklistTitle: "Sijoittajan tarkistuslista",
+    investorChecklistItem1: "Nykytila: kohde on tällä hetkellä yksi liikehuoneisto.",
+    investorChecklistItem2: "Muutospotentiaali: VE2 on alustava ehdotus, ei hyväksytty muutos.",
+    investorChecklistItem3: "Luvat ja päätökset: mahdollinen jako tai asuinkäyttö edellyttää taloyhtiön päätöksiä ja viranomaislupia.",
+    investorChecklistItem4: "Tuottolaskelmat: esimerkkilaskelmia, eivät tuottolupauksia.",
+    investorChecklistItem5: "Asiakirjat: ostajan tulee tutustua virallisiin asiakirjoihin ennen kaupantekoa.",
+    updatedDate: "Päivitetty 27.5.2026",
 
     // Statusbanneri — VE2-ehdotus vireillä
     statusBannerEmphasis: "Huom. — VE2-ehdotus:",
@@ -354,7 +361,7 @@ export const translations = {
     netSub: "per år",
     netDesc: "Siffran beaktar inte vakans, försäkringar, underhåll eller framtida renoveringar.",
     investorSummary: "225 m² flexibel affärslokal i Karlebys centrum. Köp som investering eller som företagets egen bas.",
-    investorYieldDisclaimer: "Avkastnings- och hyresberäkningar är enbart exempelkalkyler med valda antaganden. De utgör inte ett avkastningslöfte, en bedömning av marknadshyran eller en prognos för framtida värdeutveckling. Beräkningarna beaktar inte nödvändigtvis vakans, finansieringskostnader, skatter, försäkringar, underhåll, renoveringar eller kostnader till följd av bolagsstämmobeslut. Köparen bör göra en egen utredning innan köpbeslutet fattas.",
+    investorYieldDisclaimer: "Avkastnings- och hyresberäkningarna är endast illustrativa exempel baserade på valda antaganden. De är inte en garanti för avkastning, en bedömning av marknadshyra eller en prognos för framtida värdeutveckling. Beräkningarna omfattar inte nödvändigtvis alla kostnader, såsom vakans, finansieringskostnader, skatter, försäkringar, underhåll, renoveringar, tillstånds- och planeringskostnader eller kostnader som följer av bostadsbolagets beslut. Köparen ska göra sin egen bedömning utifrån sina egna mål och sin risktolerans.",
 
     // Avkastningskalkylator
     yieldCalcBadge: "Avkastningskalkylator",
@@ -386,7 +393,7 @@ export const translations = {
     growth4Desc: "Om investeringsbeslutet fattas: uppskattningsvis 1 500 direkta + 5 000 indirekta arbetstillfällen. Förväntad långvarig efterfrågan på lokaler.",
 
     // Efterfrågan
-    demandBadge: "Varför är efterfrågeläget starkt?",
+    demandBadge: "Bakgrunden till Karlebys tillväxt",
     demandTitle: "Tre tillväxtkrafter",
     demand1Icon: "⚓",
     demand1Title: "Arctial-projektet",
@@ -396,7 +403,7 @@ export const translations = {
     demand2Desc: "Över 100 M€ i årliga investeringar i KIP-området stödjer långvarig efterfrågan på affärslokaler.",
     demand3Icon: "🏙️",
     demand3Title: "Begränsat utbud",
-    demand3Desc: "I Karlebys stadskärna finns ett begränsat antal kvalitetslokaler — efterfrågan överstiger utbudet.",
+    demand3Desc: "Det kan finnas efterfrågan på flexibla affärslokaler i centrum, särskilt för företags-, projekt- och teamanvändning.",
 
     // PDF-länk i investeraravsnittet
     investorPdfTitle: "Förvaltningsintyg",
@@ -537,9 +544,9 @@ export const translations = {
     why5Icon: "📅", why5Tag: "Tillgänglighet förhandlingsbar",
     why5Title: "Frigörs enligt avtal",
     why5Desc: "Lokalen kan frigöras enligt avtal. Tillgänglighet och startdatum är förhandlingsbara — långvarig användning möjlig utan byggförseningar.",
-    why6Icon: "📈", why6Tag: "Lönsam investering",
-    why6Title: "Produktiv B2B-investering",
-    why6Desc: "KIP-områdets tillväxt och nya arbetstillfällen stödjer stark efterfrågan på kvalitetskontorslokaler. Hög hyresavkastning och värdestegringspotential.",
+    why6Icon: "📈", why6Tag: "Investeringsobjekt",
+    why6Title: "B2B-Investeringsobjekt",
+    why6Desc: "KIP-områdets tillväxt och nya arbetstillfällen stödjer efterfrågeläget för kvalitetskontorslokaler. Avkastningspotentialen beror på hyresnivå, beläggningsgrad och kostnader — köparen bör göra en egen bedömning.",
 
     // Korttidsuthyrning
     dayRentalBadge: "Korttidsuthyrning",
@@ -573,12 +580,19 @@ export const translations = {
 
     footer: "Pitkänsillankatu 18 · 67100 Karleby · 225 m² · 119 000 €",
     footerDisclaimer: "Informationen på webbplatsen baseras på säljarens uppfattning och bostadsbolagets dokument. Bindande uppgifter framgår av förvaltningsintyget och bostadsbolagets officiella handlingar. VE2-uppdelningsförslaget är under behandling och har inte godkänts. Ytor är ungefärliga. Avkastnings- och hyresberäkningar är exempelkalkyler, inte löften. Vi förbehåller oss rätten till ändringar.",
-    ve2DisclaimerTitle: "Obs. — VE2-förslaget är preliminärt",
-    ve2DisclaimerBody: "Objektet är för närvarande en affärslokal. Den möjliga uppdelning i affärslokal och loft-/bostadslokal som beskrivs på webbplatsen är ett preliminärt förslag som föreslagits bolagets styrelse och ännu inte godkänts av bostadsbolaget. Möjlig uppdelning, ändring av användningsändamål och bostadsbruk kräver bolagsstämmobeslut, myndighetstillstånd, stadgeändringar och nödvändiga byggarbeten. Genomförandet är inte garanterat.",
-    areaDisclaimer: "Ytor, planlösningar och exempel på lokalanvändning är vägledande. Officiella ytor, användningsändamål och ansvar fastställs av bolagsordningen, förvaltningsintyget, bygglov och övriga officiella handlingar.",
-    housingCoRenovationNote: "Köparen bör ta del av förvaltningsintyget, bokslutet, underhållsbehovsutredningen och övriga officiella handlingar för att bedöma framtida reparationsbehov och kostnader.",
-    housingCoVe2CostNote: "Förslaget utgår från att aktieägaren ansvarar för planerings-, tillstånds-, renoverings- och administrativa kostnader. Den slutliga fördelningen av kostnader och ansvar fastställs av bolagsstämmobeslut och officiella handlingar.",
-    energyCertNote: "Energicertifikat tillhandahålls köparen i samband med köpet.",
+    ve2DisclaimerTitle: "Viktig information — VE2-förslaget",
+    ve2DisclaimerBody: "Objektet är för närvarande en affärslokal. Den möjliga uppdelningen i en affärslokal och ett loft-/bostadsliknande utrymme som beskrivs på webbplatsen är endast ett preliminärt ändringsförslag som har föreslagits för bostadsbolagets styrelse och ännu inte har godkänts av bostadsbolaget. En eventuell uppdelning, ändrad användning eller bostadsanvändning förutsätter nödvändiga beslut i bostadsbolaget, myndighetstillstånd, ändringar i bolagsordningen, registreringar och byggarbeten. Ingen garanti ges för att förslaget godkänns eller genomförs.",
+    areaDisclaimer: "Ytor, planritningar, visualiseringar och exempel på användning av utrymmen är endast riktgivande. Officiella ytor, användningsändamål, besittningsrätter och ansvar fastställs enligt bolagsordningen, förvaltningsintyget, bygglov, myndighetsbeslut och övriga officiella köpehandlingar.",
+    housingCoRenovationNote: "Flera betydande reparationer har genomförts i bostadsbolaget. Köparen bör dock ta del av förvaltningsintyget, bokslutet, underhållsbehovsutredningen och övriga officiella handlingar för att bedöma framtida reparationsbehov och kostnader.",
+    housingCoVe2CostNote: "Förslaget bygger på utgångspunkten att aktieägaren ansvarar för planerings-, tillstånds-, renoverings- och administrativa kostnader i anslutning till ändringen. Den slutliga fördelningen av kostnader och ansvar fastställs genom bostadsbolagets beslut, officiella handlingar och eventuella myndighetskrav.",
+    energyCertNote: "Energicertifikatet lämnas till köparen som en del av köpehandlingarna.",
+    investorChecklistTitle: "Checklista för investerare",
+    investorChecklistItem1: "Nuläge: objektet är för närvarande en affärslokal.",
+    investorChecklistItem2: "Utvecklingspotential: VE2 är ett preliminärt förslag, inte en godkänd ändring.",
+    investorChecklistItem3: "Tillstånd och beslut: möjlig uppdelning eller bostadsbruk kräver bostadsbolagets beslut och myndighetstillstånd.",
+    investorChecklistItem4: "Avkastningsberäkningar: exempelkalkyler, inte avkastningslöften.",
+    investorChecklistItem5: "Handlingar: köparen bör ta del av officiella handlingar innan köpet.",
+    updatedDate: "Uppdaterad 27.5.2026",
 
     statusBannerEmphasis: "Obs. — VE2-förslag:",
     statusBannerText: "Objektet är för närvarande en affärslokal (225 m²). Pågående VE2-uppdelning till möjlig affärslokal (ca 131 m²) och möjlig loft-/bostadslokal (ca 94 m²) är ett preliminärt förslag — ännu inte godkänt av bostadsbolaget. Genomförandet kräver bolagsstämmobeslut, tillstånd och byggarbeten. Fastigheten säljs som helhet för 119 000 €.",
@@ -657,7 +671,7 @@ export const translations = {
     netSub: "per year",
     netDesc: "Figure does not account for vacancy, insurance, upkeep or future renovations.",
     investorSummary: "225 m² versatile commercial space in Kokkola city centre. Buy as an investment or your company's own base.",
-    investorYieldDisclaimer: "Yield and rent calculations are illustrative examples based on selected assumptions only. They do not constitute a guarantee of return, an assessment of market rent or a forecast of future value appreciation. Calculations may not account for all costs such as vacancy, financing, taxes, insurance, maintenance, renovations or costs arising from housing company decisions. The buyer should conduct their own due diligence before making a purchase decision.",
+    investorYieldDisclaimer: "Return and rental calculations are illustrative examples based on selected assumptions only. They are not a return guarantee, a rental valuation or a forecast of future value development. The calculations may not include all costs, such as vacancy, financing costs, taxes, insurance, maintenance, renovations, permit and planning costs or costs arising from housing company decisions. The buyer must conduct their own assessment based on their own objectives and risk tolerance.",
 
     // Yield calculator
     yieldCalcBadge: "Yield Calculator",
@@ -689,7 +703,7 @@ export const translations = {
     growth4Desc: "If investment decision is made: estimated 1,500 direct + 5,000 indirect jobs. Anticipated long-term demand for commercial space.",
 
     // Demand
-    demandBadge: "Why is demand outlook strong?",
+    demandBadge: "Background to Kokkola's growth",
     demandTitle: "Three growth drivers",
     demand1Icon: "⚓",
     demand1Title: "Arctial project",
@@ -699,7 +713,7 @@ export const translations = {
     demand2Desc: "Over €100M in annual KIP zone investments support long-term demand for commercial space.",
     demand3Icon: "🏙️",
     demand3Title: "Limited supply",
-    demand3Desc: "Kokkola city centre has a limited number of quality commercial spaces — demand exceeds supply.",
+    demand3Desc: "There may be demand for flexible city-centre commercial premises, particularly for business, project and team use.",
 
     // Investor section PDF link
     investorPdfTitle: "Management certificate",
@@ -840,9 +854,9 @@ export const translations = {
     why5Icon: "📅", why5Tag: "Availability negotiable",
     why5Title: "Available subject to agreement",
     why5Desc: "The space can be made available subject to agreement. Start date and terms are negotiable — long-term occupancy possible without construction delays.",
-    why6Icon: "📈", why6Tag: "Profitable investment",
-    why6Title: "Productive B2B Investment Asset",
-    why6Desc: "KIP zone growth and new jobs support strong demand for quality office space. High rental yield and capital appreciation potential make this an attractive investment.",
+    why6Icon: "📈", why6Tag: "Investment opportunity",
+    why6Title: "B2B Investment Asset",
+    why6Desc: "KIP zone growth and new jobs support demand prospects for quality office space. Return potential depends on rent level, occupancy and costs — the buyer should conduct their own assessment.",
 
     // Short-term rental
     dayRentalBadge: "Short-term rental",
@@ -876,12 +890,19 @@ export const translations = {
 
     footer: "Pitkänsillankatu 18 · 67100 Kokkola · 225 m² · €119,000",
     footerDisclaimer: "Information on this website is based on the seller's knowledge and housing company documents. Binding information is provided in the management certificate and the housing company's official documents. The VE2 split proposal is pending and has not been approved. Floor areas are indicative. Yield and rent calculations are illustrative examples, not guarantees. We reserve the right to make changes.",
-    ve2DisclaimerTitle: "Note — VE2 proposal is preliminary only",
-    ve2DisclaimerBody: "The property is currently a single commercial unit. The possible split into a commercial unit and a loft/residential space described on this website is a preliminary proposal submitted to the housing company board and not yet approved by the housing company. Any split, change of use and residential occupancy requires housing company resolutions, regulatory permits, changes to the articles of association and necessary construction work. Realisation is not guaranteed.",
-    areaDisclaimer: "Floor areas, floor plans and space usage examples are indicative. Official areas, permitted uses and responsibilities are determined by the articles of association, management certificate, building permits and other official documents.",
-    housingCoRenovationNote: "The buyer should review the management certificate, financial statements, maintenance needs survey and other official documents to assess future repair needs and costs.",
-    housingCoVe2CostNote: "The proposal assumes the shareholder bears planning, permit, renovation and administrative costs. The final allocation of costs and responsibilities is determined by housing company decisions and official documents.",
-    energyCertNote: "Energy certificate will be provided to the buyer at the time of purchase.",
+    ve2DisclaimerTitle: "Important note — VE2 proposal",
+    ve2DisclaimerBody: "The property is currently one commercial unit. The possible division into a commercial unit and a loft/residential-type space described on this website is only a preliminary proposal submitted to the housing company's board and has not yet been approved by the housing company. Any division, change of use or residential use requires the necessary housing company decisions, authority permits, amendments to the articles of association, registrations and construction work. No guarantee is given that the proposal will be approved or implemented.",
+    areaDisclaimer: "Areas, floor plans, visualisations and examples of space usage are indicative only. Official areas, permitted uses, rights of possession and responsibilities are determined by the articles of association, property manager's certificate, building permits, authority decisions and other official transaction documents.",
+    housingCoRenovationNote: "Several significant repairs have been carried out in the housing company. However, the buyer should review the management certificate, financial statements, maintenance needs survey and other official documents to assess future repair needs and costs.",
+    housingCoVe2CostNote: "The proposal is based on the assumption that the shareholder would be responsible for the planning, permit, renovation and administrative costs related to the change. The final allocation of costs and responsibilities will be determined by the housing company's decisions, official documents and any authority requirements.",
+    energyCertNote: "The energy certificate will be provided to the buyer as part of the transaction documents.",
+    investorChecklistTitle: "Investor checklist",
+    investorChecklistItem1: "Current status: the property is currently a single commercial unit.",
+    investorChecklistItem2: "Conversion potential: VE2 is a preliminary proposal, not an approved change.",
+    investorChecklistItem3: "Permits and decisions: any division or residential use requires housing company resolutions and authority permits.",
+    investorChecklistItem4: "Yield calculations: illustrative examples, not return guarantees.",
+    investorChecklistItem5: "Documents: the buyer should review official documents before completing a purchase.",
+    updatedDate: "Updated 27 May 2026",
 
     statusBannerEmphasis: "Note — VE2 Proposal:",
     statusBannerText: "The property is currently a single commercial unit (225 m²). The proposed VE2 split into a possible commercial unit (approx. 131 m²) and a possible loft/residential space (approx. 94 m²) is a preliminary proposal — not yet approved by the housing company. Realisation requires housing company resolutions, permits and construction work. The property is sold as a whole for €119,000.",
