@@ -264,7 +264,7 @@ export default function Home() {
       </section>
 
       {/* ── KÄYTTÖTARKOITUKSEN MUUTOS VIREILLÄ ──────────────────────── */}
-      <section aria-label="Tiedote: käyttötarkoituksen muutos" className="bg-amber-50 border-y border-amber-300 py-5 px-4 shadow-sm">
+      <section aria-label="VE2-ehdotus" className="bg-amber-50 border-y border-amber-300 py-5 px-4 shadow-sm">
         <div className="max-w-4xl mx-auto">
           <p className="text-amber-900 text-sm lg:text-base text-center leading-relaxed">
             <strong>{t.statusBannerEmphasis}</strong>{" "}{t.statusBannerText}
@@ -281,7 +281,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
             {(([
               { label: t.detailSize,  value: "225 m²",  sub: t.detailSizeSub,  inline: false },
-              { label: t.detailFloor, value: <>Pitkänsillankatu&nbsp;<wbr />18</>, sub: t.detailFloorSub, inline: false },
+              { label: t.detailFloor, value: <><strong>Terassitalo</strong><br /><span className="font-normal text-[0.85em]">Pitkänsillankatu&nbsp;18</span><br /><span className="font-normal text-[0.8em]">{t.detailFloorSub}</span></>, sub: "", inline: false },
               { label: t.detailPrice, value: t.detailPriceVal, sub: t.detailPriceSub, inline: false },
               { label: t.detailMaint, value: <>1&nbsp;500–2&nbsp;500&nbsp;Euroa</>, sub: t.detailMaintSub, inline: false },
             ]) as Array<{ label: string; value: ReactNode; sub: string; inline: boolean }>).map((item, i) => (
@@ -545,62 +545,50 @@ export default function Home() {
           <FadeIn delay={100}>
             <div className="bg-slate-50 rounded-2xl lg:rounded-3xl p-6 lg:p-10 border border-slate-200 shadow-sm mb-6 lg:mb-8">
               <h3 className="text-xl lg:text-2xl font-bold text-slate-800 mb-3">
-                As Oy Kokkolan Pitkänsillankatu 18 — Talous ja kiinteistön kunto
+                {t.housingCoSubtitle}
               </h3>
               <p className="text-base text-slate-600 mb-8 leading-relaxed">
-                Terassitalon (LH 19) vireillä oleva VE2-kehitysehdotus tukee
-                vahvasti koko taloyhtiön pitkän aikavälin vakautta.
+                {t.housingCoIntro}
               </p>
 
               <div className="space-y-8">
                 <div>
-                  <h4 className="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                    <span>💰</span> Vahva taloudellinen asema (Tilinpäätös 2025)
+                  <h4 className="text-lg font-bold text-slate-800 mb-3">
+                    {t.housingCoFinanceTitle}
                   </h4>
-                  <p className="text-sm text-slate-600 mb-3">Taloyhtiön taloutta on hoidettu vastuullisesti ja maksuvalmius on erinomaisella tasolla.</p>
+                  <p className="text-sm text-slate-600 mb-3">{t.housingCoFinanceIntro}</p>
                   <ul className="space-y-2 text-sm text-slate-700">
-                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span><strong>Kassavarat:</strong> Yhtiön rahat ja pankkisaamiset tilikauden 2025 päättyessä olivat 54 244,88 €.</span></li>
-                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span><strong>Hoitoylijäämä:</strong> Siirtyvä hoitoylijäämä 35 077,64 €.</span></li>
-                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span><strong>Hoitovastike:</strong> 3,80 €/m² (1.7.2026 alkaen).</span></li>
+                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>{t.housingCoCash}</span></li>
+                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>{t.housingCoSurplus}</span></li>
+                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>{t.housingCoMaintFee}</span></li>
                   </ul>
                 </div>
 
                 <div>
-                  <h4 className="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                    <span>🔧</span> Suoritetut suuret investoinnit
+                  <h4 className="text-lg font-bold text-slate-800 mb-3">
+                    {t.housingCoInvestTitle}
                   </h4>
-                  <p className="text-sm text-slate-600 mb-3">Kiinteistöstä (rak. 1943) on pidetty hyvää huolta. Raskaimmat investoinnit on jo selätetty:</p>
+                  <p className="text-sm text-slate-600 mb-3">{t.housingCoInvestIntro}</p>
                   <ul className="space-y-2 text-sm text-slate-700">
-                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>Hissien uusiminen ja korien kunnostus (2025)</span></li>
-                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>Kaukolämpölaitteiston uusiminen ja sähköautojen latauspisteet (2024)</span></li>
-                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>Julkisivu-urakka, parvekekaiteet ja ulko-ovet (2018)</span></li>
-                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>Viemäreiden uusiminen (2003)</span></li>
+                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>{t.housingCoInvest1}</span></li>
+                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>{t.housingCoInvest2}</span></li>
+                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>{t.housingCoInvest3}</span></li>
+                    <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>{t.housingCoInvest4}</span></li>
                   </ul>
                 </div>
 
                 <div>
-                  <h4 className="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                    <span>📋</span> Tulevaisuuden näkymät ja 2030-luvun hankkeet
+                  <h4 className="text-lg font-bold text-slate-800 mb-3">
+                    {t.housingCoFutureTitle}
                   </h4>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    Lähivuosien korjaustarpeet ovat maltillisia (mm. IV-nuohous 2026). Yhtiön on kuitenkin strategisesti
-                    varauduttava 2030-luvun alussa lähestyviin peruskorjauksiin (vesikatteen uusiminen ja alkuperäisten
-                    käyttövesiputkien uusimisen suunnittelu).
-                  </p>
+                  <p className="text-sm text-slate-600 leading-relaxed">{t.housingCoFutureText}</p>
                 </div>
 
                 <div className="bg-teal-50 rounded-xl p-5 lg:p-6 border border-teal-200">
-                  <h4 className="text-lg font-bold text-teal-800 mb-3 flex items-center gap-2">
-                    <span>📋</span> VE2-ehdotus lyhyesti
+                  <h4 className="text-lg font-bold text-teal-800 mb-3">
+                    {t.housingCoVe2Title}
                   </h4>
-                  <p className="text-sm text-teal-900 leading-relaxed">
-                    Vireillä olevan VE2-ehdotuksen mukaan 225 m²:n liiketila (LH 19) jaetaan kahdeksi erilliseksi
-                    osakeryhmäksi: etuosan liikehuoneistoksi (n. 131 m²) ja takaosan/alakerran Loft-tyyppiseksi
-                    asuinhuoneistoksi (n. 94 m²). Ehdotus on taloyhtiön ylimääräisen yhtiökokouksen käsiteltävänä.
-                    Hyväksyttynä se tarjoaa ostajalle joustavuutta ja riskien hajautusta — tila on käytettävissä
-                    joko kokonaisuutena tai kahtena erillisenä yksikkönä. Tila myydään tällä hetkellä yhtenä
-                    kokonaisuutena hintaan 119 000 €.
-                  </p>
+                  <p className="text-sm text-teal-900 leading-relaxed">{t.housingCoVe2Text}</p>
                 </div>
               </div>
             </div>
