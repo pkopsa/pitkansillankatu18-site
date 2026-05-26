@@ -263,11 +263,14 @@ export default function Home() {
 
       </section>
 
-      {/* ── KÄYTTÖTARKOITUKSEN MUUTOS VIREILLÄ ──────────────────────── */}
-      <section aria-label="VE2-ehdotus" className="bg-amber-50 border-y border-amber-300 py-5 px-4 shadow-sm">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-amber-900 text-sm lg:text-base text-center leading-relaxed">
-            <strong>{t.statusBannerEmphasis}</strong>{" "}{t.statusBannerText}
+      {/* ── VE2-EHDOTUS VIREILLÄ — NÄKYVÄ SELVENNYS ────────────────── */}
+      <section aria-label="VE2-ehdotus" className="bg-amber-50 border-y-2 border-amber-400 py-6 px-4 shadow-sm">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-amber-900 text-sm lg:text-base font-bold mb-2 text-center tracking-wide uppercase">
+            {t.ve2DisclaimerTitle}
+          </p>
+          <p className="text-amber-800 text-sm lg:text-[0.95rem] text-center leading-relaxed">
+            {t.ve2DisclaimerBody}
           </p>
         </div>
       </section>
@@ -278,13 +281,12 @@ export default function Home() {
           <FadeIn>
             <h2 className="text-3xl lg:text-5xl 2xl:text-6xl font-bold text-center mb-10 lg:mb-20 2xl:mb-24 text-slate-800">{t.detailsTitle}</h2>
           </FadeIn>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
             {(([
               { label: t.detailSize,   value: "225 m²",             sub: t.detailSizeSub,  inline: false },
               { label: t.detailFloor,  value: "Terassitalo",         sub: <><span className="block break-words">Pitkänsillankatu&nbsp;18</span><span className="block">{t.detailFloorSub}</span></>, inline: false },
               { label: t.detailPrice,  value: t.detailPriceVal,      sub: t.detailPriceSub, inline: false },
               { label: t.detailMaint,  value: <>1&nbsp;500–2&nbsp;500&nbsp;€</>, sub: t.detailMaintSub, inline: false },
-              { label: t.energyLabel,  value: t.energyValue,         sub: t.energySub,      inline: false },
             ]) as Array<{ label: string; value: ReactNode; sub: ReactNode; inline: boolean }>).map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 text-center shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
@@ -295,6 +297,8 @@ export default function Home() {
               </FadeIn>
             ))}
           </div>
+          <p className="text-slate-400 text-xs text-center mt-6 leading-relaxed max-w-3xl mx-auto">{t.areaDisclaimer}</p>
+          <p className="text-slate-400 text-xs text-center mt-1">{t.energyCertNote}</p>
         </div>
       </section>
 
@@ -577,6 +581,7 @@ export default function Home() {
                     <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>{t.housingCoInvest3}</span></li>
                     <li className="flex gap-2"><span className="text-slate-400 shrink-0">•</span><span>{t.housingCoInvest4}</span></li>
                   </ul>
+                  <p className="text-xs text-slate-500 mt-3 leading-relaxed">{t.housingCoRenovationNote}</p>
                 </div>
 
                 <div>
@@ -590,7 +595,8 @@ export default function Home() {
                   <h4 className="text-lg font-bold text-teal-800 mb-3">
                     {t.housingCoVe2Title}
                   </h4>
-                  <p className="text-sm text-teal-900 leading-relaxed">{t.housingCoVe2Text}</p>
+                  <p className="text-sm text-teal-900 leading-relaxed mb-3">{t.housingCoVe2Text}</p>
+                  <p className="text-xs text-teal-700 leading-relaxed border-t border-teal-200 pt-3">{t.housingCoVe2CostNote}</p>
                 </div>
               </div>
             </div>
@@ -602,8 +608,7 @@ export default function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {([
                   { title: t.housingCoPdf1, href: "/docs/Ehdotus_Yhtiokokoukselle_VE2.pdf" },
-                  { title: t.housingCoPdf2, href: "/docs/tilinpaatos-2025.pdf" },
-                  { title: t.housingCoPdf3, href: "/docs/kunnossapitotarveselvitys-2026.pdf" },
+                  { title: t.housingCoPdf3, href: "/docs/kunnossapito2025.pdf" },
                 ] as { title: string; href: string }[]).map((doc, i) => (
                   <a
                     key={i}
@@ -616,6 +621,10 @@ export default function Home() {
                     <span className="text-white text-sm font-semibold leading-snug">{doc.title}</span>
                   </a>
                 ))}
+                <div className="flex items-center gap-3 bg-slate-800/50 rounded-xl p-3 lg:p-4 border border-white/5">
+                  <span className="text-slate-500 text-xl shrink-0">📄</span>
+                  <span className="text-slate-400 text-sm leading-snug">{t.housingCoPdf2} — {lang === "fi" ? "saatavilla pyynnöstä" : lang === "sv" ? "tillgänglig på begäran" : "available on request"}</span>
+                </div>
               </div>
             </div>
           </FadeIn>

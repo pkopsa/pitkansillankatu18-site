@@ -44,7 +44,7 @@ export const translations = {
     netSub: "vuodessa",
     netDesc: "Luvussa ei ole huomioitu tyhjäkäyttöä, vakuutuksia, ylläpitoa eikä tulevia remontteja.",
     investorSummary: "225 m² monikäyttöistä liiketilaa Kokkolan keskustassa. Ostamalla sijoitukseksi tai yrityksesi tukikohdaksi hyödyt kannattavasta vuokratuotosta.",
-    investorYieldDisclaimer: "Esitetyt tuottoluvut ovat laskennallisia esimerkkejä valituilla oletuksilla, eivät tuottolupauksia. Toteutunut tuotto riippuu mm. vuokratasosta, käyttöasteesta ja kuluista.",
+    investorYieldDisclaimer: "Tuotto- ja vuokralaskelmat ovat vain esimerkkilaskelmia valituilla oletuksilla. Ne eivät ole tuottolupaus, arvio kohteen käyvästä vuokrasta tai ennuste tulevasta arvonkehityksestä. Laskelmissa ei välttämättä ole huomioitu kaikkia kustannuksia, kuten tyhjäkäyttöä, rahoituskuluja, veroja, vakuutuksia, ylläpitoa, remontteja tai taloyhtiön päätöksistä aiheutuvia kustannuksia. Ostajan tulee tehdä oma selvityksensä ennen ostopäätöstä.",
 
     // Tuottolaskuri
     yieldCalcBadge: "Tuottolaskuri",
@@ -210,7 +210,7 @@ export const translations = {
     benefit2Desc: "Optimoi Connectivity. Ydinkeskustan korkean profiilin sijainti, josta nopea pääsy (7 min) KIP-alueen major-toimijoille (Boliden, Keliber, Arctial).",
     benefit3Icon: "📈",
     benefit3Title: "Kannattava investointi",
-    benefit3Desc: "Vakaa ydinkeskustan liiketila Kokkolassa. Vireillä oleva VE2-ehdotus mahdollistaa jakamisen liikehuoneistoksi (n. 131 m²) ja Loft-asuinhuoneistoksi (n. 94 m²). Nyt myynnissä yhtenä kokonaisuutena 119 000 € hinnalla.",
+    benefit3Desc: "Vakaa ydinkeskustan liiketila Kokkolassa. Vireillä oleva VE2-ehdotus voisi mahdollistaa jakamisen liikehuoneistoksi (n. 131 m²) ja mahdolliseksi loft-/asuintilaksi (n. 94 m²) — ehdotusta ei ole vielä hyväksytty. Nyt myynnissä yhtenä kokonaisuutena 119 000 € hinnalla.",
 
     // Miksi tämä toimitila
     whyBadge: "Miksi tämä toimitila",
@@ -266,11 +266,17 @@ export const translations = {
     formBookViewing: "Varaa virtuaalinen tai fyysinen esittely",
 
     footer: "Pitkänsillankatu 18 · 67100 Kokkola · 225 m² · 119 000 €",
-    footerDisclaimer: "Sivuston tiedot perustuvat myyjän käsitykseen ja taloyhtiön asiakirjoihin. Sitovat tiedot käyvät ilmi isännöitsijäntodistuksesta ja taloyhtiön virallisista asiakirjoista. VE2-jakoehdotus on vireillä eikä sitä ole hyväksytty. Pinta-alat ovat suuntaa-antavia. Pidätämme oikeuden muutoksiin.",
+    footerDisclaimer: "Sivuston tiedot perustuvat myyjän käsitykseen ja taloyhtiön asiakirjoihin. Sitovat tiedot käyvät ilmi isännöitsijäntodistuksesta ja taloyhtiön virallisista asiakirjoista. VE2-jakoehdotus on vireillä eikä sitä ole hyväksytty. Pinta-alat ovat suuntaa-antavia. Tuotto- ja vuokralaskelmat ovat esimerkkilaskelmia, eivät lupauksia. Pidätämme oikeuden muutoksiin.",
+    ve2DisclaimerTitle: "Huom. — VE2-ehdotus on vasta alustava",
+    ve2DisclaimerBody: "Kohde on tällä hetkellä yksi liikehuoneisto. Sivustolla kuvattu mahdollinen jako liikehuoneistoksi ja loft-/asuintilaksi on vasta alustava muutosehdotus, joka on ehdotettu taloyhtiön hallitukselle eikä sitä ole vielä hyväksytty taloyhtiössä. Mahdollinen jako, käyttötarkoituksen muutos ja asuinkäyttö edellyttävät taloyhtiön päätöksiä, viranomaislupia, yhtiöjärjestyksen muutoksia ja tarvittavia rakennustöitä. Toteutumisesta ei anneta takuuta.",
+    areaDisclaimer: "Pinta-alat, pohjapiirrokset ja tilankäyttöä koskevat esimerkit ovat suuntaa-antavia. Viralliset pinta-alat, käyttötarkoitukset ja vastuut määräytyvät yhtiöjärjestyksen, isännöitsijäntodistuksen, rakennuslupien ja muiden virallisten asiakirjojen perusteella.",
+    housingCoRenovationNote: "Ostajan tulee tutustua isännöitsijäntodistukseen, tilinpäätökseen, kunnossapitotarveselvitykseen ja muihin virallisiin asiakirjoihin myös tulevien korjaustarpeiden ja kustannusten arvioimiseksi.",
+    housingCoVe2CostNote: "Ehdotuksen lähtökohtana on, että osakkeenomistaja vastaa muutokseen liittyvistä suunnittelu-, lupa-, remontti- ja hallinnollisista kustannuksista. Lopullinen kustannusten ja vastuiden jakautuminen määräytyy taloyhtiön päätösten ja virallisten asiakirjojen perusteella.",
+    energyCertNote: "Energiatodistus toimitetaan ostajalle kaupanteon yhteydessä.",
 
     // Statusbanneri — VE2-ehdotus vireillä
-    statusBannerEmphasis: "VE2-ehdotus:",
-    statusBannerText: "Kohteeseen liittyy vireillä oleva VE2-ehdotus: 225 m²:n liiketila voidaan jakaa kahdeksi osakeryhmäksi — etuosan liikehuoneistoksi (n. 131 m²) ja takaosan Loft-tyyppiseksi asuinhuoneistoksi (n. 94 m²). Ehdotus on taloyhtiön ylimääräisen yhtiökokouksen käsiteltävänä. Tila myydään tällä hetkellä yhtenä kokonaisuutena (225 m²) hintaan 119 000 €.",
+    statusBannerEmphasis: "Huom. — VE2-ehdotus:",
+    statusBannerText: "Kohde on tällä hetkellä yksi liikehuoneisto (225 m²). Vireillä oleva VE2-jako mahdolliseksi liikehuoneistoksi (n. 131 m²) ja mahdolliseksi loft-/asuintilaksi (n. 94 m²) on alustava ehdotus — ei vielä hyväksytty taloyhtiössä. Toteutuminen edellyttää taloyhtiön päätöksiä, viranomaislupia ja rakennustöitä. Tila myydään yhtenä kokonaisuutena hintaan 119 000 €.",
 
     // Sitoumus pitkäaikaiseen asumiskäyttöön
     commitmentTitle: "Sitoumus pitkäaikaiseen asumiskäyttöön",
@@ -286,14 +292,14 @@ export const translations = {
     // Taloyhtiön talous ja tekniikka
     housingCoTitle: "Taloyhtiön talous ja tekniikka",
     housingCoSubtitle: "As Oy Kokkolan Pitkänsillankatu 18 — Talous ja kiinteistön kunto",
-    housingCoIntro: "Terassitalon (LH 19) vireillä oleva VE2-kehitysehdotus tukee vahvasti koko taloyhtiön pitkän aikavälin vakautta.",
+    housingCoIntro: "Alla olevat tiedot perustuvat taloyhtiön virallisiin asiakirjoihin. Ostajan tulee tutustua isännöitsijäntodistukseen, tilinpäätökseen ja kunnossapitotarveselvitykseen ennen ostopäätöstä.",
     housingCoFinanceTitle: "💰 Vahva taloudellinen asema (Tilinpäätös 2025)",
     housingCoFinanceIntro: "Taloyhtiön taloutta on hoidettu vastuullisesti ja maksuvalmius on erinomaisella tasolla.",
     housingCoCash: "Kassavarat: Yhtiön rahat ja pankkisaamiset tilikauden 2025 päättyessä olivat 54 244,88 €.",
     housingCoSurplus: "Hoitoylijäämä: Siirtyvä hoitoylijäämä 35 077,64 €.",
     housingCoMaintFee: "Hoitovastike: 3,80 €/m² (1.7.2026 alkaen).",
     housingCoInvestTitle: "🔧 Suoritetut suuret investoinnit",
-    housingCoInvestIntro: "Kiinteistöstä (rak. 1943) on pidetty hyvää huolta. Raskaimmat investoinnit on jo selätetty:",
+    housingCoInvestIntro: "Kiinteistöstä (rak. 1943) on pidetty hyvää huolta. Merkittäviä korjauksia on tehty:",
     housingCoInvest1: "Hissien uusiminen ja korien kunnostus (2025)",
     housingCoInvest2: "Kaukolämpölaitteiston uusiminen ja sähköautojen latauspisteet (2024)",
     housingCoInvest3: "Julkisivu-urakka, parvekekaiteet ja ulko-ovet (2018)",
@@ -301,7 +307,7 @@ export const translations = {
     housingCoFutureTitle: "📋 Tulevaisuuden näkymät ja 2030-luvun hankkeet",
     housingCoFutureText: "Lähivuosien korjaustarpeet ovat maltillisia (mm. IV-nuohous 2026). Yhtiön on kuitenkin strategisesti varauduttava 2030-luvun alussa lähestyviin peruskorjauksiin (vesikatteen uusiminen ja alkuperäisten käyttövesiputkien uusimisen suunnittelu).",
     housingCoVe2Title: "🏠 VE2-ehdotus lyhyesti",
-    housingCoVe2Text: "Vireillä olevan VE2-ehdotuksen mukaan 225 m²:n liiketila (LH 19) jaetaan kahdeksi erilliseksi osakeryhmäksi: etuosan liikehuoneistoksi (n. 131 m²) ja takaosan/alakerran Loft-tyyppiseksi asuinhuoneistoksi (n. 94 m²). Ehdotus on taloyhtiön ylimääräisen yhtiökokouksen käsiteltävänä. Hyväksyttynä se tarjoaa ostajalle joustavuutta ja riskien hajautusta — tila on käytettävissä joko kokonaisuutena tai kahtena erillisenä yksikkönä. Tila myydään tällä hetkellä yhtenä kokonaisuutena hintaan 119 000 €.",
+    housingCoVe2Text: "Vireillä olevan VE2-ehdotuksen mukaan 225 m²:n liiketila (LH 19) voitaisiin jakaa kahdeksi erilliseksi osakeryhmäksi: etuosan liikehuoneistoksi (n. 131 m²) ja takaosan/alakerran mahdolliseksi loft-/asuintilaksi (n. 94 m²). Ehdotus on toimitettu taloyhtiön hallitukselle eikä sitä ole vielä hyväksytty. Muutos edellyttää taloyhtiön päätöstä, viranomaislupia, yhtiöjärjestyksen muutoksia ja rakennustöitä. Tila myydään tällä hetkellä yhtenä kokonaisuutena hintaan 119 000 €.",
     housingCoPdfsTitle: "Asiakirjat",
     housingCoPdf1: "VE2-ehdotus yhtiökokoukselle",
     housingCoPdf2: "Taloyhtiön tilinpäätös 2025",
@@ -348,7 +354,7 @@ export const translations = {
     netSub: "per år",
     netDesc: "Siffran beaktar inte vakans, försäkringar, underhåll eller framtida renoveringar.",
     investorSummary: "225 m² flexibel affärslokal i Karlebys centrum. Köp som investering eller som företagets egen bas.",
-    investorYieldDisclaimer: "De angivna avkastningssiffrorna är kalkylerade exempel med valda antaganden, inte avkastningslöften.",
+    investorYieldDisclaimer: "Avkastnings- och hyresberäkningar är enbart exempelkalkyler med valda antaganden. De utgör inte ett avkastningslöfte, en bedömning av marknadshyran eller en prognos för framtida värdeutveckling. Beräkningarna beaktar inte nödvändigtvis vakans, finansieringskostnader, skatter, försäkringar, underhåll, renoveringar eller kostnader till följd av bolagsstämmobeslut. Köparen bör göra en egen utredning innan köpbeslutet fattas.",
 
     // Avkastningskalkylator
     yieldCalcBadge: "Avkastningskalkylator",
@@ -510,7 +516,7 @@ export const translations = {
     benefit2Desc: "Optimera Connectivity. Centralt högprofilläge med snabb access (7 min) till KIP-områdets aktörer (Boliden, Keliber, Arctial).",
     benefit3Icon: "📈",
     benefit3Title: "Flexibel framtid",
-    benefit3Desc: "VE2-förslag under behandling: uppdelning i affärslokal (~131 m²) och loftlägenhet (~94 m²). Godkänt vid extra bolagsstämma ger investeraren flexibilitet och riskspridning.",
+    benefit3Desc: "Stabil affärslokal i Karlebys centrum. Pågående VE2-förslag kan möjliggöra uppdelning i affärslokal (ca 131 m²) och möjlig loft-/bostadslokal (ca 94 m²) — förslaget är inte godkänt ännu. Säljs nu som helhet för 119 000 €.",
 
     // Varför denna lokal
     whyBadge: "Varför denna lokal",
@@ -566,10 +572,16 @@ export const translations = {
     formBookViewing: "Boka virtuell eller fysisk visning",
 
     footer: "Pitkänsillankatu 18 · 67100 Karleby · 225 m² · 119 000 €",
-    footerDisclaimer: "Informationen på webbplatsen baseras på säljarens uppfattning och bostadsbolagets dokument. Bindande uppgifter framgår av förvaltningsintyget och bostadsbolagets officiella handlingar. VE2-uppdelningsförslaget är under behandling och har inte godkänts. Ytor är ungefärliga. Vi förbehåller oss rätten till ändringar.",
+    footerDisclaimer: "Informationen på webbplatsen baseras på säljarens uppfattning och bostadsbolagets dokument. Bindande uppgifter framgår av förvaltningsintyget och bostadsbolagets officiella handlingar. VE2-uppdelningsförslaget är under behandling och har inte godkänts. Ytor är ungefärliga. Avkastnings- och hyresberäkningar är exempelkalkyler, inte löften. Vi förbehåller oss rätten till ändringar.",
+    ve2DisclaimerTitle: "Obs. — VE2-förslaget är preliminärt",
+    ve2DisclaimerBody: "Objektet är för närvarande en affärslokal. Den möjliga uppdelning i affärslokal och loft-/bostadslokal som beskrivs på webbplatsen är ett preliminärt förslag som föreslagits bolagets styrelse och ännu inte godkänts av bostadsbolaget. Möjlig uppdelning, ändring av användningsändamål och bostadsbruk kräver bolagsstämmobeslut, myndighetstillstånd, stadgeändringar och nödvändiga byggarbeten. Genomförandet är inte garanterat.",
+    areaDisclaimer: "Ytor, planlösningar och exempel på lokalanvändning är vägledande. Officiella ytor, användningsändamål och ansvar fastställs av bolagsordningen, förvaltningsintyget, bygglov och övriga officiella handlingar.",
+    housingCoRenovationNote: "Köparen bör ta del av förvaltningsintyget, bokslutet, underhållsbehovsutredningen och övriga officiella handlingar för att bedöma framtida reparationsbehov och kostnader.",
+    housingCoVe2CostNote: "Förslaget utgår från att aktieägaren ansvarar för planerings-, tillstånds-, renoverings- och administrativa kostnader. Den slutliga fördelningen av kostnader och ansvar fastställs av bolagsstämmobeslut och officiella handlingar.",
+    energyCertNote: "Energicertifikat tillhandahålls köparen i samband med köpet.",
 
-    statusBannerEmphasis: "VE2-förslag:",
-    statusBannerText: "Förslag om uppdelning i affärslokal + loftlägenhet behandlas vid extra bolagsstämma. Fastigheten säljs som helhet, 119 000 €.",
+    statusBannerEmphasis: "Obs. — VE2-förslag:",
+    statusBannerText: "Objektet är för närvarande en affärslokal (225 m²). Pågående VE2-uppdelning till möjlig affärslokal (ca 131 m²) och möjlig loft-/bostadslokal (ca 94 m²) är ett preliminärt förslag — ännu inte godkänt av bostadsbolaget. Genomförandet kräver bolagsstämmobeslut, tillstånd och byggarbeten. Fastigheten säljs som helhet för 119 000 €.",
 
     commitmentTitle: "Åtagande om långsiktigt bostadsbruk",
     commitmentIntro: "Efter ändring av användningsändamålet fungerar lägenheten som en permanent bostadslägenhet. I praktiken innebär detta:",
@@ -583,14 +595,14 @@ export const translations = {
 
     housingCoTitle: "Bostadsbolagets ekonomi och teknik",
     housingCoSubtitle: "Ab Bostads Karleby Långbrogatan 18 — Ekonomi och fastighetsskick",
-    housingCoIntro: "LH 19:s pågående VE2-utvecklingsförslag stöder starkt hela bostadsbolagets långsiktiga stabilitet.",
+    housingCoIntro: "Nedanstående uppgifter baseras på bostadsbolagets officiella handlingar. Köparen bör ta del av förvaltningsintyget, bokslutet och underhållsbehovsutredningen innan köpbeslutet fattas.",
     housingCoFinanceTitle: "💰 Stark finansiell ställning (Bokslut 2025)",
     housingCoFinanceIntro: "Bostadsbolagets ekonomi har skötts ansvarsfullt och likviditeten är på utmärkt nivå.",
     housingCoCash: "Kassamedel: Bolagets kassa och banktillgodohavanden vid utgången av räkenskapsperioden 2025 var 54 244,88 €.",
     housingCoSurplus: "Driftsöverskott: Överförd driftsöverskott 35 077,64 €.",
     housingCoMaintFee: "Underhållsavgift: 3,80 €/m² (fr.o.m. 1.7.2026).",
     housingCoInvestTitle: "🔧 Genomförda stora investeringar",
-    housingCoInvestIntro: "Fastigheten (byggd 1943) har underhållits väl. De tyngsta investeringarna är redan genomförda:",
+    housingCoInvestIntro: "Fastigheten (byggd 1943) har underhållits väl. Betydande renoveringar har genomförts:",
     housingCoInvest1: "Hissrenovering och korgrestaurering (2025)",
     housingCoInvest2: "Förnyelse av fjärrvärme och laddstationer för elbilar (2024)",
     housingCoInvest3: "Fasadrenovering, balkongräcken och ytterdörrar (2018)",
@@ -598,7 +610,7 @@ export const translations = {
     housingCoFutureTitle: "📋 Framtidsutsikter och 2030-talets projekt",
     housingCoFutureText: "Reparationsbehoven under de närmaste åren är måttliga (bl.a. ventilationsrensning 2026). Bolaget måste dock strategiskt förbereda sig för grundrenoveringar i början av 2030-talet (takomläggning och planering av byte av ursprungliga vattenledningsrör).",
     housingCoVe2Title: "🏠 VE2-förslag i korthet",
-    housingCoVe2Text: "Det pågående VE2-förslaget: 225 m²:s affärslokalen kan delas upp i en affärslokal i fronten (~131 m²) och en loftlägenhet i bakre/källardelen (~94 m²). Förslaget behandlas vid extra bolagsstämma. Alla renoveringskostnader betalas av aktieägaren.",
+    housingCoVe2Text: "Det pågående VE2-förslaget innebär att 225 m²:s affärslokalen (LH 19) möjligtvis kan delas upp i en affärslokal (ca 131 m²) och en möjlig loft-/bostadslokal (ca 94 m²). Förslaget har lämnats till bolagets styrelse och har inte godkänts ännu. Förändringen kräver bolagsstämmobeslut, myndighetstillstånd, stadgeändringar och byggarbeten. Fastigheten säljs för närvarande som helhet för 119 000 €.",
     housingCoPdfsTitle: "Dokument",
     housingCoPdf1: "VE2-förslag — Bolagsstämma",
     housingCoPdf2: "Bostadsbolagets bokslut 2025",
@@ -645,7 +657,7 @@ export const translations = {
     netSub: "per year",
     netDesc: "Figure does not account for vacancy, insurance, upkeep or future renovations.",
     investorSummary: "225 m² versatile commercial space in Kokkola city centre. Buy as an investment or your company's own base.",
-    investorYieldDisclaimer: "The yield figures shown are illustrative calculations based on selected assumptions, not guarantees of return.",
+    investorYieldDisclaimer: "Yield and rent calculations are illustrative examples based on selected assumptions only. They do not constitute a guarantee of return, an assessment of market rent or a forecast of future value appreciation. Calculations may not account for all costs such as vacancy, financing, taxes, insurance, maintenance, renovations or costs arising from housing company decisions. The buyer should conduct their own due diligence before making a purchase decision.",
 
     // Yield calculator
     yieldCalcBadge: "Yield Calculator",
@@ -807,7 +819,7 @@ export const translations = {
     benefit2Desc: "Optimise Connectivity. High-profile city centre location with fast access (7 min) to KIP zone's major players (Boliden, Keliber, Arctial).",
     benefit3Icon: "📈",
     benefit3Title: "Flexible Future",
-    benefit3Desc: "VE2 proposal under consideration: split into commercial unit (~131 m²) and loft apartment (~94 m²). If approved at EGM, the investor gains flexibility and risk diversification.",
+    benefit3Desc: "Stable city centre commercial space in Kokkola. Pending VE2 proposal could enable a split into a commercial unit (approx. 131 m²) and a possible loft/residential space (approx. 94 m²) — proposal not yet approved. Currently sold as a whole for €119,000.",
 
     // Why this property
     whyBadge: "Why this property",
@@ -863,10 +875,16 @@ export const translations = {
     formBookViewing: "Book a virtual or in-person viewing",
 
     footer: "Pitkänsillankatu 18 · 67100 Kokkola · 225 m² · €119,000",
-    footerDisclaimer: "Information on this website is based on the seller's knowledge and housing company documents. Binding information is provided in the management certificate and the housing company's official documents. The VE2 split proposal is pending and has not been approved. Floor areas are indicative. We reserve the right to make changes.",
+    footerDisclaimer: "Information on this website is based on the seller's knowledge and housing company documents. Binding information is provided in the management certificate and the housing company's official documents. The VE2 split proposal is pending and has not been approved. Floor areas are indicative. Yield and rent calculations are illustrative examples, not guarantees. We reserve the right to make changes.",
+    ve2DisclaimerTitle: "Note — VE2 proposal is preliminary only",
+    ve2DisclaimerBody: "The property is currently a single commercial unit. The possible split into a commercial unit and a loft/residential space described on this website is a preliminary proposal submitted to the housing company board and not yet approved by the housing company. Any split, change of use and residential occupancy requires housing company resolutions, regulatory permits, changes to the articles of association and necessary construction work. Realisation is not guaranteed.",
+    areaDisclaimer: "Floor areas, floor plans and space usage examples are indicative. Official areas, permitted uses and responsibilities are determined by the articles of association, management certificate, building permits and other official documents.",
+    housingCoRenovationNote: "The buyer should review the management certificate, financial statements, maintenance needs survey and other official documents to assess future repair needs and costs.",
+    housingCoVe2CostNote: "The proposal assumes the shareholder bears planning, permit, renovation and administrative costs. The final allocation of costs and responsibilities is determined by housing company decisions and official documents.",
+    energyCertNote: "Energy certificate will be provided to the buyer at the time of purchase.",
 
-    statusBannerEmphasis: "VE2 Proposal:",
-    statusBannerText: "Proposal to split into commercial unit + loft apartment pending at extraordinary general meeting. Property sold as whole, 119 000 €.",
+    statusBannerEmphasis: "Note — VE2 Proposal:",
+    statusBannerText: "The property is currently a single commercial unit (225 m²). The proposed VE2 split into a possible commercial unit (approx. 131 m²) and a possible loft/residential space (approx. 94 m²) is a preliminary proposal — not yet approved by the housing company. Realisation requires housing company resolutions, permits and construction work. The property is sold as a whole for €119,000.",
 
     commitmentTitle: "Commitment to long-term residential use",
     commitmentIntro: "After the change of use, the apartment will serve as a permanent residential unit. In practice, this means:",
@@ -880,14 +898,14 @@ export const translations = {
 
     housingCoTitle: "Housing Company Financials",
     housingCoSubtitle: "As Oy Kokkolan Pitkänsillankatu 18 — Finances & Property Condition",
-    housingCoIntro: "The future VE2 development proposal for LH 19 strongly supports the long-term stability of the entire housing company.",
+    housingCoIntro: "The information below is based on the housing company's official documents. The buyer should review the management certificate, financial statements and maintenance needs survey before making a purchase decision.",
     housingCoFinanceTitle: "💰 Strong Financial Position (2025 Financials)",
     housingCoFinanceIntro: "The housing company's finances have been managed responsibly and liquidity is at an excellent level.",
     housingCoCash: "Cash reserves: Company's cash and bank deposits at the end of fiscal year 2025 were €54,244.88.",
     housingCoSurplus: "Operating surplus: Carried-over operating surplus €35,077.64.",
     housingCoMaintFee: "Maintenance fee: €3.80/m² (from 1 July 2026).",
     housingCoInvestTitle: "🔧 Major Completed Investments",
-    housingCoInvestIntro: "The property (built 1943) has been well maintained. The heaviest investments are already behind us:",
+    housingCoInvestIntro: "The property (built 1943) has been well maintained. Significant renovations have been completed:",
     housingCoInvest1: "Elevator renovation and cabin restoration (2025)",
     housingCoInvest2: "District heating system renewal and EV charging stations (2024)",
     housingCoInvest3: "Facade renovation, balcony railings and exterior doors (2018)",
@@ -895,7 +913,7 @@ export const translations = {
     housingCoFutureTitle: "📋 Future Outlook & 2030s Projects",
     housingCoFutureText: "Near-term repair needs are moderate (incl. duct cleaning 2026). However, the company must strategically prepare for major renovations in the early 2030s (roof replacement and planning for original water pipe replacement).",
     housingCoVe2Title: "🏠 VE2 Proposal Summary",
-    housingCoVe2Text: "There is a pending VE2 proposal: the current 225 m² commercial unit can be split into a front commercial space (~131 m²) and a rear/basement loft apartment (~94 m²). The proposal is to be decided at an extraordinary general meeting. All renovation costs are borne by the shareholder.",
+    housingCoVe2Text: "There is a pending VE2 proposal under which the 225 m² commercial unit (LH 19) could potentially be split into a commercial space (approx. 131 m²) and a possible loft/residential space (approx. 94 m²). The proposal has been submitted to the housing company board and has not yet been approved. The change requires housing company resolutions, regulatory permits, amendments to the articles of association and construction work. The property is currently sold as a whole for €119,000.",
     housingCoPdfsTitle: "Documents",
     housingCoPdf1: "VE2 Proposal — General Meeting",
     housingCoPdf2: "Housing Company Financial Statements 2025",

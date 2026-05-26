@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "Pitkänsillankatu 18 – Liiketila + Loft | VE2-ehdotus | Kokkola 119 000 €",
+    default: "Pitkänsillankatu 18 – Liiketila | VE2-muutospotentiaali | Kokkola 119 000 €",
     template: "%s | Pitkänsillankatu 18 Kokkola",
   },
   description:
-    "225 m² liiketila Kokkolan ydinkeskustassa, 119 000 €. Vireillä VE2-ehdotus: jako liikehuoneistoon (~131 m²) ja Loft-asuntoon (~94 m²). KIP-alueen projektitiimeille tai sijoittajalle. Vuokratuotto ~9–10 %.",
+    "225 m² liiketila Kokkolan ydinkeskustassa, 119 000 €. Alustava VE2-ehdotus: mahdollinen jako liikehuoneistoon (~131 m²) ja loft-/asuintilaan (~94 m²) — ei vielä hyväksytty. KIP-alueen projektitiimeille tai sijoittajalle.",
 
   keywords: [
     // ── SUOMI ──────────────────────────────────────────────────────
@@ -108,9 +108,9 @@ export const metadata: Metadata = {
     alternateLocale: ["sv_SE", "en_US"],
     url: BASE_URL,
     siteName: "Pitkänsillankatu 18 – Terassitalo Kokkola",
-    title: "Pitkänsillankatu 18 – Liiketila + Loft VE2 | Kokkola 119 000 €",
+    title: "Pitkänsillankatu 18 – Liiketila, VE2-muutospotentiaali | Kokkola 119 000 €",
     description:
-      "225 m² liiketila Kokkolan ydinkeskustassa. VE2-ehdotus: jako liikehuoneistoon (~131 m²) ja Loft-asuntoon (~94 m²) vireillä. Hinta 119 000 €. KIP-alueen kasvu takaa kysynnän.",
+      "225 m² liiketila Kokkolan ydinkeskustassa, 119 000 €. Alustava VE2-ehdotus mahdollisesta jaosta liikehuoneistoon (~131 m²) ja loft-/asuintilaan (~94 m²) — ei vielä hyväksytty. KIP-alue kasvaa.",
     images: [
       {
         url: "/og-image.jpg",
@@ -123,9 +123,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Pitkänsillankatu 18 – Liiketila + Loft VE2 | Kokkola 119 000 €",
+    title: "Pitkänsillankatu 18 – Liiketila, VE2-muutospotentiaali | Kokkola 119 000 €",
     description:
-      "225 m² liiketila Kokkolan ydinkeskustassa, 119 000 €. VE2-ehdotus: jako liikehuoneistoon + Loft-asuntoon. KIP-alue kasvaa — projektitiimeille tai sijoittajalle.",
+      "225 m² liiketila Kokkolan ydinkeskustassa, 119 000 €. Alustava VE2-ehdotus mahdollisesta jaosta liikehuoneistoon + loft-/asuintilaan — ei vielä hyväksytty. KIP-alue kasvaa.",
     images: ["/og-image.jpg"],
   },
 
@@ -145,7 +145,7 @@ const jsonLd = {
       "@id": `${BASE_URL}/#office`,
       name: "Pitkänsillankatu 18 – Liiketila & VE2-kohde | Kokkola",
       description:
-        "225 m² liiketila Kokkolan ydinkeskustassa. 119 000 €. Vireillä VE2-ehdotus: jakaminen liikehuoneistoksi (n. 131 m²) ja Loft-asuinhuoneistoksi (n. 94 m²). Sopii sijoittajalle, yritykselle tai projektitoimistokäyttöön. Vuokra 1 500–2 500 €/kk.",
+        "225 m² liiketila Kokkolan ydinkeskustassa. 119 000 €. Alustava VE2-ehdotus mahdollisesta jaosta liikehuoneistoon (n. 131 m²) ja loft-/asuintilaan (n. 94 m²) — ei vielä hyväksytty. Sopii sijoittajalle, yritykselle tai projektitoimistokäyttöön.",
       url: BASE_URL,
       image: `${BASE_URL}/og-image.jpg`,
       address: {
