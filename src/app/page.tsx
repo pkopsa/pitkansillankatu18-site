@@ -278,13 +278,14 @@ export default function Home() {
           <FadeIn>
             <h2 className="text-3xl lg:text-5xl 2xl:text-6xl font-bold text-center mb-10 lg:mb-20 2xl:mb-24 text-slate-800">{t.detailsTitle}</h2>
           </FadeIn>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-8">
             {(([
-              { label: t.detailSize,  value: "225 m²",  sub: t.detailSizeSub,  inline: false },
-              { label: t.detailFloor, value: <><strong>Terassitalo</strong><br /><span className="font-normal text-[0.85em]">Pitkänsillankatu&nbsp;18</span><br /><span className="font-normal text-[0.8em]">{t.detailFloorSub}</span></>, sub: "", inline: false },
-              { label: t.detailPrice, value: t.detailPriceVal, sub: t.detailPriceSub, inline: false },
-              { label: t.detailMaint, value: <>1&nbsp;500–2&nbsp;500&nbsp;Euroa</>, sub: t.detailMaintSub, inline: false },
-            ]) as Array<{ label: string; value: ReactNode; sub: string; inline: boolean }>).map((item, i) => (
+              { label: t.detailSize,   value: "225 m²",             sub: t.detailSizeSub,  inline: false },
+              { label: t.detailFloor,  value: "Terassitalo",         sub: <><span className="block break-words">Pitkänsillankatu&nbsp;18</span><span className="block">{t.detailFloorSub}</span></>, inline: false },
+              { label: t.detailPrice,  value: t.detailPriceVal,      sub: t.detailPriceSub, inline: false },
+              { label: t.detailMaint,  value: <>1&nbsp;500–2&nbsp;500&nbsp;€</>, sub: t.detailMaintSub, inline: false },
+              { label: t.energyLabel,  value: t.energyValue,         sub: t.energySub,      inline: false },
+            ]) as Array<{ label: string; value: ReactNode; sub: ReactNode; inline: boolean }>).map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 text-center shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
                   <p className="text-slate-500 text-[1.05rem] lg:text-[1.35rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
@@ -466,6 +467,7 @@ export default function Home() {
               <FloorPlan lang={lang} />
             </div>
             <p className="text-center text-slate-500 text-xs mt-4">{t.floorPlanNote}</p>
+            <p className="text-center text-slate-400 text-xs mt-2 max-w-2xl mx-auto leading-relaxed">{t.floorPlanAreaNote}</p>
           </FadeIn>
         </div>
       </section>
@@ -749,6 +751,7 @@ export default function Home() {
           <FadeIn delay={500}>
             <div className="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-white/10">
               <p className="text-slate-500 text-sm lg:text-xl">{t.footer}</p>
+              <p className="text-slate-600 text-xs mt-4 leading-relaxed max-w-3xl">{t.footerDisclaimer}</p>
             </div>
           </FadeIn>
         </div>

@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 
 type T = typeof translations[Lang];
 
-const PURCHASE_PRICE = 149000;
+const PURCHASE_PRICE = 119000;
 const MAINTENANCE = 832.5;
 const RENT_MIN = 1200;
 const RENT_MAX = 2500;
@@ -31,10 +31,13 @@ export default function InvestorSection({ t, lang }: { t: T; lang: Lang }) {
 
   const sliderPct = ((rent - RENT_MIN) / (RENT_MAX - RENT_MIN)) * 100;
 
+  const exampleGross = fmtPct(((RENT_DEFAULT * 12) / PURCHASE_PRICE) * 100);
+  const exampleNet   = fmtPct((((RENT_DEFAULT - MAINTENANCE) * 12) / PURCHASE_PRICE) * 100);
+
   const metrics: { label: string; value: ReactNode; sub: string; desc: string }[] = [
-    { label: t.grossLabel, value: "12–20 %", sub: t.grossSub, desc: t.grossDesc },
+    { label: t.grossLabel, value: exampleGross, sub: t.grossSub, desc: t.grossDesc },
     { label: t.rentLabel,  value: <>1&nbsp;500–<wbr />2&nbsp;500&nbsp;€</>, sub: t.rentSub, desc: t.rentDesc },
-    { label: t.netLabel,   value: "7–14 %",  sub: t.netSub,  desc: t.netDesc  },
+    { label: t.netLabel,   value: exampleNet,   sub: t.netSub,  desc: t.netDesc  },
   ];
 
   return (
@@ -143,6 +146,11 @@ export default function InvestorSection({ t, lang }: { t: T; lang: Lang }) {
         <div className="bg-slate-50 border border-slate-200 rounded-2xl lg:rounded-3xl p-6 lg:p-10 text-center shadow-sm">
           <p className="text-base lg:text-xl text-slate-600 leading-relaxed">{t.investorSummary}</p>
         </div>
+
+        {/* ── VASTUUVAPAUSLAUSEKE ── */}
+        <p className="text-slate-400 text-xs text-center mt-4 leading-relaxed max-w-2xl mx-auto">
+          {t.investorYieldDisclaimer}
+        </p>
 
       </div>
     </section>
