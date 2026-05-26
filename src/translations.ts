@@ -11,7 +11,7 @@ export const translations = {
     heroLine1: "225 m² liiketilaa",
     heroLine2: "projektitiimin toimistoksi",
     heroLine3: "Pitkänsillankatu 18",
-    heroSub: "Liiketila · 67100 Kokkola · 149 000 €",
+    heroSub: "Liiketila · 67100 Kokkola · 119 000 €",
     heroBtnRent: "Pyydä esittely",
     heroBtnBuy: "Lisätietoja kaupasta",
     heroScroll: "Tutustu",
@@ -23,7 +23,7 @@ export const translations = {
     detailFloor: "Osoite",
     detailFloorSub: "Terassitalo, Kokkola 67100",
     detailPrice: "Pyynnön hinta",
-    detailPriceVal: "149 000 €",
+    detailPriceVal: "119 000 €",
     detailPriceSub: "Kokkolan keskustan yritysympäristö",
     detailMaint: "Vuokraennuste",
     detailMaintSub: "per kuukausi",
@@ -205,7 +205,7 @@ export const translations = {
     benefit2Desc: "Optimoi Connectivity. Ydinkeskustan korkean profiilin sijainti, josta nopea pääsy (7 min) KIP-alueen major-toimijoille (Boliden, Keliber, Arctial).",
     benefit3Icon: "📈",
     benefit3Title: "Kannattava investointi",
-    benefit3Desc: "Vakaa ydinkeskustan kiinteistö. Käyttötarkoituksen muutos asuinhuoneistoksi vireillä — sopii pitkäaikaiseen asumiseen ja projektitoimistokäyttöön. 149 000 € pyyntihinta.",
+    benefit3Desc: "Vakaa ydinkeskustan liiketila Kokkolassa. Vireillä oleva VE2-ehdotus mahdollistaa jakamisen liikehuoneistoksi (n. 131 m²) ja Loft-asuinhuoneistoksi (n. 94 m²). Nyt myynnissä yhtenä kokonaisuutena 119 000 € hinnalla.",
 
     // Miksi tämä toimitila
     whyBadge: "Miksi tämä toimitila",
@@ -260,11 +260,11 @@ export const translations = {
     formSubjectRentShort: "Haluan vuokrata tilan kokoukseen / tilaisuuteen (lyhytaikainen)",
     formBookViewing: "Varaa virtuaalinen tai fyysinen esittely",
 
-    footer: "Pitkänsillankatu 18 · 67100 Kokkola · 225 m² · 149 000 €",
+    footer: "Pitkänsillankatu 18 · 67100 Kokkola · 225 m² · 119 000 €",
 
-    // Statusbanneri — käyttötarkoituksen muutos vireillä
-    statusBannerEmphasis: "Huom:",
-    statusBannerText: "Liikehuoneiston (LH 19) käyttötarkoituksen muutos viralliseksi asuinhuoneistoksi on vireillä (Yhtiökokouksen asialistalla 19.5.2026). Tila myydään tai vuokrataan jatkossa ensisijaisesti asuin- tai projektitoimistokäyttöön. Siihen saakka Terassitalo on normaalisti vuokrattavissa lyhytaikaisesti pop-up-, kokous- ja edustuskäyttöön.",
+    // Statusbanneri — VE2-ehdotus vireillä
+    statusBannerEmphasis: "VE2-ehdotus:",
+    statusBannerText: "Kohteeseen liittyy vireillä oleva VE2-ehdotus: 225 m²:n liiketila voidaan jakaa kahdeksi osakeryhmäksi — etuosan liikehuoneistoksi (n. 131 m²) ja takaosan Loft-tyyppiseksi asuinhuoneistoksi (n. 94 m²). Ehdotus on taloyhtiön ylimääräisen yhtiökokouksen käsiteltävänä. Tila myydään tällä hetkellä yhtenä kokonaisuutena (225 m²) hintaan 119 000 €.",
 
     // Sitoumus pitkäaikaiseen asumiskäyttöön
     commitmentTitle: "Sitoumus pitkäaikaiseen asumiskäyttöön",
@@ -280,10 +280,10 @@ export const translations = {
     // Taloyhtiön talous ja tekniikka
     housingCoTitle: "Taloyhtiön talous ja tekniikka",
     housingCoPdfsTitle: "Asiakirjat",
-    housingCoPdf1: "Yhtiökokouskutsu 19.5.2026",
-    housingCoPdf2: "Osakkaan aloite — käyttötarkoituksen muutos",
-    housingCoPdf3: "Taloyhtiön tilinpäätös 2025",
-    housingCoPdf4: "Kunnossapitotarveselvitys 2026",
+    housingCoPdf1: "VE2-ehdotus yhtiökokoukselle",
+    housingCoPdf2: "Taloyhtiön tilinpäätös 2025",
+    housingCoPdf3: "Kunnossapitotarveselvitys 2026",
+    housingCoPdf4: "",
   },
 
   sv: {
@@ -294,7 +294,7 @@ export const translations = {
     heroLine1: "225 m² affärslokal",
     heroLine2: "för projektteamets kontor",
     heroLine3: "Pitkänsillankatu 18",
-    heroSub: "Affärslokal · 67100 Karleby · 149 000 €",
+    heroSub: "Affärslokal · 67100 Karleby · 119 000 €",
     heroBtnRent: "Begär visning",
     heroBtnBuy: "Mer info om köpet",
     heroScroll: "Utforska",
@@ -305,7 +305,7 @@ export const translations = {
     detailFloor: "Adress",
     detailFloorSub: "Terassitalo, Karleby 67100",
     detailPrice: "Begärt pris",
-    detailPriceVal: "149 000 €",
+    detailPriceVal: "119 000 €",
     detailPriceSub: "Företagsmiljö i Karlebys centrum",
     detailMaint: "Hyresprognos",
     detailMaintSub: "per månad",
@@ -482,7 +482,7 @@ export const translations = {
     benefit2Desc: "Optimera Connectivity. Centralt högprofilläge med snabb access (7 min) till KIP-områdets aktörer (Boliden, Keliber, Arctial).",
     benefit3Icon: "📈",
     benefit3Title: "Lönsam investering",
-    benefit3Desc: "Stabil centrumfastighet. Ändring av användningsändamål till bostadslägenhet pågår — lämpar sig för långsiktigt boende och projektkontorsbruk. 149 000 € begärt pris.",
+    benefit3Desc: "Stabil affärslokal i Karlebys centrum. Anhängigt VE2-förslag möjliggör delning i affärslokal (ca 131 m²) och Loft-bostadslägenhet (ca 94 m²). Säljs nu som helhet för 119 000 €.",
 
     // Varför denna lokal
     whyBadge: "Varför denna lokal",
@@ -537,10 +537,10 @@ export const translations = {
     formSubjectRentShort: "Jag vill hyra lokalen för möte / tillställning (kortsiktig)",
     formBookViewing: "Boka virtuell eller fysisk visning",
 
-    footer: "Pitkänsillankatu 18 · 67100 Karleby · 225 m² · 149 000 €",
+    footer: "Pitkänsillankatu 18 · 67100 Karleby · 225 m² · 119 000 €",
 
-    statusBannerEmphasis: "OBS:",
-    statusBannerText: "Ändring av användningsändamål för affärslokalen (LH 19) till en officiell bostadslägenhet är anhängig (på bolagsstämmans föredragningslista 19.5.2026). Lokalen säljs eller hyrs ut i fortsättningen i första hand för bostads- eller projektkontorsbruk. Fram till dess är Terassitalo normalt tillgänglig för korttidsuthyrning för pop-up-, mötes- och representationsbruk.",
+    statusBannerEmphasis: "VE2-förslag:",
+    statusBannerText: "Objektet inkluderar ett anhängigt VE2-förslag: 225 m²:s affärslokalen kan delas i två aktieposter — en affärslokal i frontdelen (ca 131 m²) och en Loft-bostadslägenhet i bakdelen (ca 94 m²). Förslaget behandlas vid bostadsbolagets extra bolagsstämma. Lokalen säljs nu som en helhet (225 m²) för 119 000 €.",
 
     commitmentTitle: "Åtagande om långsiktigt bostadsbruk",
     commitmentIntro: "Efter ändring av användningsändamålet fungerar lägenheten som en permanent bostadslägenhet. I praktiken innebär detta:",
@@ -554,10 +554,10 @@ export const translations = {
 
     housingCoTitle: "Bostadsbolagets ekonomi och teknik",
     housingCoPdfsTitle: "Dokument",
-    housingCoPdf1: "Bolagsstämmokallelse 19.5.2026",
-    housingCoPdf2: "Aktieägarens initiativ — ändring av användningsändamål",
-    housingCoPdf3: "Bostadsbolagets bokslut 2025",
-    housingCoPdf4: "Underhållsutredning 2026",
+    housingCoPdf1: "VE2-förslag till bolagsstämman",
+    housingCoPdf2: "Bostadsbolagets bokslut 2025",
+    housingCoPdf3: "Underhållsutredning 2026",
+    housingCoPdf4: "",
   },
 
   en: {
@@ -568,7 +568,7 @@ export const translations = {
     heroLine1: "225 m² commercial space",
     heroLine2: "for project teams' office",
     heroLine3: "Pitkänsillankatu 18",
-    heroSub: "Business unit · 67100 Kokkola · €149,000",
+    heroSub: "Business unit · 67100 Kokkola · €119,000",
     heroBtnRent: "Request a viewing",
     heroBtnBuy: "More info on purchase",
     heroScroll: "Explore",
@@ -579,7 +579,7 @@ export const translations = {
     detailFloor: "Address",
     detailFloorSub: "Terassitalo, Kokkola 67100",
     detailPrice: "Asking price",
-    detailPriceVal: "€149,000",
+    detailPriceVal: "€119,000",
     detailPriceSub: "Kokkola city centre location",
     detailMaint: "Rent estimate",
     detailMaintSub: "per month",
@@ -756,7 +756,7 @@ export const translations = {
     benefit2Desc: "Optimise Connectivity. High-profile city centre location with fast access (7 min) to KIP zone's major players (Boliden, Keliber, Arctial).",
     benefit3Icon: "📈",
     benefit3Title: "Profitable Investment",
-    benefit3Desc: "Stable city centre asset. Change of use to residential apartment pending — suited for long-term living or project office occupancy. €149,000 asking price.",
+    benefit3Desc: "Stable city centre commercial asset in Kokkola. A pending VE2 proposal enables splitting into a commercial unit (approx. 131 m²) and a Loft residential apartment (approx. 94 m²). Currently for sale as a whole for €119,000.",
 
     // Why this property
     whyBadge: "Why this property",
@@ -811,10 +811,10 @@ export const translations = {
     formSubjectRentShort: "I want to rent the space for a meeting / event (short-term)",
     formBookViewing: "Book a virtual or in-person viewing",
 
-    footer: "Pitkänsillankatu 18 · 67100 Kokkola · 225 m² · €149,000",
+    footer: "Pitkänsillankatu 18 · 67100 Kokkola · 225 m² · €119,000",
 
-    statusBannerEmphasis: "Note:",
-    statusBannerText: "A change of use for the commercial premises (LH 19) to an official residential apartment is pending (on the housing company general meeting agenda 19.5.2026). The space will primarily be sold or rented for residential or project office use going forward. Until then, Terassitalo is normally available for short-term rental for pop-up, meeting, and corporate use.",
+    statusBannerEmphasis: "VE2 proposal:",
+    statusBannerText: "A pending VE2 proposal is attached to this property: the 225 m² commercial unit may be split into two separate share groups — a commercial unit at the front (approx. 131 m²) and a Loft-type residential apartment at the back (approx. 94 m²). The proposal is pending approval at an extraordinary general meeting of the housing company. The unit is currently for sale as a whole (225 m²) for €119,000.",
 
     commitmentTitle: "Commitment to long-term residential use",
     commitmentIntro: "After the change of use, the apartment will serve as a permanent residential unit. In practice, this means:",
@@ -828,9 +828,9 @@ export const translations = {
 
     housingCoTitle: "Housing company finances & infrastructure",
     housingCoPdfsTitle: "Documents",
-    housingCoPdf1: "AGM invitation 19.5.2026",
-    housingCoPdf2: "Shareholder initiative — change of use",
-    housingCoPdf3: "Housing company financial statements 2025",
-    housingCoPdf4: "Maintenance needs survey 2026",
+    housingCoPdf1: "VE2 proposal to the AGM",
+    housingCoPdf2: "Housing company financial statements 2025",
+    housingCoPdf3: "Maintenance needs survey 2026",
+    housingCoPdf4: "",
   },
 } as const;

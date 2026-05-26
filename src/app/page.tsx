@@ -272,39 +272,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SITOUMUS PITKÄAIKAISEEN ASUMISKÄYTTÖÖN ───────────────────── */}
-      <section aria-label={t.commitmentTitle} className="py-10 px-4 lg:py-20 lg:px-8 bg-slate-50">
-        <div className="max-w-4xl mx-auto">
-          <FadeIn>
-            <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 shadow-md border border-slate-200">
-              <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-3 lg:mb-5">{t.commitmentTitle}</h2>
-              <p className="text-base text-slate-600 mb-6 lg:mb-8 leading-relaxed">{t.commitmentIntro}</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8 mb-6 lg:mb-8">
-                <div className="space-y-3">
-                  {([t.commitmentYes1, t.commitmentYes2, t.commitmentYes3] as string[]).map((item, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <span className="text-emerald-600 font-black text-base mt-0.5 shrink-0">✓</span>
-                      <p className="text-sm lg:text-base text-slate-700 leading-snug">{item}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="space-y-3">
-                  {([t.commitmentNo1, t.commitmentNo2, t.commitmentNo3] as string[]).map((item, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <span className="text-red-500 font-black text-base mt-0.5 shrink-0">✗</span>
-                      <p className="text-sm lg:text-base text-slate-700 leading-snug">{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="bg-slate-50 rounded-xl p-4 lg:p-5 border border-slate-200">
-                <p className="text-xs lg:text-sm text-slate-600 leading-relaxed">{t.commitmentLegal}</p>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
       {/* ── PERUSTIEDOT ──────────────────────────────────────────────── */}
       <section className="py-14 px-4 lg:py-28 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
@@ -364,10 +331,7 @@ export default function Home() {
       </section>
 
       {/* ── SIJOITTAJAN TIEDOT ───────────────────────────────────────── */}
-      {/* Hidden 18.5.2026: pending change of use. Restore decision after 19.5.2026 yhtiökokous. */}
-      <div style={{ display: "none" }} aria-hidden="true">
-        <InvestorSection t={t} lang={lang} />
-      </div>
+      <InvestorSection t={t} lang={lang} />
 
       {/* ── MUUTTOVALMIS KOTI ───────────────────────────────────────── */}
       <section className="py-14 px-4 lg:py-28 lg:px-8 bg-slate-50">
@@ -447,10 +411,7 @@ export default function Home() {
       <GrowthStory t={t} lang={lang} />
 
       {/* ── KUSTANNUSVERTAILU ───────────────────────────────────────── */}
-      {/* Hidden 18.5.2026: pending change of use. Restore decision after 19.5.2026 yhtiökokous. */}
-      <div style={{ display: "none" }} aria-hidden="true">
-        <CostComparison t={t} lang={lang} />
-      </div>
+      <CostComparison t={t} lang={lang} />
 
       {/* ── LYHYTAIKAINEN VUOKRAUS ──────────────────────────────────── */}
       <DayRental
@@ -587,7 +548,7 @@ export default function Home() {
                 As Oy Kokkolan Pitkänsillankatu 18 — Talous ja kiinteistön kunto
               </h3>
               <p className="text-base text-slate-600 mb-8 leading-relaxed">
-                Terassitalon (LH 19) tuleva kehitys asuin- ja projektitoimistokäyttöön tukee
+                Terassitalon (LH 19) vireillä oleva VE2-kehitysehdotus tukee
                 vahvasti koko taloyhtiön pitkän aikavälin vakautta.
               </p>
 
@@ -630,14 +591,15 @@ export default function Home() {
 
                 <div className="bg-teal-50 rounded-xl p-5 lg:p-6 border border-teal-200">
                   <h4 className="text-lg font-bold text-teal-800 mb-3 flex items-center gap-2">
-                    <span>🏠</span> Miksi LH 19 muutetaan asuinkäyttöön?
+                    <span>📋</span> VE2-ehdotus lyhyesti
                   </h4>
                   <p className="text-sm text-teal-900 leading-relaxed">
-                    Lähestyvien 2030-luvun suurinvestointien vuoksi taloyhtiön tärkein yksittäinen turvaverkko on vakaa
-                    vastikevirta. Muuttamalla 225 neliömetrin huoneisto lailliseksi asuinhuoneistoksi, tilan häiriöherkkä
-                    satunnaiskäyttö päättyy. Samalla varmistetaan, että taloyhtiö saa tästä merkittävän kokoisesta
-                    huoneistosta luotettavan rahoituspohjan tulevien vuosikymmenten remontteja varten. Muutostyöt
-                    toteutetaan täysin osakkaan omalla kustannuksella.
+                    Vireillä olevan VE2-ehdotuksen mukaan 225 m²:n liiketila (LH 19) jaetaan kahdeksi erilliseksi
+                    osakeryhmäksi: etuosan liikehuoneistoksi (n. 131 m²) ja takaosan/alakerran Loft-tyyppiseksi
+                    asuinhuoneistoksi (n. 94 m²). Ehdotus on taloyhtiön ylimääräisen yhtiökokouksen käsiteltävänä.
+                    Hyväksyttynä se tarjoaa ostajalle joustavuutta ja riskien hajautusta — tila on käytettävissä
+                    joko kokonaisuutena tai kahtena erillisenä yksikkönä. Tila myydään tällä hetkellä yhtenä
+                    kokonaisuutena hintaan 119 000 €.
                   </p>
                 </div>
               </div>
@@ -649,10 +611,9 @@ export default function Home() {
               <h3 className="text-white font-bold text-lg lg:text-xl mb-5">{t.housingCoPdfsTitle}</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {([
-                  { title: t.housingCoPdf1, href: "/docs/yhtiokokouskutsu-19-5-2026.pdf" },
-                  { title: t.housingCoPdf2, href: "/docs/osakas-aloite-kayttotarkoituksen-muutos.pdf" },
-                  { title: t.housingCoPdf3, href: "/docs/tilinpaatos-2025.pdf" },
-                  { title: t.housingCoPdf4, href: "/docs/kunnossapitotarveselvitys-2026.pdf" },
+                  { title: t.housingCoPdf1, href: "/docs/Ehdotus_Yhtiokokoukselle_VE2.pdf" },
+                  { title: t.housingCoPdf2, href: "/docs/tilinpaatos-2025.pdf" },
+                  { title: t.housingCoPdf3, href: "/docs/kunnossapitotarveselvitys-2026.pdf" },
                 ] as { title: string; href: string }[]).map((doc, i) => (
                   <a
                     key={i}

@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "Pitkänsillankatu 18 – Tuleva asuinhuoneisto / projektitoimisto | Kokkola",
+    default: "Pitkänsillankatu 18 – 225 m² liiketila | VE2-ehdotus | Kokkola 119 000 €",
     template: "%s | Pitkänsillankatu 18 Kokkola",
   },
   description:
-    "225 m² ainutlaatuinen tila Kokkolan ydinkeskustassa. Käyttötarkoituksen muutos asuinhuoneistoksi vireillä yhtiökokouksessa 19.5.2026. Soveltuu pitkäaikaiseen asumiseen, projektitoimistoksi, sekä lyhytaikaisesti pop-up- ja edustustilaksi.",
+    "225 m² liiketila Kokkolan ydinkeskustassa. 119 000 €. Vireillä VE2-ehdotus: jakaminen liikehuoneistoksi (n. 131 m²) ja Loft-asuinhuoneistoksi (n. 94 m²). Soveltuu sijoittajalle, yritykselle tai projektitoimistokäyttöön.",
 
   keywords: [
     // ── SUOMI ──────────────────────────────────────────────────────
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     "Boliden koordinaatio Kokkola",
     "Arctial toimisto Kokkola",
     "toimitila vuokraus Kokkola",
-    "149000 liiketila Kokkola",
-    "käyttötarkoituksen muutos Kokkola",
+    "119000 liiketila Kokkola",
+    "VE2 liiketila Kokkola",
 
     // ── RUOTSI ─────────────────────────────────────────────────────
     "affärslokal Karleby",
@@ -104,9 +104,9 @@ export const metadata: Metadata = {
     alternateLocale: ["sv_SE", "en_US"],
     url: BASE_URL,
     siteName: "Pitkänsillankatu 18 – Terassitalo Kokkola",
-    title: "Pitkänsillankatu 18 – Käyttötarkoituksen muutos vireillä | Kokkola",
+    title: "Pitkänsillankatu 18 – 225 m² liiketila | VE2-ehdotus | Kokkola",
     description:
-      "225 m² tila Kokkolan keskustassa. Yhtiökokouksen käsittelyssä 19.5.2026: muutos asuinhuoneistoksi. 149 000 € tai 1 500–2 500 €/kk.",
+      "225 m² liiketila Kokkolan keskustassa. 119 000 €. VE2-ehdotus vireillä: jakaminen liikehuoneistoksi (131 m²) + Loft-asunto (94 m²). Sijoittajalle tai yritykselle.",
     images: [
       {
         url: "/og-image.jpg",
@@ -119,9 +119,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Pitkänsillankatu 18 – Käyttötarkoituksen muutos vireillä | Kokkola",
+    title: "Pitkänsillankatu 18 – 225 m² liiketila | VE2-ehdotus | Kokkola",
     description:
-      "225 m² tila Kokkolan ydinkeskustassa. Yhtiökokouksen asialistalla 19.5.2026: muutos asuinhuoneistoksi. Sopii pitkäaikaiseen asumiseen, projektitoimistoksi tai pop-up-tilaksi. 149 000 €.",
+      "225 m² liiketila Kokkolan ydinkeskustassa. 119 000 €. VE2-ehdotus vireillä: liikehuoneisto (131 m²) + Loft-asuinhuoneisto (94 m²). Sopii sijoittajalle tai projektitoimistoksi.",
     images: ["/og-image.jpg"],
   },
 
@@ -141,7 +141,7 @@ const jsonLd = {
       "@id": `${BASE_URL}/#office`,
       name: "Pitkänsillankatu 18",
       description:
-        "225 m² liiketila / tuleva asuinhuoneisto Kokkolan ydinkeskustassa. Käyttötarkoituksen muutos asuinhuoneistoksi vireillä (yhtiökokous 19.5.2026). Soveltuu pitkäaikaiseen asumiseen, projektitoimistoksi tai pop-up-tilaksi. 149 000 € tai 1 500–2 500 €/kk.",
+        "225 m² liiketila Kokkolan ydinkeskustassa. 119 000 €. Vireillä VE2-ehdotus: jakaminen liikehuoneistoksi (n. 131 m²) ja Loft-asuinhuoneistoksi (n. 94 m²). Sopii sijoittajalle, yritykselle tai projektitoimistokäyttöön. Vuokra 1 500–2 500 €/kk.",
       url: BASE_URL,
       image: `${BASE_URL}/og-image.jpg`,
       address: {
@@ -166,7 +166,7 @@ const jsonLd = {
         {
           "@type": "Offer",
           name: "Myynti",
-          price: 149000,
+          price: 119000,
           priceCurrency: "EUR",
           availability: "https://schema.org/InStock",
           seller: {
@@ -198,8 +198,8 @@ const jsonLd = {
       ],
       amenityFeature: [
         { "@type": "LocationFeatureSpecification", name: "KIP-alue", value: true },
-        { "@type": "LocationFeatureSpecification", name: "225 m² liiketila / tuleva asuinhuoneisto", value: true },
-        { "@type": "LocationFeatureSpecification", name: "Käyttötarkoituksen muutos vireillä 2026", value: true },
+        { "@type": "LocationFeatureSpecification", name: "225 m² liiketila (VE2: 131 m² + 94 m²)", value: true },
+        { "@type": "LocationFeatureSpecification", name: "VE2-ehdotus vireillä 2026", value: true },
       ],
     },
     {
