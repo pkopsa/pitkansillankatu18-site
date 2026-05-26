@@ -20,58 +20,62 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "Pitkänsillankatu 18 – 225 m² liiketila | VE2-ehdotus | Kokkola 119 000 €",
+    default: "Pitkänsillankatu 18 – Liiketila + Loft | VE2-ehdotus | Kokkola 119 000 €",
     template: "%s | Pitkänsillankatu 18 Kokkola",
   },
   description:
-    "225 m² liiketila Kokkolan ydinkeskustassa. 119 000 €. Vireillä VE2-ehdotus: jakaminen liikehuoneistoksi (n. 131 m²) ja Loft-asuinhuoneistoksi (n. 94 m²). Soveltuu sijoittajalle, yritykselle tai projektitoimistokäyttöön.",
+    "225 m² liiketila Kokkolan ydinkeskustassa, 119 000 €. Vireillä VE2-ehdotus: jako liikehuoneistoon (~131 m²) ja Loft-asuntoon (~94 m²). KIP-alueen projektitiimeille tai sijoittajalle. Vuokratuotto ~9–10 %.",
 
   keywords: [
     // ── SUOMI ──────────────────────────────────────────────────────
-    "asuinhuoneisto Kokkola",
-    "kotitoimisto Kokkola",
-    "projektitoimisto Kokkola",
-    "pop-up tila Kokkola",
-    "edustustila Kokkola",
-    "kokoustila Kokkola",
-    "liiketila Kokkola",
+    // Myynti & sijoitus
     "liiketila myytävänä Kokkola",
-    "Pitkänsillankatu 18",
-    "Kokkola ydinkeskusta toimitila",
-    "KIP-alue Kokkola",
-    "palaveritila Kokkola",
     "sijoituskiinteistö Kokkola",
-    "Keliber projektitiimi Kokkola",
-    "Boliden koordinaatio Kokkola",
-    "Arctial toimisto Kokkola",
-    "toimitila vuokraus Kokkola",
+    "toimitila Kokkola myynti",
+    "Pitkänsillankatu 18",
+    "Kokkola ydinkeskusta liiketila",
+    "liiketila 225 m² Kokkola",
     "119000 liiketila Kokkola",
-    "VE2 liiketila Kokkola",
-
+    "sijoitustuotto Kokkola",
+    // VE2 & loft
+    "VE2 ehdotus Kokkola",
+    "loft asunto Kokkola",
+    "liiketilan jako Kokkola",
+    "liikehuoneisto asuinhuoneisto Kokkola",
+    // Projektitoimisto & KIP
+    "projektitoimisto Kokkola",
+    "KIP-alue toimitila",
+    "Keliber toimisto Kokkola",
+    "Boliden koordinaatio Kokkola",
+    "Arctial projektitiimi Kokkola",
+    "toimitila vuokraus Kokkola",
+    "palaveritila Kokkola",
+    "kokoustila Kokkola",
+    "edustustila Kokkola",
     // ── RUOTSI ─────────────────────────────────────────────────────
-    "affärslokal Karleby",
-    "projektteam kontor Karleby",
+    "affärslokal till salu Karleby",
+    "investeringsfastighet Karleby",
+    "Pitkänsillankatu 18 Karleby",
+    "Karleby centrum affärslokal",
+    "VE2 förslag Karleby",
+    "loftlägenhet Karleby",
+    "projektkontor Karleby",
     "KIP-området Karleby",
-    "bostadslägenhet Karleby",
-    "projektkontorsbruk Karleby",
-    "pop-up lokal Karleby",
-    "representationslokal Karleby",
-    "mötesrum Karleby",
+    "affärslokal uthyrning Karleby",
     "möteslokal Karleby",
-
     // ── ENGLANTI ───────────────────────────────────────────────────
-    "commercial space Kokkola",
-    "residential apartment Kokkola",
-    "project team office Kokkola",
-    "Pitkansillankatu 18",
-    "KIP zone Kokkola",
-    "investment property Kokkola",
-    "pop-up space Kokkola",
-    "corporate event space Kokkola",
-    "meeting room Kokkola",
-    "business hub Finland",
+    "commercial property for sale Kokkola",
+    "investment property Kokkola Finland",
+    "Pitkansillankatu 18 Kokkola",
+    "commercial space Kokkola city centre",
+    "VE2 proposal Kokkola",
+    "loft apartment Kokkola",
+    "project office Kokkola",
+    "KIP zone office space",
     "Keliber Boliden Arctial office Kokkola",
-    "change of use residential Kokkola",
+    "meeting room Kokkola",
+    "corporate event space Kokkola",
+    "business hub Kokkola Finland",
   ],
   authors: [{ name: "Petri Kopsa", url: BASE_URL }],
   creator: "Petri Kopsa",
@@ -104,9 +108,9 @@ export const metadata: Metadata = {
     alternateLocale: ["sv_SE", "en_US"],
     url: BASE_URL,
     siteName: "Pitkänsillankatu 18 – Terassitalo Kokkola",
-    title: "Pitkänsillankatu 18 – 225 m² liiketila | VE2-ehdotus | Kokkola",
+    title: "Pitkänsillankatu 18 – Liiketila + Loft VE2 | Kokkola 119 000 €",
     description:
-      "225 m² liiketila Kokkolan keskustassa. 119 000 €. VE2-ehdotus vireillä: jakaminen liikehuoneistoksi (131 m²) + Loft-asunto (94 m²). Sijoittajalle tai yritykselle.",
+      "225 m² liiketila Kokkolan ydinkeskustassa. VE2-ehdotus: jako liikehuoneistoon (~131 m²) ja Loft-asuntoon (~94 m²) vireillä. Hinta 119 000 €. KIP-alueen kasvu takaa kysynnän.",
     images: [
       {
         url: "/og-image.jpg",
@@ -119,9 +123,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Pitkänsillankatu 18 – 225 m² liiketila | VE2-ehdotus | Kokkola",
+    title: "Pitkänsillankatu 18 – Liiketila + Loft VE2 | Kokkola 119 000 €",
     description:
-      "225 m² liiketila Kokkolan ydinkeskustassa. 119 000 €. VE2-ehdotus vireillä: liikehuoneisto (131 m²) + Loft-asuinhuoneisto (94 m²). Sopii sijoittajalle tai projektitoimistoksi.",
+      "225 m² liiketila Kokkolan ydinkeskustassa, 119 000 €. VE2-ehdotus: jako liikehuoneistoon + Loft-asuntoon. KIP-alue kasvaa — projektitiimeille tai sijoittajalle.",
     images: ["/og-image.jpg"],
   },
 
@@ -139,7 +143,7 @@ const jsonLd = {
     {
       "@type": "Office",
       "@id": `${BASE_URL}/#office`,
-      name: "Pitkänsillankatu 18",
+      name: "Pitkänsillankatu 18 – Liiketila & VE2-kohde | Kokkola",
       description:
         "225 m² liiketila Kokkolan ydinkeskustassa. 119 000 €. Vireillä VE2-ehdotus: jakaminen liikehuoneistoksi (n. 131 m²) ja Loft-asuinhuoneistoksi (n. 94 m²). Sopii sijoittajalle, yritykselle tai projektitoimistokäyttöön. Vuokra 1 500–2 500 €/kk.",
       url: BASE_URL,
@@ -200,6 +204,8 @@ const jsonLd = {
         { "@type": "LocationFeatureSpecification", name: "KIP-alue", value: true },
         { "@type": "LocationFeatureSpecification", name: "225 m² liiketila (VE2: 131 m² + 94 m²)", value: true },
         { "@type": "LocationFeatureSpecification", name: "VE2-ehdotus vireillä 2026", value: true },
+        { "@type": "LocationFeatureSpecification", name: "VE2-ehdotus vireillä", value: true },
+        { "@type": "LocationFeatureSpecification", name: "Loft-asunto mahdollinen", value: true },
       ],
     },
     {
