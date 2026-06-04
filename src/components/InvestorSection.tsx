@@ -2,18 +2,13 @@
 
 import { useState } from "react";
 import type { translations, Lang } from "@/translations";
+import { PURCHASE_PRICE, MAINTENANCE, RENT_MIN, RENT_MAX, RENT_DEFAULT, VE2 } from "@/lib/pricing";
 
 type T = (typeof translations)[Lang];
 
-const PURCHASE_PRICE = 119000;
-const MAINTENANCE = 832.5;
-const RENT_MIN = 1200;
-const RENT_MAX = 2500;
-const RENT_DEFAULT = 1800;
-
 function fmtEur(n: number): string {
   const s = Math.round(n).toString();
-  return s.replace(/\B(?=(\d{3})+(?!\d))/g, "\u00A0") + " €";
+  return s.replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " €";
 }
 
 function fmtPct(n: number): string {
@@ -68,6 +63,7 @@ export default function InvestorSection({ t, lang }: { t: T; lang: Lang }) {
                 value={rent}
                 onChange={(e) => setRent(Number(e.target.value))}
                 className="w-full h-2 rounded-full appearance-none cursor-pointer"
+                aria-label={t.yieldRentLabel}
                 style={{
                   background: `linear-gradient(to right, #10b981 ${sliderPct}%, #334155 ${sliderPct}%)`,
                 }}
@@ -94,6 +90,59 @@ export default function InvestorSection({ t, lang }: { t: T; lang: Lang }) {
             ))}
           </div>
           <p className="text-slate-500 text-xs mt-4 text-center">{t.yieldCostNote}</p>
+        </div>
+
+        {/* ── VE2 TUOTTOARVIO ── */}
+        <div className="bg-teal-950/60 border border-teal-500/20 rounded-2xl lg:rounded-3xl p-6 lg:p-10 mb-8 lg:mb-12">
+          <div className="text-center mb-6">
+            <span className="inline-block bg-teal-500/10 text-teal-400 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full border border-teal-500/20 mb-3">
+              {t.ve2YieldBadge}
+            </span>
+            <p className="text-slate-400 text-sm mt-2 max-w-xl mx-auto">{t.ve2YieldSub}</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            {[
+              {
+                label: t.ve2YieldCommercial,
+                target: VE2.commercial.target,
+                realMin: VE2.commercial.realistic[0],
+                realMax: VE2.commercial.realistic[1],
+                color: "#14b8a6",
+              },
+              {
+                label: t.ve2YieldResidential,
+                target: VE2.residential.target,
+                realMin: VE2.residential.realistic[0],
+                realMax: VE2.residential.realistic[1],
+                color: "#818cf8",
+              },
+            ].map((row) => (
+              <div key={row.label} className="bg-slate-800/60 rounded-xl p-4 lg:p-6 border border-white/5">
+                <p className="text-slate-300 text-sm font-semibold mb-3">{row.label}</p>
+                <div className="flex gap-4 flex-wrap">
+                  <div>
+                    <p className="text-slate-500 text-xs uppercase tracking-wider mb-1">{t.ve2YieldTarget}</p>
+                    <p className="font-black text-lg" style={{ color: row.color }}>{fmtEur(row.target)}<span className="text-slate-500 text-sm font-normal">{t.ve2YieldPerMonth}</span></p>
+                  </div>
+                  <div>
+                    <p className="text-slate-500 text-xs uppercase tracking-wider mb-1">{t.ve2YieldRealistic}</p>
+                    <p className="font-bold text-base text-slate-300">{fmtEur(row.realMin)}–{fmtEur(row.realMax)}<span className="text-slate-500 text-sm font-normal">{t.ve2YieldPerMonth}</span></p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="bg-slate-800/40 rounded-xl p-4 border border-white/5 flex flex-wrap gap-6">
+            <div>
+              <p className="text-slate-500 text-xs uppercase tracking-wider mb-1">{t.ve2YieldTotal}</p>
+              <p className="font-black text-xl text-teal-400">{fmtEur(VE2.totalTarget)}<span className="text-slate-500 text-sm font-normal">{t.ve2YieldPerMonth}</span></p>
+            </div>
+            <div>
+              <p className="text-slate-500 text-xs uppercase tracking-wider mb-1">{t.ve2YieldTotalRealistic}</p>
+              <p className="font-bold text-base text-slate-300">{fmtEur(VE2.totalRealistic[0])}–{fmtEur(VE2.totalRealistic[1])}<span className="text-slate-500 text-sm font-normal">{t.ve2YieldPerMonth}</span></p>
+            </div>
+          </div>
+          <p className="text-slate-500 text-xs mt-3 leading-relaxed">{t.ve2YieldNote}</p>
         </div>
 
         {/* ── MIKSI KYSYNTÄ ON VARMAA ── */}
