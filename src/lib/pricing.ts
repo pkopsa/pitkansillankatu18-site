@@ -29,6 +29,10 @@ export const RENT_DEFAULT = 1800;
 // Hotellivertailun referenssit (säädettävissä)
 export const HOTEL = { nightPerPerson: 120, meetingRoomPerDay: 200 };
 
+// Kuukausivuokrauksen vertailukohde (kalustettu asunto + erillinen toimisto)
+export const FURNISHED_APARTMENT_MONTHLY = 1400; // €/kk kalustettu yritysasunto
+export const SEPARATE_OFFICE_MONTHLY = 1800;     // €/kk erillinen toimisto
+
 // EXECUTIVE HOUSING – laajennettava lista.
 export type EHUnit = {
   id: string;
@@ -72,8 +76,8 @@ export const EXECUTIVE_HOUSING: EHUnit[] = [
     id: "eh3",
     name: "Kokkolan vanhakaupunki – Neristan",
     location: "Neristan, Kokkola (kumppani)",
-    capacity: 4, // TODO: korvaa ystävän AirBnB-ilmoituksen kapasiteetilla
-    nightlyRate: 180, // TODO: paikkamerkki (kesäarvio 150–200); korvaa ilmoituksen hinnalla
+    capacity: 5,        // 5 hlö — Neristan AirBnB-ilmoituksesta
+    nightlyRate: 180,   // 180 €/yö — Neristan AirBnB (5 hlö, Kokkolan keskusta)
     vat: 0,
     external: true,
     link: null,
