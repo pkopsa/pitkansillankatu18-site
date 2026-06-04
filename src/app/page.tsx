@@ -6,6 +6,7 @@ import { QRCodeSVG } from "qrcode.react";
 import ContactSection from "@/components/ContactSection";
 import DayRental from "@/components/DayRental";
 import CostComparison from "@/components/CostComparison";
+import ExecutiveHousingSection from "@/components/ExecutiveHousingSection";
 import InvestorSection from "@/components/InvestorSection";
 import GrowthStory from "@/components/GrowthStory";
 import PropertyMap from "@/components/PropertyMap";
@@ -437,6 +438,9 @@ export default function Home() {
 
       {/* ── KOKKOLAN KASVUTARINA ────────────────────────────────────── */}
       <GrowthStory t={t} lang={lang} />
+
+      {/* ── EXECUTIVE HOUSING ───────────────────────────────────────── */}
+      <ExecutiveHousingSection t={t} lang={lang} />
 
       {/* ── KUSTANNUSVERTAILU ───────────────────────────────────────── */}
       <CostComparison t={t} lang={lang} />

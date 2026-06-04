@@ -2,68 +2,82 @@
 
 import { useState } from "react";
 import type { translations, Lang } from "@/translations";
+import { BUNDLE, EXECUTIVE_HOUSING, HOTEL, type EHUnit } from "@/lib/pricing";
 
-type T = typeof translations[Lang];
+type T = (typeof translations)[Lang];
+type DurationType = "day" | "threeDays" | "week";
 
-const TEAM_SIZES = [4, 6, 8, 10];
-const DURATIONS = [6, 12, 18, 24];
-
-const HOTEL_NIGHT = 89;
-const WORK_DAYS = 22;
-const COWORK_MONTHLY = 350;
-const P18_MONTHLY = 1800;
+const TEAM_SIZES = [1, 2, 4, 6, 8, 10];
+const NIGHTS: Record<DurationType, number> = { day: 1, threeDays: 3, week: 7 };
+const BUNDLE_PRICE: Record<DurationType, number> = {
+  day: BUNDLE.day,
+  threeDays: BUNDLE.threeDays,
+  week: BUNDLE.week,
+};
 
 function fmt(n: number, lang: Lang): string {
   const s = Math.round(n).toString();
-  // fi/sv: välilyönti tuhaterottimena, en: pilkku
-  const sep = lang === "en" ? "," : "\u00A0";
-  const grouped = s.replace(/\B(?=(\d{3})+(?!\d))/g, sep);
-  return grouped + " €";
+  const sep = lang === "en" ? "," : " ";
+  return s.replace(/\B(?=(\d{3})+(?!\d))/g, sep) + " €";
+}
+
+function getRowLabel(unit: EHUnit, t: T): string {
+  if (unit.id === "eh1") return t.ehCalcRowEh1;
+  if (unit.id === "eh2") return t.ehCalcRowEh2;
+  if (unit.id === "eh3") return t.ehCalcRowEh3;
+  return unit.name;
 }
 
 export default function CostComparison({ t, lang }: { t: T; lang: Lang }) {
-  const [team, setTeam] = useState(6);
-  const [months, setMonths] = useState(12);
+  const [teamSize, setTeamSize] = useState(4);
+  const [duration, setDuration] = useState<DurationType>("threeDays");
+  const [useSeaside, setUseSeaside] = useState(true);
+  const [useNeristan, setUseNeristan] = useState(false);
 
-  const hotelTotal = HOTEL_NIGHT * WORK_DAYS * team * months;
-  const coworkTotal = COWORK_MONTHLY * team * months;
-  const p18Total = P18_MONTHLY * months;
-  const maxCost = hotelTotal; // hotel is always highest
+  const nights = NIGHTS[duration];
+  const meetingDays = nights;
+  const bundlePrice = BUNDLE_PRICE[duration];
 
-  const savingVsHotel = hotelTotal - p18Total;
-  const savingVsHotelPct = Math.round((savingVsHotel / hotelTotal) * 100);
-  const savingVsCowork = coworkTotal - p18Total;
-  const savingVsCoworkPct = Math.round((savingVsCowork / coworkTotal) * 100);
+  const enabledUnitIds = ["eh1"];
+  if (useSeaside) enabledUnitIds.push("eh2");
+  if (useNeristan) enabledUnitIds.push("eh3");
 
-  const bars = [
-    {
-      label: t.costOptA,
-      total: hotelTotal,
-      monthly: Math.round(hotelTotal / months),
-      barColor: "#f43f5e",
-      textColor: "#fb7185",
-    },
-    {
-      label: t.costOptB,
-      total: coworkTotal,
-      monthly: Math.round(coworkTotal / months),
-      barColor: "#f59e0b",
-      textColor: "#fbbf24",
-    },
-    {
-      label: t.costOptC,
-      total: p18Total,
-      monthly: P18_MONTHLY,
-      barColor: "#14b8a6",
-      textColor: "#2dd4bf",
-      cheapest: true,
-    },
-  ];
+  // Allocate accommodation
+  let remaining = teamSize;
+  const allocation: { unit: EHUnit; people: number }[] = [];
+  for (const unit of EXECUTIVE_HOUSING) {
+    if (remaining <= 0) break;
+    if (!enabledUnitIds.includes(unit.id)) continue;
+    const placed = Math.min(remaining, unit.capacity);
+    if (placed > 0) {
+      allocation.push({ unit, people: placed });
+      remaining -= placed;
+    }
+  }
+  const overflow = remaining;
 
-  const btnBase =
-    "px-4 py-2 lg:px-5 lg:py-2.5 rounded-xl text-sm lg:text-base font-semibold transition-all duration-200";
+  // Cost calculation
+  let ehExtraCost = 0;
+  for (const a of allocation) {
+    if (a.unit.id === "eh1") continue;
+    ehExtraCost += a.unit.nightlyRate * nights;
+  }
+  const overflowCost = overflow * nights * HOTEL.nightPerPerson;
+  const packageTotal = bundlePrice + ehExtraCost + overflowCost;
+  const hotelTotal = teamSize * nights * HOTEL.nightPerPerson + meetingDays * HOTEL.meetingRoomPerDay;
+  const savings = hotelTotal - packageTotal;
+  const savingsPct = hotelTotal > 0 ? Math.round((savings / hotelTotal) * 100) : 0;
+  const isOversized = savings < 0;
+
+  const btnBase = "px-4 py-2 lg:px-5 lg:py-2.5 rounded-xl text-sm lg:text-base font-semibold transition-all duration-200";
   const btnActive = "bg-teal-500 text-slate-900 shadow-lg shadow-teal-500/30";
   const btnInactive = "bg-slate-700 text-slate-300 hover:bg-slate-600";
+
+  const durationOptions: { key: DurationType; label: string }[] = [
+    { key: "day", label: t.ehCalcDurationDay },
+    { key: "threeDays", label: t.ehCalcDurationThreeDays },
+    { key: "week", label: t.ehCalcDurationWeek },
+  ];
 
   return (
     <section className="bg-slate-900 py-14 px-4 lg:py-28 lg:px-8">
@@ -72,134 +86,181 @@ export default function CostComparison({ t, lang }: { t: T; lang: Lang }) {
         {/* Otsikko */}
         <div className="text-center mb-10 lg:mb-16">
           <span className="inline-block bg-teal-500/10 text-teal-400 text-xs lg:text-sm font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-4 border border-teal-500/20">
-            {t.costBadge}
+            {t.ehCalcBadge}
           </span>
           <h2 className="text-3xl lg:text-5xl 2xl:text-6xl font-black text-white mb-3 lg:mb-5 tracking-tight">
-            {t.costTitle}
+            {t.ehCalcTitle}
           </h2>
           <p className="text-base lg:text-xl text-slate-400 max-w-2xl mx-auto">
-            {t.costSub}
+            {t.ehCalcSub}
           </p>
         </div>
 
         {/* Säätimet */}
         <div className="bg-slate-800 rounded-2xl lg:rounded-3xl p-6 lg:p-10 mb-8 lg:mb-12 border border-white/5 shadow-xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-8">
 
             {/* Tiimin koko */}
             <div>
               <p className="text-slate-400 text-sm lg:text-base font-semibold uppercase tracking-widest mb-4">
-                {t.costTeamLabel}
+                {t.ehCalcTeamLabel}
               </p>
               <div className="flex gap-2 lg:gap-3 flex-wrap">
                 {TEAM_SIZES.map((s) => (
                   <button
                     key={s}
-                    onClick={() => setTeam(s)}
-                    className={`${btnBase} ${team === s ? btnActive : btnInactive}`}
+                    onClick={() => setTeamSize(s)}
+                    aria-pressed={teamSize === s}
+                    className={`${btnBase} ${teamSize === s ? btnActive : btnInactive}`}
                   >
-                    {s} {t.costTeamUnit}
+                    {s} {t.ehCalcTeamUnit}
                   </button>
                 ))}
               </div>
             </div>
 
-            {/* Projektin kesto */}
+            {/* Kesto */}
             <div>
               <p className="text-slate-400 text-sm lg:text-base font-semibold uppercase tracking-widest mb-4">
-                {t.costDurationLabel}
+                {t.ehCalcDurationLabel}
               </p>
               <div className="flex gap-2 lg:gap-3 flex-wrap">
-                {DURATIONS.map((d) => (
+                {durationOptions.map(({ key, label }) => (
                   <button
-                    key={d}
-                    onClick={() => setMonths(d)}
-                    className={`${btnBase} ${months === d ? btnActive : btnInactive}`}
+                    key={key}
+                    onClick={() => setDuration(key)}
+                    aria-pressed={duration === key}
+                    className={`${btnBase} ${duration === key ? btnActive : btnInactive}`}
                   >
-                    {d} {t.costDurationUnit}
+                    {label}
                   </button>
                 ))}
               </div>
             </div>
           </div>
+
+          {/* Kytkimet EH2/EH3 */}
+          <div className="flex flex-wrap gap-4">
+            <label className="flex items-center gap-2 cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={useSeaside}
+                onChange={(e) => setUseSeaside(e.target.checked)}
+                className="w-4 h-4 accent-teal-500"
+                aria-label={t.ehCalcUseSeaside}
+              />
+              <span className="text-slate-300 text-sm lg:text-base">{t.ehCalcUseSeaside}</span>
+            </label>
+            <label className="flex items-center gap-2 cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={useNeristan}
+                onChange={(e) => setUseNeristan(e.target.checked)}
+                className="w-4 h-4 accent-teal-500"
+                aria-label={t.ehCalcUseNeristan}
+              />
+              <span className="text-slate-300 text-sm lg:text-base">{t.ehCalcUseNeristan}</span>
+            </label>
+          </div>
         </div>
 
-        {/* Pylväskaavio */}
-        <div className="bg-slate-800 rounded-2xl lg:rounded-3xl p-6 lg:p-10 mb-8 lg:mb-12 border border-white/5 shadow-xl">
-          <div className="space-y-6 lg:space-y-8">
-            {bars.map((bar) => {
-              const widthPct = Math.round((bar.total / maxCost) * 100);
-              return (
-                <div key={bar.label}>
-                  <div className="flex items-start justify-between mb-3 gap-4">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <span className="font-bold text-sm lg:text-base text-white">
-                        {bar.label}
+        {/* Rivierittely */}
+        <div className="bg-slate-800 rounded-2xl lg:rounded-3xl overflow-hidden border border-white/5 shadow-xl mb-8">
+          <table className="w-full text-sm lg:text-base" role="table" aria-label={t.ehCalcTitle}>
+            <tbody>
+              {/* Hotellivertailurivi */}
+              <tr className="border-b border-white/5">
+                <td className="px-5 lg:px-8 py-4 text-slate-400">{t.ehCalcRowHotel}</td>
+                <td className="px-5 lg:px-8 py-4 text-right font-bold text-rose-400">{fmt(hotelTotal, lang)}</td>
+              </tr>
+
+              {/* Coworking */}
+              <tr className="border-b border-white/5 bg-slate-800/50">
+                <td className="px-5 lg:px-8 py-4 text-slate-300">{t.ehCalcRowCoworking}</td>
+                <td className="px-5 lg:px-8 py-4 text-right font-semibold text-teal-400">
+                  {fmt(bundlePrice, lang)}
+                  <span className="text-slate-500 text-xs ml-1">(+EH1)</span>
+                </td>
+              </tr>
+
+              {/* Allokaatiorivit */}
+              {allocation.map((a) => {
+                const cost = a.unit.id === "eh1"
+                  ? 0
+                  : a.unit.nightlyRate * nights;
+                return (
+                  <tr key={a.unit.id} className="border-b border-white/5">
+                    <td className="px-5 lg:px-8 py-4 text-slate-300">
+                      {getRowLabel(a.unit, t)}
+                      <span className="text-slate-500 text-xs ml-2">
+                        ({a.people} {t.ehCalcTeamUnit})
                       </span>
-                      {bar.cheapest && (
-                        <span className="text-xs bg-teal-500/20 text-teal-400 border border-teal-500/30 px-2 py-0.5 rounded-full font-semibold">
-                          {t.costCheapest}
-                        </span>
+                      {a.unit.external && (
+                        <span className="ml-2 text-xs text-amber-400 font-semibold">★</span>
                       )}
-                    </div>
-                    <div className="text-right shrink-0">
-                      <span className="font-black text-xl lg:text-2xl" style={{ color: bar.textColor }}>
-                        {fmt(bar.total, lang)}
-                      </span>
-                      <br />
-                      <span className="text-slate-500 text-xs lg:text-sm">
-                        {fmt(bar.monthly, lang)}{t.costPerMonth}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="h-8 lg:h-10 bg-slate-700 rounded-full overflow-hidden">
-                    <div
-                      className="h-full rounded-full transition-all duration-700 ease-out"
-                      style={{ width: `${widthPct}%`, backgroundColor: bar.barColor }}
-                    />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+                    </td>
+                    <td className="px-5 lg:px-8 py-4 text-right font-semibold text-teal-400">
+                      {a.unit.id === "eh1"
+                        ? <span className="text-slate-500 text-xs">{lang === "fi" ? "sis. bundleen" : lang === "sv" ? "inkl. i paket" : "incl. in bundle"}</span>
+                        : fmt(cost, lang)
+                      }
+                    </td>
+                  </tr>
+                );
+              })}
+
+              {/* Ylivuoto */}
+              {overflow > 0 && (
+                <tr className="border-b border-white/5">
+                  <td className="px-5 lg:px-8 py-4 text-slate-400">
+                    {t.ehCalcRowOverflow}
+                    <span className="text-slate-500 text-xs ml-2">({overflow} {t.ehCalcTeamUnit})</span>
+                  </td>
+                  <td className="px-5 lg:px-8 py-4 text-right font-semibold text-amber-400">{fmt(overflowCost, lang)}</td>
+                </tr>
+              )}
+
+              {/* Paketti yhteensä */}
+              <tr className="border-b border-white/10 bg-teal-500/5">
+                <td className="px-5 lg:px-8 py-5 font-bold text-white text-base lg:text-lg">{t.ehCalcRowTotal}</td>
+                <td className="px-5 lg:px-8 py-5 text-right font-black text-xl lg:text-2xl text-teal-400">{fmt(packageTotal, lang)}</td>
+              </tr>
+
+              {/* Säästö */}
+              <tr className={savings > 0 ? "bg-emerald-500/10" : "bg-slate-700/30"}>
+                <td className="px-5 lg:px-8 py-5 font-bold text-base lg:text-lg" style={{ color: savings > 0 ? "#34d399" : "#94a3b8" }}>
+                  {t.ehCalcRowSavings}
+                </td>
+                <td className="px-5 lg:px-8 py-5 text-right font-black text-xl lg:text-2xl" style={{ color: savings > 0 ? "#34d399" : "#f87171" }}>
+                  {savings > 0 ? fmt(savings, lang) : fmt(Math.abs(savings), lang)}
+                  {savings > 0 && (
+                    <span className="block text-sm font-semibold text-emerald-500">
+                      {savingsPct} % {t.ehCalcCheaper}
+                    </span>
+                  )}
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        {/* Säästökortit */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mb-8 lg:mb-12">
-          <div className="bg-slate-800 rounded-2xl p-6 lg:p-8 border border-teal-500/20 shadow-xl">
-            <p className="text-slate-400 text-sm lg:text-base font-semibold mb-3">
-              {t.costSavingVsHotel}
-            </p>
-            <p className="text-3xl lg:text-4xl font-black text-teal-400 mb-1">
-              {fmt(savingVsHotel, lang)}
-            </p>
-            <p className="text-slate-400 text-sm lg:text-base">
-              {savingVsHotelPct} % {lang === "fi" ? "halvempi" : lang === "sv" ? "billigare" : "cheaper"}
-            </p>
+        {/* Rehellisyysehto */}
+        {isOversized && (
+          <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 lg:p-6 mb-8">
+            <p className="text-amber-300 text-sm lg:text-base leading-relaxed">{t.ehCalcOversized}</p>
           </div>
-          <div className="bg-slate-800 rounded-2xl p-6 lg:p-8 border border-teal-500/20 shadow-xl">
-            <p className="text-slate-400 text-sm lg:text-base font-semibold mb-3">
-              {t.costSavingVsCowork}
-            </p>
-            <p className="text-3xl lg:text-4xl font-black text-teal-400 mb-1">
-              {fmt(savingVsCowork, lang)}
-            </p>
-            <p className="text-slate-400 text-sm lg:text-base">
-              {savingVsCoworkPct} % {lang === "fi" ? "halvempi" : lang === "sv" ? "billigare" : "cheaper"}
-            </p>
-          </div>
-        </div>
+        )}
 
         {/* Laskentaperusteet */}
         <div className="bg-slate-800/50 rounded-2xl p-5 lg:p-7 border border-white/5">
           <p className="text-slate-500 text-xs lg:text-sm font-semibold uppercase tracking-widest mb-3">
             {t.costBasisTitle}
           </p>
-          <div className="flex flex-wrap gap-4 lg:gap-8 text-xs lg:text-sm text-slate-500">
-            <span><span className="font-semibold" style={{ color: "#fb7185" }}>A:</span> {t.costBasisHotel}</span>
-            <span><span className="font-semibold" style={{ color: "#fbbf24" }}>B:</span> {t.costBasisCowork}</span>
-            <span><span className="font-semibold" style={{ color: "#2dd4bf" }}>C:</span> {t.costBasisP18}</span>
+          <div className="flex flex-col gap-2 text-xs lg:text-sm text-slate-500">
+            <span>{t.ehCalcBasisBundle}</span>
+            <span>{t.ehCalcBasisHotel}</span>
           </div>
+          <p className="text-slate-500 text-xs mt-3 border-t border-white/5 pt-3">{t.ehCalcVatNote}</p>
         </div>
 
       </div>
