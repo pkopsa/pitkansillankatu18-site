@@ -59,10 +59,16 @@ export const metadata: Metadata = {
     "VE2 ehdotus Kokkola",
     "loft asunto Kokkola",
     "liikehuoneisto asuinhuoneisto Kokkola",
-    // KIP
+    // KIP & teollisuus (#Arctial #Aluminium #LowCarbon #Kronoby)
     "KIP-alue toimitila",
     "Keliber toimisto Kokkola",
     "Arctial projektitiimi Kokkola",
+    "Arctial alumiinitehdas Kokkola",
+    "vähähiilinen alumiini Kokkola",
+    "vähähiilinen teollisuus Kokkola",
+    "alumiinitehdas Kruunupyy",
+    "Kruunupyy Kokkola teollisuus",
+    "Kronoby industri Karleby",
     // ── RUOTSI ─────────────────────────────────────────────────────
     "coworking Karleby",
     "coworking-lokal Karleby",
@@ -77,6 +83,9 @@ export const metadata: Metadata = {
     "projektkontor Karleby",
     "KIP-området Karleby",
     "möteslokal Karleby",
+    "Arctial aluminium Karleby",
+    "lågkol aluminium Finland",
+    "Kronoby Karleby industri",
     // ── ENGLANTI ───────────────────────────────────────────────────
     "coworking space Kokkola",
     "executive housing Kokkola",
@@ -91,6 +100,10 @@ export const metadata: Metadata = {
     "project office Kokkola",
     "KIP zone office space",
     "Keliber Boliden Arctial office Kokkola",
+    "Arctial low carbon aluminium Finland",
+    "low carbon aluminium Kokkola",
+    "aluminium plant Kronoby Finland",
+    "Kokkola industrial park KIP",
     "meeting room Kokkola",
     "business hub Kokkola Finland",
   ],
