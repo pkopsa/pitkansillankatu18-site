@@ -178,7 +178,20 @@ export default function Home() {
       rafId = requestAnimationFrame(step);
     }
 
-    function stop() { cancelAnimationFrame(rafId); }
+    // Auto-resume: 30 s inaktiviteetin jälkeen käynnistyy uudelleen (Samsung TV kauko-ohjain ei pysäytä pysyvästi)
+    const RESUME_MS = 30_000;
+    let resumeTimer: ReturnType<typeof setTimeout> | null = null;
+
+    function resume() {
+      rafId = requestAnimationFrame(step);
+    }
+
+    function stop() {
+      cancelAnimationFrame(rafId);
+      if (resumeTimer) clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(resume, RESUME_MS);
+    }
+
     window.addEventListener("wheel", stop, { passive: true });
     window.addEventListener("touchstart", stop, { passive: true });
     window.addEventListener("keydown", stop);
@@ -186,6 +199,7 @@ export default function Home() {
     rafId = requestAnimationFrame(step);
     return () => {
       cancelAnimationFrame(rafId);
+      if (resumeTimer) clearTimeout(resumeTimer);
       window.removeEventListener("wheel", stop);
       window.removeEventListener("touchstart", stop);
       window.removeEventListener("keydown", stop);
