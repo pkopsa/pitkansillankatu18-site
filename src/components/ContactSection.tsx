@@ -160,7 +160,7 @@ export default function ContactSection({ t, prefillMessage }: { t: T; prefillMes
               <label className="flex flex-col gap-2">
                 <span className="text-sm lg:text-base font-semibold text-slate-700">
                   {t.formPhoneLabel}{" "}
-                  <span className="text-slate-400 font-normal">{t.formPhoneOptional}</span>
+                  <span className="text-slate-500 font-normal">{t.formPhoneOptional}</span>
                 </span>
                 <input
                   type="tel"
@@ -237,7 +237,7 @@ export default function ContactSection({ t, prefillMessage }: { t: T; prefillMes
                   <div className="w-full border-t border-slate-200" />
                 </div>
                 <div className="relative flex justify-center">
-                  <span className="bg-white px-4 text-sm text-slate-400">tai</span>
+                  <span className="bg-white px-4 text-sm text-slate-500">{t.formOr}</span>
                 </div>
               </div>
               <div className="mt-6 bg-slate-50 border border-slate-200 rounded-2xl p-6 lg:p-8 text-center">

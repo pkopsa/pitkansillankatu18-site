@@ -301,14 +301,14 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
             {[
               { label: t.detailSize, value: `${SALE.area} m²`, sub: t.detailSizeSub },
-              { label: t.detailAddress, value: "Pitkänsillankatu 18", sub: t.detailAddressSub },
+              { label: t.detailAddress, value: "Pitkänsillan\u00adkatu 18", sub: t.detailAddressSub },
               { label: t.detailPrice, value: t.detailPriceVal, sub: t.detailPriceSub },
               { label: t.detailRent, value: t.detailRentVal, sub: t.detailRentSub },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div className="bg-white rounded-2xl lg:rounded-3xl p-5 lg:p-8 text-center shadow-lg border border-slate-100 h-full">
                   <p className="text-slate-500 text-sm lg:text-lg font-semibold mb-2 lg:mb-3">{item.label}</p>
-                  <p className="text-lg md:text-xl lg:text-2xl font-black text-slate-900 leading-tight">{item.value}</p>
+                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-black text-slate-900 leading-tight break-words">{item.value}</p>
                   <p className="text-slate-500 text-xs md:text-sm mt-2">{item.sub}</p>
                 </div>
               </FadeIn>

@@ -259,6 +259,7 @@ export const translations = {
     formSubjectRentLong: "Haluan vuokrata tilan projektitiimille (pitkäaikainen)",
     formSubjectRentShort: "Haluan vuokrata tilan kokoukseen / tilaisuuteen (lyhytaikainen)",
     formBookViewing: "Varaa virtuaalinen tai fyysinen esittely",
+    formOr: "tai",
 
     // Kartta
     mapBadge: "Sijainti",
@@ -536,6 +537,7 @@ export const translations = {
     formSubjectRentLong: "Jag vill hyra lokalen för projektteamet (långsiktig)",
     formSubjectRentShort: "Jag vill hyra lokalen för möte / tillställning (kortsiktig)",
     formBookViewing: "Boka virtuell eller fysisk visning",
+    formOr: "eller",
 
     mapBadge: "Läge",
     mapTitle: "Fastighetens läge",
@@ -810,6 +812,7 @@ export const translations = {
     formSubjectRentLong: "I want to rent the space for my project team (long-term)",
     formSubjectRentShort: "I want to rent the space for a meeting / event (short-term)",
     formBookViewing: "Book a virtual or in-person viewing",
+    formOr: "or",
 
     mapBadge: "Location",
     mapTitle: "Property location",
