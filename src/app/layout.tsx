@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { BROKER, OWNER, SALE, SITE_URL, telHref } from "@/config/site";
+import { BROKER, LAST_UPDATED, OWNER, PRICE_PER_M2, SALE, SITE_URL, telHref } from "@/config/site";
+import { OG_IMAGE } from "@/config/seo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -77,16 +78,24 @@ export const metadata: Metadata = {
   },
 };
 
+// Rakenteinen data (JSON-LD) Googlelle:
+//  - LocalBusiness = itse toimitila (osoite, sijainti, pinta-ala, yhteystieto vuokraukseen)
+//  - RealEstateListing = myynti-/vuokrausilmoitus (hinta, €/m², julkaisupäivä)
+//  - WebSite = sivusto ja kielet
+const intl = (phone: string) => telHref(phone).replace("tel:", "");
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Office",
-      "@id": `${SITE_URL}/#office`,
+      "@type": "LocalBusiness",
+      "@id": `${SITE_URL}/#premises`,
       name: "Pitkänsillankatu 18 – toimisto- ja projektitila | Kokkola",
       description: `${SALE.area} m² toimisto-, projekti- ja edustustila Kokkolan ydinkeskustassa. Vuokralle kuukausittain tai myyntiin.`,
       url: SITE_URL,
-      image: `${SITE_URL}/og-image.jpg`,
+      image: `${SITE_URL}${OG_IMAGE}`,
+      telephone: intl(OWNER.phone),
+      email: OWNER.email,
       address: {
         "@type": "PostalAddress",
         streetAddress: "Pitkänsillankatu 18",
@@ -100,11 +109,24 @@ const jsonLd = {
         latitude: 63.83768,
         longitude: 23.13689,
       },
-      floorSize: {
-        "@type": "QuantitativeValue",
-        value: SALE.area,
-        unitCode: "MTK",
-      },
+      amenityFeature: [
+        { "@type": "LocationFeatureSpecification", name: "Katutason projektitoimisto", value: true },
+        { "@type": "LocationFeatureSpecification", name: "Pohjakerroksen tiimitilat", value: true },
+        { "@type": "LocationFeatureSpecification", name: "Keittiö", value: true },
+        { "@type": "LocationFeatureSpecification", name: "Ydinkeskusta", value: true },
+      ],
+    },
+    {
+      "@type": "RealEstateListing",
+      "@id": `${SITE_URL}/#listing`,
+      url: SITE_URL,
+      name: `Pitkänsillankatu 18, Kokkola – ${SALE.area} m² toimitila, velaton hinta ${SALE.label}`,
+      description: `Velaton hinta ${SALE.label} (${PRICE_PER_M2} €/m²), ${SALE.area} m² yhtiöjärjestyksen mukainen pinta-ala, sisältää pohjakerroksen. Myös vuokrattavissa kuukausittain.`,
+      datePosted: LAST_UPDATED,
+      dateModified: LAST_UPDATED,
+      inLanguage: ["fi", "sv", "en"],
+      image: `${SITE_URL}${OG_IMAGE}`,
+      about: { "@id": `${SITE_URL}/#premises` },
       offers: [
         {
           "@type": "Offer",
@@ -112,13 +134,28 @@ const jsonLd = {
           businessFunction: "http://purl.org/goodrelations/v1#Sell",
           price: SALE.salePriceDebtFree,
           priceCurrency: "EUR",
+          priceSpecification: [
+            { "@type": "PriceSpecification", price: SALE.salePriceDebtFree, priceCurrency: "EUR", valueAddedTaxIncluded: false },
+            {
+              "@type": "UnitPriceSpecification",
+              price: PRICE_PER_M2,
+              priceCurrency: "EUR",
+              unitCode: "MTK",
+              referenceQuantity: { "@type": "QuantitativeValue", value: 1, unitCode: "MTK" },
+            },
+          ],
           availability: "https://schema.org/InStock",
           url: BROKER.listingUrl,
+          itemOffered: {
+            "@type": "Place",
+            name: "Pitkänsillankatu 18, Kokkola",
+            additionalProperty: { "@type": "PropertyValue", name: "Pinta-ala (yhtiöjärjestys)", value: SALE.area, unitCode: "MTK" },
+          },
           seller: {
             "@type": "RealEstateAgent",
             name: BROKER.company,
             url: BROKER.listingUrl,
-            telephone: telHref(BROKER.phone).replace("tel:", ""),
+            telephone: intl(BROKER.phone),
             email: BROKER.email,
           },
         },
@@ -127,19 +164,14 @@ const jsonLd = {
           name: "Vuokraus yrityksille",
           businessFunction: "http://purl.org/goodrelations/v1#LeaseOut",
           availability: "https://schema.org/InStock",
+          url: `${SITE_URL}/#tilapaketit`,
           seller: {
             "@type": "Person",
             name: OWNER.name,
-            telephone: telHref(OWNER.phone).replace("tel:", ""),
+            telephone: intl(OWNER.phone),
             email: OWNER.email,
           },
         },
-      ],
-      amenityFeature: [
-        { "@type": "LocationFeatureSpecification", name: "Katutason projektitoimisto", value: true },
-        { "@type": "LocationFeatureSpecification", name: "Pohjakerroksen tiimitilat", value: true },
-        { "@type": "LocationFeatureSpecification", name: "Keittiö", value: true },
-        { "@type": "LocationFeatureSpecification", name: "Ydinkeskusta", value: true },
       ],
     },
     {
