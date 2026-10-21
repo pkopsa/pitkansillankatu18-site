@@ -10,7 +10,7 @@ import PropertyMap from "@/components/PropertyMap";
 import Lightbox, { type LightboxImage } from "@/components/Lightbox";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Lang, translations, type T } from "@/translations";
-import { BROKER, LINKS, OWNER, SALE, SITE_URL, SPLIT, telHref } from "@/config/site";
+import { BROKER, LINKS, OWNER, SALE, SITE_URL, SPLIT, SPLIT_SUMMARY_PDF, telHref } from "@/config/site";
 import { GALLERY, HERO_IMAGE, webpLoader, type GalleryImage } from "@/data/gallery";
 
 function FadeIn({
@@ -95,22 +95,11 @@ function getScrollSpeed() {
 }
 
 export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang }) {
-  const [lang, setLang] = useState<Lang>(initialLang);
+  const lang = initialLang;
   const [lightbox, setLightbox] = useState<{ images: LightboxImage[]; index: number } | null>(null);
   const [rentPrefill, setRentPrefill] = useState("");
 
   const t = translations[lang];
-
-  // <html lang> seuraa valittua kieltä (ruudunlukijat, käännöstyökalut)
-  useEffect(() => {
-    document.documentElement.lang = lang;
-  }, [lang]);
-
-  // Skrollaa ylös kielen vaihtuessa
-  function handleSetLang(l: Lang) {
-    setLang(l);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
 
   // Wake Lock — estää näytön sammumisen (toimii Chromiumissa)
   useEffect(() => {
@@ -156,7 +145,9 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
       pausing = true;
       setTimeout(() => {
         langIndex = (langIndex + 1) % LANGS_CYCLE.length;
-        setLang(LANGS_CYCLE[langIndex]);
+        const nextUrl = new URL(window.location.href);
+        nextUrl.pathname = LANGS_CYCLE[langIndex] === "fi" ? "/" : `/${LANGS_CYCLE[langIndex]}`;
+        window.location.assign(nextUrl.toString());
         window.scrollTo({ top: 0, behavior: "instant" });
         pausing = false;
       }, PAUSE_MS);
@@ -211,10 +202,10 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   }
 
-  const gallerySections = [
+  const gallerySections: { title: string; images: GalleryImage[]; note?: string }[] = [
     { title: t.galleryOutdoor, images: GALLERY.outdoor },
     { title: t.galleryStreet, images: GALLERY.street },
-    { title: t.galleryLower, images: GALLERY.lower },
+    { title: t.galleryLower, images: GALLERY.lower, note: t.galleryLowerNote },
     { title: t.galleryExtra, images: GALLERY.extra },
   ];
 
@@ -235,7 +226,7 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
 
   return (
     <main lang={lang} className="bg-white text-slate-800 font-sans">
-      <LanguageSwitcher lang={lang} setLang={handleSetLang} />
+      <LanguageSwitcher lang={lang} />
 
       {lightbox && (
         <Lightbox
@@ -472,6 +463,7 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
               <h3 className="text-xl lg:text-2xl font-bold text-slate-800 mb-4 lg:mb-6">
                 {section.title} <span className="text-slate-500 font-normal text-base">· {section.images.length} {t.galleryCount}</span>
               </h3>
+              {section.note && <p className="mb-5 max-w-3xl text-sm lg:text-base text-slate-600 leading-relaxed">{section.note}</p>}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-4">
                 {section.images.map((img, i) => (
                   <button
@@ -542,6 +534,10 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
               </FadeIn>
             ))}
           </div>
+          <a href={SPLIT_SUMMARY_PDF} target="_blank" rel="noopener noreferrer" className="inline-flex mb-3 text-teal-700 font-semibold underline underline-offset-4">
+            {t.splitSummaryDownload}
+          </a>
+          <p className="mb-6 text-sm text-slate-600 max-w-3xl">{t.splitSummaryNote}</p>
           <p className="text-base lg:text-lg text-slate-700 leading-relaxed max-w-3xl mx-auto">{t.splitOutro}</p>
         </div>
       </section>
@@ -558,6 +554,7 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
               <div className="bg-slate-800 rounded-2xl lg:rounded-3xl p-6 lg:p-10 border border-white/10 h-full flex flex-col justify-center text-center">
                 <p className="text-slate-300 text-lg">{t.salePriceLabel}</p>
                 <p className="text-[clamp(2rem,5.5vw,3.5rem)] font-black text-teal-400 my-3 whitespace-nowrap leading-none">{t.detailPriceVal}</p>
+                <p className="text-slate-300 text-sm lg:text-base">{t.salePricePerArea}</p>
                 <p className="text-slate-300 text-sm lg:text-base">{t.saleAreaNote}</p>
               </div>
             </FadeIn>

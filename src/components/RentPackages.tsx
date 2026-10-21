@@ -2,18 +2,13 @@
 
 import { useState } from "react";
 import { LINKS, RENT, formatEur, type Lang } from "@/config/site";
+import { calculateRentEstimate } from "@/lib/rent";
 import type { T } from "@/translations";
 
 type PkgId = keyof typeof RENT.packages;
-const PKG_IDS: PkgId[] = ["eh1", "eh2", "eh3"];
 
 function pkgName(id: PkgId, t: T): string {
   return id === "eh1" ? t.pkgEh1Name : id === "eh2" ? t.pkgEh2Name : t.pkgEh3Name;
-}
-
-// Pienin paketti, johon tiimi mahtuu
-function suggestPackage(team: number): PkgId {
-  return PKG_IDS.find((id) => team <= RENT.packages[id].persons[1]) ?? "eh3";
 }
 
 function range([a, b]: readonly [number, number]): string {
@@ -23,6 +18,7 @@ function range([a, b]: readonly [number, number]): string {
 export default function RentPackages({ t, lang, onCta }: { t: T; lang: Lang; onCta: (prefill: string) => void }) {
   const [team, setTeam] = useState<number>(6);
   const [months, setMonths] = useState<number>(3);
+  const [pmo, setPmo] = useState(false);
 
   const cards = [
     { id: "eh1" as const, name: t.pkgEh1Name, forWho: t.pkgEh1For, space: t.pkgEh1Space },
@@ -30,11 +26,13 @@ export default function RentPackages({ t, lang, onCta }: { t: T; lang: Lang; onC
     { id: "eh3" as const, name: t.pkgEh3Name, forWho: t.pkgEh3For, space: t.pkgEh3Space },
   ];
 
-  const suggested = suggestPackage(team);
-  const monthly = RENT.packages[suggested].monthly;
-  const total = monthly * months;
-  const coworking = RENT.coworkingDeskMonthly * team * months;
-  const diff = coworking - total;
+  const estimate = calculateRentEstimate(team, months);
+
+  function askEstimate() {
+    const name = estimate ? pkgName(estimate.id, t) : t.calcCustomPackage;
+    const message = t.calcInquiry.replace("{team}", String(team)).replace("{months}", String(months)).replace("{package}", name);
+    onCta(message + (pmo ? `\n${t.calcPmoRequest}` : ""));
+  }
 
   function ask(name: string) {
     onCta(t.pkgPrefill.replace("{paketti}", name));
@@ -164,21 +162,33 @@ export default function RentPackages({ t, lang, onCta }: { t: T; lang: Lang; onC
             </fieldset>
           </div>
 
-          <dl className="grid grid-cols-2 lg:grid-cols-3 gap-4 text-sm" aria-live="polite">
-            {[
-              { label: t.calcPackageLabel, value: `${pkgName(suggested, t)} (${suggested.toUpperCase()})` },
-              { label: t.calcMonthlyLabel, value: formatEur(monthly, lang) },
-              { label: t.calcPerPersonLabel, value: formatEur(monthly / team, lang) },
-              { label: t.calcTotalLabel, value: formatEur(total, lang) },
-              { label: t.calcCompareLabel, value: formatEur(coworking, lang) },
-              { label: t.calcDiffLabel, value: `${formatEur(Math.abs(diff), lang)} ${diff >= 0 ? t.calcCheaper : t.calcDearer}` },
-            ].map((row, i) => (
-              <div key={row.label} className={`bg-slate-900/60 rounded-xl p-4 ${i === 0 ? "col-span-2 lg:col-span-1" : ""}`}>
-                <dt className="text-slate-400 text-xs">{row.label} <span className="italic">({t.calcEstimate})</span></dt>
-                <dd className="text-white font-bold text-base sm:text-lg lg:text-xl mt-1 break-words">{row.value}</dd>
-              </div>
-            ))}
-          </dl>
+          <label className="flex items-start gap-3 text-slate-200 mb-3">
+            <input type="checkbox" checked={pmo} onChange={e => setPmo(e.target.checked)} className="mt-1 h-5 w-5 accent-teal-500" />
+            <span>{t.calcPmoLabel}</span>
+          </label>
+          {pmo && <p className="text-teal-200 text-sm mb-6">{t.calcPmoNote}</p>}
+          {estimate ? (
+            <dl className="grid grid-cols-2 lg:grid-cols-3 gap-4 text-sm" aria-live="polite" data-testid="rent-estimate">
+              {[
+                { key: "package", label: t.calcPackageLabel, value: `${pkgName(estimate.id, t)} (${estimate.id.toUpperCase()})` },
+                { key: "monthly", label: t.calcMonthlyLabel, value: formatEur(estimate.monthly, lang) },
+                { key: "person", label: t.calcPerPersonLabel, value: formatEur(estimate.perPerson, lang) },
+                { key: "total", label: t.calcTotalLabel, value: formatEur(estimate.total, lang) },
+                { key: "vat", label: t.calcVatLabel, value: formatEur(estimate.vat, lang) },
+                { key: "gross", label: t.calcGrossLabel, value: formatEur(estimate.gross, lang) },
+                { key: "comparison", label: t.calcCompareLabel, value: formatEur(estimate.coworking, lang) },
+                { key: "difference", label: t.calcDiffLabel, value: `${formatEur(Math.abs(estimate.difference), lang)} ${estimate.difference >= 0 ? t.calcCheaper : t.calcDearer}` },
+              ].map(row => (
+                <div key={row.key} className={`bg-slate-900/60 rounded-xl p-4 ${row.key === "package" ? "col-span-2 lg:col-span-1" : ""}`}>
+                  <dt className="text-slate-400 text-xs">{row.label} <span className="italic">({t.calcEstimate})</span></dt>
+                  <dd data-testid={`rent-${row.key}`} className="text-white font-bold text-base sm:text-lg lg:text-xl mt-1 break-words">{row.value}</dd>
+                </div>
+              ))}
+            </dl>
+          ) : <p role="status" className="text-white border border-teal-400/40 rounded-xl p-5">{t.calcNoEstimate}</p>}
+          <button type="button" onClick={askEstimate} className="mt-6 rounded-full bg-teal-500 px-6 py-3 font-bold text-slate-900 hover:bg-teal-400">
+            {t.calcAsk}
+          </button>
           <p className="text-slate-400 text-xs mt-6 leading-relaxed">{t.calcNote}</p>
         </div>
       </div>

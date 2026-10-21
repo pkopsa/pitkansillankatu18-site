@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
-import { LAST_UPDATED, SALE, SITE_URL, formatEur, type Lang } from "@/config/site";
+import { LAST_UPDATED, SALE, SALE_PRICE_PER_SQM, SITE_URL, formatEur, type Lang } from "@/config/site";
 
 const A = SALE.area;
 
 // Hakukonetekstit kielittäin – hinta ja pinta-ala configista
 const SEO: Record<Lang, { title: string; description: string; ogAlt: string; locale: string }> = {
   fi: {
-    title: `Pitkänsillankatu 18 – toimisto- ja projektitila Kokkolan keskustassa | ${A} m² | ${formatEur(SALE.salePriceDebtFree, "fi")}`,
-    description: `${A} m² toimisto-, projekti- ja edustustila Kokkolan ydinkeskustassa. Vuokralle kuukausittain tai myyntiin, velaton hinta ${formatEur(SALE.salePriceDebtFree, "fi")}. Katutason projektitoimisto ja pohjakerroksen tiimitilat.`,
+    title: `Projektitoimisto Kokkola | ${A} m² | ${formatEur(SALE.salePriceDebtFree, "fi")} · ${formatEur(SALE_PRICE_PER_SQM, "fi")}/m²`,
+    description: `${A} m² projekti- ja toimistotila Kokkolan keskustassa. Kuukausivuokraus tai myynti: velaton hinta ${formatEur(SALE.salePriceDebtFree, "fi")} (${formatEur(SALE_PRICE_PER_SQM, "fi")}/m²). Katutaso ja pohjakerros.`,
     ogAlt: "Pitkänsillankatu 18, Kokkola – julkisivu",
     locale: "fi_FI",
   },
   sv: {
-    title: `Pitkänsillankatu 18 – kontors- och projektlokal i Karleby centrum | ${A} m² | ${formatEur(SALE.salePriceDebtFree, "sv")}`,
-    description: `${A} m² kontor, projekt- och representationslokal i Karlebys stadskärna. Att hyra per månad eller köpa, skuldfritt pris ${formatEur(SALE.salePriceDebtFree, "sv")}. Projektkontor på gatuplan och teamutrymmen på nedre våningen.`,
+    title: `Projektkontor Karleby | ${A} m² | ${formatEur(SALE.salePriceDebtFree, "sv")} · ${formatEur(SALE_PRICE_PER_SQM, "sv")}/m²`,
+    description: `${A} m² projekt- och kontorslokal i Karleby centrum. Månadshyra eller köp: skuldfritt pris ${formatEur(SALE.salePriceDebtFree, "sv")} (${formatEur(SALE_PRICE_PER_SQM, "sv")}/m²). Gatuplan och nedre våning.`,
     ogAlt: "Pitkänsillankatu 18, Karleby – fasad",
     locale: "sv_FI",
   },
   en: {
-    title: `Pitkänsillankatu 18 – office and project space in Kokkola city centre | ${A} m² | ${formatEur(SALE.salePriceDebtFree, "en")}`,
-    description: `${A} m² office, project and representation space in Kokkola city centre. For monthly rent or for sale, debt-free price ${formatEur(SALE.salePriceDebtFree, "en")}. Street-level project office and lower-floor team rooms.`,
+    title: `Project office in Kokkola | ${A} m² | ${formatEur(SALE.salePriceDebtFree, "en")} · ${formatEur(SALE_PRICE_PER_SQM, "en")}/m²`,
+    description: `${A} m² project and office space in Kokkola city centre. Monthly rent or purchase: debt-free price ${formatEur(SALE.salePriceDebtFree, "en")} (${formatEur(SALE_PRICE_PER_SQM, "en")}/m²). Street level and lower floor.`,
     ogAlt: "Pitkänsillankatu 18, Kokkola – facade",
     locale: "en_GB",
   },

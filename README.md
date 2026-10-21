@@ -2,7 +2,7 @@
 
 Myynti- ja vuokrasivusto toimitilalle As Oy Kokkolan Pitkänsillankatu 18:ssa (Terassitalo, LH 19, 225 m²).
 
-**Versio:** 6.0.0 (21.10.2026) – muutokset: [CHANGELOG.md](CHANGELOG.md), päätökset: [DECISIONS-v6.md](DECISIONS-v6.md)
+**Versio:** 6.0.1 (21.10.2026) – muutokset: [CHANGELOG.md](CHANGELOG.md), päätökset: [DECISIONS-v6.md](DECISIONS-v6.md)
 **Live:** https://pitkansillankatu18.com (kieliversiot `/sv` ja `/en`)
 **Vercel-projekti:** pitkansillankatu18-site
 
@@ -40,8 +40,8 @@ Sivu, metatiedot (`src/config/seo.ts`) ja JSON-LD (`src/app/layout.tsx`) lukevat
 ```
 src/
   app/
-    page.tsx, sv/page.tsx, en/page.tsx — kieliversiot (metatiedot) → HomeContent
-    layout.tsx        — root layout, yhteiset metatiedot, JSON-LD
+    (fi)/page.tsx, (sv)/sv/page.tsx, (en)/en/page.tsx — kieliversiot → HomeContent
+    (fi|sv|en)/layout.tsx — palvelimen kieli; yhteinen components/RootDocument
     sitemap.ts        — kolme kieliversiota
     api/contact/      — yhteydenottolomakkeen API-reitti (Nodemailer)
   components/
@@ -51,16 +51,17 @@ src/
     GrowthStory       — Kokkolan kasvutarina
     PropertyMap       — Leaflet-kartta (ladataan vasta näkyvissä)
     Lightbox          — kuvakatselu (näppäimistö + kosketus)
-    LanguageSwitcher  — fi / sv / en
+    LanguageSwitcher  — fi / sv / en reittilinkkeinä
   config/site.ts      — muuttuvat tiedot
   config/seo.ts       — title/description/OpenGraph kielittäin
+  config/structured-data.ts — RealEstateListing, Place, LocalBusiness ja tarjoukset
   data/gallery.ts     — gallerian osiot + WebP-kuvanlataaja
   data/pk18-images.json — kuvien mitat (npm run images kirjoittaa)
   translations.ts     — kaikki UI-tekstit kolmella kielellä + alt-tekstit
 public/
   img/pk18/           — tilakuvat WebP 800/1200/1600 (+ 2400 lightboxiin)
   img/pohjapiirros/   — pohjapiirrokset WebP
-  docs/               — pohjapiirros-PDF:t (LH 19A / A 19B)
+  docs/               — pohjapiirros-PDF:t + julkinen, päivätty jakoehdotuksen yhteenveto
   og-image.jpg        — 1200×630
 scripts/
   optimize-images.mjs — kuvien optimointi (sharp), versiotarkiste ?v=
@@ -91,3 +92,12 @@ Wake Lock API pitää näytön päällä Chromium-pohjaisissa selaimissa.
 ## Muutosloki
 
 Katso [CHANGELOG.md](CHANGELOG.md). Tagit: `git tag --sort=-version:refname`.
+
+## Hyväksymistestaus (UAT)
+
+`npm ci` → `npx playwright install chromium` → `npm run test:uat`. Testit rakentavat tuotantoversion ja käynnistävät sen paikallisesti porttiin 3118; `BASE_URL` voi osoittaa erikseen käynnistettyyn paikalliseen testipalvelimeen. Lomakelähetykset korvataan testivastauksilla. Testit tarkastavat FI/SV/EN, desktop/mobiili, hinnat, jakoesityksen, kolme PDF:ää, laskurin, kuvat, linkit ja indeksointivalmiuden.
+
+Auditointi ja liiketoiminnan avoimet asiat: [docs/uat/PK18-UAT-raportti.md](docs/uat/PK18-UAT-raportti.md).
+Petrikopsa.comin synkronointisuunnitelma ja valmis FI/SV/EN-osio: [docs/uat/PETRIKOPSA-SYNKRONOINTI.md](docs/uat/PETRIKOPSA-SYNKRONOINTI.md).
+
+Huomaa: teknisesti vihreä UAT ei vahvista taloyhtiön tekemää päätöstä, konsultoinnin hintaa tai Googlen indeksointia. 17.10. jakoluonnos ja 7.10. pöytäkirja erotetaan toisistaan. Julkinen yhteenveto generoidaan `scripts/generate-split-summary.py`:llä (Python + reportlab); yksityisiä alkuperäisasiakirjoja ei sisällytetä repoon.
