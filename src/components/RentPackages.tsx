@@ -23,6 +23,8 @@ function range([a, b]: readonly [number, number]): string {
 export default function RentPackages({ t, lang, onCta }: { t: T; lang: Lang; onCta: (prefill: string) => void }) {
   const [team, setTeam] = useState<number>(6);
   const [months, setMonths] = useState<number>(3);
+  // PMO-optio: projektinjohto (petrikopsa.com) – ei hintaa, tarjouksen mukaan
+  const [pmo, setPmo] = useState<boolean>(false);
 
   const cards = [
     { id: "eh1" as const, name: t.pkgEh1Name, forWho: t.pkgEh1For, space: t.pkgEh1Space },
@@ -37,7 +39,11 @@ export default function RentPackages({ t, lang, onCta }: { t: T; lang: Lang; onC
   const diff = coworking - total;
 
   function ask(name: string) {
-    onCta(t.pkgPrefill.replace("{paketti}", name));
+    onCta(t.pkgPrefill.replace("{paketti}", name) + (pmo ? t.pkgPrefillPmo : ""));
+  }
+
+  function spaceOf(id: PkgId): string {
+    return id === "eh1" ? t.pkgEh1Space : id === "eh2" ? t.pkgEh2Space : t.pkgEh3Space;
   }
 
   return (
@@ -164,6 +170,25 @@ export default function RentPackages({ t, lang, onCta }: { t: T; lang: Lang; onC
             </fieldset>
           </div>
 
+          <div className="mb-8 flex items-start gap-3 bg-slate-900/60 rounded-xl p-4 border border-white/10">
+            <input
+              id="calc-pmo"
+              type="checkbox"
+              checked={pmo}
+              onChange={(e) => setPmo(e.target.checked)}
+              className="mt-1 h-5 w-5 accent-teal-500 shrink-0"
+            />
+            <label htmlFor="calc-pmo" className="text-sm">
+              <span className="block text-white font-semibold">{t.calcPmoLabel}</span>
+              <span className="block text-slate-400">
+                {t.calcPmoDesc.replace(/ – .*$/, "")} –{" "}
+                <a href={LINKS.petrikopsa} target="_blank" rel="noopener noreferrer" className="underline decoration-teal-500/50 hover:text-teal-300">
+                  {t.calcPmoDesc.replace(/^.* – /, "")}
+                </a>
+              </span>
+            </label>
+          </div>
+
           <dl className="grid grid-cols-2 lg:grid-cols-3 gap-4 text-sm" aria-live="polite">
             {[
               { label: t.calcPackageLabel, value: `${pkgName(suggested, t)} (${suggested.toUpperCase()})` },
@@ -172,13 +197,21 @@ export default function RentPackages({ t, lang, onCta }: { t: T; lang: Lang; onC
               { label: t.calcTotalLabel, value: formatEur(total, lang) },
               { label: t.calcCompareLabel, value: formatEur(coworking, lang) },
               { label: t.calcDiffLabel, value: `${formatEur(Math.abs(diff), lang)} ${diff >= 0 ? t.calcCheaper : t.calcDearer}` },
+              { label: t.calcSpaceLabel, value: spaceOf(suggested), wide: true },
+              ...(pmo ? [{ label: t.calcPmoLabel, value: t.calcPmoValue }] : []),
             ].map((row, i) => (
-              <div key={row.label} className={`bg-slate-900/60 rounded-xl p-4 ${i === 0 ? "col-span-2 lg:col-span-1" : ""}`}>
+              <div key={row.label} className={`bg-slate-900/60 rounded-xl p-4 ${i === 0 ? "col-span-2 lg:col-span-1" : ""} ${"wide" in row && row.wide ? "col-span-2" : ""}`}>
                 <dt className="text-slate-400 text-xs">{row.label} <span className="italic">({t.calcEstimate})</span></dt>
-                <dd className="text-white font-bold text-base sm:text-lg lg:text-xl mt-1 break-words">{row.value}</dd>
+                <dd className={`text-white font-bold mt-1 break-words ${"wide" in row && row.wide ? "text-sm lg:text-base" : "text-base sm:text-lg lg:text-xl"}`}>{row.value}</dd>
               </div>
             ))}
           </dl>
+          <button
+            onClick={() => ask(`${pkgName(suggested, t)} (${suggested.toUpperCase()}), ${team} ${t.pkgPersonsUnit}, ${months} ${t.pkgMonthsUnit}`)}
+            className="mt-6 bg-teal-500 hover:bg-teal-400 text-slate-900 font-bold text-sm px-5 py-3 rounded-full transition-colors"
+          >
+            {t.pkgCta}
+          </button>
           <p className="text-slate-400 text-xs mt-6 leading-relaxed">{t.calcNote}</p>
         </div>
       </div>
