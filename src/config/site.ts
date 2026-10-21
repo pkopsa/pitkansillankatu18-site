@@ -34,8 +34,9 @@ export const BROKER = {
   title: "Kiinteistönvälittäjä LKV",
   phone: "040 148 0636",
   email: "petri@asuntobjorndahl.fi",
-  // TODO v6.0.1: vaihdetaan julkiseen Etuovi/Dixu-ilmoituslinkkiin. Ei esikatselulinkkejä.
-  listingUrl: "https://www.asuntobjorndahl.fi",
+  // Asunto Björndahlin julkaisema myynti-ilmoitus, Kauppalehti Toimitilat 21.10.2026.
+  listingUrl: "https://toimitilat.kauppalehti.fi/Description/268030557",
+  websiteUrl: "https://www.asuntobjorndahl.fi",
 } as const;
 
 export const OWNER = {

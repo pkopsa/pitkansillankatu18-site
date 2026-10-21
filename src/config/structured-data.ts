@@ -55,7 +55,7 @@ export function buildJsonLd(lang: Lang) {
           referenceQuantity: { "@type": "QuantitativeValue", value: 1, unitCode: "MTK" },
         },
         seller: {
-          "@type": "RealEstateAgent", name: BROKER.company, url: BROKER.listingUrl,
+          "@type": "RealEstateAgent", name: BROKER.company, url: BROKER.websiteUrl,
           telephone: telHref(BROKER.phone).replace("tel:", ""), email: BROKER.email,
         },
       },
