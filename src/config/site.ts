@@ -19,10 +19,13 @@ export const SALE = {
   },
 } as const;
 
-// Hallitukselle 17.10.2026 esitetty jako – yhtiöjärjestyksen mukaiset vastikepinta-alat
+// Velaton neliöhinta (108 000 € / 225 m² = 480 €/m²) – lasketaan, ei kovakoodata
+export const PRICE_PER_M2 = Math.round(SALE.salePriceDebtFree / SALE.area);
+
+// Hallitukselle 17.10.2026 esitetty jako – yhtiöjärjestyksen mukaiset vastikepinta-alat (1 osake = 1 m²)
 export const SPLIT = {
-  commercial: { id: "LH 19A", area: 107 },
-  residential: { id: "A 19B", area: 118 },
+  commercial: { id: "LH 19A", area: 107, shares: "2226–2332" },
+  residential: { id: "A 19B", area: 118, shares: "2333–2450" },
 } as const;
 
 export const BROKER = {

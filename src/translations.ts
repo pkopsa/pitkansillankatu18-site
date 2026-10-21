@@ -1,4 +1,4 @@
-import { BROKER, LAST_UPDATED, RENT, SALE, SPLIT, formatDate, formatEur, type Lang } from "@/config/site";
+import { BROKER, LAST_UPDATED, PRICE_PER_M2, RENT, SALE, SPLIT, formatDate, formatEur, type Lang } from "@/config/site";
 
 export type { Lang };
 
@@ -7,6 +7,7 @@ const priceEn = formatEur(SALE.salePriceDebtFree, "en");
 const rentFi = `${formatEur(RENT.monthlyRange[0], "fi").replace(/ €$/, "")}–${formatEur(RENT.monthlyRange[1], "fi")}`;
 const rentEn = `${formatEur(RENT.monthlyRange[0], "en")}–${formatEur(RENT.monthlyRange[1], "en").replace(/^€/, "")}`;
 const A = SALE.area;
+const M2 = PRICE_PER_M2; // 480 €/m²
 const C = SPLIT.commercial;
 const R = SPLIT.residential;
 
@@ -20,7 +21,7 @@ export const translations = {
     heroLocation: "Kokkola · Ydinkeskusta · Pitkänsillankatu 18",
     heroTitle: `Toimisto-, projekti- ja edustustila Kokkolan keskustassa – ${A}\u00a0m², vuokralle tai myyntiin`,
     heroSub: "Katutason edustava projektitoimisto ja pohjakerroksen tiimitilat. Myös kuukausivuokralla.",
-    heroMeta: `${A}\u00a0m² · Velaton hinta ${priceFi}`,
+    heroMeta: `${A}\u00a0m² · Velaton hinta ${priceFi} (${M2}\u00a0€/m²)`,
     heroBtnRent: "Pyydä esittely tai vuokratarjous",
     heroBtnListing: "Katso myynti-ilmoitus",
 
@@ -93,7 +94,7 @@ export const translations = {
     // Kuukausikustannuslaskuri
     calcBadge: "Laskuri",
     calcTitle: "Kuukausikustannus vuokra-asiakkaalle",
-    calcSub: "Valitse tiimin koko ja kesto. Laskuri ehdottaa pakettia ja vertaa coworking-työpisteisiin.",
+    calcSub: "Valitse tiimin koko ja kesto. Laskuri ehdottaa tilapakettia (isommille tiimeille myös pohjakerroksen tiimitilat), vertaa coworking-työpisteisiin ja voit lisätä projektinjohdon.",
     calcTeamLabel: "Tiimin koko",
     calcDurationLabel: "Kesto",
     calcPackageLabel: "Ehdotettu paketti",
@@ -106,18 +107,23 @@ export const translations = {
     calcCheaper: "edullisempi",
     calcDearer: "kalliimpi",
     calcNote: `Kaikki luvut ovat arvioita (alv 0 %, + alv 25,5 %), eivät sitovia tarjouksia. Coworking-vertailu ${formatEur(RENT.coworkingDeskMonthly, "fi")}/hlö/kk.`,
+    calcSpaceLabel: "Tila",
+    calcPmoLabel: "Lisää projektinjohto (PMO)",
+    calcPmoDesc: "Strategic PMO, SAFe- ja AI-konsultointi – Petri Kopsa, petrikopsa.com",
+    calcPmoValue: "Tarjouksen mukaan",
+    pkgPrefillPmo: " Lisäksi kiinnostaa projektinjohto (PMO).",
 
     // Ekosysteemi
     ecoBadge: "Kaikki samasta paikasta",
     ecoTitle: "Tilat, projektinjohto ja majoitus",
     eco1Title: "Tilat + projektinjohto avaimet käteen",
-    eco1Desc: "Petri Kopsa (MSc, MBA, PMP, SAFe SPC) – Strategic PMO, hankejohto ja AI-konsultointi",
+    eco1Desc: "Petri Kopsa (MSc, MBA, PMP, SAFe SPC) – Strategic PMO, SAFe- ja AI-konsultointi sekä hankejohto",
     eco1Link: "petrikopsa.com →",
     eco2Title: "Tarvitsetko tilaa vain päiväksi?",
     eco2Desc: "Kokoukset, koulutukset ja juhlat: terassitalo.com",
     eco2Link: "Varauskalenteri →",
     eco3Title: "Majoitus projektitiimille 200 metrin päässä",
-    eco3Desc: "Kalustettu asunto samalla kadulla: pitkansillankatu33.com",
+    eco3Desc: "Corporate Housing: kalustettu 69 m² kaksio samalla kadulla – pitkansillankatu33.com",
     eco3Link: "pitkansillankatu33.com →",
 
     // Miksi tämä toimitila
@@ -164,7 +170,7 @@ export const translations = {
     galleryTitle: "Kuvagalleria",
     galleryOutdoor: "Ulkoa ja sijainti",
     galleryStreet: "Katutaso",
-    galleryLower: `Pohjakerros – ${R.id}`,
+    galleryLower: `Pohjakerros – tiimitilat vuokralle / ${R.id}-suunnitelma`,
     galleryCount: "kuvaa",
     galleryExtra: "Lisäkuvia – tila projektitoimistona",
 
@@ -172,9 +178,9 @@ export const translations = {
     splitBadge: "Huoneiston jako",
     splitTitle: "Huoneiston jako – esitys ylimääräiselle yhtiökokoukselle",
     splitIntro: `Taloyhtiön hallitus käsitteli huoneiston LH 19 jakamista kokouksessaan 7.10.2026 (pöytäkirja 5/2026, § 4). Osakas on toimittanut hallitukselle 17.10.2026 yksinkertaistetun esityksen ylimääräistä yhtiökokousta varten: huoneisto jaettaisiin liikehuoneistoksi ${C.id} ja asuinhuoneistoksi ${R.id}. Esitys ei ole vielä yhtiökokouksen hyväksymä.`,
-    splitCard1Title: `${C.id} – liikehuoneisto, katutaso, ${C.area} m² (sininen alue).`,
+    splitCard1Title: `${C.id} – liikehuoneisto, katutaso, ${C.area} m² (osakkeet ${C.shares}, sininen alue).`,
     splitCard1Body: "Pitkänsillankadun puoleinen osa, käynti suoraan kadulta. Toimisto-, myymälä- tai palvelutila.",
-    splitCard2Title: `${R.id} – asuinhuoneisto, katutaso ja pohjakerros, ${R.area} m² (vihreä alue).`,
+    splitCard2Title: `${R.id} – asuinhuoneisto, katutaso ja pohjakerros, ${R.area} m² (osakkeet ${R.shares}, vihreä alue).`,
     splitCard2Body: "Sisäpihan puoleinen katutason osa ja huoneistoon kuuluva pohjakerros, käynti sisäpihalta.",
     splitSmall: `Pinta-alat ovat yhtiöjärjestyksen mukaisia vastikepinta-aloja (yhteensä ${A} m², sisältää pohjakerroksen), eivät mitattuja huoneistoaloja. Huoneistojen väliin rakennettaisiin EI30-palo- ja ääniseinä. Kustannuksista vastaa osakas.`,
     splitOutro: `Jaon jälkeen kohde toimisi joko yhtenä ${A} m² kokonaisuutena tai kahtena erillisenä yksikkönä (toimisto + asunto). Lisätiedot: kiinteistönvälittäjä ${BROKER.name}.`,
@@ -189,7 +195,7 @@ export const translations = {
     saleBadge: "Myynnissä",
     saleTitle: "Kohde myynnissä",
     salePriceLabel: "Velaton hinta",
-    saleAreaNote: `${A} m², yhtiöjärjestyksen mukainen pinta-ala`,
+    saleAreaNote: `${A} m², yhtiöjärjestyksen mukainen pinta-ala · ${M2} €/m²`,
     saleBrokerLabel: "Välittäjä",
     saleListingBtn: "Katso myynti-ilmoitus",
     saleRentNote: "Tila on myynnin aikana vuokrattavissa yrityskäyttöön; mahdolliset vuokrasopimukset sovitetaan kaupan ehtoihin.",
@@ -323,7 +329,7 @@ export const translations = {
     heroLocation: "Karleby · Centrum · Pitkänsillankatu 18",
     heroTitle: `Kontor, projekt- och representationslokal i Karleby centrum – ${A}\u00a0m², att hyra eller köpa`,
     heroSub: "Representativt projektkontor på gatuplan och teamutrymmen på nedre våningen. Även månadshyra.",
-    heroMeta: `${A}\u00a0m² · Skuldfritt pris ${priceFi}`,
+    heroMeta: `${A}\u00a0m² · Skuldfritt pris ${priceFi} (${M2}\u00a0€/m²)`,
     heroBtnRent: "Begär visning eller hyresofferta",
     heroBtnListing: "Se försäljningsannonsen",
 
@@ -391,7 +397,7 @@ export const translations = {
 
     calcBadge: "Kalkylator",
     calcTitle: "Månadskostnad för hyresgästen",
-    calcSub: "Välj teamstorlek och period. Kalkylatorn föreslår ett paket och jämför med coworking-platser.",
+    calcSub: "Välj teamstorlek och period. Kalkylatorn föreslår ett lokalpaket (för större team även teamutrymmena på nedre våningen), jämför med coworking-platser och du kan lägga till projektledning.",
     calcTeamLabel: "Teamstorlek",
     calcDurationLabel: "Period",
     calcPackageLabel: "Föreslaget paket",
@@ -404,17 +410,22 @@ export const translations = {
     calcCheaper: "billigare",
     calcDearer: "dyrare",
     calcNote: `Alla siffror är uppskattningar (moms 0 %, + moms 25,5 %), inte bindande offerter. Coworking-jämförelse ${formatEur(RENT.coworkingDeskMonthly, "sv")}/pers/mån.`,
+    calcSpaceLabel: "Lokal",
+    calcPmoLabel: "Lägg till projektledning (PMO)",
+    calcPmoDesc: "Strategic PMO, SAFe- och AI-konsultering – Petri Kopsa, petrikopsa.com",
+    calcPmoValue: "Enligt offert",
+    pkgPrefillPmo: " Vi är också intresserade av projektledning (PMO).",
 
     ecoBadge: "Allt på ett ställe",
     ecoTitle: "Lokaler, projektledning och boende",
     eco1Title: "Lokaler + projektledning nyckelfärdigt",
-    eco1Desc: "Petri Kopsa (MSc, MBA, PMP, SAFe SPC) – Strategic PMO, projektledning och AI-konsultering",
+    eco1Desc: "Petri Kopsa (MSc, MBA, PMP, SAFe SPC) – Strategic PMO, SAFe- och AI-konsultering samt projektledning",
     eco1Link: "petrikopsa.com →",
     eco2Title: "Behöver du lokal bara för en dag?",
     eco2Desc: "Möten, utbildningar och fester: terassitalo.com",
     eco2Link: "Bokningskalender →",
     eco3Title: "Boende för projektteamet 200 meter bort",
-    eco3Desc: "Möblerad lägenhet på samma gata: pitkansillankatu33.com",
+    eco3Desc: "Corporate housing: möblerad tvåa på 69 m² på samma gata – pitkansillankatu33.com",
     eco3Link: "pitkansillankatu33.com →",
 
     whyTitle: "Varför denna lokal",
@@ -458,16 +469,16 @@ export const translations = {
     galleryTitle: "Bildgalleri",
     galleryOutdoor: "Exteriör och läge",
     galleryStreet: "Gatuplan",
-    galleryLower: `Nedre våning – ${R.id}`,
+    galleryLower: `Nedre våning – teamutrymmen att hyra / plan för ${R.id}`,
     galleryCount: "bilder",
     galleryExtra: "Fler bilder – lokalen som projektkontor",
 
     splitBadge: "Delning av lägenheten",
     splitTitle: "Delning av lägenheten – förslag till extra bolagsstämma",
     splitIntro: `Bostadsbolagets styrelse behandlade delningen av lokal LH 19 vid sitt möte 7.10.2026 (protokoll 5/2026, § 4). Delägaren har 17.10.2026 lämnat ett förenklat förslag till styrelsen inför en extra bolagsstämma: lokalen skulle delas i affärslokalen ${C.id} och bostadslägenheten ${R.id}. Förslaget har ännu inte godkänts av bolagsstämman.`,
-    splitCard1Title: `${C.id} – affärslokal, gatuplan, ${C.area} m² (blått område).`,
+    splitCard1Title: `${C.id} – affärslokal, gatuplan, ${C.area} m² (aktierna ${C.shares}, blått område).`,
     splitCard1Body: "Delen mot Pitkänsillankatu, ingång direkt från gatan. Kontor, butik eller servicelokal.",
-    splitCard2Title: `${R.id} – bostadslägenhet, gatuplan och nedre våning, ${R.area} m² (grönt område).`,
+    splitCard2Title: `${R.id} – bostadslägenhet, gatuplan och nedre våning, ${R.area} m² (aktierna ${R.shares}, grönt område).`,
     splitCard2Body: "Gatuplanets del mot innergården och den tillhörande nedre våningen, ingång från innergården.",
     splitSmall: `Ytorna är vederlagsytor enligt bolagsordningen (totalt ${A} m², inkluderar nedre våningen), inte uppmätta lägenhetsytor. Mellan lägenheterna skulle byggas en brand- och ljudisolerande EI30-vägg. Delägaren står för kostnaderna.`,
     splitOutro: `Efter delningen kunde objektet fungera antingen som en helhet på ${A} m² eller som två separata enheter (kontor + bostad). Mer information: fastighetsmäklare ${BROKER.name}.`,
@@ -481,7 +492,7 @@ export const translations = {
     saleBadge: "Till salu",
     saleTitle: "Objektet är till salu",
     salePriceLabel: "Skuldfritt pris",
-    saleAreaNote: `${A} m², yta enligt bolagsordningen`,
+    saleAreaNote: `${A} m², yta enligt bolagsordningen · ${M2} €/m²`,
     saleBrokerLabel: "Mäklare",
     saleListingBtn: "Se försäljningsannonsen",
     saleRentNote: "Lokalen kan hyras ut för företagsbruk under försäljningen; eventuella hyresavtal anpassas till köpevillkoren.",
@@ -608,7 +619,7 @@ export const translations = {
     heroLocation: "Kokkola · City Centre · Pitkänsillankatu 18",
     heroTitle: `Office, project and representation space in Kokkola city centre – ${A}\u00a0m², for rent or for sale`,
     heroSub: "A representative project office at street level and team rooms on the lower floor. Also available monthly.",
-    heroMeta: `${A}\u00a0m² · Debt-free price ${priceEn}`,
+    heroMeta: `${A}\u00a0m² · Debt-free price ${priceEn} (€${M2}/m²)`,
     heroBtnRent: "Request a viewing or rental quote",
     heroBtnListing: "View the sales listing",
 
@@ -676,7 +687,7 @@ export const translations = {
 
     calcBadge: "Calculator",
     calcTitle: "Monthly cost for a tenant",
-    calcSub: "Choose team size and duration. The calculator suggests a package and compares it with coworking desks.",
+    calcSub: "Choose team size and duration. The calculator suggests a space package (lower-floor team rooms included for larger teams), compares it with coworking desks, and you can add project leadership.",
     calcTeamLabel: "Team size",
     calcDurationLabel: "Duration",
     calcPackageLabel: "Suggested package",
@@ -689,17 +700,22 @@ export const translations = {
     calcCheaper: "cheaper",
     calcDearer: "more expensive",
     calcNote: `All figures are estimates (VAT 0%, + VAT 25.5%), not binding offers. Coworking comparison ${formatEur(RENT.coworkingDeskMonthly, "en")}/person/month.`,
+    calcSpaceLabel: "Space",
+    calcPmoLabel: "Add project leadership (PMO)",
+    calcPmoDesc: "Strategic PMO, SAFe and AI consulting – Petri Kopsa, petrikopsa.com",
+    calcPmoValue: "On request",
+    pkgPrefillPmo: " We are also interested in project leadership (PMO).",
 
     ecoBadge: "All in one place",
     ecoTitle: "Space, project management and accommodation",
     eco1Title: "Space + project management, turnkey",
-    eco1Desc: "Petri Kopsa (MSc, MBA, PMP, SAFe SPC) – Strategic PMO, project leadership and AI consulting",
+    eco1Desc: "Petri Kopsa (MSc, MBA, PMP, SAFe SPC) – Strategic PMO, SAFe and AI consulting, project leadership",
     eco1Link: "petrikopsa.com →",
     eco2Title: "Need a space for just one day?",
     eco2Desc: "Meetings, training and parties: terassitalo.com",
     eco2Link: "Booking calendar →",
     eco3Title: "Accommodation for the project team 200 metres away",
-    eco3Desc: "A furnished apartment on the same street: pitkansillankatu33.com",
+    eco3Desc: "Corporate housing: furnished 69 m² two-room apartment on the same street – pitkansillankatu33.com",
     eco3Link: "pitkansillankatu33.com →",
 
     whyTitle: "Why this property",
@@ -743,16 +759,16 @@ export const translations = {
     galleryTitle: "Photo gallery",
     galleryOutdoor: "Exterior and location",
     galleryStreet: "Street level",
-    galleryLower: `Lower floor – ${R.id}`,
+    galleryLower: `Lower floor – team rooms for rent / ${R.id} plan`,
     galleryCount: "photos",
     galleryExtra: "More photos – the space as a project office",
 
     splitBadge: "Division of the unit",
     splitTitle: "Division of the unit – proposal to an extraordinary general meeting",
     splitIntro: `The housing company's board discussed dividing unit LH 19 at its meeting on 7 October 2026 (minutes 5/2026, § 4). On 17 October 2026 the shareholder submitted a simplified proposal to the board for an extraordinary general meeting: the unit would be divided into commercial unit ${C.id} and residential unit ${R.id}. The proposal has not yet been approved by the general meeting.`,
-    splitCard1Title: `${C.id} – commercial unit, street level, ${C.area} m² (blue area).`,
+    splitCard1Title: `${C.id} – commercial unit, street level, ${C.area} m² (shares ${C.shares}, blue area).`,
     splitCard1Body: "The part facing Pitkänsillankatu, entrance directly from the street. Office, shop or service premises.",
-    splitCard2Title: `${R.id} – residential unit, street level and lower floor, ${R.area} m² (green area).`,
+    splitCard2Title: `${R.id} – residential unit, street level and lower floor, ${R.area} m² (shares ${R.shares}, green area).`,
     splitCard2Body: "The courtyard-side part of the street level and the lower floor belonging to the unit, entrance from the courtyard.",
     splitSmall: `Areas are charge-basis areas per the articles of association (${A} m² in total, including the lower floor), not measured floor areas. An EI30 fire and sound-insulating wall would be built between the units. The shareholder bears the costs.`,
     splitOutro: `After the division the property could serve either as one ${A} m² whole or as two separate units (office + home). More information: real estate agent ${BROKER.name}.`,
@@ -766,7 +782,7 @@ export const translations = {
     saleBadge: "For sale",
     saleTitle: "The property is for sale",
     salePriceLabel: "Debt-free price",
-    saleAreaNote: `${A} m², area per the articles of association`,
+    saleAreaNote: `${A} m², area per the articles of association · €${M2}/m²`,
     saleBrokerLabel: "Agent",
     saleListingBtn: "View the sales listing",
     saleRentNote: "The space can be rented for business use during the sale; any leases will be aligned with the terms of the sale.",
