@@ -9,18 +9,18 @@
       2400
     ]
   },
-  "pk18-katu-nayteikkunat-2": {
+  "pk18-katu-nayteikkunat": {
     "width": 1600,
-    "height": 1038,
+    "height": 1039,
     "widths": [
       800,
       1200,
       1600
     ]
   },
-  "pk18-katu-nayteikkunat": {
+  "pk18-katu-nayteikkunat-2": {
     "width": 1600,
-    "height": 1039,
+    "height": 1038,
     "widths": [
       800,
       1200,
@@ -72,15 +72,6 @@
       1600
     ]
   },
-  "pk18-katutaso-keittio-yleiskuva-2": {
-    "width": 1600,
-    "height": 1037,
-    "widths": [
-      800,
-      1200,
-      1600
-    ]
-  },
   "pk18-katutaso-keittio-yleiskuva": {
     "width": 1600,
     "height": 1036,
@@ -89,6 +80,15 @@
       1200,
       1600,
       2400
+    ]
+  },
+  "pk18-katutaso-keittio-yleiskuva-2": {
+    "width": 1600,
+    "height": 1037,
+    "widths": [
+      800,
+      1200,
+      1600
     ]
   },
   "pk18-katutaso-keltaiset-tuolit": {

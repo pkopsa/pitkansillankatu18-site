@@ -12,9 +12,9 @@
  * (q85, raja 900 kt).
  * EXIF-metatiedot (sijainti, kamera) poistetaan; EXIF-suunta huomioidaan.
  *
- * Jos lähdekansiossa on "<nimi>-sumennettu.jpg", sitä käytetään alkuperäisen
- * sijaan ja tulostiedoston nimi on ilman "-sumennettu"-päätettä
- * (ks. scripts/blur-plates.mjs).
+ * Jos lähdekansiossa on "<nimi>-muokattu.jpg" (logo poistettu, scripts/remove-logos.py)
+ * tai "<nimi>-sumennettu.jpg" (kilvet sumennettu, scripts/blur-plates.mjs), käytetään
+ * niistä ensimmäistä alkuperäisen sijaan; tulostiedoston nimi on ilman päätettä.
  *
  * Käyttö:
  *   npm run images                                   # oletuskansiot alla
@@ -40,7 +40,8 @@ const MAX_BYTES = 250 * 1024;
 const QUALITIES = [82, 74, 66, 58, 50];
 const SHRINK_STEPS = [1, 0.85, 0.7]; // jos laatu ei riitä, pienennä mittoja
 const EXT = new Set([".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp", ".avif", ".heic", ".heif"]);
-const BLURRED_SUFFIX = "-sumennettu";
+// Muokattujen versioiden päätteet etusijajärjestyksessä
+const EDIT_SUFFIXES = ["-muokattu", "-sumennettu"];
 
 // Lightboxin täysikokoiset (2400 px, q85, ≤ 900 kt)
 const LARGE = {
@@ -90,16 +91,21 @@ async function encodeUnderLimit(input, width, qualities = QUALITIES, maxBytes = 
   return null;
 }
 
-/** Valitsee lähdetiedostot: sumennettu versio korvaa alkuperäisen. */
+/** Valitsee lähdetiedostot: muokattu versio korvaa alkuperäisen (ks. EDIT_SUFFIXES). */
 async function listSources(dir) {
   const files = (await fs.readdir(dir)).filter((f) => EXT.has(path.extname(f).toLowerCase())).sort();
-  const blurred = new Set(
-    files.filter((f) => path.parse(f).name.endsWith(BLURRED_SUFFIX))
-      .map((f) => path.parse(f).name.slice(0, -BLURRED_SUFFIX.length)),
-  );
-  return files
-    .filter((f) => !blurred.has(path.parse(f).name))
-    .map((f) => ({ dir, file: f, base: slugify(path.parse(f).name.replace(BLURRED_SUFFIX, "")) }));
+  const byBase = new Map();
+  for (const f of files) {
+    const name = path.parse(f).name;
+    const suffix = EDIT_SUFFIXES.find((s) => name.endsWith(s));
+    const original = suffix ? name.slice(0, -suffix.length) : name;
+    const rank = suffix ? EDIT_SUFFIXES.indexOf(suffix) : EDIT_SUFFIXES.length;
+    const prev = byBase.get(original);
+    if (!prev || rank < prev.rank) byBase.set(original, { file: f, rank });
+  }
+  return [...byBase.entries()]
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([original, { file }]) => ({ dir, file, base: slugify(original) }));
 }
 
 async function writeVariant(base, encoded) {
