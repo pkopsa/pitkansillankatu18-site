@@ -18,7 +18,8 @@ Myynti- ja vuokrasivusto toimitilalle As Oy Kokkolan Pitkänsillankatu 18:ssa (T
 npm run dev      # localhost:3000 (Webpack, ei Turbopack)
 npm run build    # Tuotantobuild
 npm run lint     # ESLint
-npm run images   # Kuvat pk18-aineistosta → public/img/pk18 (WebP)
+npm run images   # Kuvat pk18-aineistosta → public/img/pk18 (WebP) + logotarkistus
+npm run check:images  # Björndahl-logotarkistus public/img-kuville (ajetaan myös ennen buildia)
 ```
 
 > **Huom.** Tämän koneen CPU ei tue BMI2-käskyjä — Turbopack kaatuu. Älä lisää `--turbopack`-lippua.
@@ -62,13 +63,24 @@ public/
   docs/               — pohjapiirros-PDF:t (LH 19A / A 19B)
   og-image.jpg        — 1200×630
 scripts/
-  optimize-images.mjs — kuvien optimointi (sharp)
+  optimize-images.mjs — kuvien optimointi (sharp), versiotarkiste ?v=
+  check-logos.mjs     — Björndahlin B-logon tunnistin (prebuild + images)
+  remove-logos.py     — B-logon poisto lähdekuvista (OpenCV, erillinen venv)
+  grade-v5-photos.py  — v5.5-kuvien sävysovitus ammattikuviin (OpenCV)
   blur-plates.mjs     — rekisterikilpien sumennus lähdekuviin
   generate-og-image.mjs — og-image.jpg julkisivukuvasta
   render-pdf.swift    — PDF → PNG (macOS PDFKit; korvaa pdftoppm:n)
 ```
 
 Lähdekuvat ja -asiakirjat ovat repon ulkopuolella: `~/kopsa-web/pk18-aineisto`.
+
+### Kuvat: Björndahlin logo EI saa palata
+
+Kuvaajan lähdekuvissa on Asunto Björndahlin pyöreä punainen B-logo (julkisivu, näyteikkunat-2).
+- Julkaistava versio tehdään aina `scripts/remove-logos.py`:llä (`…-muokattu.jpg`); `npm run images` hylkää näistä kuvista muun version.
+- `scripts/check-logos.mjs` tunnistaa logon: se ajetaan `npm run images` -ajossa jokaiselle lähdekuvalle ja `prebuild`-vaiheessa kaikille `public/img`-kuville – build epäonnistuu, jos logo löytyy. Älä ohita tarkistusta.
+- Uudet kuvat lisätään vain `npm run images` -putken kautta (ei suoraan `public/`-kansioon).
+- Kuvien URL:issa on sisällön tarkiste (`?v=`), koska kuvat välimuistitetaan vuodeksi (`immutable`); älä poista sitä.
 
 ## Kiosk-tila
 

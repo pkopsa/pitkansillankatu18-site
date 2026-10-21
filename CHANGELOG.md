@@ -37,6 +37,12 @@
 - "Kohde myynnissä": hinta skaalautuu laatikon leveyteen eikä katkea.
 - Fonttikoot yhtenäistetty: osio-otsikot ja tunnisteet samankokoisia; "Miksi tämä toimitila" ei enää kahteen kertaan.
 - Laskurin ja kasvutarinan tekstien ylivuodot kapeilla näytöillä korjattu.
+- **Logot eivät palaa:** `scripts/check-logos.mjs` (ajetaan `npm run images` -ajossa ja ennen jokaista buildia),
+  ja kuvaskripti vaatii logottoman version julkisivusta ja näyteikkunat-2:sta.
+- **Välimuisti:** kuvien URL:iin sisällön tarkiste `?v=…` (myös og-image ja pohjapiirrokset) – päivitetty kuva näkyy heti
+  eikä vanha versio jää selaimen vuoden välimuistiin.
+- **Lisäkuvia-galleria:** v5.5-livesivuston 10 kuvaa omana osionaan, sävy ja valoisuus sovitettu ammattikuviin
+  (`scripts/grade-v5-photos.py`), rekisterikilvet sumennettu.
 
 ### Korjattu
 - Lomakkeen API: käyttäjän syöte koodataan HTML-sähköpostissa; sähköpostin muototarkistus.

@@ -120,6 +120,22 @@ Lähtötila: master = origin/master = tuotanto (`12bb0ff`, v5.5-1). Haara: `rele
 - **Tarkistus:** automaattinen ylivuototesti 9 leveydellä (320–1440 px) × FI/SV/EN → 0 ylivuotoa (ennen 6).
   Lighthouse mobiili /sv: 95 / 100 / 96 / 100.
 
+## Katselmointi 2 (21.10.2026): logot, välimuisti ja v5.5-kuvat
+- **"Logot jäivät kuviin" = selaimen välimuisti:** julkaistavissa tiedostoissa ei ollut logoja (tarkistettu), mutta kuvat
+  julkaistiin samoilla URL:eilla ja `Cache-Control: immutable, max-age=1 v` piti vanhat versiot selaimessa. Korjaus:
+  manifestiin sisällön SHA-1-tarkiste → loader lisää `?v=`; pohjapiirroksille `?v=20261017`, og-imagelle `?v=LAST_UPDATED`.
+- **Logojen paluun esto (3 kerrosta):** (1) `REQUIRED_EDITS` – julkisivu ja näyteikkunat-2 vain `-muokattu`-versiona;
+  (2) `findLogos` jokaiselle lähdekuvalle `npm run images` -ajossa; (3) `prebuild` ajaa tunnistimen kaikille `public/img`-kuville
+  → Vercel-build epäonnistuu, jos logo pääsee kuviin. Testattu: alkuperäiset 3/3 logoa tunnistettu, 0 väärää hälytystä
+  muissa 26 + 10 kuvassa; virheellinen ajo ei kirjoita manifestia. Sääntö kirjattu CLAUDE.md:hen ja README:hen.
+- **v5.5-kuvat:** 11 kuvaa git-historiasta → `pk18-aineisto/kuvat-v5-live/`. Sävysovitus LAB-avaruudessa
+  (valkotasapaino, L-prosenttipisteet, kroma vain lisäten; sisäkuvat sisäkuviin, ulkokuvat lievemmin) →
+  `kuvat-v5-sovitettu/`. Omana galleriaosionaan "Lisäkuvia – tila projektitoimistona", jotta ammattikuvaosiot pysyvät yhtenäisinä.
+  Pilvisen sään ulkokuvia ei voi muuttaa aurinkoisiksi – ne poikkeavat hieman ammattikuvien ulkokuvista.
+- **Jätetty pois:** `kip18-kaytatava.jpg` – oviaukosta näkyy sänky, mikä liiketilan markkinoinnissa voi herättää kysymyksiä
+  asumiskäytöstä. Lisätään, jos Petri haluaa.
+- **Kilvet v5.5-kuvissa:** katunäkymän Volvo ja kahden julkisivukuvan ikkunaheijastukset sumennettu (eivät olleet selvästi luettavia).
+
 ## Avoimet asiat
 - **v6.0.1:** julkinen Etuovi/Dixu-ilmoituslinkki `BROKER.listingUrl`:iin.
 - **v6.0.1:** sv/en-tekstien tarkistus (Petri).

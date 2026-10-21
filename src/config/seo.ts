@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SALE, SITE_URL, formatEur, type Lang } from "@/config/site";
+import { LAST_UPDATED, SALE, SITE_URL, formatEur, type Lang } from "@/config/site";
 
 const A = SALE.area;
 
@@ -27,6 +27,9 @@ const SEO: Record<Lang, { title: string; description: string; ogAlt: string; loc
 
 const PATHS: Record<Lang, string> = { fi: "/", sv: "/sv", en: "/en" };
 
+// Versio kuvan URL:iin, jotta somepalvelut ja selaimet hakevat päivitetyn kuvan
+export const OG_IMAGE = `/og-image.jpg?v=${LAST_UPDATED}`;
+
 export function pageUrl(lang: Lang): string {
   return lang === "fi" ? SITE_URL : `${SITE_URL}${PATHS[lang]}`;
 }
@@ -49,13 +52,13 @@ export function buildMetadata(lang: Lang): Metadata {
       siteName: "Pitkänsillankatu 18 – Kokkola",
       title: s.title,
       description: s.description,
-      images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: s.ogAlt }],
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: s.ogAlt }],
     },
     twitter: {
       card: "summary_large_image",
       title: s.title,
       description: s.description,
-      images: ["/og-image.jpg"],
+      images: [OG_IMAGE],
     },
   };
 }

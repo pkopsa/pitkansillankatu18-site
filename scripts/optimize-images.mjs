@@ -23,15 +23,17 @@
  * Manifesti (mitat sivun width/height-arvoja varten): src/data/pk18-images.json
  */
 
+import { createHash } from "node:crypto";
 import { promises as fs } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import sharp from "sharp";
+import { findLogos } from "./check-logos.mjs";
 
 const AINEISTO = path.join(os.homedir(), "kopsa-web/pk18-aineisto");
 const SRCS = (process.argv.length > 2
   ? process.argv.slice(2)
-  : [path.join(AINEISTO, "kuvat-katutaso"), path.join(AINEISTO, "kuvat-alakerta")]
+  : ["kuvat-katutaso", "kuvat-alakerta", "kuvat-v5-sovitettu"].map((d) => path.join(AINEISTO, d))
 ).map((p) => path.resolve(p));
 const OUT = path.resolve("public/img/pk18");
 const MANIFEST = path.resolve("src/data/pk18-images.json");
@@ -40,6 +42,10 @@ const MAX_BYTES = 250 * 1024;
 const QUALITIES = [82, 74, 66, 58, 50];
 const SHRINK_STEPS = [1, 0.85, 0.7]; // jos laatu ei riitä, pienennä mittoja
 const EXT = new Set([".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp", ".avif", ".heic", ".heif"]);
+// Kuvat, joista Björndahlin logo on poistettu (scripts/remove-logos.py): vain "-muokattu"-versio kelpaa.
+// Lisäksi jokainen lähdekuva ajetaan logotunnistimen läpi (scripts/check-logos.mjs).
+const REQUIRED_EDITS = new Set(["pk18-julkisivu-pitkansillankatu", "pk18-katu-nayteikkunat-2"]);
+
 // Muokattujen versioiden päätteet etusijajärjestyksessä
 const EDIT_SUFFIXES = ["-muokattu", "-sumennettu"];
 
@@ -112,7 +118,7 @@ async function writeVariant(base, encoded) {
   const info = await sharp(encoded.buf).metadata();
   const outName = `${base}-${info.width}.webp`; // nimi = todellinen leveys
   await fs.writeFile(path.join(OUT, outName), encoded.buf);
-  return { outName, width: info.width, height: info.height, kb: Math.round(encoded.buf.length / 1024), q: encoded.q };
+  return { outName, buf: encoded.buf, width: info.width, height: info.height, kb: Math.round(encoded.buf.length / 1024), q: encoded.q };
 }
 
 async function processOne({ dir, file, base }, seen) {
@@ -120,6 +126,14 @@ async function processOne({ dir, file, base }, seen) {
     throw new Error(`Nimikonflikti: "${file}" ja "${seen.get(base)}" normalisoituvat samaksi nimeksi "${base}". Nimeä toinen uudelleen.`);
   }
   seen.set(base, file);
+
+  if (REQUIRED_EDITS.has(base) && !path.parse(file).name.endsWith("-muokattu")) {
+    throw new Error(`"${file}": tästä kuvasta pitää käyttää logoton "-muokattu"-versio – aja scripts/remove-logos.py.`);
+  }
+  const logos = await findLogos(path.join(dir, file));
+  if (logos.length) {
+    throw new Error(`"${file}": Björndahlin logo löytyi (${logos.length} kpl) – poista se ennen julkaisua (scripts/remove-logos.py).`);
+  }
 
   const input = sharp(path.join(dir, file), { failOn: "none" }).rotate(); // rotate() = EXIF-suunta
   let meta;
@@ -150,7 +164,10 @@ async function processOne({ dir, file, base }, seen) {
     if (!encoded) throw new Error(`"${file}" (${LARGE.width} px): ei saatu alle ${LARGE.maxBytes / 1024} kt.`);
     results.push({ ...(await writeVariant(base, encoded)), shrunk: encoded.w !== LARGE.width });
   }
-  return { file, base, results };
+  // Versiotunniste sisällöstä: muuttunut kuva saa uuden URL:n (?v=), vaikka välimuisti on "immutable"
+  const hash = createHash("sha1");
+  for (const r of results) hash.update(r.buf);
+  return { file, base, results, v: hash.digest("hex").slice(0, 8) };
 }
 
 async function main() {
@@ -189,6 +206,12 @@ async function main() {
     }
   }
 
+  if (failed > 0) {
+    // Ei kirjoiteta manifestia vajaana – sivu jatkaa edellisellä toimivalla manifestilla
+    console.error(`\nKeskeytetty: ${failed} virhettä, manifestia ei päivitetty.`);
+    process.exit(1);
+  }
+
   // Manifesti: sivu lukee tästä kuvien mitat ja saatavilla olevat leveydet
   await fs.writeFile(
     MANIFEST,
@@ -200,6 +223,7 @@ async function main() {
             width: m.results[0].width,
             height: m.results[0].height,
             widths: m.results.map((x) => x.width).sort((a, b) => a - b),
+            v: m.v,
           },
         ]),
       ),
@@ -207,8 +231,7 @@ async function main() {
       2,
     ) + "\n",
   );
-  console.log(`\nValmis: ${manifest.length} kuvaa, ${failed} virhettä. Manifesti: ${MANIFEST}\nMuista alt-tekstit kaikilla kielillä!`);
-  if (failed > 0) process.exit(1);
+  console.log(`\nValmis: ${manifest.length} kuvaa. Manifesti: ${MANIFEST}\nMuista alt-tekstit kaikilla kielillä!`);
 }
 
 main().catch((e) => {

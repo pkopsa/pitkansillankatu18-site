@@ -1,11 +1,12 @@
 import type { ImageLoaderProps } from "next/image";
 import manifest from "@/data/pk18-images.json";
 
-type ManifestEntry = { width: number; height: number; widths: number[] };
+type ManifestEntry = { width: number; height: number; widths: number[]; v?: string };
 const MANIFEST = manifest as Record<string, ManifestEntry>;
 
-// Pohjapiirrosten WebP-versiot (scripts/render-pdf.swift → sharp)
+// Pohjapiirrosten WebP-versiot (scripts/render-pdf.swift → sharp); vaihda versio, jos kuvat muuttuvat
 const FLOOR_PLAN_WIDTHS = [800, 1600];
+const FLOOR_PLAN_VERSION = "20261017";
 
 export type GalleryImage = { base: string; src: string; width: number; height: number };
 
@@ -51,16 +52,33 @@ export const GALLERY = {
     "pk18-alakerta-huone",
     "pk18-alakerta-portaat",
   ].map(pk18),
+  // v5.5-sivuston kuvat, sävy sovitettu ammattikuviin (scripts/grade-v5-photos.py)
+  extra: [
+    "pk18-v5-avoin-toimisto",
+    "pk18-v5-kokouspoyta",
+    "pk18-v5-taukotila-naytto",
+    "pk18-v5-neuvottelutila",
+    "pk18-v5-keittioalue",
+    "pk18-v5-keittio",
+    "pk18-v5-toimisto",
+    "pk18-v5-julkisivu",
+    "pk18-v5-julkisivu-sisaankaynti",
+    "pk18-v5-katunakyma",
+  ].map(pk18),
 };
 
 export const HERO_IMAGE = pk18("pk18-katutaso-pitka-poyta-ikkunat");
 
 // Valmiiksi optimoidut WebP-versiot: valitaan pienin leveys, joka riittää.
 // src on muotoa "/img/pk18/<base>" tai "/img/pohjapiirros/<base>" ilman päätettä.
+// ?v= = sisällön tarkiste: kuvat välimuistitetaan vuodeksi ("immutable"), joten muuttunut
+// kuva tarvitsee uuden URL:n – muuten selain näyttää vanhan version.
 export function webpLoader({ src, width }: ImageLoaderProps): string {
   const base = src.slice(src.lastIndexOf("/") + 1);
-  const widths = src.startsWith("/img/pohjapiirros/") ? FLOOR_PLAN_WIDTHS : MANIFEST[base]?.widths ?? [];
+  const isPlan = src.startsWith("/img/pohjapiirros/");
+  const widths = isPlan ? FLOOR_PLAN_WIDTHS : MANIFEST[base]?.widths ?? [];
   if (widths.length === 0) return src;
   const w = widths.find((x) => x >= width) ?? widths[widths.length - 1];
-  return `${src}-${w}.webp`;
+  const v = isPlan ? FLOOR_PLAN_VERSION : MANIFEST[base]?.v;
+  return `${src}-${w}.webp${v ? `?v=${v}` : ""}`;
 }

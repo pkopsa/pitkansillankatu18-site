@@ -215,6 +215,7 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
     { title: t.galleryOutdoor, images: GALLERY.outdoor },
     { title: t.galleryStreet, images: GALLERY.street },
     { title: t.galleryLower, images: GALLERY.lower },
+    { title: t.galleryExtra, images: GALLERY.extra },
   ];
 
   const floorPlanLightbox: LightboxImage[] = FLOOR_PLANS.map((p) => ({ src: p.img, alt: t[p.altKey] }));
