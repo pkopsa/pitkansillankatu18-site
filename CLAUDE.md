@@ -15,7 +15,7 @@ npm run start    # Start production server
 npm run lint     # Run ESLint
 ```
 
-No test runner is configured yet.
+Playwright UAT: `npm run test:uat` builds and starts a local production server on port 3118, then checks FI/SV/EN on desktop and mobile. Contact form delivery is mocked.
 
 ## Architecture
 

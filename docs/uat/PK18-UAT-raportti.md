@@ -1,0 +1,45 @@
+# PK18 – business- ja hyväksymistestaus 21.10.2026
+
+**Lähtöversio:** 6.0.0, commit `0d151bd`, tuotannon kolme kieliversiota tarkistettu suoraan HTTPS:llä ja selaimella. **Korjattu versio:** 6.0.1, haara `codex/pk18-uat-v6`, paikallinen tuotantobuild. Ei tuotantomuutosta tai master-mergeä tämän auditoinnin perusteella.
+
+**Tulos:** lopullinen sarja **70/70 läpi**, 0 ohitettua, 0 epävakaata; Node 24.22.0 / Next 15.5.28 / npm. Lint ja build läpi, kuvien prebuild-logotarkistus 126 kuvaa / 0 logollista. Aiempi laajennettu sarja antoi myös 70/70; viimeisin ajo varmistaa lopullisen 6.0.1:n. Testit eivät lähetä oikeita viestejä. Tekninen läpäisy ei vahvista puuttuvaa hallituksen päätöstä, sitovaa hinnastoa, toisen sivuston toteutusta tai Googlen indeksointia.
+
+## Kahdeksan hyväksymispistettä
+
+| Tunnus | Julkaistu 6.0.0 / ennen | Korjaus ja paikallinen 6.0.1 | Business-hyväksynnän tila |
+|---|---|---|---|
+| PK18-UAT-01 | 108 000 € oli jo oikein kaikilla kielillä, myös title/description/OG ja JSON-LD:n Offerissa. 480 €/m² puuttui hinnan yhteydestä ja metatiedoista. | Yksikköhinta lasketaan yhdestä lähteestä: 108 000 / 225 = 480. Mukana myyntiosiossa, title/description/OG/Twitter ja myyntitarjouksen UnitPriceSpecificationissa. Vuokralaskuri ei käytä ostohintaa. | Korjattu ja testattu. |
+| PK18-UAT-02 | 107/118 m² oikein; osakeryhmät näkyivät PDF:issä mutta puuttuivat sivukorteista. Ei vanhoja yksikköjakoja tai VEN02:ta aktiivisessa sisällössä. | Config + kortit: LH 19A, katutaso, liikehuoneisto, 107 m², osakkeet 2226–2332; A 19B, katutaso ja pohjakerros, 118 m², osakkeet 2333–2450. Yhteensä 225, pohjakerrosta ei lisätä toistamiseen. | Korjattu; yksiköt kuvataan ehdotettuina, ei nykyisinä rekisteröityinä yksikköinä. |
+| PK18-UAT-03 | ARK 1-1 ja ARK 1-2: molemmat live-PDF:t 200 application/pdf. Värilliset WebP:t ja katselu jo olemassa. Erillinen esitys-PDF puuttui. | Alkuperäiset pohjapiirros-PDF:t säilyivät tavutasolla samoina. Lisätty selvästi merkitty julkinen yhteenveto 17.10. jakoluonnoksesta; kolme latausta testattu 200/PDF-tunnisteella, kuvat latautuvat ja katselu avautuu/sulkeutuu. Yhteenvedon yksi sivu tarkastettu myös kuvana. | Korjattu yhteenvedon osalta. Ei väitetä, että julkaistu PDF olisi hallituksen lopullinen esitys. |
+| PK18-UAT-04 | Jo lähtöteksti sanoi jaon olevan hyväksymättä. Geminin ehdottaman muotoilun hallituksen 7.10. hyväksymää esitystä ei voi vahvistaa pöytäkirjalla. | Täsmennetty hallituksen käsittely 7.10., osakkaan luonnos 17.10. ja omistajan ilmoittama marraskuun 2026 käsittelytavoite. Kokouspäivä ja lopullinen esitys vahvistuvat erikseen. Ei väitettä hyväksytystä yhtiöjärjestysmuutoksesta. | **Lähdeuskollinen teksti korjattu; lopullisen hallituksen esityksen toteaminen avoin.** |
+| PK18-UAT-05 | EH1–EH3 olivat jo B2B-tilapaketteja, eivät tuottolaskureita. Laskuri kuitenkin sivuutti korttien kestorajat. PMO-tarjousoptio puuttui. | Laskenta vaatii sekä henkilöt että keston paketin rajoihin; muuten yksilöllinen tarjous. Arvonlisävero ja verollinen kokonaisarvio näkyvät, senttien pyöristys korjattu. PMO/SAFe/AI-optio pyytää erillisen tarjouksen ja siirtää tiimin/ajan/paketin lomakkeelle. EH3 ja koko tila kattavat pohjakerroksen sovittavassa laajuudessa; majoitus erillään. | Tekninen toiminta korjattu. Säilytetyt 1 500 / 1 800 / 2 500 €/kk ovat aiemman version arvioita; niiden kaupallista hyväksyntää ei todennettu. Konsultoinnin hintaa ei keksitty. |
+| PK18-UAT-06 | 800–1600 px kuvat alle 300 kt; kahdeksan 2400 px kuvaa ylitti uuden 400 kt:n ehdon. Alakerta jo omana galleriana. | Logotarkistava putki uudelleenajettu: kaikki 122 gallerian WebP:t <400 000 tavua, suurin 389 074. Kahdeksan lightbox-kuvan yhteiskoko 4 508 698 → 2 876 590 tavua (−36,2 %), leveys säilyi 2400 px. Sisällön versiotarkisteet päivitetty. FI/SV/EN-altit tarkastettu, alakerran pitkä vuokraus ja ehdotettu A 19B erotettu. 320/375 px ei vaakaylivuotoa. | Korjattu ja tarkistettu kuvina. |
+| PK18-UAT-07 | Kaikki kolme ulkoista kohdetta toimivat jo; petrikopsa.com ohjautui www-osoitteeseen. Konsultointiviesti/PK33-kuvaus tarvitsivat täydennyksen. | PK18 mainitsee nyt Strategic PMO:n, SAFe:n ja AI:n sekä 69 m² kalustetun kaksion, majoitus erikseen. Kohteet tarkistettu: Terassitalo + varauskalenteri, petrikopsa.com ja PK33 kaikki 200. Valmis suunnitelma ja FI/SV/EN React-osio petrikopsa.comiin. | PK18 korjattu. **Petrikopsa.comin integraatio ja julkaisu vielä tehtävä omassa repossa.** |
+| PK18-UAT-08 | Robots/sitemap/canonical/hreflang olemassa. Palvelimen html lang oli fi myös /sv ja /en; painikkeet vaihtoivat sisältöä vaihtamatta metadataa/URLia. Schema käytti Office-roolia. | Kolme kielikohtaista juurilayoutia säilyttävät /, /sv, /en mutta antavat oikean kielen palvelimelta. Kielilinkki ja kiosk-kierto vaihtavat reittiä. JSON-LD erottaa RealEstateListing-, Place-, LocalBusiness-, Offer- ja WebSite-entiteetit. Sitemapissa 3 URLia ja x-default; indeksointi sallittu. | Tekninen valmius korjattu ja paikallisesti testattu. **Search Console -tilaa ja indeksointia ei vahvistettu.** |
+
+## Erityinen lähdehavainto PK18-UAT-04:stä
+
+7.10.2026 pöytäkirjan 5/2026 § 4:ssa todetaan, että osakas yksinkertaistaa ehdotusta ja hallitus käsittelee asiaa myöhemmin esimerkiksi sähköpostilla. 17.10. asiakirjan otsikko on “LUONNOS … isännöitsijän ja hallituksen muokattavaksi”. Luonnoksen oma väite aiemmasta hallituksen päätöksestä ei yksin korvaa pöytäkirjaa tai myöhempää kirjallista päätöstä.
+
+Siksi tässä työssä ei muutettu sivua väittämään, että hallitus olisi jo 7.10. hyväksynyt juuri 107/118 m² esityksen marraskuun yhtiökokoukselle. Jos myöhempi hallituksen päätös on olemassa, julkinen muotoilu päivitetään sen nojalla. Pöytäkirjaa, raakaa kutsuluonnosta, yksityisiä henkilötietoja tai .docx-lähdettä ei julkaistu eikä lisätty repoon. Julkinen yhteenveto on [ladattava PDF](../../public/docs/pk18-jakoehdotus-julkinen-yhteenveto-20261017.pdf), ei alkuperäisen hallituksen esityksen näköiskappale.
+
+## Mitä testattiin
+
+- FI/SV/EN × työpöytä 1440×1000 / mobiili 375×812; lisäksi 320 px vaakaylivuoto. Hinta ja yksikköhinta, meta/OG, jaon faktat, PDF-pyynnöt ja kuvat, ehdollinen juridinen sanamuoto, laskuri, PMO-tarjouspyyntö, altit, linkit ja indeksikelpoisuuden tekniset osat.
+- Laskenta: esim. 6 hlö / 3 kk → EH2, vuokra 1 800 €/kk, veroton yhteensä 5 400 €, alv 1 377 €, verollinen yhteensä 6 777 €. Esim. 2 hlö / 12 kk ja 12 hlö / 1 kk eivät saa julkaistujen pakettirajojen vastaista hintaa.
+- Aktiivinen src/public-tekstisisältö skannattu pyydetyille vanhoille hinnoille, VEN02:lle ja vanhoille yksikköjaoille: ei osumia. Muutoshistorian vanhoja hintamainintoja ei poisteta eikä binäärikuvien satunnaisia numerojaksoja käsitellä hintoina. Pohjakuvan 94,7 m² huoneala ei ole vanha 94 m² yksikköjako.
+- Ulkoiset kohteet ja molemmat jo julkaistut PDF:t tarkistettu HTTPS GET -pyynnöillä; 200. Uusi yhteenveto tarkistettu paikallisesti, ei vielä livenä. Lomakkeita ei lähetetty eikä SMTP-toimitusta hyväksymistestattu.
+
+Toisto: `npm ci`, `npx playwright install chromium`, `npm run test:uat`. Ajotiedostot ovat gitignoressa; [testikoodi](../../tests/uat/pk18.spec.ts) sisältää toistettavat odotukset. [Kuvakaappaukset](kuvat/) näyttävät korjatun paikallisen version, eivät väitä sitä julkaistuksi.
+
+## Jatkotoimet ennen tuotantomergeä
+
+1. Tarkista uusi juridinen muotoilu ja mahdollinen myöhempi hallituksen päätös. Pidä kokouksen päivämäärä suunnitelmana, kunnes kutsu on vahvistettu.
+2. Vahvista EH-pakettien henkilö-/kestorajat ja arviohinnat liiketoiminnan näkökulmasta; säilytä konsultointi erillisenä tarjouksena.
+3. Tarkista esikatselussa mobiili, kielenvaihto, kuvat ja kolme PDF-linkkiä. Lopullinen vuokra-/myyntisisältö ei muutu käyttöön ennen hyväksyttyä master-mergeä.
+4. Toteuta [petrikopsa.comin synkronointi](PETRIKOPSA-SYNKRONOINTI.md) sen omassa repossa; valmis komponentti toimitettu tämän työn mukana. Nykyisiä kurssireittejä ei korvata.
+5. Julkaisun jälkeen lähetä `https://pitkansillankatu18.com/sitemap.xml` Search Consoleen ja tee URL-tarkistus /, /sv, /en → Testaa julkaistu URL → Pyydä indeksointia. Tarkista Googlen valitsema canonical ja mahdollinen noindex/estot. Tämä edellyttää sivuston Search Console -käyttöoikeutta.
+
+Google kertoo, että uudelleenindeksointi voi kestää päiviä tai viikkoja eikä pyyntö takaa indeksiin pääsyä: [Google Search Central](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl). Schema-roolit perustuvat [RealEstateListing](https://schema.org/RealEstateListing)- ja [LocalBusiness](https://schema.org/LocalBusiness)-määrittelyihin. Ulkoista Rich Results / Schema Validator -palvelun hyväksyntää ei tässä väitetä saaduksi; paikallinen JSON-rakenne ja arvot testattiin. Kielilayoutit toteutettu [Next.js 15:n route groups -ohjeen](https://nextjs.org/docs/15/app/api-reference/file-conventions/route-groups) mukaan.
+
+**Hyväksyntäpäätös:** tekniset korjaukset läpäisevät UAT:n. Koko ekosysteemin 100 % business-hyväksyntää ei kuitata ennen hallituksen esityksen, kaupallisten oletusten, petrikopsa.comin integraation ja Search Consolen tilan erillistä vahvistamista.

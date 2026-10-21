@@ -12,3 +12,8 @@ images/
 *.csv
 *.zip
 *.tsbuildinfo
+
+# Hyväksymistestien ajonaikaiset tiedostot
+test-results/
+playwright-report/
+.venv/

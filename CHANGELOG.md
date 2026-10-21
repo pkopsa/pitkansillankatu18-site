@@ -1,5 +1,16 @@
 # Muutosloki
 
+## 6.0.1 – 2026-10-21 (UAT-korjaukset, ei vielä tuotannossa)
+
+- 480 €/m² johdetaan myyntihinnasta ja yhtiöjärjestyspinta-alasta; lisätty sivulle, metatietoihin ja JSON-LD:n yksikköhintaan.
+- Osakeryhmät 2226–2332 / 2333–2450 mukaan jakoesityksen kortteihin, ja käsittelyn tila täsmennetty lähdeasiakirjan mukaisesti.
+- Julkinen yhteenveto-PDF osakkaan luonnoksesta; alkuperäisiä pohjakuvia ei muutettu, pöytäkirjaa tai kutsuluonnosta ei julkaistu.
+- Laskuri huomioi pakettien kestorajat ja alv:n, tarjoaa erikseen hinnoiteltavan PMO/SAFe/AI-tarjousoption ja täyttää tarjouspyynnön.
+- Kaikki 2400 px lightbox-kuvat uudelleen optimoitu alle 400 kt:uun logotarkistusta ohittamatta; versiotarkisteet päivitetty.
+- FI/SV/EN saavat oman palvelimen html-kielen; kielivalitsin ja kiosk-kierto vaihtavat myös URLin/metatiedot.
+- Schema erottaa RealEstateListing-, Place-, LocalBusiness- ja Offer-roolit. Sitemapissa x-default.
+- Toistettavat desktop/mobiili-UAT-testit ja petrikopsa.comin synkronointisuunnitelma valmiilla React-osiolla.
+
 ## 6.0.0 – 2026-10-21
 
 ### Muutettu

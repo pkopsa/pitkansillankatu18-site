@@ -19,11 +19,14 @@ export const SALE = {
   },
 } as const;
 
-// Hallitukselle 17.10.2026 esitetty jako – yhtiöjärjestyksen mukaiset vastikepinta-alat
+// Osakkaan 17.10.2026 jakoluonnos – ei yhtiökokouksen hyväksymä muutos.
 export const SPLIT = {
-  commercial: { id: "LH 19A", area: 107 },
-  residential: { id: "A 19B", area: 118 },
+  commercial: { id: "LH 19A", area: 107, shares: [2226, 2332] as const },
+  residential: { id: "A 19B", area: 118, shares: [2333, 2450] as const },
 } as const;
+
+export const SALE_PRICE_PER_SQM = SALE.salePriceDebtFree / SALE.area;
+export const SPLIT_SUMMARY_PDF = "/docs/pk18-jakoehdotus-julkinen-yhteenveto-20261017.pdf";
 
 export const BROKER = {
   company: "Asunto Björndahl Kokkola LKV Oy",
@@ -66,9 +69,11 @@ export const RENT = {
 
 // Muotoilee euromäärän kielen mukaan: fi/sv "108 000 €", en "€108,000"
 export function formatEur(n: number, lang: Lang): string {
-  const digits = Math.round(n).toString();
-  if (lang === "en") return "€" + digits.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  return digits.replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " €";
+  return new Intl.NumberFormat(lang === "en" ? "en-IE" : lang === "sv" ? "sv-FI" : "fi-FI", {
+    style: "currency", currency: "EUR",
+    minimumFractionDigits: Number.isInteger(n) ? 0 : 2,
+    maximumFractionDigits: 2,
+  }).format(n);
 }
 
 // "050 306 0635" → "+358503060635" (tel:-linkkejä varten)

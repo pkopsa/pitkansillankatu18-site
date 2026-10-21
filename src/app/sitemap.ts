@@ -4,7 +4,7 @@ import { pageUrl } from "@/config/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date(LAST_UPDATED);
-  const languages = { fi: pageUrl("fi"), sv: pageUrl("sv"), en: pageUrl("en") };
+  const languages = { fi: pageUrl("fi"), sv: pageUrl("sv"), en: pageUrl("en"), "x-default": pageUrl("fi") };
 
   return (["fi", "sv", "en"] as const).map((lang) => ({
     url: pageUrl(lang),

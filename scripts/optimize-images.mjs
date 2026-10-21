@@ -9,7 +9,7 @@
  * mittoja pienennetään, kunnes tiedosto on alle 250 kt. Jos raja ei täyty,
  * skripti ilmoittaa virheen eikä kirjoita tiedostoa.
  * LARGE-listan kuvista tehdään lisäksi 2400 px versio lightboxia varten
- * (q85, raja 900 kt).
+ * (q82 tai alempi, raja 400 kt).
  * EXIF-metatiedot (sijainti, kamera) poistetaan; EXIF-suunta huomioidaan.
  *
  * Jos lähdekansiossa on "<nimi>-muokattu.jpg" (logo poistettu, scripts/remove-logos.py)
@@ -49,11 +49,11 @@ const REQUIRED_EDITS = new Set(["pk18-julkisivu-pitkansillankatu", "pk18-katu-na
 // Muokattujen versioiden päätteet etusijajärjestyksessä
 const EDIT_SUFFIXES = ["-muokattu", "-sumennettu"];
 
-// Lightboxin täysikokoiset (2400 px, q85, ≤ 900 kt)
+// Lightboxin täysikokoiset (2400 px, q82 tai alempi, < 400 kt)
 const LARGE = {
   width: 2400,
-  quality: 85,
-  maxBytes: 900 * 1024,
+  quality: 82,
+  maxBytes: 399_999,
   bases: new Set([
     "pk18-julkisivu-pitkansillankatu",
     "pk18-katutaso-keittio-yleiskuva",
@@ -160,7 +160,7 @@ async function processOne({ dir, file, base }, seen) {
   }
 
   if (LARGE.bases.has(base) && srcWidth >= LARGE.width) {
-    const encoded = await encodeUnderLimit(input, LARGE.width, [LARGE.quality, 78, 70], LARGE.maxBytes);
+    const encoded = await encodeUnderLimit(input, LARGE.width, [LARGE.quality, 76, 70, 64, 58, 52, 46], LARGE.maxBytes);
     if (!encoded) throw new Error(`"${file}" (${LARGE.width} px): ei saatu alle ${LARGE.maxBytes / 1024} kt.`);
     results.push({ ...(await writeVariant(base, encoded)), shrunk: encoded.w !== LARGE.width });
   }
