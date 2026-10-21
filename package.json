@@ -1,6 +1,6 @@
 {
-  "name": "pitkansillankatu-site",
-  "version": "4.14.0",
+  "name": "pitkansillankatu18-site",
+  "version": "6.0.0",
   "private": true,
   "scripts": {
     "dev": "rm -rf .next node_modules/.cache && next dev",
