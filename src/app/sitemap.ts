@@ -1,16 +1,16 @@
 import type { MetadataRoute } from "next";
-
-const BASE = "https://pitkansillankatu18.com";
+import { LAST_UPDATED } from "@/config/site";
+import { pageUrl } from "@/config/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  const lastModified = new Date(LAST_UPDATED);
+  const languages = { fi: pageUrl("fi"), sv: pageUrl("sv"), en: pageUrl("en") };
 
-  return [
-    {
-      url: BASE,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-  ];
+  return (["fi", "sv", "en"] as const).map((lang) => ({
+    url: pageUrl(lang),
+    lastModified,
+    changeFrequency: "weekly",
+    priority: lang === "fi" ? 1.0 : 0.8,
+    alternates: { languages },
+  }));
 }

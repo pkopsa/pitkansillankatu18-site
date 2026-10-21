@@ -11,3 +11,4 @@ images/
 .claude/
 *.csv
 *.zip
+*.tsbuildinfo
