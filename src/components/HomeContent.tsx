@@ -85,13 +85,13 @@ function toLightbox(images: GalleryImage[], t: T): LightboxImage[] {
 const PAUSE_MS = 2000;
 const LANGS_CYCLE: Lang[] = ["fi", "sv", "en"];
 function getScrollSpeed() {
-  if (typeof window === "undefined") return 1.5;
+  if (typeof window === "undefined") return 0.75;
   // URL override: pitkansillankatu18.com/?speed=8  (handy for on-site kiosk tuning)
   const urlSpeed = parseFloat(new URLSearchParams(window.location.search).get("speed") ?? "");
   if (!isNaN(urlSpeed)) return Math.min(20, Math.max(0.1, urlSpeed));
-  // Viewport-height based: one screenful scrolls by in ~3 s at 60 fps
-  // — auto-calibrates for 1080p TVs, 4K displays and laptops alike
-  return Math.min(12, Math.max(1, window.innerHeight / 180));
+  // Näytön korkeuden mukaan: yksi näytöllinen vierii ohi ~6 sekunnissa (60 fps).
+  // v6.0.2: puolitettu (oli ~3 s, /180, 1–12 px) – liian nopea tietokoneen näytöllä.
+  return Math.min(6, Math.max(0.5, window.innerHeight / 360));
 }
 
 export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang }) {
@@ -140,6 +140,8 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
     let rafId: number;
     let pausing = false;
     let langIndex = Math.max(0, LANGS_CYCLE.indexOf(initialLang));
+    // Alle 1 px:n askeleet kerätään talteen – osa selaimista pyöristää scrollBy(0, 0.5) nollaan
+    let carry = 0;
 
     function switchLang() {
       pausing = true;
@@ -159,7 +161,12 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
       if (window.scrollY >= maxScroll - 1) {
         switchLang();
       } else {
-        window.scrollBy(0, getScrollSpeed());
+        carry += getScrollSpeed();
+        const px = Math.floor(carry);
+        if (px >= 1) {
+          window.scrollBy(0, px);
+          carry -= px;
+        }
       }
       rafId = requestAnimationFrame(step);
     }
