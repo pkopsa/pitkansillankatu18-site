@@ -47,7 +47,7 @@ export default function RentPackages({ t, lang, onCta }: { t: T; lang: Lang; onC
           <span className="inline-block bg-teal-500/10 text-teal-400 text-xs lg:text-sm font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-4 border border-teal-500/20">
             {t.pkgBadge}
           </span>
-          <h2 className="text-3xl lg:text-5xl font-black text-white mb-3 lg:mb-5 tracking-tight">{t.pkgTitle}</h2>
+          <h2 className="text-3xl lg:text-5xl font-bold text-white mb-3 lg:mb-5">{t.pkgTitle}</h2>
           <p className="text-base lg:text-xl text-slate-400 max-w-2xl mx-auto">{t.pkgSub}</p>
         </div>
 
@@ -172,10 +172,10 @@ export default function RentPackages({ t, lang, onCta }: { t: T; lang: Lang; onC
               { label: t.calcTotalLabel, value: formatEur(total, lang) },
               { label: t.calcCompareLabel, value: formatEur(coworking, lang) },
               { label: t.calcDiffLabel, value: `${formatEur(Math.abs(diff), lang)} ${diff >= 0 ? t.calcCheaper : t.calcDearer}` },
-            ].map((row) => (
-              <div key={row.label} className="bg-slate-900/60 rounded-xl p-4">
+            ].map((row, i) => (
+              <div key={row.label} className={`bg-slate-900/60 rounded-xl p-4 ${i === 0 ? "col-span-2 lg:col-span-1" : ""}`}>
                 <dt className="text-slate-400 text-xs">{row.label} <span className="italic">({t.calcEstimate})</span></dt>
-                <dd className="text-white font-bold text-lg lg:text-xl mt-1">{row.value}</dd>
+                <dd className="text-white font-bold text-base sm:text-lg lg:text-xl mt-1 break-words">{row.value}</dd>
               </div>
             ))}
           </dl>

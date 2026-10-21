@@ -31,6 +31,13 @@
 - Vanhat yhtiökokous- ja taloyhtiön PDF:t (`public/docs/`) sekä vanhat kip18-kuvat.
 - Oikotie-linkki (vanha ilmoitus) ja vercel.json:n väärä pitkansillankatu33.com-ohjaus.
 
+### Katselmointi 21.10.2026 (Petrin palaute)
+- Björndahlin pyöreä punainen B-logo poistettu kuvista (julkisivu, näyteikkunat-2) – `scripts/remove-logos.py`.
+- Hero: otsikko pienempi (myös ruotsiksi mahtuu), teksti ylempänä, taustakuva näkyy tekstin alla; painikkeet samankokoisia.
+- "Kohde myynnissä": hinta skaalautuu laatikon leveyteen eikä katkea.
+- Fonttikoot yhtenäistetty: osio-otsikot ja tunnisteet samankokoisia; "Miksi tämä toimitila" ei enää kahteen kertaan.
+- Laskurin ja kasvutarinan tekstien ylivuodot kapeilla näytöillä korjattu.
+
 ### Korjattu
 - Lomakkeen API: käyttäjän syöte koodataan HTML-sähköpostissa; sähköpostin muototarkistus.
 - `npm audit fix`: Next.js 15.5.14 → 15.5.28 (kriittinen haavoittuvuus).

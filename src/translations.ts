@@ -18,9 +18,9 @@ export const translations = {
 
     // Hero
     heroLocation: "Kokkola · Ydinkeskusta · Pitkänsillankatu 18",
-    heroTitle: `Toimisto-, projekti- ja edustustila Kokkolan keskustassa – ${A} m², vuokralle tai myyntiin`,
+    heroTitle: `Toimisto-, projekti- ja edustustila Kokkolan keskustassa – ${A}\u00a0m², vuokralle tai myyntiin`,
     heroSub: "Katutason edustava projektitoimisto ja pohjakerroksen tiimitilat. Myös kuukausivuokralla.",
-    heroMeta: `${A} m² · Velaton hinta ${priceFi}`,
+    heroMeta: `${A}\u00a0m² · Velaton hinta ${priceFi}`,
     heroBtnRent: "Pyydä esittely tai vuokratarjous",
     heroBtnListing: "Katso myynti-ilmoitus",
 
@@ -121,8 +121,7 @@ export const translations = {
     eco3Link: "pitkansillankatu33.com →",
 
     // Miksi tämä toimitila
-    whyBadge: "Miksi tämä toimitila",
-    whyTitle: "MIKSI TÄMÄ TOIMITILA",
+    whyTitle: "Miksi tämä toimitila",
     whySub: "Kuusi syytä valita tämä kohde yrityksellenne",
     why1Icon: "📍", why1Tag: "Keskustan sykkeessä",
     why1Title: "Strateginen sijainti – 0 km sydämestä",
@@ -311,9 +310,9 @@ export const translations = {
     langFlag: "🇸🇪",
 
     heroLocation: "Karleby · Centrum · Pitkänsillankatu 18",
-    heroTitle: `Kontor, projekt- och representationslokal i Karleby centrum – ${A} m², att hyra eller köpa`,
+    heroTitle: `Kontor, projekt- och representationslokal i Karleby centrum – ${A}\u00a0m², att hyra eller köpa`,
     heroSub: "Representativt projektkontor på gatuplan och teamutrymmen på nedre våningen. Även månadshyra.",
-    heroMeta: `${A} m² · Skuldfritt pris ${priceFi}`,
+    heroMeta: `${A}\u00a0m² · Skuldfritt pris ${priceFi}`,
     heroBtnRent: "Begär visning eller hyresofferta",
     heroBtnListing: "Se försäljningsannonsen",
 
@@ -407,8 +406,7 @@ export const translations = {
     eco3Desc: "Möblerad lägenhet på samma gata: pitkansillankatu33.com",
     eco3Link: "pitkansillankatu33.com →",
 
-    whyBadge: "Varför denna lokal",
-    whyTitle: "VARFÖR DENNA LOKAL",
+    whyTitle: "Varför denna lokal",
     whySub: "Sex skäl att välja denna fastighet för ert företag",
     why1Icon: "📍", why1Tag: "I stadens hjärta",
     why1Title: "Strategiskt läge – 0 km från centrum",
@@ -586,9 +584,9 @@ export const translations = {
     langFlag: "🇬🇧",
 
     heroLocation: "Kokkola · City Centre · Pitkänsillankatu 18",
-    heroTitle: `Office, project and representation space in Kokkola city centre – ${A} m², for rent or for sale`,
+    heroTitle: `Office, project and representation space in Kokkola city centre – ${A}\u00a0m², for rent or for sale`,
     heroSub: "A representative project office at street level and team rooms on the lower floor. Also available monthly.",
-    heroMeta: `${A} m² · Debt-free price ${priceEn}`,
+    heroMeta: `${A}\u00a0m² · Debt-free price ${priceEn}`,
     heroBtnRent: "Request a viewing or rental quote",
     heroBtnListing: "View the sales listing",
 
@@ -682,8 +680,7 @@ export const translations = {
     eco3Desc: "A furnished apartment on the same street: pitkansillankatu33.com",
     eco3Link: "pitkansillankatu33.com →",
 
-    whyBadge: "Why this property",
-    whyTitle: "WHY THIS PROPERTY",
+    whyTitle: "Why this property",
     whySub: "Six reasons to choose this space for your business",
     why1Icon: "📍", why1Tag: "Heart of the city",
     why1Title: "Strategic location – 0 km from the core",

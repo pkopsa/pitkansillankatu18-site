@@ -233,7 +233,7 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
   ];
 
   return (
-    <main className="bg-white text-slate-800 font-sans">
+    <main lang={lang} className="bg-white text-slate-800 font-sans">
       <LanguageSwitcher lang={lang} setLang={handleSetLang} />
 
       {lightbox && (
@@ -248,7 +248,7 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
       )}
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative min-h-[100svh] flex flex-col items-center justify-start overflow-hidden">
         <div className="absolute inset-0">
           <Image
             loader={webpLoader}
@@ -259,24 +259,24 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 via-55% to-black/0" />
         </div>
 
-        <div className="relative z-10 text-center px-4 lg:px-8 max-w-5xl mx-auto py-24">
-          <p className="text-teal-300 text-sm lg:text-xl font-semibold tracking-widest uppercase mb-4 lg:mb-6">
+        <div className="relative z-10 text-center px-4 lg:px-8 max-w-4xl mx-auto pt-24 sm:pt-28 lg:pt-32 pb-12">
+          <p className="text-teal-300 text-xs sm:text-sm lg:text-base font-semibold tracking-widest uppercase mb-3 lg:mb-5">
             {t.heroLocation}
           </p>
-          <h1 className="text-[1.9rem] sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-black text-white leading-[1.1] tracking-tight mb-6 lg:mb-8">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white leading-tight tracking-tight text-balance mb-4 lg:mb-6">
             {t.heroTitle}
           </h1>
-          <p className="text-base sm:text-lg md:text-2xl text-slate-100 mb-3 lg:mb-4 font-light max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-xl text-white mb-2 lg:mb-3 max-w-2xl mx-auto text-balance [text-shadow:0_1px_3px_rgb(0_0_0/0.85)]">
             {t.heroSub}
           </p>
-          <p className="text-teal-300 text-base md:text-xl font-semibold mb-8 lg:mb-12">{t.heroMeta}</p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <p className="text-teal-300 text-sm sm:text-base lg:text-lg font-semibold mb-6 lg:mb-8 [text-shadow:0_1px_3px_rgb(0_0_0/0.85)]">{t.heroMeta}</p>
+          <div className="flex flex-col sm:flex-row items-center sm:items-stretch justify-center gap-3 sm:gap-4">
             <button
               onClick={() => goToContact(t.rentInquiryPrefill)}
-              className="inline-block bg-teal-500 hover:bg-teal-400 text-slate-900 text-base lg:text-xl font-bold px-8 lg:px-12 py-4 lg:py-5 rounded-full transition-colors duration-300 shadow-2xl"
+              className="w-64 sm:w-72 min-h-14 flex items-center justify-center text-center leading-tight text-sm sm:text-base lg:text-lg font-bold px-6 py-3 rounded-full transition-colors duration-300 shadow-2xl bg-teal-500 hover:bg-teal-400 text-slate-900"
             >
               {t.heroBtnRent}
             </button>
@@ -284,7 +284,7 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
               href={BROKER.listingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-slate-100 hover:bg-white text-slate-900 text-base lg:text-xl font-bold px-8 lg:px-12 py-4 lg:py-5 rounded-full transition-colors duration-300 shadow-2xl"
+              className="w-64 sm:w-72 min-h-14 flex items-center justify-center text-center leading-tight text-sm sm:text-base lg:text-lg font-bold px-6 py-3 rounded-full transition-colors duration-300 shadow-2xl bg-slate-100 hover:bg-white text-slate-900"
             >
               {t.heroBtnListing}
             </a>
@@ -365,9 +365,9 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-3 mb-4 lg:mb-6 justify-center">
-              <span className="text-teal-400 text-lg lg:text-2xl" aria-hidden>◆</span>
-              <p className="text-teal-400 text-lg lg:text-2xl font-semibold tracking-widest uppercase">{t.benefitsBadge}</p>
-              <span className="text-teal-400 text-lg lg:text-2xl" aria-hidden>◆</span>
+              <span className="text-teal-400 text-sm lg:text-base" aria-hidden>◆</span>
+              <p className="text-teal-400 text-sm lg:text-base font-semibold tracking-widest uppercase">{t.benefitsBadge}</p>
+              <span className="text-teal-400 text-sm lg:text-base" aria-hidden>◆</span>
             </div>
             <h2 className="text-3xl lg:text-5xl font-bold text-center mb-10 lg:mb-16 text-white leading-tight">
               {t.benefitsTitle.split("\n").map((line, i) => (
@@ -427,8 +427,7 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
       <section className="py-14 px-4 lg:py-24 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <p className="text-teal-700 text-sm lg:text-base font-semibold tracking-widest uppercase mb-3 text-center">{t.whyBadge}</p>
-            <h2 className="text-3xl lg:text-5xl font-black text-center mb-3 text-slate-900 tracking-tight">{t.whyTitle}</h2>
+            <h2 className="text-3xl lg:text-5xl font-bold text-center mb-3 text-slate-800">{t.whyTitle}</h2>
             <p className="text-base lg:text-xl text-slate-500 text-center mb-10 lg:mb-16">{t.whySub}</p>
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
@@ -501,7 +500,7 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <p className="text-teal-700 text-sm lg:text-base font-semibold tracking-widest uppercase mb-3 text-center">{t.splitBadge}</p>
-            <h2 className="text-2xl lg:text-4xl font-bold text-center mb-6 lg:mb-8 text-slate-800">{t.splitTitle}</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-6 lg:mb-8 text-slate-800 text-balance">{t.splitTitle}</h2>
             <p className="text-base lg:text-lg text-slate-700 leading-relaxed mb-8 max-w-3xl mx-auto">{t.splitIntro}</p>
           </FadeIn>
 
@@ -557,7 +556,7 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
             <FadeIn>
               <div className="bg-slate-800 rounded-2xl lg:rounded-3xl p-6 lg:p-10 border border-white/10 h-full flex flex-col justify-center text-center">
                 <p className="text-slate-300 text-lg">{t.salePriceLabel}</p>
-                <p className="text-4xl lg:text-6xl font-black text-teal-400 my-3">{t.detailPriceVal}</p>
+                <p className="text-[clamp(2rem,5.5vw,3.5rem)] font-black text-teal-400 my-3 whitespace-nowrap leading-none">{t.detailPriceVal}</p>
                 <p className="text-slate-300 text-sm lg:text-base">{t.saleAreaNote}</p>
               </div>
             </FadeIn>
@@ -658,7 +657,7 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
                   <div key={item.label} className="flex flex-col items-center">
                     <span className="text-3xl lg:text-5xl mb-2 lg:mb-4" aria-hidden>{item.icon}</span>
                     <p className="text-slate-500 text-xs lg:text-lg mb-1 lg:mb-2">{item.label}</p>
-                    <p className="text-sm lg:text-2xl font-bold text-slate-800">{item.value}</p>
+                    <p className="text-sm lg:text-xl font-bold text-slate-800">{item.value}</p>
                   </div>
                 ))}
               </div>
@@ -671,9 +670,9 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
       <section id="yhteystiedot" className="py-14 px-4 lg:py-24 lg:px-8 bg-slate-800 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
-            <p className="text-teal-300 text-base lg:text-2xl font-semibold tracking-widest uppercase mb-4 lg:mb-6">{t.contactBadge}</p>
-            <h2 className="text-4xl lg:text-6xl font-bold mb-4 lg:mb-8">{t.contactTitle}</h2>
-            <p className="text-base lg:text-2xl text-slate-300 mb-10 lg:mb-16 leading-relaxed">{t.contactSub}</p>
+            <p className="text-teal-300 text-sm lg:text-base font-semibold tracking-widest uppercase mb-3">{t.contactBadge}</p>
+            <h2 className="text-3xl lg:text-5xl font-bold mb-4 lg:mb-6">{t.contactTitle}</h2>
+            <p className="text-base lg:text-xl text-slate-300 mb-10 lg:mb-16 leading-relaxed">{t.contactSub}</p>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 items-stretch text-left">

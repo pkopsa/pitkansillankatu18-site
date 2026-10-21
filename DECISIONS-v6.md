@@ -106,6 +106,20 @@ Lähtötila: master = origin/master = tuotanto (`12bb0ff`, v5.5-1). Haara: `rele
 - git grep 119 000, 119000, VE2, VEN0, vastike, sijoittaja, preview=true, pöytäkirja → ei osumia sisällössä,
   paitsi "pöytäkirja 5/2026, § 4" ja "vastikepinta-aloja" (VE2-osumat ovat satunnaisia tavuja WebP-kuvissa).
 
+## Katselmointi 21.10.2026 (Petrin palaute esikatselusta)
+- **B-logot:** löytyi 3 (julkisivu 2 ikkunaa, näyteikkunat-2 porras); sisäkuvissa ei. Ne olivat kuvaan lisättyjä merkkejä,
+  eivät fyysisiä tarroja. Poisto `scripts/remove-logos.py` (OpenCV, ajettu erillisessä venvissä): vasen ikkuna shiftmap,
+  oikea ikkuna kloonattu vasemmasta, porras rivi-interpolointi + kivetyksen tekstuuri. Tulos `kuvat-katutaso/*-muokattu.jpg`
+  (repon ulkopuolella); kuvaskripti käyttää muokattu > sumennettu > alkuperäinen. og-image uusittu.
+- **Hero:** otsikko 2xl → 5xl (oli 1.9rem → 7xl), `225 m²` sitovalla välilyönnillä, sisältö ylhäällä ja liukuvärjäys
+  vaalenee alaspäin → taustakuva näkyy. Pienille teksteille varjo luettavuuden vuoksi.
+- **Painikkeet:** samankokoiset (leveys 16/18 rem, min. korkeus 3,5 rem); pidempi teksti rivittyy kahdelle riville.
+- **Myyntihinta:** `clamp(2rem, 5,5vw, 3,5rem)` + `nowrap`.
+- **Fonttikoot:** kaikki osio-otsikot 3xl/5xl (paitsi pitkä jakoesityksen otsikko 2xl–4xl), tunnisteet sm/base,
+  "Ota yhteyttä" pienennetty muiden tasolle, "Miksi tämä toimitila" -tunniste poistettu (oli otsikon toisto).
+- **Tarkistus:** automaattinen ylivuototesti 9 leveydellä (320–1440 px) × FI/SV/EN → 0 ylivuotoa (ennen 6).
+  Lighthouse mobiili /sv: 95 / 100 / 96 / 100.
+
 ## Avoimet asiat
 - **v6.0.1:** julkinen Etuovi/Dixu-ilmoituslinkki `BROKER.listingUrl`:iin.
 - **v6.0.1:** sv/en-tekstien tarkistus (Petri).

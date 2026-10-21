@@ -27,7 +27,7 @@ export default function GrowthStory({ t }: { t: T; lang: Lang }) {
           >
             {t.growthBadge}
           </span>
-          <h2 className="text-3xl lg:text-5xl 2xl:text-6xl font-black text-white tracking-tight">
+          <h2 className="text-3xl lg:text-5xl font-bold text-white">
             {t.growthTitle}
           </h2>
         </div>
@@ -69,7 +69,7 @@ export default function GrowthStory({ t }: { t: T; lang: Lang }) {
                   style={{ backgroundColor: "#1e293b", borderColor: AMBER_DIM }}
                 >
                   <h3 className="text-sm lg:text-base font-bold text-white mb-2 leading-snug">{ev.title}</h3>
-                  <p className="text-xs lg:text-sm text-slate-400 leading-relaxed">{ev.desc}</p>
+                  <p className="text-xs lg:text-sm text-slate-400 leading-relaxed break-words hyphens-auto">{ev.desc}</p>
                 </div>
 
                 {/* Pystyviiva mobiilissa pisteiden välillä — viimeisellä ei viivaa */}
