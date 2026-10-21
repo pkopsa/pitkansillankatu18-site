@@ -1,0 +1,262 @@
+{
+  "pk18-julkisivu-pitkansillankatu": {
+    "width": 1600,
+    "height": 1039,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ]
+  },
+  "pk18-katu-nayteikkunat-2": {
+    "width": 1600,
+    "height": 1038,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-katu-nayteikkunat": {
+    "width": 1600,
+    "height": 1039,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-katu-sisapihan-suunta": {
+    "width": 1600,
+    "height": 1039,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-katutaso-kahvipiste": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-katutaso-keittio-baaritaso": {
+    "width": 1600,
+    "height": 1037,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-katutaso-keittio-kukat": {
+    "width": 1600,
+    "height": 1037,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-katutaso-keittio-saareke": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-katutaso-keittio-yleiskuva-2": {
+    "width": 1600,
+    "height": 1037,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-katutaso-keittio-yleiskuva": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ]
+  },
+  "pk18-katutaso-keltaiset-tuolit": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ]
+  },
+  "pk18-katutaso-koulutustila-naytto": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-katutaso-koulutustila-sisapiha": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-katutaso-lasikaappi-astiasto": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-katutaso-pitka-poyta-ikkunat": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ]
+  },
+  "pk18-katutaso-pitka-poyta-keittioon": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-katutaso-pitka-poyta-naytto": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-katutaso-pitka-poyta-nojatuolit": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ]
+  },
+  "pk18-katutaso-ryijy-ja-poyta": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-katutaso-sisaankaynti-neuvottelupoyta": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-katutaso-tyohuone": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-katutaso-valkokangas-ja-naytto": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ]
+  },
+  "pk18-katutaso-wc": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-alakerta-huone": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-alakerta-keittio": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ]
+  },
+  "pk18-alakerta-oleskelu": {
+    "width": 1600,
+    "height": 1039,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ]
+  },
+  "pk18-alakerta-portaat": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  },
+  "pk18-alakerta-tyotila-kirjahylly": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ]
+  }
+}

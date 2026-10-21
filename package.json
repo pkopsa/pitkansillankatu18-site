@@ -6,7 +6,8 @@
     "dev": "rm -rf .next node_modules/.cache && next dev",
     "build": "next build",
     "start": "rm -rf .next && next build && next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@types/leaflet": "^1.9.21",
@@ -27,6 +28,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "^15",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
