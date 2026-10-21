@@ -147,3 +147,17 @@ Lähtötila: master = origin/master = tuotanto (`12bb0ff`, v5.5-1). Haara: `rele
 - Repo-siivous myöhemmin (ei tässä): `feature/ve2-executive-housing`- ja `vercel/install-vercel-web-analytics-…`-haarat GitHubissa;
   masterin `stash@{0}` (package-lock versiokenttä) voi poistaa.
 - pk18-aineisto: `kuvat-katutaso/*-sumennettu.jpg` uusia tiedostoja repon ulkopuolella (Drive-kopio päivitettävä tarvittaessa).
+
+## v6.0.1 – UAT-auditointi 21.10.2026 (Claude, haara fix/v6.0.1-uat)
+- **Jakoesityksen sanamuoto säilytetty.** Pyyntö oli "hallituksen (7.10.2026) esitys ylimääräiselle yhtiökokoukselle (marraskuu 2026)".
+  Pöytäkirjan 5/2026 § 4 mukaan hallitus *käsitteli* asiaa ja pyysi yksinkertaistettua esitystä, mutta ei päättänyt esittää
+  (dokumentti 09, kohta 1). Sivun nykyinen teksti on tosi; "hallituksen esitys" ja "marraskuu 2026" lisätään vasta,
+  kun hallitus on käsitellyt 17.10. esityksen ja kokouspäivä on kirjallisesti vahvistettu. **Petri päättää.**
+- **Osakenumerot lisätty korttien otsikoihin** Petrin pyynnöstä (aiempi ohje oli jättää pois; ne näkyivät jo PDF:issä).
+- **Yhtiökokousesityksen PDF:ää ei julkaistu:** luonnos (17.10.) sisältää lauseen "hallitus päätti … esittää", joka ei vastaa
+  pöytäkirjaa. Julkaistaan, kun hallitus/isännöitsijä on hyväksynyt tekstin.
+- **2400 px lightbox-kuvat (8 kpl, 425–783 kt) jätetty ennalleen:** latautuvat vain klikattaessa; uudelleenpakkaus tehdään
+  lähdekuvista Mac minillä (`npm run images`, ks. avoimet asiat), ei WebP→WebP-uudelleenpakkauksena.
+- **`<html lang>` palvelimella aina "fi":** jätetty ennalleen. Google päättelee kielen näkyvästä sisällöstä ja hreflangista,
+  ei lang-attribuutista; korjaus vaatisi juuritason layoutin jakamisen kolmeen reittiryhmään. Ehdotus v6.1:een.
+- Build testattu ilman Google Fonts -yhteyttä (työtilan verkkorajoitus) väliaikaisella fonttikorvauksella, jota ei committattu.

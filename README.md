@@ -2,7 +2,7 @@
 
 Myynti- ja vuokrasivusto toimitilalle As Oy Kokkolan Pitkänsillankatu 18:ssa (Terassitalo, LH 19, 225 m²).
 
-**Versio:** 6.0.0 (21.10.2026) – muutokset: [CHANGELOG.md](CHANGELOG.md), päätökset: [DECISIONS-v6.md](DECISIONS-v6.md)
+**Versio:** 6.0.1 (21.10.2026) – muutokset: [CHANGELOG.md](CHANGELOG.md), päätökset: [DECISIONS-v6.md](DECISIONS-v6.md)
 **Live:** https://pitkansillankatu18.com (kieliversiot `/sv` ja `/en`)
 **Vercel-projekti:** pitkansillankatu18-site
 

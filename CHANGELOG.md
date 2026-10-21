@@ -1,5 +1,20 @@
 # Muutosloki
 
+## 6.0.1 – 2026-10-21 (UAT-korjaukset)
+
+### Muutettu
+- **Neliöhinta 480 €/m²** (laskettu configista: 108 000 € / 225 m²) näkyy heron hintarivillä, myyntiosiossa,
+  meta descriptionissa (FI/SV/EN) ja JSON-LD:ssä (UnitPriceSpecification). PK18-UAT-01.
+- **Huoneiston jako:** korteissa osakenumerot – LH 19A osakkeet 2226–2332, A 19B osakkeet 2333–2450. PK18-UAT-02/04.
+  Johdannon sanamuoto ennallaan (pöytäkirja 5/2026, § 4: hallitus käsitteli, ei vielä päättänyt esittää).
+- **Laskuri:** PMO-optio (projektinjohto, petrikopsa.com, hinta tarjouksen mukaan), ehdotetun paketin tila näkyy
+  (isommille tiimeille pohjakerroksen tiimitilat) ja "Kysy tätä pakettia" -painike vie laskurin valinnat lomakkeelle. PK18-UAT-05.
+- **Galleria:** pohjakerroksen osion otsikko "Pohjakerros – tiimitilat vuokralle / A 19B -suunnitelma" (FI/SV/EN). PK18-UAT-06.
+- **Ekosysteemi:** petrikopsa.com-kortti "Strategic PMO, SAFe- ja AI-konsultointi"; PK33-kortti "Corporate Housing:
+  kalustettu 69 m² kaksio"; footerin terassitalo.com-linkki etusivulle (ennen varauskalenteriin). PK18-UAT-07.
+- **JSON-LD:** olematon schema.org-tyyppi `Office` → `LocalBusiness`; uusi `RealEstateListing` (datePosted, offers).
+  Myynti- ja vuokraustarjoukset siirretty ilmoitukselle. PK18-UAT-08.
+
 ## 6.0.0 – 2026-10-21
 
 ### Muutettu
