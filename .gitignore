@@ -5,3 +5,10 @@ node_modules/
 images/
 .vercel/*
 !.vercel/project.json
+
+# lisätty v6.0.0
+.DS_Store
+.claude/
+*.csv
+*.zip
+*.tsbuildinfo

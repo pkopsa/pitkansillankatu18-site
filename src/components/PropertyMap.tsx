@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 // Koordinaatit: Google Maps -tarkistus 2026-04-16
 const LAT = 63.83768282802387;
 const LNG = 23.13688783166557;
+const LEAFLET_CSS = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
 
 export default function PropertyMap() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -16,6 +17,14 @@ export default function PropertyMap() {
     let map: import("leaflet").Map | null = null;
 
     async function init() {
+      // Leafletin CSS ladataan vasta kun kartta tulee näkyviin (ei estä sivun piirtoa)
+      if (!document.querySelector(`link[href="${LEAFLET_CSS}"]`)) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = LEAFLET_CSS;
+        link.crossOrigin = "";
+        document.head.appendChild(link);
+      }
       const L = (await import("leaflet")).default;
 
       // Leafletin oletuskuvakkeet rikkoontuvat Next.js:ssä — korjataan
@@ -38,10 +47,10 @@ export default function PropertyMap() {
         attributionControl: true,
       });
 
-      // Voyager — värikäs ja selkeä, hyvä kontrasti
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-        attribution: '&copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
-        maxZoom: 20,
+      // OpenStreetMapin vakiotiilet (CARTO vaatii nykyään API-avaimen)
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 19,
       }).addTo(map);
 
       // Oma tyylitelty markeri
@@ -97,19 +106,24 @@ export default function PropertyMap() {
         .openPopup();
     }
 
-    init();
-    return () => { map?.remove(); };
+    // Leaflet (~40 kt JS) ladataan vasta kun kartta on lähellä näkymää
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          init();
+        }
+      },
+      { rootMargin: "600px" }
+    );
+    observer.observe(containerRef.current);
+    return () => {
+      observer.disconnect();
+      map?.remove();
+    };
   }, []);
 
   return (
-    <>
-      {/* Leafletin CSS */}
-      <link
-        rel="stylesheet"
-        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        crossOrigin=""
-      />
-      <div ref={containerRef} className="w-full h-[480px]" />
-    </>
+    <div ref={containerRef} className="w-full h-[480px]" />
   );
 }

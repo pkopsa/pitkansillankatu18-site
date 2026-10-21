@@ -29,3 +29,11 @@ This is a **Next.js 15** app using the **App Router** with React 19, TypeScript,
 - `next.config.ts` — Next.js configuration (TypeScript).
 
 Tailwind is configured via `@tailwindcss/postcss` (v4 plugin approach — no `tailwind.config.*` file by default).
+
+## Kuvat: Björndahlin logo EI saa palata
+
+Kuvaajan lähdekuvissa on Asunto Björndahlin pyöreä punainen B-logo (julkisivu, näyteikkunat-2).
+- Julkaistava versio tehdään aina `scripts/remove-logos.py`:llä (`…-muokattu.jpg`); `npm run images` hylkää näistä kuvista muun version.
+- `scripts/check-logos.mjs` tunnistaa logon: se ajetaan `npm run images` -ajossa jokaiselle lähdekuvalle ja `prebuild`-vaiheessa kaikille `public/img`-kuville – build epäonnistuu, jos logo löytyy. Älä ohita tarkistusta.
+- Uudet kuvat lisätään vain `npm run images` -putken kautta (ei suoraan `public/`-kansioon).
+- Kuvien URL:issa on sisällön tarkiste (`?v=`), koska kuvat välimuistitetaan vuodeksi (`immutable`); älä poista sitä.

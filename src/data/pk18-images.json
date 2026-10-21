@@ -1,0 +1,390 @@
+{
+  "pk18-julkisivu-pitkansillankatu": {
+    "width": 1600,
+    "height": 1039,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "212f062e"
+  },
+  "pk18-katu-nayteikkunat": {
+    "width": 1600,
+    "height": 1039,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "ae4beb1e"
+  },
+  "pk18-katu-nayteikkunat-2": {
+    "width": 1600,
+    "height": 1038,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "3650045e"
+  },
+  "pk18-katu-sisapihan-suunta": {
+    "width": 1600,
+    "height": 1039,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "b2ef83e3"
+  },
+  "pk18-katutaso-kahvipiste": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "e71bbfc5"
+  },
+  "pk18-katutaso-keittio-baaritaso": {
+    "width": 1600,
+    "height": 1037,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "f9147af9"
+  },
+  "pk18-katutaso-keittio-kukat": {
+    "width": 1600,
+    "height": 1037,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "1dfed3f0"
+  },
+  "pk18-katutaso-keittio-saareke": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "70d1d48e"
+  },
+  "pk18-katutaso-keittio-yleiskuva": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "f8bf820f"
+  },
+  "pk18-katutaso-keittio-yleiskuva-2": {
+    "width": 1600,
+    "height": 1037,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "001c3252"
+  },
+  "pk18-katutaso-keltaiset-tuolit": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "82d52de8"
+  },
+  "pk18-katutaso-koulutustila-naytto": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "76d285e1"
+  },
+  "pk18-katutaso-koulutustila-sisapiha": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "4957bb56"
+  },
+  "pk18-katutaso-lasikaappi-astiasto": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "e73205a8"
+  },
+  "pk18-katutaso-pitka-poyta-ikkunat": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "1f195d5e"
+  },
+  "pk18-katutaso-pitka-poyta-keittioon": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "a0a83e4c"
+  },
+  "pk18-katutaso-pitka-poyta-naytto": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "a0787ed6"
+  },
+  "pk18-katutaso-pitka-poyta-nojatuolit": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "8b8b2900"
+  },
+  "pk18-katutaso-ryijy-ja-poyta": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "abf7a054"
+  },
+  "pk18-katutaso-sisaankaynti-neuvottelupoyta": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "d54840f0"
+  },
+  "pk18-katutaso-tyohuone": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "dab0e70d"
+  },
+  "pk18-katutaso-valkokangas-ja-naytto": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "99e43cdd"
+  },
+  "pk18-katutaso-wc": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "c1c6cbc3"
+  },
+  "pk18-alakerta-huone": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "84b0c026"
+  },
+  "pk18-alakerta-keittio": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "37f741ef"
+  },
+  "pk18-alakerta-oleskelu": {
+    "width": 1600,
+    "height": 1039,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "eeba4db0"
+  },
+  "pk18-alakerta-portaat": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "b4ad902a"
+  },
+  "pk18-alakerta-tyotila-kirjahylly": {
+    "width": 1600,
+    "height": 1036,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "873cb3b9"
+  },
+  "pk18-v5-avoin-toimisto": {
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "ea96c9d9"
+  },
+  "pk18-v5-julkisivu": {
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "82b07541"
+  },
+  "pk18-v5-julkisivu-sisaankaynti": {
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "a54b8eb3"
+  },
+  "pk18-v5-katunakyma": {
+    "width": 1600,
+    "height": 1077,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "e6370b36"
+  },
+  "pk18-v5-keittio": {
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "f6597205"
+  },
+  "pk18-v5-keittioalue": {
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "e58972a5"
+  },
+  "pk18-v5-kokouspoyta": {
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "3e727992"
+  },
+  "pk18-v5-neuvottelutila": {
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "e63b4445"
+  },
+  "pk18-v5-taukotila-naytto": {
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "e4adf722"
+  },
+  "pk18-v5-toimisto": {
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
+    "v": "0484b029"
+  }
+}

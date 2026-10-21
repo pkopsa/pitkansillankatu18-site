@@ -1,13 +1,5 @@
 {
   "git": {
     "deploymentEnabled": true
-  },
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.pitkansillankatu33.com" }],
-      "destination": "https://pitkansillankatu33.com/$1",
-      "permanent": true
-    }
-  ]
+  }
 }
