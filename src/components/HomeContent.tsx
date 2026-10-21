@@ -228,7 +228,7 @@ export default function HomeContent({ initialLang = "fi" }: { initialLang?: Lang
     { label: "petrikopsa.com", href: LINKS.petrikopsa },
     { label: "terassitalo.com", href: LINKS.booking },
     { label: "pitkansillankatu33.com", href: LINKS.pk33 },
-    { label: "Asunto Björndahl", href: BROKER.listingUrl },
+    { label: "Asunto Björndahl", href: BROKER.websiteUrl },
   ];
 
   return (

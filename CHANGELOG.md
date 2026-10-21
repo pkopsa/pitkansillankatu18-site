@@ -1,5 +1,9 @@
 # Muutosloki
 
+## 6.0.2 – 2026-10-21
+
+- Myyntipainikkeet ja Offerin url osoittavat Asunto Björndahlin julkaisemaan Kauppalehti Toimitilat -ilmoitukseen; footerin ja RealEstateAgentin linkki välittäjän kotisivulle (`BROKER.websiteUrl`).
+
 ## 6.0.1 – 2026-10-21 (UAT-korjaukset, ei vielä tuotannossa)
 
 - 480 €/m² johdetaan myyntihinnasta ja yhtiöjärjestyspinta-alasta; lisätty sivulle, metatietoihin ja JSON-LD:n yksikköhintaan.
